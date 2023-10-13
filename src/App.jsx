@@ -1,20 +1,39 @@
 import { useState } from "react";
-import "./App.css";
+import "./style/App.css";
+import { motion } from "framer-motion";
+import TitleReflector from "./TitleReflector";
+import NavCircle from "./NavCircle";
 
 function App() {
   return (
     <>
       <div className="page-container">
-        <div className="sky"></div>
+        <motion.div
+          className="sky"
+          initial={{
+            background:
+              "linear-gradient(rgb(255, 255, 255) -300%, rgb(236, 236, 236) 0%, gray 100%)",
+          }}
+          animate={{
+            background:
+              "linear-gradient(rgb(255, 255, 255) 0%, rgb(236, 236, 236) 100%, gray 300%)",
+          }}
+          transition={{ duration: 2, ease: "circOut" }}
+        >
+          <motion.div
+            className="sky-color"
+            initial={{ y: -500 }}
+            animate={{ y: 25 }}
+            transition={{ ease: "circOut", duration: 2 }}
+          >
+            <NavCircle circleId="circleone" circleTitle="About" />
+            <div className="blue"></div>
+            <div className="orange"></div>
+          </motion.div>
+        </motion.div>
+
         <div className="ground">
-          <div className="heading-container">
-            <div className="text-container">
-              <h1 className="title-text">Josh Brown Dev</h1>
-            </div>
-            <div className="reflection-container">
-              <h1 className="reflection-text">Josh Brown Dev</h1>
-            </div>
-          </div>
+          <TitleReflector category="DESIGN"/>
         </div>
       </div>
     </>
