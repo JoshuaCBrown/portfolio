@@ -1,39 +1,24 @@
 import { useState } from "react";
-import "./style/App.css";
+// import "./style/App.css";
+import "./style/Darkstyle.css";
 import { motion } from "framer-motion";
 import TitleReflector from "./TitleReflector";
-import NavCircle from "./NavCircle";
+import NavCircles from "./home-components/NavCircles";
+import LightSky from "./home-components/LightSky";
+import DarkSky from "./home-components/DarkSky";
 
 function App() {
   return (
     <>
       <div className="page-container">
-        <motion.div
-          className="sky"
-          initial={{
-            background:
-              "linear-gradient(rgb(255, 255, 255) -300%, rgb(236, 236, 236) 0%, gray 100%)",
-          }}
-          animate={{
-            background:
-              "linear-gradient(rgb(255, 255, 255) 0%, rgb(236, 236, 236) 100%, gray 300%)",
-          }}
-          transition={{ duration: 2, ease: "circOut" }}
-        >
-          <motion.div
-            className="sky-color"
-            initial={{ y: -500 }}
-            animate={{ y: 25 }}
-            transition={{ ease: "circOut", duration: 2 }}
-          >
-            <NavCircle circleId="circleone" circleTitle="About" />
-            <div className="blue"></div>
-            <div className="orange"></div>
-          </motion.div>
-        </motion.div>
+        {/* <LightSky /> */}
+        <DarkSky />
 
         <div className="ground">
-          <TitleReflector category="DESIGN"/>
+          <TitleReflector category="DESIGN" />
+          <div className="glass-reflection">
+            <div className="reflection-blend"></div>
+          </div>
         </div>
       </div>
     </>

@@ -6,10 +6,16 @@ function TitleReflector() {
       <div className="text-container">
         <h1 className="title-text">JoshbrownDESIGN</h1>
       </div>
-      <motion.div
+      {/* <motion.div
         className="reflection-container"
         style={{ transformPerspective: 150, scaleY: 0, rotateX: 0 }}
         animate={{ transformPerspective: 150, scaleY: .9, rotateX: 50 }}
+        transition={{ duration: 2, ease: "circOut" }}
+      > */}
+      <motion.div
+        className="reflection-container"
+        style={{ transformPerspective: 150, scaleY: 0, rotateX: 0 }}
+        animate={{ transformPerspective: 500, scaleY: 0.9, rotateX: 1 }}
         transition={{ duration: 2, ease: "circOut" }}
       >
         <motion.h1
@@ -20,6 +26,9 @@ function TitleReflector() {
         >
           JoshbrownDESIGN
         </motion.h1>
+        <div className="reflection-cover">
+          
+        </div>
       </motion.div>
     </div>
   );

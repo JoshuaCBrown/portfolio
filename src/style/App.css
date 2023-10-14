@@ -37,32 +37,29 @@ body {
   align-items: center;
 }
 
-.sky-color {
+.nav-circles {
   display: flex;
   gap: 10px;
 }
 
-#circleone {
+.nav-circle {
   border-radius: 50%;
   height: 200px;  
   width: 200px;
-  background-color: rgb(255, 215, 215);
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
   perspective: 50px;
 }
 
-.blue {
-  border-radius: 50%;
-  height: 200px;  
-  width: 200px;
+div#circleone {
+  background-color: rgb(255, 215, 215);
+}
+
+
+#circletwo {
   background-color: rgb(182, 183, 255);
 }
 
-.orange {
-  border-radius: 50%;
-  height: 200px;  
-  width: 200px;
-  background-color: rgb(255, 170, 229);
+#circlethree {
   background-color: rgb(220, 182, 255);
 }
 
@@ -126,9 +123,3 @@ h1.reflection-text {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
 }
-
-
-
-
-  
- 
