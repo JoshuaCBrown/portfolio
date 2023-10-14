@@ -18,6 +18,7 @@ function TitleReflector() {
         animate={{ transformPerspective: 500, scaleY: 0.9, rotateX: 1 }}
         transition={{ duration: 2, ease: "circOut" }}
       >
+        
         <motion.h1
           className="reflection-text"
           // style={{ rotateX: 90 }}
@@ -26,6 +27,8 @@ function TitleReflector() {
         >
           JoshbrownDESIGN
         </motion.h1>
+        <div className="gradient-reflection">
+        </div>
         <div className="reflection-cover">
           
         </div>
