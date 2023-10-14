@@ -23,7 +23,6 @@ body {
   box-sizing: border-box;
   display: grid;
   width: 100%;
-  /* border: 5px solid black; */
   grid-template-rows: 3fr 1fr;
   height: auto;
   margin: 0;
@@ -31,10 +30,14 @@ body {
 }
 
 .sky {
-  /* background: linear-gradient(rgb(255, 255, 255), rgb(236, 236, 236)); */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#dark .sky {
+  background: radial-gradient(at bottom, rgb(46, 46, 46), black);
+  position: relative;
 }
 
 .nav-circles {
@@ -78,7 +81,7 @@ div#circleone {
   grid-template-areas: "place";
 }
 
-div.text-container {
+div.title-container {
   grid-area: place;
   z-index: 10;
 }
