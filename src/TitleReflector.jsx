@@ -22,6 +22,9 @@ function TitleReflector({ category, themeStyle }) {
         <div className="title-container">
           <h1 className="title-text">Joshbrown{category}</h1>
         </div>
+        <div className="title-texture-container">
+          <h1 className="title-texture">Joshbrown{category}</h1>
+        </div>
         <motion.div
           className="reflection-container"
           variants={variants}
@@ -49,7 +52,7 @@ function TitleReflector({ category, themeStyle }) {
           </div>
         </>
       ) : (
-        ""
+        <div className="ground-color"></div>
       )}
 
       <div className="ground-texture"></div>

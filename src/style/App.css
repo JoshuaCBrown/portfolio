@@ -40,11 +40,9 @@ body {
 }
 
 .bgimg-container {
-  
   width: 100%;
   height: 100%;
   position: absolute;
-  
 }
 
 #dark .bgimg-container {
@@ -73,6 +71,31 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+
+#light .home-shapes::after {
+  content: '';
+  position: absolute;
+  /* background-color: black; */
+  height: 80%;
+  width: 40%;
+  right: -20px;
+  top: -20px;
+  border-top: 2px black dashed;
+  border-right: 2px black dashed;
+}
+
+#light .home-shapes::before {
+  content: '';
+  position: absolute;
+  /* background-color: black; */
+  height: 100%;
+  width: 20%;
+  left: -20px;
+  bottom: -20px;
+  border-left: 2px black dashed;
+  border-bottom: 2px black dashed;
+}
+
 
 #light .home-shape {
   height: 20px;
@@ -109,7 +132,7 @@ body {
 
 #dark div#shapeone {
   background-color: rgb(71, 15, 15);
-  background-image: url("../assets/transtextures/rocky-wall.png")
+  background-image: url("../assets/transtextures/rocky-wall.png");
 }
 
 #dark #shapetwo {
@@ -142,9 +165,14 @@ body {
   grid-template-areas: "place";
 }
 
-div.title-container {
+div.title-container,
+div.title-texture-container {
   grid-area: place;
   z-index: 10;
+  /* height:  */
+  /* box-sizing: content-box; */
+  /* border: 2px black solid; */
+  /* background: gray; */
 }
 
 div.reflection-container {
@@ -163,9 +191,11 @@ div.reflection-container {
 
 h1.title-text,
 h1.reflection-text,
-h1.reflection-text-highlight {
+h1.reflection-text-highlight,
+h1.title-texture {
   font-size: 7rem;
   margin: 0;
+  /* margin: 5px 0; */
   padding: 0;
   font-weight: 100;
   line-height: 5rem;
@@ -176,21 +206,44 @@ h1.reflection-text-highlight {
   /* color: transparent; */
   /* color: rgb(53, 53, 53, .5); */
   text-shadow: none;
-  background-image: url("../assets/transtextures/light-aluminum.png");
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(0, 0, 0, .7); 
+  color: black;
+  /* color: transparent; */
   /* -webkit-text-stroke: 4px transparent; */
 }
 
+#light div.title-texture-container {
+  background-image: url("../assets/transtextures/white-leather.png");
+
+  /* background-size: 5%; */
+  /* background: red; */
+  /* background-size: 5%; */
+  /* background-position-y: 5px; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: .7;
+}
+
+#light h1.title-texture {
+ 
+  color: transparent;
+  /* filter: invert(100); */
+  opacity: 1;
+}
+
+#dark div.title-texture-container {
+  opacity: 0;
+}
+
 #dark h1.title-text {
-  color: rgb(230, 230, 230);
+  color: rgb(224, 224, 224);
   text-shadow: 0 0 4px #fff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
-    0 0 42px rgb(255, 126, 203, 0.5), 0 0 82px rgb(255, 126, 203, 0.4),
-    0 0 92px rgb(255, 126, 203, 0.3), 0 0 102px rgb(255, 126, 203, 0.2),
-    0 0 151px rgba(255, 126, 203, 0.1);
+    0 0 42px rgb(255, 126, 203, 0.8), 0 0 82px rgb(255, 126, 203, 0.0),
+    0 0 92px rgb(255, 126, 203, 0.1), 0 0 102px rgb(255, 126, 203, 0),
+    0 0 151px rgba(255, 126, 203, 0);
 }
 
 #light h1.reflection-text {
+  /* display: none; */
   color: rgba(128, 128, 128, 0.274);
   font-size: 7rem;
   line-height: 5rem;
@@ -293,10 +346,18 @@ h1.reflection-text-highlight {
   width: 100%;
 }
 
-#light .ground-texture {
-  box-shadow: inset 0 2px 10px rgba(128, 128, 128, 0.658);
-  background-image: url("../assets/transtextures/scribble-light.png");
+#light .ground-color {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(ellipse at 50% 30%, transparent 20%, black 200%);
   opacity: .5;
+}
+
+#light .ground-texture {
+  box-shadow: inset 0 2px 10px rgba(128, 128, 128, 0.5);
+  background-image: url("../assets/transtextures/scribble-light.png");
+  opacity: 0.5;
 }
 
 #dark .ground-texture {
