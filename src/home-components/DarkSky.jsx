@@ -1,4 +1,4 @@
-import NavCircles from "./NavCircles";
+import NavCircles from "./HomeShapes";
 import { motion } from "framer-motion";
 
 function DarkSky() {
@@ -8,7 +8,7 @@ function DarkSky() {
         
       </div>
       <div className="sky-container">
-        {/* <NavCircles /> */}
+        <NavCircles />
       </div>
       
     </div>

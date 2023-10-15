@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-function NavCircle({ cardClass, cardId, cardFront, cardBack }) {
+function HomeShape({ cardClass, cardId, cardFront, cardBack }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const clickHandler = () => {
@@ -27,4 +27,4 @@ function NavCircle({ cardClass, cardId, cardFront, cardBack }) {
   );
 }
 
-export default NavCircle;
+export default HomeShape;

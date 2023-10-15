@@ -4,18 +4,21 @@ import "./style/App.css";
 // import "./style/Posterity.css";
 import { motion } from "framer-motion";
 import TitleReflector from "./TitleReflector";
-import NavCircles from "./home-components/NavCircles"; 
-import LightSky from "./home-components/LightSky";
+import NavCircles from "./home-components/HomeShapes";
+import Sky from "./home-components/Sky";
 import DarkSky from "./home-components/DarkSky";
 
 function App() {
   const [themeStyle, setThemeStyle] = useState(false);
+
+  const toggleTheme = () => setThemeStyle(!themeStyle);
+
   return (
     <>
       <div className="page-container" id={themeStyle ? "dark" : "light"}>
-        {themeStyle === true ? <DarkSky /> : <LightSky />}
+        <Sky themeStyle={themeStyle} toggleTheme={toggleTheme} />
         <div className="ground">
-          <TitleReflector category="DESIGN" themeStyle={themeStyle}/> 
+          <TitleReflector category="DESIGN" themeStyle={themeStyle} />
         </div>
       </div>
     </>

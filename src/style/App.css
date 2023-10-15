@@ -1,5 +1,3 @@
-
-
 html,
 body {
   height: 100%;
@@ -35,42 +33,105 @@ body {
   align-items: center;
 }
 
+/* darkmode */
 #dark .sky {
   background: radial-gradient(at bottom, rgb(46, 46, 46), black);
   position: relative;
 }
 
-.nav-circles {
+.bgimg-container {
+  
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+}
+
+#dark .bgimg-container {
+  background-image: url("../assets/transtextures/wall-4-light.png");
+  opacity: 5%;
+}
+
+#light .bgimg-container {
+  background-image: url("../assets/transtextures/scribble-light.png");
+  opacity: 50%;
+}
+
+.sky-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  /* border: orange 2px dashed; */
+  position: absolute;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#light .home-shapes {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
-.nav-circle {
-  border-radius: 50%;
-  height: 200px;  
-  width: 200px;
+#light .home-shape {
+  height: 20px;
+  width: 300px;
   /* backface-visibility: hidden; */
   perspective: 50px;
 }
 
-div#circleone {
+#light div#shapeone {
   background-color: rgb(255, 215, 215);
 }
 
-
-#circletwo {
+#light #shapetwo {
   background-color: rgb(182, 183, 255);
 }
 
-#circlethree {
+#light #shapethree {
   background-color: rgb(220, 182, 255);
 }
 
+#dark .home-shapes {
+  display: flex;
+  gap: 30px;
+}
+
+#dark .home-shape {
+  border-radius: 0%;
+  height: 175px;
+  width: 200px;
+  box-shadow: 0px -5px 20px black;
+
+  /* backface-visibility: hidden; */
+}
+
+#dark div#shapeone {
+  background-color: rgb(71, 15, 15);
+  background-image: url("../assets/transtextures/rocky-wall.png")
+}
+
+#dark #shapetwo {
+  background-color: rgb(153, 87, 0);
+}
+
+#dark #shapethree {
+  background-color: rgb(71, 15, 15);
+}
+
 .ground {
-  background: white;
   position: relative;
   display: flex;
   justify-content: center;
+}
+
+#light .ground {
+  background: white;
+}
+
+#dark .ground {
+  background: radial-gradient(black, black);
 }
 
 .heading-container {
@@ -100,24 +161,37 @@ div.reflection-container {
   /* overflow: hidden; */
 }
 
-
 h1.title-text,
-h1.reflection-text {
+h1.reflection-text,
+h1.reflection-text-highlight {
   font-size: 7rem;
   margin: 0;
   padding: 0;
-  font-weight:100;
+  font-weight: 100;
   line-height: 5rem;
   /* text-shadow: 2px 40px 0px pink; */
 }
 
-h1.title-text {
-  color: rgb(53, 53, 53);
+#light h1.title-text {
+  /* color: transparent; */
+  /* color: rgb(53, 53, 53, .5); */
+  text-shadow: none;
+  background-image: url("../assets/transtextures/light-aluminum.png");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, .7); 
+  /* -webkit-text-stroke: 4px transparent; */
 }
 
+#dark h1.title-text {
+  color: rgb(230, 230, 230);
+  text-shadow: 0 0 4px #fff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
+    0 0 42px rgb(255, 126, 203, 0.5), 0 0 82px rgb(255, 126, 203, 0.4),
+    0 0 92px rgb(255, 126, 203, 0.3), 0 0 102px rgb(255, 126, 203, 0.2),
+    0 0 151px rgba(255, 126, 203, 0.1);
+}
 
-h1.reflection-text {
-  color: rgba(128, 128, 128, 0.774);
+#light h1.reflection-text {
+  color: rgba(128, 128, 128, 0.274);
   font-size: 7rem;
   line-height: 5rem;
   transform: rotateY(180deg) rotateZ(180deg);
@@ -125,4 +199,141 @@ h1.reflection-text {
   /* background: radial-gradient(white 10%, grey);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
+}
+
+#dark h1.reflection-text {
+  position: absolute;
+  color: rgba(128, 128, 128, 0.774);
+  font-size: 7rem;
+  line-height: 5.6rem;
+  transform: rotateY(180deg) rotateZ(180deg);
+  transform-origin: bottom;
+  text-shadow: 0 0 4px #fff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
+    0 0 42px rgb(255, 126, 203, 0.5), 0 0 82px rgb(255, 126, 203, 0.4),
+    0 0 92px rgb(255, 126, 203, 0.3), 0 0 102px rgb(255, 126, 203, 0.2),
+    0 0 151px rgba(255, 126, 203, 0.1);
+  opacity: 70%;
+}
+
+#dark h1.reflection-text-highlight {
+  position: absolute;
+  font-weight: 400;
+  color: rgba(128, 128, 128, 0.774);
+  font-size: 7rem;
+  line-height: 5.6rem;
+  transform: rotateY(180deg) rotateZ(180deg);
+  transform-origin: bottom;
+  background: linear-gradient(transparent, rgb(255, 212, 255));
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px transparent;
+  filter: blur(2px);
+}
+
+/* .reflection-cover only covers the reflection itself */
+.reflection-cover {
+  position: absolute;
+  justify-self: center;
+  width: 125%;
+  height: 115%;
+  transform: rotateY(180deg) rotateZ(180deg);
+  transform-origin: bottom;
+  box-shadow: inset 0px 0px 50px 5px black, inset 0px -2px 10px -10px red,
+    0 0px 40px 0px black;
+  border-radius: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .glass-reflection covers ground */
+.glass-reflection {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(black 20%, white 200%);
+  /* border: red solid 3px; */
+  box-sizing: border-box;
+  justify-self: center;
+  align-self: center;
+  position: absolute;
+  opacity: 50%;
+  overflow: hidden;
+}
+
+.reflection-blend {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    60% 80% at 50% 5%,
+    transparent 25%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.4) 85%,
+    black 170%
+  );
+  /* background: red; */
+  opacity: 100%;
+}
+
+.glass-reflection-two {
+  position: absolute;
+  align-self: center;
+  justify-self: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    transparent 20%,
+    rgba(0, 0, 0, 0.5) 35%,
+    rgba(0, 0, 0, 1) 65%
+  );
+  opacity: 100%;
+}
+
+.ground-texture {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#light .ground-texture {
+  box-shadow: inset 0 2px 10px rgba(128, 128, 128, 0.658);
+  background-image: url("../assets/transtextures/scribble-light.png");
+  opacity: .5;
+}
+
+#dark .ground-texture {
+  /* border: 2px solid green; */
+  background-image: url("../assets/transtextures/asfalt-light.png");
+  opacity: 0.4;
+  box-shadow: inset 0 15px 15px black;
+}
+
+.toggle-container {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 20px;
+  background-color: lightgray;
+  box-shadow: inset 2px -2px 4px 1px rgb(99, 99, 99),
+    inset -3px 5px 5px 0px white;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 1000;
+}
+
+.toggle-container[data-themeStyle="true"] {
+  justify-content: flex-end;
+}
+
+.toggle {
+  /* position: relative; */
+  /* border: green 2px solid; */
+  height: 28px;
+  width: 28px;
+  background-color: gray;
+  box-shadow: inset 0 0 10px black;
+  align-self: center;
+  border-radius: 50%;
+  margin: 2px;
 }

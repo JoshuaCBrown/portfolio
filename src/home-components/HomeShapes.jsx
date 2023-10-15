@@ -1,31 +1,31 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import NavCircle from "./NavCircle";
+import HomeShape from "./HomeShape";
 
-function NavCircles() {
+function HomeShapes() {
   return (
     <>
       <motion.div
-        className="nav-circles"
+        className="home-shapes"
         initial={{ y: -500 }}
         animate={{ y: 25 }}
         transition={{ ease: "circOut", duration: 2 }}
       >
-        <NavCircle
-          cardClass="nav-circle"
-          cardId="circleone"
+        <HomeShape
+          cardClass="home-shape"
+          cardId="shapeone"
           cardFront="About"
           cardBack="This is data"
         />
-        <NavCircle
-          cardClass="nav-circle"
-          cardId="circletwo"
+        <HomeShape
+          cardClass="home-shape"
+          cardId="shapetwo"
           cardFront="Portfolio"
           cardBack="This is data"
         />
-        <NavCircle
-          cardClass="nav-circle"
-          cardId="circlethree"
+        <HomeShape
+          cardClass="home-shape"
+          cardId="shapethree"
           cardFront="Contact"
           cardBack="This is data"
         />
@@ -34,4 +34,4 @@ function NavCircles() {
   );
 }
 
-export default NavCircles;
+export default HomeShapes;

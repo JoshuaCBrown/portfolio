@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-.dark-sky {
+#dark .sky {
   background: radial-gradient(at bottom, rgb(46, 46, 46), black);
   /* background-color: gray; */
   /* background: linear-gradient(rgb(0, 0, 0), rgb(48, 48, 48)); */
@@ -140,9 +140,19 @@ h1.title-text {
     0 0 42px rgb(255, 126, 203, 0.5), 0 0 82px rgb(255, 126, 203, 0.4),
     0 0 92px rgb(255, 126, 203, 0.3), 0 0 102px rgb(255, 126, 203, 0.2),
     0 0 151px rgba(255, 126, 203, 0.1);
+    /* TEAL */
+  /* text-shadow: 0 0 4px #fff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
+    0 0 42px rgba(233, 126, 255, 0.5), 0 0 82px rgba(126, 251, 255, 0.4),
+    0 0 92px rgba(126, 251, 255, 0.3), 0 0 102px rgba(126, 251, 255, 0.2),
+    0 0 151px rgba(126, 251, 255, 0.1); */
+    /* PURPLE */
+  /* text-shadow: 0 0 4px #fff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
+    0 0 42px rgba(224, 126, 255, 0.5), 0 0 82px rgb(224, 126, 203, 0.4),
+    0 0 92px rgb(224, 126, 203, 0.3), 0 0 102px rgb(224, 126,203, 0.2),
+    0 0 151px rgba(224, 126, 203, 0.1); */
 }
 
-h1.reflection-text {
+#dark h1.reflection-text {
   position: absolute;
   color: rgba(128, 128, 128, 0.774);
   font-size: 7rem;
@@ -154,7 +164,6 @@ h1.reflection-text {
     0 0 92px rgb(255, 126, 203, 0.3), 0 0 102px rgb(255, 126, 203, 0.2),
     0 0 151px rgba(255, 126, 203, 0.1);
   opacity: 70%;
-
 }
 
 h1.reflection-text-highlight {
@@ -231,3 +240,35 @@ h1.reflection-text-highlight {
   opacity: .4;
   box-shadow: inset 0 15px 15px black;
 }
+
+.toggle-container {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 20px;
+  background-color: lightgray;
+  box-shadow: inset 2px -2px 4px 1px rgb(99, 99, 99), inset -3px 5px 5px 0px white;
+  cursor: pointer;
+  display: flex;  
+  justify-content: flex-start;
+  z-index: 1000;
+}
+
+.toggle-container[data-themeStyle="true"] {
+  justify-content: flex-end;
+}
+
+.toggle {
+  /* position: relative; */
+  /* border: green 2px solid; */
+  height: 28px;
+  width: 28px;
+  background-color: gray;
+  box-shadow: inset 0 0 10px black;
+  align-self: center;
+  border-radius: 50%;
+  margin: 2px;
+}
+

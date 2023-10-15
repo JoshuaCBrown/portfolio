@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function TitleReflector({ category, themeStyle }) {
   const lightVariants = {
     initial: { transformPerspective: 150, scaleY: 0, rotateX: 0 },
-    animate: { transformPerspective: 150, scaleY: 0.9, rotateX: 50 },
+    animate: { transformPerspective: 175, scaleY: 0.9, rotateX: 50 },
     transition: { duration: 2, ease: "circOut" },
   };
 
@@ -20,7 +20,7 @@ function TitleReflector({ category, themeStyle }) {
       {/* these are all children of .ground */}
       <div className="heading-container">
         <div className="title-container">
-          <h1 className="title-text">JoshBrown{category}</h1>
+          <h1 className="title-text">Joshbrown{category}</h1>
         </div>
         <motion.div
           className="reflection-container"
