@@ -1,5 +1,7 @@
-import NavCircles from "./HomeShapes";
-import { motion } from "framer-motion";
+import NavImgs from "./NavImgs";
+import { motion } from "framer-motion"; 
+import "../style/Sky.css";
+
 
 function Sky({ themeStyle, toggleTheme }) {
   const lightVariants = {
@@ -35,6 +37,7 @@ function Sky({ themeStyle, toggleTheme }) {
           transition={{ type: "tween", duration: 2 }}
         ></motion.div>
       </div>
+        
       <motion.div
         className="sky"
         style={{
@@ -46,8 +49,9 @@ function Sky({ themeStyle, toggleTheme }) {
         transition="transition"
       >
         <div className="bgimg-container"></div>
-        <div className="sky-container"><NavCircles /></div>
+        <div className="sky-container"><NavImgs /></div>
       </motion.div>
+      
     </>
   );
 }

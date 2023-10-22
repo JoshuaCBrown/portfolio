@@ -1,4 +1,4 @@
-import NavCircles from "./HomeShapes";
+import NavCircles from "./NavImgs";
 import { motion } from "framer-motion";
 
 function DarkSky() {

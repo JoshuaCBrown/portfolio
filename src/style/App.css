@@ -1,3 +1,29 @@
+/* css variables */
+
+:root {
+  /* color palette original */
+  /* --primaryDark: #323366;
+  --primaryLight: #7f98ff;
+  --primaryLightAccent: #ffcc7f; */
+/* option two */
+  /* --primaryDark: #8E9EAA;
+  --primaryLight: #80C8FF;
+  --primaryLightAccent: #FFCC80; */
+
+  --primaryDark: #172733;
+  --primaryLight: #87ABA7;
+  --primaryLightAccent: #AB87A9;
+  --primaryBlack: black;
+  --primaryWhite: white;
+  --primaryShade: rgba(0, 0, 0, 0.577);
+  --compColor: var(--primaryDark);
+  --mannyColor: var(--primaryDark);
+  --cubeColor: var(--primaryWhite);
+  --svgBgDark: var(--primaryDark);
+  --svgBgLight: var(--primaryLight);
+  --svgBgAccent: var(--primaryLightAccent);
+}
+
 html,
 body {
   height: 100%;
@@ -27,121 +53,7 @@ body {
   padding: 0;
 }
 
-.sky {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* darkmode */
-#dark .sky {
-  background: radial-gradient(at bottom, rgb(46, 46, 46), black);
-  position: relative;
-}
-
-.bgimg-container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-#dark .bgimg-container {
-  background-image: url("../assets/transtextures/wall-4-light.png");
-  opacity: 5%;
-}
-
-#light .bgimg-container {
-  background-image: url("../assets/transtextures/scribble-light.png");
-  opacity: 50%;
-}
-
-.sky-container {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  /* border: orange 2px dashed; */
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#light .home-shapes {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-#light .home-shapes::after {
-  content: '';
-  position: absolute;
-  /* background-color: black; */
-  height: 80%;
-  width: 40%;
-  right: -20px;
-  top: -20px;
-  border-top: 2px black dashed;
-  border-right: 2px black dashed;
-}
-
-#light .home-shapes::before {
-  content: '';
-  position: absolute;
-  /* background-color: black; */
-  height: 100%;
-  width: 20%;
-  left: -20px;
-  bottom: -20px;
-  border-left: 2px black dashed;
-  border-bottom: 2px black dashed;
-}
-
-
-#light .home-shape {
-  height: 20px;
-  width: 300px;
-  /* backface-visibility: hidden; */
-  perspective: 50px;
-}
-
-#light div#shapeone {
-  background-color: rgb(255, 215, 215);
-}
-
-#light #shapetwo {
-  background-color: rgb(182, 183, 255);
-}
-
-#light #shapethree {
-  background-color: rgb(220, 182, 255);
-}
-
-#dark .home-shapes {
-  display: flex;
-  gap: 30px;
-}
-
-#dark .home-shape {
-  border-radius: 0%;
-  height: 175px;
-  width: 200px;
-  box-shadow: 0px -5px 20px black;
-
-  /* backface-visibility: hidden; */
-}
-
-#dark div#shapeone {
-  background-color: rgb(71, 15, 15);
-  background-image: url("../assets/transtextures/rocky-wall.png");
-}
-
-#dark #shapetwo {
-  background-color: rgb(153, 87, 0);
-}
-
-#dark #shapethree {
-  background-color: rgb(71, 15, 15);
-}
 
 .ground {
   position: relative;

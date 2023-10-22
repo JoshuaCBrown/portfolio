@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-function HomeShape({ cardClass, cardId, cardFront, cardBack }) {
+function NavBtn({ cardClass, cardId, cardFront, cardBack }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const clickHandler = () => {
@@ -12,6 +12,9 @@ function HomeShape({ cardClass, cardId, cardFront, cardBack }) {
     <>
       <div>
         <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, ease: "easeIn", delay: 2 }}
           className={cardClass}
           id={cardId}
           key={cardId}
@@ -27,4 +30,4 @@ function HomeShape({ cardClass, cardId, cardFront, cardBack }) {
   );
 }
 
-export default HomeShape;
+export default NavBtn;

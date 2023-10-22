@@ -1,0 +1,94 @@
+
+.home-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px black solid; */
+}
+
+#comp-nav {
+  justify-content: flex-start;
+}
+
+#manny-nav {
+  justify-content: flex-end;
+}
+
+.img-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px pink solid; */
+  z-index: 2;
+  width: 300px;
+  height: 100%;
+}
+
+.svg-container {
+  
+  position: absolute;
+  /* align-self: center; */
+  /* justify-self: center; */
+  display: flex;
+  /* border: 2px black solid; */
+  height: 100%;
+  width: 100%;
+  max-width: 300px;
+}
+
+#comp-nav svg,
+#manny-nav svg {
+  stroke-width: 2px;
+}
+
+#cube-nav svg {
+  margin-top: -20px;
+}
+
+#light .home-shape {
+  height: 40px;
+  width: 150px;
+  /* backface-visibility: hidden; */
+  perspective: 50px;
+  /* position: absolute; */
+  color: var(--primaryWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primaryShade);
+}
+
+/* #light div#shapeone {
+  background-color: var(--primaryLightAccent);
+}
+
+#light #shapetwo {
+  background-color: var(--primaryDark);
+}
+
+#light #shapethree {
+  background-color: var(--primaryLight);
+} */
+
+#dark .home-shape {
+  border-radius: 0%;
+  height: 175px;
+  width: 200px;
+  box-shadow: 0px -5px 20px black;
+
+  /* backface-visibility: hidden; */
+}
+
+#dark div#shapeone {
+  background-color: rgb(71, 15, 15);
+  background-image: url("../assets/transtextures/rocky-wall.png");
+}
+
+#dark #shapetwo {
+  background-color: rgb(153, 87, 0);
+}
+
+#dark #shapethree {
+  background-color: rgb(71, 15, 15);
+}

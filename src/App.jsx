@@ -4,7 +4,7 @@ import "./style/App.css";
 // import "./style/Posterity.css";
 import { motion } from "framer-motion";
 import TitleReflector from "./TitleReflector";
-import NavCircles from "./home-components/HomeShapes";
+import NavCircles from "./home-components/NavImgs";
 import Sky from "./home-components/Sky";
 import DarkSky from "./home-components/DarkSky";
 
