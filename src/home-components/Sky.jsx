@@ -49,7 +49,7 @@ function Sky({ themeStyle, toggleTheme }) {
         transition="transition"
       >
         <div className="bgimg-container"></div>
-        <div className="sky-container"><NavImgs /></div>
+        <div className="sky-container"><NavImgs themeStyle={themeStyle} /></div>
       </motion.div>
       
     </>

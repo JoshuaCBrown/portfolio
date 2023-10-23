@@ -1,42 +1,26 @@
-/* #dark svg {
-  --svgBgLight: transparent;
-  --svgBgAccent: transparent;
-}
+/* svg {
+  stroke: pink;
+  fill: white;
+  filter: drop-shadow(0 0 10px white);
 
-#svg-comp-front>svg,
-#svg-manny-front>svg { */
-  /* --compColor: rgb(255, 140, 159); */
-  /* --compColor: white; */
-  /* --mannyColor: rgb(96, 181, 255); */
-  /* --mannyColor: white;
-  opacity: 1;
-}
-
-#svg-comp-front>svg {
-  --compColor: white;
-  filter: drop-shadow(0 0 3px blue);
-}
-#svg-manny-front>svg {
-  --mannyColor: white;
-  filter: drop-shadow(0 0 3px blue);
-}
-
-#svg-comp-bg>svg,
-#svg-manny-bg>svg {
-  --compStrokeW: 4px;
-  --compColor: blue;
-  --mannyStrokeW: 5px;
-  --mannyColor: blue;
-  filter: drop-shadow( 0 0 3px white);
-  opacity: .5; */
-  /* border: red solid 2px; */
-/* } */
+} */
 .home-nav {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   /* border: 2px black solid; */
+}
+
+.dark-stone-card {
+  overflow: hidden;
+  height: 200px;
+  width: 175px;
+  border-radius: 0%;
+  height: 175px;
+  width: 200px;
+  box-shadow: 0px -5px 20px black;
+  position: relative;
 }
 
 #comp-nav {
@@ -58,14 +42,27 @@
 }
 
 .svg-container {
-  position: absolute;
   /* align-self: center; */
   /* justify-self: center; */
   display: flex;
   /* border: 2px black solid; */
+  
+  
+}
+
+#dark .svg-container {
+  height: 100%;
+  width: 100%;
+}
+
+#light .svg-container {
   max-width: 300px;
   height: 100%;
   width: 100%;
+}
+
+#light .svg-container {
+  position: absolute;
 }
 
 #manny-svg {
@@ -88,6 +85,22 @@
   opacity: .5;
 }
 
+#dark div#cube-svg {
+  width: 300px;
+  height: auto;
+  /* right: -10px; */
+  /* bottom: -20px; */
+  opacity: .5;
+}
+
+#dark .svg-container {
+  max-width: 400px;
+  height: auto;
+}
+
+#dark .svg-container {
+  position: absolute;
+}
 
 #comp-nav svg,
 #manny-nav svg {
@@ -128,19 +141,6 @@
   border-bottom: 2px black dashed;
 }
 
-.nav-btn {
-  height: 40px;
-  width: 200px;
-  /* backface-visibility: hidden; */
-  perspective: 50px;
-  /* position: absolute; */
-  color: var(--primaryWhite);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--primaryShade);
-}
-
 #light .nav-btn {
   height: 40px;
   width: 200px;
@@ -166,33 +166,33 @@
   background-color: var(--primaryLight);
 } */
 
-/* #dark .nav-btn {
-  border: 2px solid rgb(117, 253, 117);
-  color: rgb(117, 253, 117);
-  background: transparent;
-  box-shadow: 0 0 5px 0px white, 0 0 15px rgb(117, 253, 117, .5), inset 0 0 5px 0px white, inset 0 0 20px -5px rgb(117, 253, 117, .5), 0 0 50px rgba(255, 255, 255, 0.233), inset 0 0 20px rgba(255, 255, 255, 0.2);
-  text-shadow: 0 0 3px white;
-} */
 #dark .nav-btn {
-  
-}
-#dark div#about-nav {
-  /* background-color: rgb(153, 87, 0); */
-  background-color: rgb(0, 59, 99);
-  /* background-image: url("../assets/transtextures/rocky-wall.png"); */
 
+
+  /* backface-visibility: hidden; */
+}
+
+#dark div#about-nav {
+  background-color: rgb(153, 87, 0);
+  background-image: url("../assets/transtextures/rocky-wall.png");
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 #dark div#portfolio-nav {
-  background-color: rgb(0, 90, 150);
-  /* background-color: rgb(71, 15, 15); */
-  /* background-image: url("../assets/transtextures/rocky-wall.png"); */
-
+  
+  background-color: rgb(71, 15, 15);
+  background-image: url("../assets/transtextures/rocky-wall.png");
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 #dark div#contact-nav {
-  background-color: rgb(8, 125, 202);
-  /* background-color: rgb(71, 15, 15); */
-  /* background-image: url("../assets/transtextures/rocky-wall.png"); */
-
+  background-color: rgb(71, 15, 15);
+  background-image: url("../assets/transtextures/rocky-wall.png");
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }

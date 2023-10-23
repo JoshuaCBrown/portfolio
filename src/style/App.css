@@ -22,6 +22,8 @@
   --svgBgDark: var(--primaryDark);
   --svgBgLight: var(--primaryLight);
   --svgBgAccent: var(--primaryLightAccent);
+  --mannyStrokeW: 2px;
+  --compStrokeW: 2px;
 }
 
 html,
@@ -148,10 +150,14 @@ h1.title-texture {
 
 #dark h1.title-text {
   color: rgb(224, 224, 224);
-  text-shadow: 0 0 4px #fff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
+  /* text-shadow: 0 0 4px #fff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
     0 0 42px rgb(255, 126, 203, 0.8), 0 0 82px rgb(255, 126, 203, 0.0),
     0 0 92px rgb(255, 126, 203, 0.1), 0 0 102px rgb(255, 126, 203, 0),
-    0 0 151px rgba(255, 126, 203, 0);
+    0 0 151px rgba(255, 126, 203, 0); */
+    text-shadow: 0 0 4px #ffffff, 0 0 10px #ffffffbb, 0 0 21px #ffffff9f,
+    0 0 42px rgba(126, 135, 255, 0.7), 0 0 82px rgba(126, 203, 255, 0),
+    0 0 92px rgba(126, 186, 255, 0.1), 0 0 102px rgba(126, 182, 255, 0),
+    0 0 151px rgba(126, 208, 255, 0);
 }
 
 #light h1.reflection-text {

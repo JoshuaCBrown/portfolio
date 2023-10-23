@@ -12,9 +12,9 @@ function NavBtn({ cardClass, cardId, cardFront, cardBack }) {
     <>
       <div>
         <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeIn", delay: 2 }}
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.5, ease: "easeIn", delay: 1 }}
           className={cardClass}
           id={cardId}
           key={cardId}
