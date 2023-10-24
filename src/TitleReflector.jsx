@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 function TitleReflector({ category, themeStyle }) {
   const lightVariants = {
     initial: { transformPerspective: 150, scaleY: 0, rotateX: 0 },
     animate: { transformPerspective: 175, scaleY: 0.9, rotateX: 50 },
+    exit: { x: -500, transition: { duration: 0.25 } },
     transition: { duration: 2, ease: "circOut" },
   };
 
   const darkVariants = {
     initial: { transformPerspective: 2000, scaleY: 0.9, rotateX: 0 },
     animate: { transformPerspective: 2000, scaleY: 0.9, rotateX: 0 },
-    transition: { duration: 2, ease: "circOut" },
+    transition: { duration: 0, ease: "circOut" },
   };
 
   const variants = themeStyle ? darkVariants : lightVariants;
@@ -20,11 +22,12 @@ function TitleReflector({ category, themeStyle }) {
       {/* these are all children of .ground */}
       <div className="heading-container">
         <div className="title-container">
-          <h1 className="title-text">Joshbrown{category}</h1>
+          <h1 className="title-text">{category}</h1>
         </div>
         <div className="title-texture-container">
-          <h1 className="title-texture">Joshbrown{category}</h1>
+          <h1 className="title-texture">{category}</h1>
         </div>
+
         <motion.div
           className="reflection-container"
           variants={variants}
@@ -32,16 +35,16 @@ function TitleReflector({ category, themeStyle }) {
           animate="animate"
           transition={{ duration: 2, ease: "circOut" }}
         >
-          <h1 className="reflection-text">Joshbrown{category}</h1>
+          <h1 className="reflection-text">{category}</h1>
           {themeStyle ? (
             <>
-              <h1 className="reflection-text-highlight">Joshbrown{category}</h1>
+              <h1 className="reflection-text-highlight">{category}</h1>
               <div className="reflection-cover"></div>
             </>
           ) : (
             ""
           )}
-          {/* <div className="gradient-reflection"></div> */}
+          
         </motion.div>
       </div>
       {themeStyle ? (

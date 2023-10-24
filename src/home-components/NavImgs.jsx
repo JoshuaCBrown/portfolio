@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import NavBtn from "./NavBtn";
 import CompImg from "../assets/svgs/CompImg.jsx";
@@ -6,10 +6,19 @@ import CompImg from "../assets/svgs/CompImg.jsx";
 import MannyImg from "../assets/svgs/MannyImg.jsx";
 import "../style/NavImgs.css";
 
-function NavImgs({ themeStyle }) {
+function NavImgs({ themeStyle, reTitle }) {
+  useEffect(() => {
+    reTitle("JoshbrownDESIGN");
+  }, []);
+
   return (
     <>
-      <div className="home-nav-container">
+      <motion.div
+        className="home-nav-container"
+        initial={{}}
+        animate={{ x: 0, scale: 1 }}
+        exit={{ x: -2000, scale: 2, transition: { duration: 2 } }}
+      >
         <div className="home-nav" id="comp-nav">
           <div className="home-third">
             {themeStyle ? (
@@ -38,19 +47,19 @@ function NavImgs({ themeStyle }) {
                 cardClass="nav-btn"
                 cardId="about-nav"
                 cardFront="About"
-                cardBack=""
+                cardLink="about"
               />
               <NavBtn
                 cardClass="nav-btn"
                 cardId="portfolio-nav"
                 cardFront="Portfolio"
-                cardBack=""
+                cardBack="portfolio"
               />
               <NavBtn
                 cardClass="nav-btn"
-                cardId="contact-nav"
-                cardFront="Contact"
-                cardBack=""
+                cardId="connect-nav"
+                cardFront="Connect"
+                cardBack="connect"
               />
               <motion.div
                 initial={{ height: 0, width: 0 }}
@@ -81,7 +90,7 @@ function NavImgs({ themeStyle }) {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

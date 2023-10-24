@@ -10,12 +10,28 @@
   --primaryLight: #80C8FF;
   --primaryLightAccent: #FFCC80; */
 
+
+  /* BLUE COLOR PALETTE  */
+
+
+
+  /* ORIGINAL-BLUE-    #087CC9 #005A96  #003C63 */
+  /* #1E6696 #5199C9 #003C63 #97D4FC #CCEBFF  */
+  /* #144463 #65C0FC #005A96 #99D6FF #CCEBFF */
+  /* SLIGHTLY LESS MONOCHROMATIC MORE DEPTH LESS APPEALING */
+  /* #246996 #2C4D63 #087CC9 #212C33 #2B3033  */
+
+
   --primaryDark: #172733;
   --primaryLight: #87ABA7;
   --primaryLightAccent: #AB87A9;
   --primaryBlack: black;
   --primaryWhite: white;
   --primaryShade: rgba(0, 0, 0, 0.577);
+  /* DARK COLOR PALETTE */
+  --darkLBlue: #5199C9;
+  --darkMBlue: #1E6696;
+  --darkDBlue: #003C63;
   --compColor: var(--primaryDark);
   --mannyColor: var(--primaryDark);
   --cubeColor: var(--primaryWhite);
@@ -24,6 +40,7 @@
   --svgBgAccent: var(--primaryLightAccent);
   --mannyStrokeW: 2px;
   --compStrokeW: 2px;
+
 }
 
 html,
@@ -298,7 +315,9 @@ h1.title-texture {
   cursor: pointer;
   display: flex;
   justify-content: flex-start;
+  /* align-items: center; */
   z-index: 1000;
+  padding: 0 2px;
 }
 
 .toggle-container[data-themeStyle="true"] {
@@ -308,11 +327,11 @@ h1.title-texture {
 .toggle {
   /* position: relative; */
   /* border: green 2px solid; */
-  height: 28px;
-  width: 28px;
+  height: 25px;
+  width: 25px;
   background-color: gray;
-  box-shadow: inset 0 0 10px black;
-  align-self: center;
+  box-shadow: inset 0 0 10px rgb(95, 95, 95);
+  /* align-self: center; */
   border-radius: 50%;
   margin: 2px;
 }

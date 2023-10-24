@@ -1,36 +1,71 @@
-/* #dark svg {
+/*
+    VARIABLE REFERENCE 
+--primaryDark: #172733;
+--primaryLight: #87aba7;
+--primaryLightAccent: #ab87a9;
+--primaryBlack: black;
+--primaryWhite: white;
+--primaryShade: rgba(0, 0, 0, 0.577);
+--compColor: var(--primaryDark);
+--mannyColor: var(--primaryDark);
+--cubeColor: var(--primaryWhite);
+--svgBgDark: var(--primaryDark);
+--svgBgLight: var(--primaryLight);
+--svgBgAccent: var(--primaryLightAccent);
+--mannyStrokeW: 2px;
+--compStrokeW: 2px;
+
+*/
+
+/* ORIGINAL-BLUE    #087CC9 #005A96  #003C63 */
+  /* BLUE COLOR PALETTE  */
+  /* #1E6696 #5199C9 #003C63 #97D4FC #CCEBFF  */
+  /* #144463 #65C0FC #005A96 #99D6FF #CCEBFF */
+  /* SLIGHTLY LESS MONOCHROMATIC MORE DEPTH LESS APPEALING */
+  /* #246996 #2C4D63 #087CC9 #212C33 #2B3033  */
+
+  #light #svg-comp-front > svg,
+  #light #svg-manny-front > svg {
+  --svgBgLight: var(--primaryLight);
+  --svgBgAccent: var(--primaryLightAccent);
+  --compColor: var(--primaryDark);
+  --mannyColor: var(--primaryDark);
+  filter: none;
+}
+
+  #dark svg {
   --svgBgLight: transparent;
   --svgBgAccent: transparent;
 }
 
-#svg-comp-front>svg,
-#svg-manny-front>svg { */
+#dark #svg-comp-front > svg,
+#dark #svg-manny-front > svg {
   /* --compColor: rgb(255, 140, 159); */
-  /* --compColor: white; */
+  --compColor: white;
   /* --mannyColor: rgb(96, 181, 255); */
-  /* --mannyColor: white;
+  --mannyColor: white;
   opacity: 1;
 }
 
-#svg-comp-front>svg {
+#svg-comp-front > svg {
   --compColor: white;
   filter: drop-shadow(0 0 3px blue);
 }
-#svg-manny-front>svg {
+#svg-manny-front > svg {
   --mannyColor: white;
   filter: drop-shadow(0 0 3px blue);
 }
 
-#svg-comp-bg>svg,
-#svg-manny-bg>svg {
-  --compStrokeW: 4px;
+#svg-comp-bg > svg,
+#svg-manny-bg > svg {
+  --compStrokeW: 6px;
   --compColor: blue;
   --mannyStrokeW: 5px;
   --mannyColor: blue;
-  filter: drop-shadow( 0 0 3px white);
-  opacity: .5; */
+  filter: drop-shadow(0 0 3px white);
+  opacity: 0.5;
   /* border: red solid 2px; */
-/* } */
+}
 .home-nav {
   position: relative;
   display: flex;
@@ -78,16 +113,15 @@
   height: auto;
   top: -50px;
   left: -60px;
-  opacity: .5;
+  opacity: 0.5;
   /* stroke-width: 20px; */
   /* stroke: black; */
 }
 
 #dark div#manny-svg {
   width: 200px;
-  opacity: .5;
+  opacity: 0.5;
 }
-
 
 #comp-nav svg,
 #manny-nav svg {
@@ -107,7 +141,7 @@
 }
 
 #light .right-dashed {
-  content: '';
+  content: "";
   position: absolute;
   height: 80%;
   width: 40%;
@@ -118,7 +152,7 @@
 }
 
 #light .left-dashed {
-  content: '';
+  content: "";
   position: absolute;
   height: 50%;
   width: 20%;
@@ -174,25 +208,45 @@
   text-shadow: 0 0 3px white;
 } */
 #dark .nav-btn {
-  
+  box-shadow: 0 0px 3px 2px rgb(63, 63, 63);
 }
+
 #dark div#about-nav {
   /* background-color: rgb(153, 87, 0); */
   background-color: rgb(0, 59, 99);
   /* background-image: url("../assets/transtextures/rocky-wall.png"); */
-
 }
 
 #dark div#portfolio-nav {
   background-color: rgb(0, 90, 150);
   /* background-color: rgb(71, 15, 15); */
   /* background-image: url("../assets/transtextures/rocky-wall.png"); */
-
 }
 
-#dark div#contact-nav {
+#dark div#connect-nav {
   background-color: rgb(8, 125, 202);
   /* background-color: rgb(71, 15, 15); */
   /* background-image: url("../assets/transtextures/rocky-wall.png"); */
+}
 
+
+#dark::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  height: 5px;
+  width: 70%;
+  background: linear-gradient(to left, transparent, var(--darkMBlue) 20%, transparent);
+  z-index: 1;
+}
+
+#dark::after {
+  content: '';
+  position: absolute;
+  left: 200px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(transparent, var(--darkMBlue) 20%, transparent);
 }

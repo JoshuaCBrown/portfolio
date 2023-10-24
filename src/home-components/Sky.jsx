@@ -1,9 +1,9 @@
 import NavImgs from "./NavImgs";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import "../style/Sky.css";
+import AnimatedRoutes from "../AnimatedRoutes";
 
-
-function Sky({ themeStyle, toggleTheme }) {
+function Sky({ themeStyle, toggleTheme, reTitle }) {
   const lightVariants = {
     initial: {
       background:
@@ -12,9 +12,9 @@ function Sky({ themeStyle, toggleTheme }) {
     animate: {
       background:
         "linear-gradient(rgb(255, 255, 255) 0%, rgb(230, 230, 230) 100%, gray 300%)",
-      transition: { duration: 2 }
+      transition: { duration: 2 },
     },
-    transition: { transition: { duration: 2, ease: "circOut" }},
+    transition: { transition: { duration: 2, ease: "circOut" } },
   };
 
   const darkVariants = {
@@ -37,7 +37,7 @@ function Sky({ themeStyle, toggleTheme }) {
           transition={{ type: "tween", duration: 2 }}
         ></motion.div>
       </div>
-        
+
       <motion.div
         className="sky"
         style={{
@@ -49,9 +49,11 @@ function Sky({ themeStyle, toggleTheme }) {
         transition="transition"
       >
         <div className="bgimg-container"></div>
-        <div className="sky-container"><NavImgs themeStyle={themeStyle} /></div>
+        <div className="sky-container">
+          <AnimatedRoutes themeStyle={themeStyle} reTitle={reTitle} />
+          {/* <NavImgs themeStyle={themeStyle} /> */}
+        </div>
       </motion.div>
-      
     </>
   );
 }

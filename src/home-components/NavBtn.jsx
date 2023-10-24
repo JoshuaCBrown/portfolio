@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
 function NavBtn({ cardClass, cardId, cardFront, cardBack }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -11,20 +11,22 @@ function NavBtn({ cardClass, cardId, cardFront, cardBack }) {
   return (
     <>
       <div>
-        <motion.div
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // transition={{ duration: 0.5, ease: "easeIn", delay: 1 }}
-          className={cardClass}
-          id={cardId}
-          key={cardId}
-          // initial={false}
-          // onClick={() => clickHandler}
-          // animate={{ rotateY: isFlipped ? 180 : 360 }}
-          // transition={{ ease: "easeIn", duration: 0.5 }}
-        >
-          {cardFront}
-        </motion.div>
+        <Link to="about">
+          <motion.div
+            // initial={{ y: -1000 }}
+            // animate={{ y: 0 }}
+            // transition={{ duration: 0.25, ease: "easeIn", delay: 0 }}
+            className={cardClass}
+            id={cardId}
+            key={cardId}
+            // initial={false}
+            // onClick={() => clickHandler}
+            // animate={{ rotateY: isFlipped ? 180 : 360 }}
+            // transition={{ ease: "easeIn", duration: 0.5 }}
+          >
+            {cardFront}
+          </motion.div>
+        </Link>
       </div>
     </>
   );
