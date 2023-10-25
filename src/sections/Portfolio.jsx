@@ -10,7 +10,7 @@ const Portfolio = ({ themeStyle, reTitle }) => {
     []);
   return (
     <>
-      <h1>hi</h1>
+      <h1>sup</h1>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-function NavBtn({ cardClass, cardId, cardFront, cardBack }) {
+function NavBtn({ cardClass, cardId, cardFront, cardLink }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const clickHandler = () => {
@@ -11,7 +11,7 @@ function NavBtn({ cardClass, cardId, cardFront, cardBack }) {
   return (
     <>
       <div>
-        <Link to="about">
+        <Link to={cardLink}>
           <motion.div
             // initial={{ y: -1000 }}
             // animate={{ y: 0 }}

@@ -5,6 +5,7 @@ import "./style/App.css";
 import { motion } from "framer-motion";
 import TitleReflector from "./TitleReflector";
 import Sky from "./home-components/Sky";
+import AnimatedTitle from "./AnimatedTitle";
 
 const Home = () => {
   const [themeStyle, setThemeStyle] = useState(false);
@@ -20,7 +21,8 @@ const Home = () => {
       <div className="page-container" id={themeStyle ? "dark" : "light"}>
         <Sky themeStyle={themeStyle} toggleTheme={toggleTheme} reTitle={reTitle} />
         <div className="ground">
-          <TitleReflector category={pageTitle} themeStyle={themeStyle} />
+          {/* <TitleReflector category={pageTitle} themeStyle={themeStyle} /> */}
+          <AnimatedTitle themeStyle={themeStyle} />
         </div>
       </div>
     </>

@@ -15,9 +15,10 @@ function NavImgs({ themeStyle, reTitle }) {
     <>
       <motion.div
         className="home-nav-container"
-        initial={{}}
-        animate={{ x: 0, scale: 1 }}
-        exit={{ x: -2000, scale: 2, transition: { duration: 2 } }}
+        initial={{ x: "100vw" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100vw", transition: { duration: 2 } }}
+        transition={{ duration: 2 }}
       >
         <div className="home-nav" id="comp-nav">
           <div className="home-third">
@@ -53,13 +54,13 @@ function NavImgs({ themeStyle, reTitle }) {
                 cardClass="nav-btn"
                 cardId="portfolio-nav"
                 cardFront="Portfolio"
-                cardBack="portfolio"
+                cardLink="portfolio"
               />
               <NavBtn
                 cardClass="nav-btn"
                 cardId="connect-nav"
                 cardFront="Connect"
-                cardBack="connect"
+                cardLink="connect"
               />
               <motion.div
                 initial={{ height: 0, width: 0 }}

@@ -21,9 +21,15 @@ function TitleReflector({ category, themeStyle }) {
     <>
       {/* these are all children of .ground */}
       <div className="heading-container">
-        <div className="title-container">
+      
+        <motion.div className="title-container" style={{ zIndex: 1000 }}
+            initial={{ translateX: 2000 }}
+            animate={{ translateX: 0 }}
+            exit={{ translateX: -2000, transition: { duration: 2 } }}
+            transition={{ duration: 2 }}
+            >
           <h1 className="title-text">{category}</h1>
-        </div>
+        </motion.div>
         <div className="title-texture-container">
           <h1 className="title-texture">{category}</h1>
         </div>
@@ -33,6 +39,7 @@ function TitleReflector({ category, themeStyle }) {
           variants={variants}
           initial="initial"
           animate="animate"
+          exit={{ translateX: -2000, transition: {duration: 2 } }}
           transition={{ duration: 2, ease: "circOut" }}
         >
           <h1 className="reflection-text">{category}</h1>
@@ -44,8 +51,9 @@ function TitleReflector({ category, themeStyle }) {
           ) : (
             ""
           )}
-          
         </motion.div>
+        
+      {/* </motion.div> */}
       </div>
       {themeStyle ? (
         <>
