@@ -14,7 +14,24 @@ import Connect from "./sections/Connect";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 
-function AnimatedRoutes({ themeStyle, reTitle }) {
+function AnimatedRoutes({ themeStyle, loadedStatus }) {
+  const skyInitAnim = {
+    initial: { opacity: 0, x: 0 },
+    animate: { opacity: 1, x: 0, transition: { duration: .5 }},
+    exit: { opacity: 1, x: "-100vw", transition: { duration: .25 } },
+    transition: { duration: 1 },
+  };
+  const skyLoadedAnim = {
+    initial: { opacity: 1, x: "100vw" },
+    animate: { opacity: 1, x: 0, transition: { duration: .25 }},
+    exit: { opacity: 1, x: "-100vw", transition: { duration: .25 } },
+    transition: { duration: 4 },
+  };
+
+  const groundInitAnim = {
+    
+  }
+
   const location = useLocation();
   return (
     <>
@@ -22,20 +39,14 @@ function AnimatedRoutes({ themeStyle, reTitle }) {
         <Routes location={location} key={location.pathname}>
           <Route
             path="/"
-            element={<NavImgs themeStyle={themeStyle} reTitle={reTitle} />}
+            element={<NavImgs themeStyle={themeStyle} animVariant={loadedStatus ? skyLoadedAnim : skyInitAnim} />}
           />
-          <Route
-            path="about"
-            element={<About themeStyle={themeStyle} reTitle={reTitle} />}
-          />
+          <Route path="about" element={<About themeStyle={themeStyle} />} />
           <Route
             path="portfolio"
-            element={<Portfolio themeStyle={themeStyle} reTitle={reTitle} />}
+            element={<Portfolio themeStyle={themeStyle} />}
           />
-          <Route
-            path="connect"
-            element={<Connect themeStyle={themeStyle} reTitle={reTitle} />}
-          />
+          <Route path="connect" element={<Connect themeStyle={themeStyle} />} />
         </Routes>
       </AnimatePresence>
     </>

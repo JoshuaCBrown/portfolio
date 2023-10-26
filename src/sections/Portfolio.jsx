@@ -4,10 +4,7 @@ import TitleReflector from "../TitleReflector";
 import Sky from "../home-components/Sky";
 
 const Portfolio = ({ themeStyle, reTitle }) => {
-  useEffect(() => {
-      reTitle("Portfolio");
-    },
-    []);
+
   return (
     <>
       <h1>sup</h1>

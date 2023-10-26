@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import "../style/Sky.css";
 import AnimatedRoutes from "../AnimatedRoutes";
 
-function Sky({ themeStyle, toggleTheme, reTitle }) {
+function Sky({ themeStyle, toggleTheme, loadedStatus }) {
   const lightVariants = {
     initial: {
       background:
@@ -50,7 +50,7 @@ function Sky({ themeStyle, toggleTheme, reTitle }) {
       >
         <div className="bgimg-container"></div>
         <div className="sky-container">
-          <AnimatedRoutes themeStyle={themeStyle} reTitle={reTitle} />
+          <AnimatedRoutes themeStyle={themeStyle} loadedStatus={loadedStatus}/>
           {/* <NavImgs themeStyle={themeStyle} /> */}
         </div>
       </motion.div>

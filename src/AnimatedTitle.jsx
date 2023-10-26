@@ -12,6 +12,9 @@ import { motion } from "framer-motion";
 
 function AnimatedTitle({ themeStyle }) {
   const location = useLocation();
+
+//page loaded status will decide if it passes the shadow animation lightVariant or the nonAnimating lightVariant shadow
+
   return (
     <>
       <AnimatePresence mode="wait">

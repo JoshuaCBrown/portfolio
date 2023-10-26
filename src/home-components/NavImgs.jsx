@@ -6,31 +6,29 @@ import CompImg from "../assets/svgs/CompImg.jsx";
 import MannyImg from "../assets/svgs/MannyImg.jsx";
 import "../style/NavImgs.css";
 
-function NavImgs({ themeStyle, reTitle }) {
-  useEffect(() => {
-    reTitle("JoshbrownDESIGN");
-  }, []);
-
+function NavImgs({ themeStyle, animVariant }) {
+  
   return (
     <>
       <motion.div
         className="home-nav-container"
-        initial={{ x: "100vw" }}
-        animate={{ x: 0 }}
-        exit={{ x: "-100vw", transition: { duration: 2 } }}
-        transition={{ duration: 2 }}
+        variants={animVariant}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition="transition"
       >
         <div className="home-nav" id="comp-nav">
           <div className="home-third">
             {themeStyle ? (
               <div className="svg-container" id="svg-comp-bg">
-                <CompImg />
+                <CompImg themeStyle={themeStyle} />
               </div>
             ) : (
               <></>
             )}
             <div className="svg-container" id="svg-comp-front">
-              <CompImg />
+              <CompImg themeStyle={themeStyle} />
             </div>
           </div>
         </div>
@@ -81,13 +79,13 @@ function NavImgs({ themeStyle, reTitle }) {
           <div className="home-third">
             {themeStyle ? (
               <div className="svg-container" id="svg-manny-bg">
-                <MannyImg />
+                <MannyImg themeStyle={themeStyle} />
               </div>
             ) : (
               <></>
             )}
             <div className="svg-container" id="svg-manny-front">
-              <MannyImg />
+              <MannyImg themeStyle={themeStyle} />
             </div>
           </div>
         </div>
