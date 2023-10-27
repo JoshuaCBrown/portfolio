@@ -2,18 +2,33 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./style/Ground.css";
 
-function TitleReflector({ category, themeStyle }) {
-
-  const lightVariants = {
-    initial: { transformPerspective: 150, scaleY: 0, rotateX: 0 },
-    animate: { transformPerspective: 175, scaleY: 0.9, rotateX: 50, transition: {duration: 2} },
-    transition: { duration: 0, ease: "circOut" }
-  };
-
+function TitleReflector({
+  category,
+  themeStyle,
+  lightVariants,
+  titleVariants,
+}) {
   const darkVariants = {
-    initial: { transformPerspective: 2000, scaleY: 0.9, rotateX: 0 },
-    animate: { transformPerspective: 2000, scaleY: 0.9, rotateX: 0 },
-    exit: { transformPerspective: 150, scaleY: 0, rotateX: 0, transition: {duration: 0 }},
+    initial: {
+      transformPerspective: 2000,
+      scaleY: 0.9,
+      rotateX: 0,
+      x: "100vw",
+    },
+    animate: {
+      transformPerspective: 2000,
+      scaleY: 0.9,
+      rotateX: 0,
+      x: 0,
+      transition: { duration: 0.25 },
+    },
+    exit: {
+      transformPerspective: 2000,
+      scaleY: 0.9,
+      rotateX: 0,
+      x: "-100vw",
+      transition: { duration: 0.25 },
+    },
     transition: { duration: 0, ease: "circOut" },
   };
 
@@ -25,21 +40,21 @@ function TitleReflector({ category, themeStyle }) {
       <div className="heading-container">
         <motion.div
           className="title-container"
-          style={{ zIndex: 1000 }}
-          // initial={{ translateX: 2000 }}
-          // animate={{ translateX: 0 }}
-          // exit={{ translateX: -2000, transition: { duration: 2 } }}
-          // transition={{ duration: 2 }}
+          style={{ zIndex: 10 }}
+          variants={titleVariants}
+          initial="initial"
+          animate={{ x: 0, transition: { duration: 0.25 } }}
+          exit={{ x: "-100vw", transition: { duration: 0.25 } }}
         >
           <h1 className="title-text">{category}</h1>
         </motion.div>
         <motion.div
           className="title-texture-container"
-          style={{ zIndex: 1000 }}
-          initial={{ translateX: 2000 }}
-          animate={{ translateX: 0 }}
-          exit={{ translateX: -2000, transition: { duration: 2 } }}
-          transition={{ duration: 2 }}
+          style={{ zIndex: 10 }}
+          variants={titleVariants}
+          initial="initial"
+          animate={{ x: 0, transition: { duration: 0.25 } }}
+          exit={{ x: "-100vw", transition: { duration: 0.25 } }}
         >
           <h1 className="title-texture">{category}</h1>
         </motion.div>
@@ -50,13 +65,7 @@ function TitleReflector({ category, themeStyle }) {
           initial="initial"
           animate="animate"
           exit="exit"
-          // exit={{ translateX: -2000, transition: { duration: 2 } }}
-          // transition={{ duration: 2, ease: "circOut" }}
-          // style={{zIndex: 0}}
-          // initial={{ translateX: 2000 }}
-          // animate={{ translateX: 0 }}
-          // exit={{ translateX: -2000, transition: { duration: 2 } }}
-          // transition={{ duration: 2 }}
+          transition="transition"
         >
           <h1 className="reflection-text">{category}</h1>
           {themeStyle ? (
@@ -67,23 +76,10 @@ function TitleReflector({ category, themeStyle }) {
           ) : (
             <></>
           )}
-        {/* </div> */}
-
+          {/* </div> */}
         </motion.div>
       </div>
-      {themeStyle ? (
-        <>
-          <div className="glass-reflection-two" style={{zIndex: 1 }}></div>
-          <div className="glass-reflection" style={{zIndex: 2}}>
-            <div className="reflection-blend"></div>
-          </div>
-        </>
-      ) : (
-        <div className="ground-color" style={{zIndex: 1}}></div>
-      )}
-
-      <div className="ground-texture" style={{zIndex: 4}}></div>
-      {/* </motion.div> */}
+      
     </>
   );
 }

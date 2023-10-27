@@ -1,7 +1,7 @@
 import NavImgs from "./NavImgs";
 import { motion } from "framer-motion";
 import "../style/Sky.css";
-import AnimatedRoutes from "../AnimatedRoutes";
+import AnimatedRoutes from "../transit-routes/AnimatedRoutes";
 
 function Sky({ themeStyle, toggleTheme, loadedStatus }) {
   const lightVariants = {

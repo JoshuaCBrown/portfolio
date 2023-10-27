@@ -1,0 +1,37 @@
+.about-content-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  /* border: 2px black solid; */
+  width: 900px;
+  color: var(--primaryLight);
+  font-weight: 700;
+}
+p {
+  text-align: center;
+}
+.about-box-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  color: black;
+  /* border: red 2px solid; */
+}
+
+.about-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  background-color: var(--primaryShade);
+}
+
+#achievements-box {
+  width: 125px;
+}
+#interests-box {
+  width: 200px;
+}

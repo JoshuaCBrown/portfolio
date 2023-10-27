@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import TitleReflector from "../TitleReflector";
-import Sky from "../home-components/Sky";
+import TransitAnim from "../transit-routes/TransitAnim";
 
-const Connect = ({ themeStyle, reTitle }) => {
-
+const Connect = ({ themeStyle }) => {
   return (
     <>
-      <h1>hi</h1>
+      <TransitAnim>
+        <h1>hi</h1>
+      </TransitAnim>
     </>
   );
 };

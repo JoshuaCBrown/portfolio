@@ -1,21 +1,7 @@
 import "../../style/NavImgs.css";
 import { motion } from "framer-motion";
 
-export default function MannyImg({ themeStyle }) {
-
-  const lightSvgVariants = {
-    initial: { pathLength: 0 },
-    animate: { pathLength: 1, transition: { duration: 2 }},
-    transition: { duration: 2 },
-  };
-
-  const darkSvgVariants = {
-    initial: { pathLength: 1 },
-    animate: { pathLength: 1, transition: { duration: 0 }},
-    transition: { duration: 0 },
-  };
-
-  const svgVariants = themeStyle ? lightSvgVariants : lightSvgVariants;
+export default function MannyImg({ svgVariants }) {
 
   return (
     <>

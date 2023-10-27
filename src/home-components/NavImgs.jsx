@@ -7,7 +7,18 @@ import MannyImg from "../assets/svgs/MannyImg.jsx";
 import "../style/NavImgs.css";
 
 function NavImgs({ themeStyle, animVariant }) {
-  
+  const lightSvgVariants = {
+    initial: { pathLength: 0 },
+    animate: { pathLength: 1, transition: { duration: 2 }},
+    transition: { duration: 2 },
+  };
+
+  const darkSvgVariants = {
+    initial: { pathLength: 1 },
+    animate: { pathLength: 1, transition: { duration: 0 }},
+    transition: { duration: 0 },
+  };
+
   return (
     <>
       <motion.div
@@ -22,13 +33,13 @@ function NavImgs({ themeStyle, animVariant }) {
           <div className="home-third">
             {themeStyle ? (
               <div className="svg-container" id="svg-comp-bg">
-                <CompImg themeStyle={themeStyle} />
+                <CompImg svgVariants={darkSvgVariants} />
               </div>
             ) : (
               <></>
             )}
             <div className="svg-container" id="svg-comp-front">
-              <CompImg themeStyle={themeStyle} />
+              <CompImg svgVariants={themeStyle ? darkSvgVariants : lightSvgVariants} />
             </div>
           </div>
         </div>
@@ -79,13 +90,13 @@ function NavImgs({ themeStyle, animVariant }) {
           <div className="home-third">
             {themeStyle ? (
               <div className="svg-container" id="svg-manny-bg">
-                <MannyImg themeStyle={themeStyle} />
+                <MannyImg svgVariants={darkSvgVariants} />
               </div>
             ) : (
               <></>
             )}
             <div className="svg-container" id="svg-manny-front">
-              <MannyImg themeStyle={themeStyle} />
+              <MannyImg svgVariants={themeStyle ? darkSvgVariants : lightSvgVariants} />
             </div>
           </div>
         </div>
