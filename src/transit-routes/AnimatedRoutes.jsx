@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "../Home";
-import About from "../sections/About";
+import About from "../sections/about/About";
 import NavImgs from "../home-components/NavImgs";
 import Portfolio from "../sections/Portfolio";
 import Connect from "../sections/Connect";

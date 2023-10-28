@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import TransitAnim from "../transit-routes/TransitAnim";
+import TransitAnim from "../../transit-routes/TransitAnim";
 import "../style/About.css";
 
 const About = ({ themeStyle, reTitle }) => {
