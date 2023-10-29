@@ -18,20 +18,20 @@ const pFive = Math.trunc(charArr.length * proportionArr[4]);
 const pSix = Math.trunc(charArr.length * proportionArr[5]);
 const pSeven = Math.trunc(charArr.length * proportionArr[6]);
 
-const blockStruct = [pOne, pTwo, pThree, pFour, pFive, pSix, pSeven, pFour, pThree];
+const blockStruct = [pOne, pTwo, pThree, pFour, pFive, pSix, pSeven];
 
-export function shaperMaker() {
+export function shaperMaker () {
   let lineArr = [];
   let second = 0;
   for (let i = 0; i < blockStruct.length; ++i) {
     let first = second;
     second += blockStruct[i];
-    while (charArr[second] !== " ") {
+    while (charArr[second] !== " " && second < (charArr.length-1)) {
       ++second;
     }
     lineArr[i] = charArr.slice(first, second).join("").trim();
   }
-  lineArr[blockStruct.length] = charArr.slice(second);
+  lineArr[blockStruct.length] = charArr.slice(second).join('').trim();
   console.log(blockStruct);
   console.log(charArr);
   console.log(lineArr);

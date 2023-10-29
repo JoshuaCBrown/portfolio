@@ -9,11 +9,10 @@ const About = ({ themeStyle, reTitle }) => {
     <>
       <TransitAnim>
         <div className="about-page-container">
-
           <div className="about-content-container">
-            <p>
-             <TextBlockShaper />
-            </p>
+            <div className="about-summary">
+              <TextBlockShaper />
+            </div>
             <div className="about-box-container">
               <div className="about-box" id="education-box">
                 <h3>Education</h3>
