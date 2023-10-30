@@ -1,37 +1,130 @@
+.about-page-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  border: green 3px solid;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: stretch;
+}
+
 .about-content-container {
   display: grid;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  align-content: start;
+  align-items: start;
+  justify-content: stretch;
+  /* align-content: space-around; */
   justify-items: center;
-  /* border: 2px black solid; */
+  border: 2px pink solid;
   width: 900px;
   color: var(--primaryLight);
   font-weight: 700;
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+  grid-gap: 10px;
+  overflow: hidden;
 }
 p {
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
-.about-box-container {
+
+h2 {
+  font-size: 1.1rem;
+}
+.about-summary {
+  border: 2px orange solid;
+}
+.about-nav-container {
+  display: flex;
+  align-self: stretch;
+  width: 100%;
+  /* border: 2px blue solid; */
+}
+
+.about-nav {
   display: grid;
   align-items: center;
   justify-items: center;
+  width: 100%;
   gap: 10px;
   color: black;
   /* border: red 2px solid; */
+  box-sizing: border-box;
+}
+
+/* .about-nav[data-btnClicked="true"] #achievements-box,
+.about-nav[data-btnClicked="true"] #interests-box {
+  width: 125px;
+  background: transparent;
+} */
+
+.about-nav[data-btnClicked="true"] .about-box {
+  width: 125px;
+  background: transparent;
+}
+
+.about-nav[data-btnClicked="true"] {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .about-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 125px;
   height: 40px;
   background-color: var(--primaryShade);
 }
 
 #achievements-box {
-  width: 125px;
+  width: 150px;
 }
 #interests-box {
   width: 200px;
+}
+
+.left-spacer,
+.right-spacer {
+  /* border-bottom: 2px black solid; */
+  width: 100%;
+  box-sizing: border-box;
+}
+.about-box {
+  box-sizing: border-box;
+}
+.selected-nav,
+#education-box {
+  border: 2px black dashed;
+  box-sizing: border-box;
+  border-bottom: none;
+  position: relative;
+}
+
+#education-box::before {
+  content: "";
+  position: absolute;
+  left: -1000px;
+  bottom: 0;
+  width: 1000px;
+  border-bottom: 2px black dashed;
+}
+
+#education-box::after {
+  content: "";
+  position: absolute;
+  right: -1000px;
+  bottom: 0;
+  width: 1000px;
+  border-bottom: 2px black dashed;
+}
+
+h2 {
+  color: var(--primaryDark);
+  /* text-shadow: 2px 2px 2px black; */
 }

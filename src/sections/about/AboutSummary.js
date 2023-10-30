@@ -1,5 +1,5 @@
 const aboutText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  "My name is Josh Brown. I like problem solving and making things. I am a self-taught full stack web developer with experience in the MERN stack, and intend to one day enter into a career as a professional programmer. While I am fairly early in my programming journey, I have already fallen in love with programming, in that it shares the same foundational attributes as my favorite hobbies: creativity, problem solving, and a virtually endless supply of new information to continuously learn and grow. Click the buttons below to learn more about me, or click here for a single page, non-interactive version of my resume. ";
 
 const charArr = aboutText.split("");
 // const wordLengthArr = charArr.map((word) => {

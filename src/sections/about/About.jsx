@@ -1,35 +1,70 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link, Outlet } from "react-router-dom";
 import TransitAnim from "../../transit-routes/TransitAnim";
 import "../../style/About.css";
 import TextBlockShaper from "./TextBlockShaper";
+import MyComponent from "./Test";
+const About = ({ themeStyle }) => {
+  const [btnClicked, setBtnClicked] = useState(false);
 
-const About = ({ themeStyle, reTitle }) => {
+  const clickHandler = (itemId) => {
+    console.log("btn clicked");
+    console.log(btnClicked);
+    setBtnClicked(true);
+  };
+
+  const spring = {
+    type: "spring",
+    stiffness: 700,
+    damping: 30,
+  };
+
+  const abtNavBtns = [
+    { id: "education-box", title: "Education", link: "education" },
+    { id: "experience-box", title: "Experience", link: "experience" },
+    { id: "skills-box", title: "Skills", link: "skills" },
+    { id: "achievements-box", title: "Achievements", link: "achievements" },
+    { id: "interests-box", title: "Interests", link: "interests" },
+  ];
+
   return (
     <>
       <TransitAnim>
         <div className="about-page-container">
           <div className="about-content-container">
-            <div className="about-summary">
-              <TextBlockShaper />
+            {btnClicked ? (
+              <></>
+            ) : (
+              <div className="about-summary">
+                <TextBlockShaper />
+              </div>
+            )}
+            {/* <MyComponent /> */}
+            <div className="about-nav-container">
+              <div className="left-spacer"></div>
+              <nav>
+                <ul className="about-nav" data-btnClicked={btnClicked}>
+                  {abtNavBtns.map((item) => (
+                    <Link to={item.link}>
+                    <motion.li
+                      key={item.id}
+                      className="about-box"
+                      id={item.id}
+                      onClick={() => clickHandler(item.id)}
+                      layout
+                    >
+                      
+                        <h2>{item.title}</h2>
+                      
+                    </motion.li>
+                    </Link>
+                  ))}
+                </ul>
+              </nav>
+              <div className="right-spacer"></div>
             </div>
-            <div className="about-box-container">
-              <div className="about-box" id="education-box">
-                <h3>Education</h3>
-              </div>
-              <div className="about-box" id="experience-box">
-                <h3>Experience</h3>
-              </div>
-              <div className="about-box" id="skills-box">
-                <h3>Skills</h3>
-              </div>
-              <div className="about-box" id="achievements-box">
-                <h3>Achievements</h3>
-              </div>
-              <div className="about-box" id="interests-box">
-                <h3>Interests</h3>
-              </div>
-            </div>
+            <Outlet />
           </div>
         </div>
       </TransitAnim>

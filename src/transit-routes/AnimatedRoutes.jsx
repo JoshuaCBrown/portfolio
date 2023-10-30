@@ -1,20 +1,18 @@
 import { useState } from "react";
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Home from "../Home";
 import About from "../sections/about/About";
 import NavImgs from "../home-components/NavImgs";
 import Portfolio from "../sections/Portfolio";
 import Connect from "../sections/Connect";
-import { AnimatePresence } from "framer-motion";
+import Achievements from "../sections/about/Achievements";
+import Education from "../sections/about/Education";
+import Experience from "../sections/about/Experience";
+import Interests from "../sections/about/Interests";
+import Skills from "../sections/about/Skills";
 
 function AnimatedRoutes({ themeStyle, loadedStatus }) {
-  
   const skyInitAnim = {
     initial: { opacity: 0, x: 0 },
     animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -42,7 +40,13 @@ function AnimatedRoutes({ themeStyle, loadedStatus }) {
               />
             }
           />
-          <Route path="about" element={<About themeStyle={themeStyle} />} />
+          <Route path="about" element={<About themeStyle={themeStyle} />}>
+            <Route path="education" element={<Education />} />
+            <Route path="experience" element={<Experience />} />
+            <Route path="skills" element={<Skills />} />
+            <Route path="achievements" element={<Achievements />} />
+            <Route path="interests" element={<Interests />} />
+          </Route>
           <Route
             path="portfolio"
             element={<Portfolio themeStyle={themeStyle} />}
