@@ -37,11 +37,12 @@
   --opt4: #114b5f;
   --opt4v2: #6b2737;
   --opt4v3: #d64933;
-  --opt5: #495159
+  --opt5: #495159;
  
   --primaryBlack: black;
   --primaryWhite: white;
   --primaryShade: rgba(0, 0, 0, 0.577);
+  --primaryLightShade: rgba(0, 0, 0, 0.2);
   /* DARK COLOR PALETTE */
   --darkLBlue: #5199C9;
   --darkMBlue: #1E6696;

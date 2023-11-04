@@ -1,0 +1,11 @@
+.portfolio-item-container {
+  width: 900px;
+  border: black 2px solid;
+  height: 20px;
+  display: flex;
+}
+
+.portfolio-img {
+  width: 200px;
+  height: auto;
+}

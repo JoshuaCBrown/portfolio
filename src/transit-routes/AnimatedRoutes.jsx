@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "../Home";
 import About from "../sections/about/About";
 import NavImgs from "../home-components/NavImgs";
-import Portfolio from "../sections/Portfolio";
+import Portfolio from "../sections/portfolio/Portfolio";
 import Connect from "../sections/Connect";
 import Achievements from "../sections/about/Achievements";
 import Education from "../sections/about/Education";
@@ -40,13 +40,7 @@ function AnimatedRoutes({ themeStyle, loadedStatus }) {
               />
             }
           />
-          <Route path="about" element={<About themeStyle={themeStyle} />}>
-            <Route path="education" element={<Education />} />
-            <Route path="experience" element={<Experience />} />
-            <Route path="skills" element={<Skills />} />
-            <Route path="achievements" element={<Achievements />} />
-            <Route path="interests" element={<Interests />} />
-          </Route>
+          <Route path="about" element={<About themeStyle={themeStyle} />} />
           <Route
             path="portfolio"
             element={<Portfolio themeStyle={themeStyle} />}
