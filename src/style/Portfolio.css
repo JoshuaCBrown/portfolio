@@ -1,11 +1,54 @@
 .portfolio-item-container {
-  width: 900px;
-  border: black 2px solid;
-  height: 20px;
+  width: 700px;
+  /* border: black 2px solid; */
+  height: 450px;
+  position: relative;
   display: flex;
+  /* display: grid;
+  grid-auto-flow: column;
+  justify-content: center; */
+}
+
+.portfolio-item {
+  flex: 1;
+  overflow: hidden;
+}
+
+.img-div {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  /* width: 90px; */
+  /* border: 2px pink solid; */
+  background-color: red;
+  /* padding: 25px; */
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .portfolio-img {
-  width: 200px;
-  height: auto;
+  height: 400px;
+  /* filter: blur(10px); */
+}
+
+.craft {
+  background-color: red;
+  height: 10px;
+}
+
+.coding {
+  background-color: var(--primaryLight);
+  height: 10px;
+}
+
+.music {
+  background-color: var(--primaryLightAccent);
+  height: 10px;
+}
+
+.video {
+  background-color: var(--primaryShade);
+  height: 10px;
 }
