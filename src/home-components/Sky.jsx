@@ -1,6 +1,8 @@
 import NavImgs from "./NavImgs";
 import { motion } from "framer-motion";
 import "../style/Sky.css";
+import AnimatedNav from "../transit-routes/AnimatedNav";
+import NavHeader from "../NavHeader";
 import AnimatedRoutes from "../transit-routes/AnimatedRoutes";
 
 function Sky({ themeStyle, toggleTheme, loadedStatus }) {
@@ -26,6 +28,7 @@ function Sky({ themeStyle, toggleTheme, loadedStatus }) {
   const variants = themeStyle ? darkVariants : lightVariants;
   return (
     <>
+      <NavHeader />
       <div
         className="toggle-container"
         data-themeStyle={themeStyle}
@@ -50,7 +53,7 @@ function Sky({ themeStyle, toggleTheme, loadedStatus }) {
       >
         <div className="bgimg-container"></div>
         <div className="sky-container">
-          <AnimatedRoutes themeStyle={themeStyle} loadedStatus={loadedStatus}/>
+          <AnimatedRoutes themeStyle={themeStyle} loadedStatus={loadedStatus} />
           {/* <NavImgs themeStyle={themeStyle} /> */}
         </div>
       </motion.div>

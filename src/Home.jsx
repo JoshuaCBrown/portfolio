@@ -10,8 +10,6 @@ import AnimatedTitle from "./transit-routes/AnimatedTitle";
 const Home = () => {
   const [themeStyle, setThemeStyle] = useState(false);
 
-  const [pageTitle, setPageTitle] = useState("");
-
   const [loadedStatus, setLoadedStatus] = useState(false);
 
   const toggleTheme = () => setThemeStyle(!themeStyle);

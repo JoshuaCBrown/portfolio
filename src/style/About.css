@@ -2,7 +2,7 @@
   display: grid;
   height: 100%;
   width: 100%;
-  border: green 3px solid;
+  /* border: green 3px solid; */
   position: relative;
   box-sizing: border-box;
   justify-content: center;
@@ -18,7 +18,7 @@
   justify-content: stretch;
   /* align-content: space-around; */
   justify-items: center;
-  border: 2px pink solid;
+  /* border: 2px pink solid; */
   width: 900px;
   color: var(--primaryLight);
   font-weight: 700;
@@ -43,7 +43,7 @@ h2 {
 }
 
 .about-summary {
-  border: 2px orange solid;
+  /* border: 2px orange solid; */
 }
 .about-nav-container {
   display: flex;
@@ -82,13 +82,13 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 125px;
+  width: 100px;
   height: 40px;
   background-color: var(--primaryShade);
 }
 
 #achievements-box {
-  width: 150px;
+  width: 125px;
 }
 #interests-box {
   width: 200px;
@@ -96,7 +96,7 @@ h2 {
 
 .about-nav[data-btnClicked="true"]>#achievements-box,
 .about-nav[data-btnClicked="true"]>#interests-box {
-  width: 125px;
+  width: 100px;
   /* background: transparent; */
 }
 

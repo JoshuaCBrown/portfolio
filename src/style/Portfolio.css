@@ -1,7 +1,67 @@
+#root {
+  --color-cat1: var(--primaryLight);
+  --color-cat2: var(--primaryLightAccent);
+  --color-cat3: var(--primaryDark);
+  --color-cat4: var(--optOne);
+}
+
+.portfolio-container {
+  /* border: orange solid 5px; */
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.color-cat-key {
+  display: flex;
+  align-self: end;
+  padding-bottom: 25px;
+  justify-content: center;
+  /* border: 2px solid black; */
+}
+
+.coding-key,
+.music-key,
+.craft-key,
+.video-key {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coding-color,
+.music-color,
+.craft-color,
+.video-color {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.coding-color {
+  background-color: var(--color-cat1);
+}
+.music-color {
+  background-color: var(--color-cat2);
+}
+
+.craft-color {
+  background-color: var(--color-cat4);
+}
+
+.video-color {
+  background-color: var(--color-cat3);
+}
+
 .portfolio-item-container {
   width: 700px;
   /* border: black 2px solid; */
-  height: 450px;
+
   position: relative;
   display: flex;
   /* display: grid;
@@ -15,12 +75,13 @@
 }
 
 .img-div {
+  margin-top: 10px;
   position: relative;
   overflow: hidden;
   padding: 0;
   /* width: 90px; */
   /* border: 2px pink solid; */
-  background-color: red;
+  /* background-color: red; */
   /* padding: 25px; */
   height: 300px;
   display: flex;
@@ -33,22 +94,54 @@
   /* filter: blur(10px); */
 }
 
-.craft {
-  background-color: red;
-  height: 10px;
+.blur-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.coding {
-  background-color: var(--primaryLight);
-  height: 10px;
-}
-
-.music {
-  background-color: var(--primaryLightAccent);
-  height: 10px;
-}
-
-.video {
+.project-title-container {
+  opacity: 0;
+  transition: all .5s;
+  position: absolute;
+  text-wrap: wrap;
+  width: 500px;
+  height: 70px;
+  border: var(--primaryLight) 2px solid;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primaryShade);
-  height: 10px;
+  
+}
+
+.project-title {
+  color: var(--primaryWhite);
+  width: 50%;
+  text-align: center;
+}
+
+.blur-div:hover > .project-title-container {
+  opacity: 1;
+  transition: all .5s;
+}
+
+.color-categorized {
+  margin-bottom: 15px;
+}
+#craft {
+  border-top: 10px solid var(--color-cat4);
+}
+
+#coding {
+  border-top: 10px solid var(--color-cat1);
+}
+
+#music {
+  border-top: 10px solid var(--color-cat2);
+}
+
+#video {
+  border-top: 10px solid var(--color-cat3);
 }
