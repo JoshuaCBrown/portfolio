@@ -237,3 +237,15 @@ body {
   font-size: 1.1rem;
   text-transform: uppercase;
 }
+
+.content-container {
+  /* border: 2px purple solid; */
+  box-sizing: border-box;
+  max-height: calc(100% - 5.4rem);
+  margin-top: 30px;
+  align-self: flex-start;
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  /* background-color: red; */
+}

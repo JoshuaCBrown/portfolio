@@ -40,7 +40,7 @@ function AnimatedRoutes({ themeStyle, loadedStatus }) {
               />
             }
           />
-          <Route path="about" element={<About themeStyle={themeStyle} />} />
+          <Route path="about/*" element={<About themeStyle={themeStyle} />} />
           <Route
             path="portfolio"
             element={<Portfolio themeStyle={themeStyle} />}

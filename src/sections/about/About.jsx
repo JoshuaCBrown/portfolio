@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, Outlet } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+
 import TransitAnim from "../../transit-routes/TransitAnim";
 
 import TextBlockShaper from "./TextBlockShaper";
@@ -31,15 +33,15 @@ const About = ({ themeStyle }) => {
   };
 
   const abtNavBtns = [
-    { id: "education-box", title: "Education", link: "about/education" },
-    { id: "experience-box", title: "Experience", link: "about/experience" },
-    { id: "skills-box", title: "Skills", link: "about/skills" },
+    { id: "education-box", title: "Education", link: "#education" },
+    { id: "experience-box", title: "Experience", link: "#experience" },
+    { id: "skills-box", title: "Skills", link: "#skills" },
     {
       id: "achievements-box",
       title: "Achievements",
-      link: "about/achievements",
+      link: "#achievements",
     },
-    { id: "interests-box", title: "Interests", link: "about/interests" },
+    { id: "interests-box", title: "Interests", link: "#interests" },
   ];
 
   return (
@@ -62,32 +64,44 @@ const About = ({ themeStyle }) => {
                   {abtNavBtns.map((item) => (
                     <motion.li
                       key={item.id}
-                      className="about-box"
-                      id={item.id}
+                      className="about-box-li"
+                      
                       onClick={() => clickHandler(item.id)}
                       initial={false}
                       layout
                     >
-                      <h2>{item.title}</h2>
+                      <HashLink smooth to={item.link}>
+                        <div className="about-box" id={item.id}>
+                          <h2>{item.title}</h2>
+                        </div>
+                      </HashLink>
                     </motion.li>
                   ))}
                 </ul>
               </nav>
               <div className="right-spacer"></div>
             </div>
-            <div className="about-cat-container">
-              <AnimatePresence>
-                <motion.div
-                  className="about-cat"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 2 }}
-                >
-                  {catSelected === "education-box" && <Education />}
-                </motion.div>
-              </AnimatePresence>
-            </div>
+
+            {btnClicked ? (
+              <div className="about-cat-container">
+                <AnimatePresence>
+                  <motion.div
+                    className="about-cat"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 2 } }}
+                    transition={{ duration: 2 }}
+                  >
+                    <Education />
+                    <Experience />
+                    <Skills />
+                    <Achievements />
+                    <Interests />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </TransitAnim>

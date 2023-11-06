@@ -62,7 +62,10 @@ const Education = () => {
   ];
 
   return (
-    <div className="education-container">
+    <div className="education-container" id="education">
+      <h2 className="about-section-heading" id="education-section-heading">
+        Education
+      </h2>
       <div className="education-college">
         <h3 className="education-heading">University</h3>
         <h4 className="college-title">Florida State University</h4>

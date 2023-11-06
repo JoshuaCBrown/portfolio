@@ -1,14 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
-
-
+import { motion } from "framer-motion";
 
 function NavHeader() {
-
   const location = useLocation();
-const { pathname } = location;
+  const { pathname } = location;
   return (
     <>
-    {pathname !== '/' ? (<nav className="nav-header">
+      {pathname !== "/" ? (
+        <motion.nav
+          className="nav-header"
+          initial={{ x: "100vw" }}
+          animate={{ x: 0, transition: { duration: 0.25 } }}
+        >
           <Link style={{ textDecoration: "none" }} to="/">
             <h3 className="nav-header-link">Home</h3>
           </Link>
@@ -21,11 +24,10 @@ const { pathname } = location;
           <Link style={{ textDecoration: "none" }} to="connect">
             <h3 className="nav-header-link">Connect</h3>
           </Link>
-        </nav>) : (
-          <></>
-        )}
-        
- 
+        </motion.nav>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
