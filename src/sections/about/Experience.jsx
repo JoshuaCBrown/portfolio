@@ -1,3 +1,6 @@
+import { leftJobs, rightJobs } from "./ExpeJobs";
+import { motion } from "framer-motion";
+
 const Experience = () => {
   return (
     <>
@@ -8,16 +11,35 @@ const Experience = () => {
         <div className="timeline-container">
           <div className="timeline-left">
             <div className="jobs-left">
-              <div className="job-left">
-                <div className="job-description"></div>
-                <div className="description-arrow-left">
-                  <div className="top-arrow-left"></div>
-                  <div className="bottom-arrow-left"></div>
+              {leftJobs.map((job) => (
+                <div className="job-left" key={job.id}>
+                  <div className="job-description" id={job.id}>
+                    <div>
+                      <h3>{job.title}</h3>
+                      <em>{job.duration}</em>
+                    </div>
+                    <motion.div
+                      className="job-highlights"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <ul>
+                        {job.highlights.map((highlight) => (
+                          <li>{highlight}</li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </div>
+                  <div
+                    className={
+                      job.lowArrow
+                        ? "description-arrow-left low-arrow"
+                        : "description-arrow-left"
+                    }
+                  ></div>
                 </div>
-              </div>
-              <div className="job-left"></div>
-              <div className="job-left"></div>
-              <div className="job-left"></div>
+              ))}
             </div>
             <div className="color-coded-time" id="color-code-left">
               <div className="time-color-left" id="bdr-time"></div>
@@ -33,12 +55,35 @@ const Experience = () => {
               <div className="time-color-right" id="bartender-time"></div>
             </div>
             <div className="jobs-right">
-              <div className="job-right">
-              <div className="description-arrow-right"></div>
-              <div className="job-description"></div>
-              </div>
-              <div className="job-right"></div>
-              <div className="job-right"></div>
+              {rightJobs.map((job) => (
+                <div className="job-right" key={job.id}>
+                  <div
+                    className={
+                      job.lowArrow
+                        ? "description-arrow-right low-arrow"
+                        : "description-arrow-right"
+                    }
+                  ></div>
+                  <div className="job-description" id={job.id}>
+                  <div>
+                      <h3>{job.title}</h3>
+                      <em>{job.duration}</em>
+                    </div>
+                    <motion.div
+                      className="job-highlights"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <ul>
+                        {job.highlights.map((highlight) => (
+                          <li>{highlight}</li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

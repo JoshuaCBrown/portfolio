@@ -1,0 +1,102 @@
+const ExpeJobs = [
+  {
+    title: 'Business Development Representative',
+    duration: 'May 2023 - Present',
+    highlights: [
+      'Designed custom Chrome extension used by entire team',
+      '1st place in \'Why Change\' pitch contest held amongst entire sales department',
+      'Over 200% quota since starting',
+    ],
+    id: 'bdr-job',
+    lowArrow: false,
+  },
+  {
+    title: 'Audio Engineer/Studio Consultant',
+    duration: 'May 2018 - May 2023',
+    highlights: [
+      'Designed custom Chrome extension used by entire team',
+      '1st place in \'Why Change\' pitch contest held amongst entire sales department',
+      'Over 200% quota since starting',
+    ],
+    id: 'musician-job',
+    lowArrow: false,
+  },
+  {
+    title: 'Audio Equipment Repair and Resale',
+    duration: 'May 2023 - Present',
+    highlights: [
+      'Blah blah blah',
+      'balh blah bla 2',
+      'blah blah blah 3',
+    ],
+    id: 'repair-job',
+    lowArrow: false,
+  },
+  {
+    title: 'Workshop instructor',
+    duration: 'May 2023 - Present',
+    highlights: [
+      'Blah blah blah',
+      'balh blah bla 2',
+      'blah blah blah 3',
+    ],
+    id: 'workshopper-job',
+    lowArrow: true,
+  },
+  {
+    title: 'Writer',
+    duration: 'May 2023 - Present',
+    highlights: [
+      'Blah blah blah',
+      'balh blah bla 2',
+      'blah blah blah 3',
+    ],
+    id: 'writer-job',
+    lowArrow: true,
+  },
+  {
+    title: 'Bartender',
+    duration: 'May 2023 - Present',
+    highlights: [
+      'Blah blah blah',
+      'balh blah bla 2',
+      'blah blah blah 3',
+    ],
+    id: 'bartender-job',
+    lowArrow: true,
+  },
+  {
+    title: 'Tutor',
+    duration: 'May 2023 - Present',
+    highlights: [
+      'Blah blah blah',
+      'balh blah bla 2',
+      'blah blah blah 3',
+    ],
+    id: 'tutor-job',
+    lowArrow: true,
+  },
+];
+
+function rightColumn(arr) {
+  let rightArray = [];
+  for(let i = 1; i < arr.length; i += 2) {
+    rightArray.push(arr[i]);
+  }
+  console.log(rightArray);
+  return rightArray;
+}
+
+function leftColumn(arr) {
+  let leftArray = [];
+  for(let i = 0; i < arr.length; i += 2) {
+    leftArray.push(arr[i]);
+  }
+  console.log(leftArray);
+  return leftArray;
+}
+
+const rightJobs = rightColumn(ExpeJobs);
+const leftJobs = leftColumn(ExpeJobs);
+
+export { leftJobs, rightJobs };
