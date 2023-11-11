@@ -413,7 +413,7 @@ h2 {
 
 #bdr-time {
   height: 6%;
-  background-color: var(--primaryLightAccent);
+  background-color: var(--primaryDark);
 }
 
 #musician-time {
@@ -430,7 +430,7 @@ h2 {
 
 #workshopper-time {
   height: 14%;
-  background-color: var(--primaryLightAccent);
+  background-color: var(--primaryDark);
   top: 48%;
   width: 10px;
   left: 0;
@@ -438,19 +438,19 @@ h2 {
 
 #writer-time {
   height: 23%;
-  background-color: var(--opt4v3);
+  background-color: var(--primaryDark);
   top: 64%;
 }
 
 #bartender-time {
   height: 10%;
-  background-color: var(--primaryDark);
+  background-color: var(--primaryLight);
   top: 79%;
 }
 
 #tutor-time {
   height: 12.5%;
-  background-color: var(--primaryLight);
+  background-color: var(--primaryDark);
   top: 87.5%;
 }
 
@@ -524,7 +524,25 @@ h2 {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  color: var(--primaryWhite);
+  color: var(--primaryDark);
+  /* background: radial-gradient(circle at 7px 20%, white 5px, var(--primaryLight) 20px, var(--primaryLight) 27px, white 27px, white 35px, var(--primaryLight) 38px, var(--primaryLight) 40px, white 40px); */
+  border: 2px var(--primaryDark) solid;
+}
+
+.jd-bg-right {
+    background: radial-gradient(circle at 7px 20%, white 10px, var(--primaryLight) 30px, white 30px);
+}
+
+.jd-bg-right-low {
+    background: radial-gradient(circle at 7px 80%, white 10px, var(--primaryLight) 30px, white 30px);
+}
+
+.jd-bg-left {
+    background: radial-gradient(circle at calc(100% - 7px) 20%, white 10px, var(--primaryLight) 30px, white 30px);
+}
+
+.jd-bg-left-low {
+    background: radial-gradient(circle at calc(100% - 7px) 80%, white 10px, var(--primaryLight) 30px, white 30px);
 }
 
 .job-highlights {
@@ -534,8 +552,10 @@ h2 {
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: inherit;
+  background: inherit;
 }
+
+
 
 ul {
   list-style-type: none;
@@ -646,7 +666,7 @@ ul {
 .low-arrow {
   top: 80%;
 }
-#bdr-job {
+/* #bdr-job {
   background-color: var(--primaryLightAccent);
 }
 #musician-job {
@@ -666,4 +686,4 @@ ul {
 }
 #tutor-job {
   background-color: var(--primaryLight);
-}
+} */

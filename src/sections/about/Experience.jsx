@@ -13,7 +13,11 @@ const Experience = () => {
             <div className="jobs-left">
               {leftJobs.map((job) => (
                 <div className="job-left" key={job.id}>
-                  <div className="job-description" id={job.id}>
+                  <div className={
+                      job.lowArrow
+                        ? "job-description jd-bg-left-low"
+                        : "job-description jd-bg-left"
+                    } id={job.id}>
                     <div>
                       <h3>{job.title}</h3>
                       <em>{job.duration}</em>
@@ -64,8 +68,15 @@ const Experience = () => {
                         : "description-arrow-right"
                     }
                   ></div>
-                  <div className="job-description" id={job.id}>
-                  <div>
+                  <div
+                    className={
+                      job.lowArrow
+                        ? "job-description jd-bg-right-low"
+                        : "job-description jd-bg-right"
+                    }
+                    id={job.id}
+                  >
+                    <div>
                       <h3>{job.title}</h3>
                       <em>{job.duration}</em>
                     </div>
