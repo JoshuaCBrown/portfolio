@@ -72,7 +72,8 @@ h2 {
   width: 100%;
   gap: 10px;
   height: 100%;
-  color: black;
+  color: var(--primaryBlack);
+  text-decoration: none;
   /* border: red 2px solid; */
   box-sizing: border-box;
 }
@@ -105,10 +106,11 @@ h2 {
   flex: 1;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  /* width: 100px; */
   height: 40px;
   /* border: orange 2px solid; */
-  background-color: var(--primaryShade);
+  background-color: transparent;
+  border: 2px var(--primaryLightShade) dashed;
 }
 
 #achievements-box {
@@ -265,6 +267,7 @@ h2 {
   border-top: 2px solid var(--primaryBlack);
   border-bottom: 2px solid var(--primaryBlack);
   border-radius: 5px;
+  margin: 5px 0;
   /* background: var(--primaryShade); */
 }
 
@@ -523,26 +526,28 @@ h2 {
   display: grid;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 5px 5px 5px 50px;
   color: var(--primaryDark);
+  background: linear-gradient(to right, transparent, var(--primaryLight));
   /* background: radial-gradient(circle at 7px 20%, white 5px, var(--primaryLight) 20px, var(--primaryLight) 27px, white 27px, white 35px, var(--primaryLight) 38px, var(--primaryLight) 40px, white 40px); */
-  border: 2px var(--primaryDark) solid;
+  /* border-left: 20px var(--primaryLight) dashed; */
+  border-left: 2px var(--primaryDark) dashed;
 }
 
 .jd-bg-right {
-    background: radial-gradient(circle at 7px 20%, white 10px, var(--primaryLight) 30px, white 30px);
+    /* background: radial-gradient(circle at 7px 20%, white 10px, var(--primaryLight) 30px, white 30px); */
 }
 
 .jd-bg-right-low {
-    background: radial-gradient(circle at 7px 80%, white 10px, var(--primaryLight) 30px, white 30px);
+    /* background: radial-gradient(circle at 7px 80%, white 10px, var(--primaryLight) 30px, white 30px); */
 }
 
 .jd-bg-left {
-    background: radial-gradient(circle at calc(100% - 7px) 20%, white 10px, var(--primaryLight) 30px, white 30px);
+    /* background: radial-gradient(circle at calc(100% - 7px) 20%, white 10px, var(--primaryLight) 30px, white 30px); */
 }
 
 .jd-bg-left-low {
-    background: radial-gradient(circle at calc(100% - 7px) 80%, white 10px, var(--primaryLight) 30px, white 30px);
+    /* background: radial-gradient(circle at calc(100% - 7px) 80%, white 10px, var(--primaryLight) 30px, white 30px); */
 }
 
 .job-highlights {
@@ -555,10 +560,16 @@ h2 {
   background: inherit;
 }
 
+.job-highlights li {
+  font-size: .8rem;
+  list-style-type: disc;
+  text-align: left;
+  margin-left: 2rem;
+}
 
 
-ul {
-  list-style-type: none;
+.job-highlights > ul {
+  list-style-type: disc;
 }
 /* .description-arrow-left {
   display: grid;
@@ -585,10 +596,11 @@ ul {
 
 .description-arrow-right {
   position: relative;
-  left: -5px;
+  left: 0px;
   top: 20%;
   border-top: 2px black dashed;
-  width: calc(100% + 10px);
+  /* width: calc(100% + 10px); */
+  width: 100%;
   height: 0;
   display: flex;
   align-items: center;
@@ -597,20 +609,21 @@ ul {
   box-sizing: content-box;
 }
 
-.description-arrow-right::after {
+/* .description-arrow-right::after {
   content: "";
-  top: -5px;
-  right: -8px;
+  top: -10px;
+  right: 0px;
   position: absolute;
-  border: 2px black solid;
+  border-left: 2px black solid;
+  border-right: none;
   background-color: transparent;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
+  height: 20px;
+  width: 1px;
+  /* border-radius: 50%; */
   box-sizing: border-box;
-}
+} */
 
-.description-arrow-right::before {
+/* .description-arrow-right::before {
   content: "";
   top: -4px;
   left: -3px;
@@ -621,14 +634,15 @@ ul {
   width: 4px;
   border-radius: 50%;
   box-sizing: border-box;
-}
+} */
 
 .description-arrow-left {
   position: relative;
-  left: -5px;
+  left: 0px;
   top: 20%;
   border-top: 2px black dashed;
-  width: calc(100% + 10px);
+  /* width: calc(100% + 10px); */
+  width: 100%;
   height: 0;
   display: flex;
   align-items: center;
@@ -639,18 +653,18 @@ ul {
 
 .description-arrow-left::before {
   content: "";
-  top: -5px;
-  left: -8px;
+  top: -10px;
+  left: 0px;
   position: absolute;
-  border: 2px black solid;
+  border-left: 2px black solid;
   background-color: transparent;
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
+  height: 20px;
+  width: 1px;
+  /* border-radius: 50%; */
   box-sizing: border-box;
 }
 
-.description-arrow-left::after {
+/* .description-arrow-left::after {
   content: "";
   top: -4px;
   right: -3px;
@@ -661,7 +675,7 @@ ul {
   width: 4px;
   border-radius: 50%;
   box-sizing: border-box;
-}
+} */
 
 .low-arrow {
   top: 80%;

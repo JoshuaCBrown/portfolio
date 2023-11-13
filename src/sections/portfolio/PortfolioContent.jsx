@@ -17,13 +17,13 @@ import tutorialHeavenImg from "../../assets/portfolio-images/coding/tutorial-hea
 import portfolioImg from "../../assets/portfolio-images/coding/portfolio-large.png";
 import "../../style/Portfolio.css";
 
-const Portfolio = ({ themeStyle }) => {
-  const portfolioContent = [
+const PortfolioContent = [
     {
       title: "PC control panel briefcase",
       img: briefcaseImg,
       id: "briefcase-img",
       cat: "craft",
+      description: ''
     },
     {
       title: "Custom rackmount PC for music production",
@@ -104,78 +104,3 @@ const Portfolio = ({ themeStyle }) => {
       cat: "coding",
     },
   ];
-
-  const imgSorter = (item, str) => {
-    return item.cat === str;
-  };
-
-  const codingImgs = portfolioContent.filter((item) =>
-    imgSorter(item, "coding")
-  );
-  const musicImgs = portfolioContent.filter((item) => imgSorter(item, "music"));
-  const craftImgs = portfolioContent.filter((item) => imgSorter(item, "craft"));
-
-  const videoImgs = portfolioContent.filter((item) => imgSorter(item, "video"));
-
-  const sortedImgs = [...codingImgs, ...musicImgs, ...craftImgs, ...videoImgs];
-
-  return (
-    <>
-      <TransitAnim>
-        <div className="portfolio-page-container">
-          <div className="portfolio-flex-container">
-            <div className="color-cat-key">
-              <h3 id="key-legend-title">Color Key</h3>
-              <div className="key-legend-item">
-                <div className="coding-color"></div><span>code</span>
-              </div>
-              <div className="key-legend-item">
-                <div className="music-color"></div><span>music</span>
-              </div>
-              <div className="key-legend-item">
-                <div className="craft-color"></div><span>craft</span>
-              </div>
-              <div className="key-legend-item">
-                <div className="video-color"></div><span>video</span>
-              </div>
-            </div>
-            <div className="portfolio-item-container">
-              {sortedImgs.map((item) => (
-                <motion.div
-                  className="portfolio-item"
-                  key={item.id}
-                  style={{ flex: 1 }}
-                  initial={{ flex: 1 }}
-                  whileHover={{ flex: 10 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <div className="color-coded" id={item.cat}></div>
-                  <div className="img-div">
-                    <motion.div
-                      className="blur-div"
-                      key={item.id}
-                      initial={{ filter: "blur(10px)" }}
-                      whileHover={{ filter: "blur(0px)" }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <img
-                        src={item.img}
-                        className="portfolio-img"
-                        id={item.id}
-                      />
-                      <div className="project-title-container">
-                        <h2 className="project-title">{item.title}</h2>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="portfolio-spacer-right"></div>
-          </div>
-        </div>
-      </TransitAnim>
-    </>
-  );
-};
-export default Portfolio;
