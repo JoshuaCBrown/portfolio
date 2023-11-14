@@ -526,7 +526,7 @@ h2 {
   display: grid;
   justify-content: center;
   align-items: center;
-  border-radius: 5px 5px 5px 50px;
+  
   color: var(--primaryDark);
   background: linear-gradient(to right, transparent, var(--primaryLight));
   /* background: radial-gradient(circle at 7px 20%, white 5px, var(--primaryLight) 20px, var(--primaryLight) 27px, white 27px, white 35px, var(--primaryLight) 38px, var(--primaryLight) 40px, white 40px); */
@@ -536,6 +536,7 @@ h2 {
 
 .jd-bg-right {
     /* background: radial-gradient(circle at 7px 20%, white 10px, var(--primaryLight) 30px, white 30px); */
+    border-radius: 5px 5px 5px 50px;
 }
 
 .jd-bg-right-low {
@@ -544,6 +545,7 @@ h2 {
 
 .jd-bg-left {
     /* background: radial-gradient(circle at calc(100% - 7px) 20%, white 10px, var(--primaryLight) 30px, white 30px); */
+
 }
 
 .jd-bg-left-low {
@@ -619,7 +621,7 @@ h2 {
   background-color: transparent;
   height: 20px;
   width: 1px;
-  /* border-radius: 50%; */
+
   box-sizing: border-box;
 } */
 

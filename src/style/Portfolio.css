@@ -75,7 +75,7 @@
 }
 
 .portfolio-item-container {
-  width: 700px;
+  max-width: 700px;
   /* border: black 2px solid; */
 
   position: relative;
@@ -87,10 +87,15 @@
   justify-content: center; */
 }
 
+
+
 .portfolio-item {
   flex: 1;
   overflow: hidden;
+  position: relative;
+  /* opacity: 0; */
 }
+
 
 .img-div {
   margin-top: 10px;

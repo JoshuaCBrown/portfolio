@@ -18,10 +18,11 @@ const Experience = () => {
                         ? "job-description jd-bg-left-low"
                         : "job-description jd-bg-left"
                     } id={job.id}>
-                    <div>
+                    <motion.div
+                    >
                       <h3>{job.title}</h3>
                       <em>{job.duration}</em>
-                    </div>
+                    </motion.div>
                     <motion.div
                       className="job-highlights"
                       initial={{ opacity: 0 }}
