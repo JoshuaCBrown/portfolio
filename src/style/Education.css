@@ -1,0 +1,108 @@
+/* EDUCATION SECTION */
+
+.education-container {
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "sectionHeading sectionHeading"
+    "university books"
+    "web books";
+  grid-template-columns: 1fr 1fr;
+  border-radius: 79% 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border: 3px black dashed;
+  /* background-color: black; */
+}
+
+#education-section-heading {
+  grid-area: sectionHeading;
+}
+
+.about-section-heading {
+  font-size: 1.7rem;
+  border-top: 2px solid var(--primaryBlack);
+  border-bottom: 2px solid var(--primaryBlack);
+  border-radius: 5px;
+  margin: 5px 0;
+  /* background: var(--primaryShade); */
+}
+
+.education-college {
+  grid-area: university;
+  /* background-color: var(--primaryLight); */
+  padding: 2px;
+  color: var(--primaryDark);
+  margin: 3px;
+  border: 2px var(--primaryDark) dashed;
+  border-radius: 50px 50px 0 0;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+}
+
+.education-books {
+  grid-area: books;
+  background-color: var(--primaryLightAccent);
+  padding: 2px;
+  color: var(--primaryWhite);
+  margin: 3px;
+}
+
+.education-online {
+  grid-area: web;
+  margin: 3px;
+  background-color: var(--primaryDark);
+  color: var(--primaryWhite);
+}
+
+.education-heading {
+  background: var(--primaryLight);
+  border: 2px var(--primaryDark) dashed;
+  width: 110%;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.college-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.college-degree {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.college-accolade {
+  font-size: 0.7rem;
+}
+
+.book-list,
+.online-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: stretch;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.book-item,
+.online-item {
+  margin-bottom: 0.5rem;
+}
+
+.book-subtitle,
+.online-link {
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+.book-author {
+  font-size: 0.7rem;
+}
+

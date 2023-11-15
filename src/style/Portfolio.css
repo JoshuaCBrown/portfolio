@@ -3,6 +3,7 @@
   --color-cat2: var(--primaryLightAccent);
   --color-cat3: var(--primaryDark);
   --color-cat4: var(--optOne);
+  --portfolio-width: 700px;
 }
 
 
@@ -97,7 +98,7 @@
 }
 
 
-.img-div {
+.img-div-container {
   margin-top: 10px;
   position: relative;
   overflow: hidden;
@@ -110,44 +111,93 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  /* border: 3px pink solid; */
+  box-sizing: border-box;
+}
+
+
+
+.blur-div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: var(--portfolio-width);
+  /* width: 100%; */
+  /* width: 100%; */
+  /* overflow: hidden; */
+}
+
+.img-div {
+  /* margin-top: 10px; */
+  overflow: hidden;
+  position: relative;
+  /* height: 300px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px orange solid; */
+  flex: 1;
+  
+  /* overflow: hidden; */
 }
 
 .portfolio-img {
   height: 400px;
+  /* width: auto; */
   /* filter: blur(10px); */
 }
 
-.blur-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 
 
-.project-title-container {
+.project-info-container {
   opacity: 0;
   transition: all .5s;
   position: absolute;
   text-wrap: wrap;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 70px;
   border: var(--primaryLight) 2px solid;
   text-align: center;
-  display: flex;
+  display: grid;
   justify-content: center;
+  justify-items: center;
   align-items: center;
   background-color: var(--primaryShade);
+  overflow: hidden;
   
 }
 
-.project-title {
-  color: var(--primaryWhite);
-  width: 50%;
-  text-align: center;
+.project-info-container[data-isShown="true"] {
+  height: 250px;
+  opacity: 1;
+  max-width: 500px;
 }
 
-.blur-div:hover > .project-title-container {
+.project-title {
+  /* border: green 4px solid; */
+  overflow-wrap: normal;
+  color: var(--primaryWhite);
+  display: flex;
+  max-width: 250px;
+  justify-content: center;
+}
+
+.project-description,
+.project-technology {
+  color: var(--primaryWhite);
+  font-weight: 0;
+  font-size: .875rem;
+}
+
+.project-technology {
+  font-style: italic;
+}
+
+.blur-div:hover > .project-info-container {
   opacity: 1;
   transition: all .5s;
 }

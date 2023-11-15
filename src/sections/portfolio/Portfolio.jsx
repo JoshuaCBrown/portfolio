@@ -34,6 +34,26 @@ const Portfolio = ({ themeStyle }) => {
     console.log(itemId);
     return hasSelected ? stylizer(itemId) : { flex: 1 };
   }
+
+  function techJoiner(arr) {
+    const str = arr.join(', ');
+    return str;
+  }
+
+  const noBlur = {
+    initial: { filter: "blur(0)" },
+    whileHover: { filter: "blur(0)" },
+    transition: { duration: 0.5 },
+  };
+
+  const hasBlur = {
+    initial: { filter: "blur(10px)" },
+    whileHover: { filter: "blur(0px)" },
+    transition: { duration: 0.5 },
+  };
+
+  const blurVariants = hasSelected ? noBlur : hasBlur;
+
   //these sorting functions here are so that I can add and remove portfolio projects to the PortfolioContent array without worrying about their order and they will be automatically sorted into the proper category
   const imgSorter = (item, str) => {
     return item.cat === str;
@@ -92,29 +112,45 @@ const Portfolio = ({ themeStyle }) => {
                   onClick={() => clickHandler(item.id)}
                 >
                   <div className="color-coded" id={item.cat}></div>
-                  <div className="img-div">
+                  <div className="img-div-container">
                     <motion.div
                       className="blur-div"
                       key={item.id}
-                      initial={{ filter: "blur(10px)" }}
-                      whileHover={{ filter: "blur(0px)" }}
-                      transition={{ duration: 0.5 }}
+                      variants={blurVariants}
+                      initial="initial"
+                      whileHover="whileHover"
+                      transition="transition"
                     >
-                      <img
-                        src={item.img}
-                        className="portfolio-img"
-                        id={item.id}
-                      />
+                      <div className="img-div">
+                        <img
+                          src={item.img}
+                          className="portfolio-img"
+                          id={item.id}
+                        />
+                      </div>
                       {projectClicked === item.id && (
                         <>
                           {item.imgs.map((pic) => (
-                            <img src={pic} className="portfolio-img" />
+                            <div className="img-div">
+                              <img src={pic} className="portfolio-img" />
+                            </div>
                           ))}
                         </>
                       )}
-                      <div className="project-title-container">
+                      <motion.div 
+                      className="project-info-container"
+                      layout
+                      data-isShown={item.id === projectClicked}
+                      >
                         <h2 className="project-title">{item.title}</h2>
-                      </div>
+                        {projectClicked === item.id && (
+                          <>
+                            <p className="project-description">{item.description}</p>
+                            <span className="project-technology">{techJoiner(item.technology)}
+                            </span>
+                          </>
+                        )}
+                      </motion.div>
                     </motion.div>
                   </div>
                 </motion.div>

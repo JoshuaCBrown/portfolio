@@ -1,5 +1,6 @@
 import { leftJobs, rightJobs } from "./ExpeJobs";
 import { motion } from "framer-motion";
+import "../../style/Experience.css"
 
 const Experience = () => {
   return (

@@ -1,3 +1,5 @@
+import "../../style/Education.css";
+
 const Education = () => {
   const booksEducation = [
     {
