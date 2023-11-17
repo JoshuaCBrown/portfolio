@@ -68,45 +68,47 @@ const Education = () => {
       <h2 className="about-section-heading" id="education-section-heading">
         Education
       </h2>
-      <div className="education-college">
-        <h3 className="education-heading">University</h3>
-        <h4 className="college-title">Florida State University</h4>
-        <h5 className="college-degree">Bachelor of Science, Marketing</h5>
-        <h5 className="college-degree">Bachelor of Science, Criminology</h5>
-        <span className="college-accolade">
-          Golden Key International Honour Society
-        </span>
-        <br />
-        <span className="college-accolade">
-          PR Secretary for Alpha Phi Omega
-        </span>
-      </div>
-      <div className="education-books">
-        <h3 className="education-heading">Books</h3>
-        <ul className="book-list">
-          {booksEducation.map((book) => (
-            <li>
-              <div className="book-item" key={book.id}>
-                <h4 className="book-title">{book.title}</h4>
-                <span className="book-subtitle">{book.subtitle}, </span>
-                <span className="book-author">{book.author}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="education-online">
-        <h3 className="education-heading">Web</h3>
-        <ul className="online-list">
-          {onlineEducation.map((course) => (
-            <li>
-              <div className="online-item" key={course.id}>
-                <h4 className="online-title">{course.title}</h4>
-                <span className="online-link">{course.link}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
+      <div className="education-content">
+        <div className="education-college">
+          <h3 className="education-heading">University</h3>
+          <h4 className="college-title">Florida State University</h4>
+          <h5 className="college-degree">Bachelor of Science, Marketing</h5>
+          <h5 className="college-degree">Bachelor of Science, Criminology</h5>
+          <span className="college-accolade">
+            Golden Key International Honour Society
+          </span>
+          <br />
+          <span className="college-accolade">
+            PR Secretary for Alpha Phi Omega
+          </span>
+        </div>
+        {/* <div className="education-books">
+          <h3 className="education-heading">Books</h3>
+          <ul className="book-list">
+            {booksEducation.map((book) => (
+              <li>
+                <div className="book-item" key={book.id}>
+                  <h4 className="book-title">{book.title}</h4>
+                  <span className="book-subtitle">{book.subtitle}, </span>
+                  <span className="book-author">{book.author}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="education-online">
+          <h3 className="education-heading">Web</h3>
+          <ul className="online-list">
+            {onlineEducation.map((course) => (
+              <li>
+                <div className="online-item" key={course.id}>
+                  <h4 className="online-title">{course.title}</h4>
+                  <span className="online-link">{course.link}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div> */}
       </div>
     </div>
   );

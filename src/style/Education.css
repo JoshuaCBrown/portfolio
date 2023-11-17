@@ -3,21 +3,25 @@
 .education-container {
   text-align: center;
   display: grid;
-  grid-template-areas:
-    "sectionHeading sectionHeading"
-    "university books"
-    "web books";
-  grid-template-columns: 1fr 1fr;
-  border-radius: 79% 0;
+  /* grid-template-rows: 1fr 1fr; */
   height: 100%;
   width: 100%;
-  overflow: hidden;
-  border: 3px black dashed;
+  /* border: 3px black dashed; */
   /* background-color: black; */
 }
 
+.education-content {
+  display: grid;
+  /* grid-template-areas:
+    "university books"
+    "web books"; */
+  /* border-radius: 20%; */
+  /* overflow: hidden; */
+  /* border: 2px solid black; */
+  justify-content: center;
+}
 #education-section-heading {
-  grid-area: sectionHeading;
+  
 }
 
 .about-section-heading {
@@ -30,16 +34,17 @@
 }
 
 .education-college {
-  grid-area: university;
-  /* background-color: var(--primaryLight); */
+  /* grid-area: university; */
+  background-color: var(--primaryLight);
   padding: 2px;
   color: var(--primaryDark);
   margin: 3px;
   border: 2px var(--primaryDark) dashed;
-  border-radius: 50px 50px 0 0;
+  /* border-radius: 0 0 100% 0; */
   overflow: hidden;
   display: grid;
-  justify-items: center;
+  max-width: 300px;
+  /* transform: rotate(120deg); */
 }
 
 .education-books {
@@ -48,6 +53,7 @@
   padding: 2px;
   color: var(--primaryWhite);
   margin: 3px;
+  /* transform: rotate(60deg); */
 }
 
 .education-online {

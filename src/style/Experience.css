@@ -182,7 +182,7 @@
 
 .job-description {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: grid;
   justify-content: center;
   align-items: center;
@@ -191,10 +191,10 @@
   background: linear-gradient(to left, transparent, var(--primaryLight));
   /* background: radial-gradient(circle at 7px 20%, white 5px, var(--primaryLight) 20px, var(--primaryLight) 27px, white 27px, white 35px, var(--primaryLight) 38px, var(--primaryLight) 40px, white 40px); */
   /* border-left: 20px var(--primaryLight) dashed; */
-  border-left: 10px var(--primaryDark) dashed;
+  /* border-left: 10px var(--primaryDark) dashed;
   border-top: 10px dashed var(--primaryDark);
   border-right: 10px transparent solid;
-  border-left: 10px transparent solid;
+  border-left: 10px transparent solid; */
   box-sizing: border-box;
 }
 
@@ -208,25 +208,34 @@
 
 .jd-bg-right {
     /* background: radial-gradient(circle at 7px 20%, white 10px, var(--primaryLight) 30px, white 30px); */
-    border-radius: 150px 50px 150px 50px;
+    border-radius: 100% 10% 100% 10%;
+    background: linear-gradient(to right, var(--primaryLight), transparent 125%);
 }
 
 .jd-bg-right-low {
     /* background: radial-gradient(circle at 7px 80%, white 10px, var(--primaryLight) 30px, white 30px); */
-    border-radius: 150px 50px 150px 50px;
+    /* border: 2px var(--primaryDark) dashed; */
+    border-radius: 100% 10% 100% 10%;
+    background: linear-gradient(to right, var(--primaryLight), transparent 125%);
 }
 
 .jd-bg-left {
     /* background: radial-gradient(circle at calc(100% - 7px) 20%, white 10px, var(--primaryLight) 30px, white 30px); */
-    border-radius: 50px 150px 50px 150px;
-    background: linear-gradient(to right, transparent, var(--primaryLight));
+    border-radius: 10% 100% 10% 100%;
+    /* border-left: 2px var(--primaryDark) dashed; */
+    /* border-top: 2px var(--primaryDark) dashed; */
+    background: linear-gradient(to left, var(--primaryLight), transparent 125%);
 }
 
 .jd-bg-left-low {
     /* background: radial-gradient(circle at calc(100% - 7px) 80%, white 10px, var(--primaryLight) 30px, white 30px); */
     /* border-radius: 50px 150px 50px 150px; */
-    border-radius: 0 70% 15% 70%;
-    background: linear-gradient(to right, transparent, var(--primaryLight));
+    border-radius: 10% 100% 10% 100%;
+    /* border-left: 2px var(--primaryDark) dashed;
+    border-top: 2px var(--primaryDark) dashed; */
+    /* background: linear-gradient(to right, transparent, var(--primaryLight)); */
+    background: linear-gradient(to left, var(--primaryLight), transparent 125%);
+    /* opacity: .2; */
   }
 
 .job-highlights {
