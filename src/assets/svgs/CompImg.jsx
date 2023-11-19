@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function CompImg({ svgVariants }) {
 
-  return (
+  return ( 
     <>
       <motion.svg
         version="1.1"

@@ -1,41 +1,55 @@
+import { useState } from "react";
 import "../../style/Education.css";
+import collegeIcon from "../../assets/icons/gradcap1.png";
+import booksIcon from "../../assets/icons/book1.png";
+import webIcon from "../../assets/icons/web2.png";
+import arrow from "../../assets/commonicons/arrow.png";
+import { motion } from "framer-motion";
 
 const Education = () => {
+  const [eduSelected, setEduSelected] = useState({
+    title: "University",
+    icon: collegeIcon,
+    id: "college-edu",
+    specialStruct: true,
+    content: [],
+  });
+
   const booksEducation = [
     {
       title: "Eloquent Javascript",
       subtitle: "A modern Introduction to Programming, 3rd edition",
-      author: "Haverbeke",
+      source: "Haverbeke",
       id: "book1",
     },
     {
       title: "Javascript Programming",
       subtitle: "A Brain-Friendly Guide",
-      author: "Freeman & Robson",
+      source: "Freeman & Robson",
       id: "book2",
     },
     {
       title: "Arduino for Dummies",
       subtitle: "2nd edition",
-      author: "Nussey",
+      source: "Nussey",
       id: "book3",
     },
     {
       title: "Arduino for Musicians",
       subtitle: "A Complete Guide to Arduino and Teensy Microcontrollers",
-      author: "Edstrom",
+      source: "Edstrom",
       id: "book4",
     },
     {
       title: "Atomic Habits",
       subtitle: "Tiny Changes, Remarkable Results",
-      author: "Clear",
+      source: "Clear",
       id: "book5",
     },
     {
       title: "Deep Work",
       subtitle: "Rules for Focused Success in a Distracted World",
-      author: "Newport",
+      source: "Newport",
       id: "book6",
     },
   ];
@@ -43,25 +57,104 @@ const Education = () => {
   const onlineEducation = [
     {
       title: "The Odin Project",
-      link: "theodinproject.com",
+      source: "theodinproject.com",
       id: "online1",
     },
     {
       title: "freeCodeCamp",
-      link: "freecodecamp.org",
+      source: "freecodecamp.org",
       id: "online2",
     },
     {
       title: "UI/UX Design",
-      link: "generalassembly.com",
+      source: "generalassembly.com",
       id: "online3",
     },
     {
       title: "Intro to Excel",
-      link: "generalassembly.com",
+      source: "generalassembly.com",
       id: "online4",
     },
   ];
+
+  const collegeEdu = {
+    title: "University",
+    icon: collegeIcon,
+    id: "college-edu",
+    specialStruct: true,
+    content: [],
+  };
+
+  const bookEdu = {
+    title: "Books",
+    icon: booksIcon,
+    id: "books-edu",
+    specialStruct: false,
+    content: booksEducation,
+  };
+
+  const webEdu = {
+    title: "Web",
+    icon: webIcon,
+    id: "web-edu",
+    specialStruct: false,
+    content: onlineEducation,
+  };
+
+  function eduLeftClick() {
+    const currentIndex = eduCategories.findIndex(
+      (obj) => obj.title === eduSelected.title
+    );
+    currentIndex === 0
+      ? setEduSelected(eduCategories[eduCategories.length - 1])
+      : setEduSelected(eduCategories[currentIndex - 1]);
+  }
+
+  function eduRightClick() {
+    const currentIndex = eduCategories.findIndex(
+      (obj) => obj.title === eduSelected.title
+    );
+    currentIndex === eduCategories.length - 1
+      ? setEduSelected(eduCategories[0])
+      : setEduSelected(eduCategories[currentIndex + 1]);
+  }
+
+  const divsOrList = (obj) => {
+    return obj.specialStruct ? (
+      <div className="edu-detail-content" key={obj.id}>
+        <h3 className="education-heading">{obj.title}</h3>
+        <h4 className="college-title">Florida State University</h4>
+        <h5 className="college-degree">Bachelor of Science, Marketing</h5>
+        <h5 className="college-degree">Bachelor of Science, Criminology</h5>
+        <span className="college-accolade">
+          Golden Key International Honour Society
+        </span>
+        <br />
+        <span className="college-accolade">
+          PR Secretary for Alpha Phi Omega
+        </span>
+      </div>
+    ) : (
+      <div className="edu-detail">
+        <h3 className="education-heading">{obj.title}</h3>
+        <ul className="edu-list">
+          {obj.content.map((item) => (
+            <li>
+              <div className="edu-item-container" key={item.id}>
+                <h4 className="edu-item-title">{item.title}</h4>
+                {item.subtitle && (
+                  <span className="edu-item-subtitle">{item.subtitle}, </span>
+                )}
+                <span className="edu-item-source">{item.source}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
+  const eduCategories = [collegeEdu, webEdu, bookEdu];
 
   return (
     <div className="education-container" id="education">
@@ -69,18 +162,29 @@ const Education = () => {
         Education
       </h2>
       <div className="education-content">
-        <div className="education-college">
-          <h3 className="education-heading">University</h3>
-          <h4 className="college-title">Florida State University</h4>
-          <h5 className="college-degree">Bachelor of Science, Marketing</h5>
-          <h5 className="college-degree">Bachelor of Science, Criminology</h5>
-          <span className="college-accolade">
-            Golden Key International Honour Society
-          </span>
-          <br />
-          <span className="college-accolade">
-            PR Secretary for Alpha Phi Omega
-          </span>
+        <div className="education-selector">
+          <div className="green-top"></div>
+          <div className="top-half-education">
+            <div id="edu-left-select-div">
+              <button id="edu-left-select" onClick={eduLeftClick}>
+                <img src={arrow} id="left-arrow" />
+              </button>
+            </div>
+            <motion.img
+              className="edu-icon"
+              src={eduSelected.icon}
+              key={eduSelected.id}
+              initial={{ opacity: 0, x: "-100px" }}
+              animate={{ opacity: 1, x: 0 }}
+            ></motion.img>
+            <div id="edu-right-select-div">
+              <button id="edu-right-select" onClick={eduRightClick}>
+                <img src={arrow} id="right-arrow" />
+              </button>
+            </div>
+          </div>
+
+          <div className="bottom-half-education">{divsOrList(eduSelected)}</div>
         </div>
         {/* <div className="education-books">
           <h3 className="education-heading">Books</h3>
