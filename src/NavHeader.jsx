@@ -7,24 +7,34 @@ function NavHeader() {
   return (
     <>
       {pathname !== "/" ? (
-        <motion.nav
-          className="nav-header"
+        <motion.div
+          className="nav-sidebar-container"
           initial={{ x: "100vw" }}
           animate={{ x: 0, transition: { duration: 0.25 } }}
         >
-          <Link style={{ textDecoration: "none" }} to="/">
-            <h3 className="nav-header-link">Home</h3>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="about">
-            <h3 className="nav-header-link">About</h3>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="portfolio">
-            <h3 className="nav-header-link">Portfolio</h3>
-          </Link>
-          <Link style={{ textDecoration: "none" }} to="connect">
-            <h3 className="nav-header-link">Connect</h3>
-          </Link>
-        </motion.nav>
+          <nav className="nav-container">
+            <h3 className="nav-sidebar-link">
+              <Link style={{ textDecoration: "none" }} to="/">
+              <span className="link-text">Home</span>
+              </Link>
+            </h3>
+            <h3 className="nav-sidebar-link">
+              <Link style={{ textDecoration: "none" }} to="about">
+              <span className="link-text">About</span>
+              </Link>
+            </h3>
+            <h3 className="nav-sidebar-link">
+              <Link style={{ textDecoration: "none" }} to="portfolio">
+              <span className="link-text">Portfolio</span>
+              </Link>
+            </h3>
+            <h3 className="nav-sidebar-link">
+              <Link style={{ textDecoration: "none" }} to="connect">
+                <span className="link-text">Connect</span>
+              </Link>
+            </h3>
+          </nav>
+        </motion.div>
       ) : (
         <></>
       )}
