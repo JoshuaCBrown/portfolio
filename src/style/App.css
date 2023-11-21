@@ -268,8 +268,11 @@ body {
 .content-container {
   /* border: 2px purple solid; */
   box-sizing: border-box;
-  max-height: calc(100% - 5.4rem);
-  margin-top: 30px;
+
+  /* <-----IMPORTANT IF YOU DON'T WANT CONTENT OVERFLOWING OVER HEADER TEXT AND TOP NAVIGATION , leave commented out otherwise------> */
+
+  /* max-height: calc(100% - 5.4rem); */
+  /* margin-top: 30px; */
   align-self: flex-start;
   display: flex;
   align-items: flex-start;

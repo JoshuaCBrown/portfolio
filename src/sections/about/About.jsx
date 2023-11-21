@@ -8,6 +8,9 @@ import KeysImg from "../../assets/svgs/KeysImg.jsx";
 import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
 import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
+import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
+
+import TransitAnim from "../../transit-routes/TransitAnim";
 
 import "../../style/About.css";
 
@@ -26,9 +29,38 @@ const About = ({ themeStyle }) => {
 
   return (
     <>
-      <div className="about-container">
-        <Skills />
-        {/* <Education /> */}
+      <TransitAnim>
+        <div className="about-container">
+          <div className="my-name-container">
+            <div className="my-name-top-container">
+              <div className="circle-container">
+                <img src={phreshPhoto} className="fresh-foto" />
+              </div>
+              <div className="intro-name-container">
+                <div className="introduction-yo">My name is Josh</div>
+                <div className="not-introduction-yo"></div>
+              </div>
+            </div>
+            <div className="my-name-bottom-container"></div>
+          </div>
+          <div className="intro-container">
+            <div className="intro-top-container"></div>
+            <div className="intro-mid-container">
+              I enjoy problem solving and making things from nothing.
+            </div>
+            <div className="intro-bottom-container"></div>
+          </div>
+          <div className="my-city-container">
+            <div className="my-top-city"></div>
+            <div className="my-middle-city"></div>
+            <div className="my-bottom-city">
+              <div className="skyline-svg">
+                <SkylineImg />
+              </div>
+            </div>
+          </div>
+          {/* <Skills />
+        <Education /> 
         {themeStyle ? (
           <>
             <BenchyImg svgVariants={darkSvgVariants} />{" "}
@@ -41,8 +73,9 @@ const About = ({ themeStyle }) => {
             <BenchyImg svgVariants={lightSvgVariants} />
             <SkylineImg svgVariants={lightSvgVariants} />
           </div>
-        )}
-      </div>
+        )} */}
+        </div>
+      </TransitAnim>
     </>
   );
 };

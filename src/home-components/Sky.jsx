@@ -28,7 +28,7 @@ function Sky({ themeStyle, toggleTheme, loadedStatus }) {
   const variants = themeStyle ? darkVariants : lightVariants;
   return (
     <>
-      <NavHeader />
+      {/* <NavHeader /> */}
       <div
         className="toggle-container"
         data-themeStyle={themeStyle}
