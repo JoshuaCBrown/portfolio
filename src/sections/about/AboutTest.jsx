@@ -32,43 +32,34 @@ const About = ({ themeStyle }) => {
       <TransitAnim>
         <div className="about-container">
           <div className="my-name-container">
-            <div className="my-name-left"></div>
-            <div className="my-name-middle">
-
-              <div className="remaining-circles">
-                <div className="photo-container">
-                  <img src={phreshPhoto} className="fresh-foto" />
-                </div>
-                <div className="circle-design" id="circle-one"></div>
-                <div className="circle-design" id="circle-two"></div>
-                <div className="circle-design" id="circle-three"></div>
+            <div className="my-name-top-container">
+              <div className="circle-container">
+                <img src={phreshPhoto} className="fresh-foto" />
+              </div>
+              <div className="intro-name-container">
+                <div className="introduction-yo">My name is Josh</div>
+                <div className="not-introduction-yo"></div>
               </div>
             </div>
-            <div className="my-name-right">
-              <div className="introduction-yo">My name is Josh</div>
-              <div className="not-introduction-yo"></div>
-            </div>
+            <div className="my-name-bottom-container"></div>
           </div>
           <div className="intro-container">
             <div className="intro-top-container"></div>
             <div className="intro-mid-container">
-              I enjoy problem solving and making things
+              I enjoy problem solving and making things from nothing.
             </div>
             <div className="intro-bottom-container"></div>
           </div>
           <div className="my-city-container">
             <div className="my-top-city"></div>
-            <div className="my-middle-city">
-              <div className="middle-city-left"></div>
-              <div className="skyline-svg-container">
+            <div className="my-middle-city"></div>
+            <div className="my-bottom-city">
+              <div className="skyline-svg">
                 <SkylineImg svgVariants={lightSvgVariants} />
               </div>
-            </div>
-            <div className="my-bottom-city">
-              I live in Atlanta
 
             </div>
-
+           
           </div>
           <div className="tilted-container"></div>
           {/* <Skills />
