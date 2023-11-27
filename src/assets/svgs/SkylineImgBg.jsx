@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import "../../style/About.css";
 
-export default function SkylineImg({ svgVariants }) {
+export default function SkylineImgBg ({ svgVariants }) {
   return (
     <motion.svg
       version="1.1"
@@ -13,7 +13,7 @@ export default function SkylineImg({ svgVariants }) {
       viewBox="0 0 500 500"
       enable-background="new 0 0 500 500"
       xml:space="preserve"
-      className="skyline-svg"
+      className="skyline-svg-bg"
     >
       <g>
         <motion.path
@@ -22,8 +22,8 @@ export default function SkylineImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primaryLight)"
+          strokeWidth="var(--svgStrokeWTwo)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeMiterlimit="10"
@@ -36,8 +36,8 @@ export default function SkylineImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primaryLight)"
+          strokeWidth="var(--svgStrokeWTwo)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeMiterlimit="10"

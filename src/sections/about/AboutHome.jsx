@@ -13,17 +13,13 @@ import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
 import SkylineImgBg from "../../assets/svgs/SkylineImgBg.jsx";
 import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
 import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
-import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
 
 import TransitAnim from "../../transit-routes/TransitAnim";
 
-import AboutHome from "./AboutHome";
-
 import "../../style/About.css";
 
-const About = ({ themeStyle }) => {
+const AboutHome = ({ themeStyle }) => {
   const [goClicked, setGoClicked] = useState(false);
-  const [aboutSection, setAboutSection] = useState("");
 
   const lightSvgVariants = {
     initial: { pathLength: 0 },
@@ -37,14 +33,9 @@ const About = ({ themeStyle }) => {
     transition: { duration: 0 },
   };
 
-  const goClickHandler = () => {
-    setGoClicked(true);
-    setAboutSection('skills');
-  }
-
   return (
     <>
-      <TransitAnim>
+
         <div className="about-container" data-goOn={goClicked}>
           <div className="about-left-container">
             <div className="about-left-left"></div>
@@ -52,11 +43,7 @@ const About = ({ themeStyle }) => {
               <div className="about-circles-container" data-goOn={goClicked}>
                 <motion.div layout className="photo-container">
                   <div className="photo-shaper">
-                    {goClicked ? (<h2 className="about-sub-heading">{aboutSection }</h2>) : (
-
-                    
                     <img src={phreshPhoto} className="fresh-foto" />
-                    )}
                   </div>
                 </motion.div>
                 <div className="remaining-circles" data-goOn={goClicked}>
@@ -76,77 +63,30 @@ const About = ({ themeStyle }) => {
                     layout
                   ></motion.div>
                 </div>
-                {{ goClicked } ? <div className="place-holder"></div> : <></>}
+                {{goClicked} ? (<div className="place-holder"></div>) : (<></>)}
               </div>
             </div>
             <div className="about-left-right">
-              {goClicked ? (
-                <></>
-              ) : (
-                <>
-                  <div className="about-left-right-top">My name is Josh</div>
-                  <div className="about-left-right-bottom">
-                    <div className="about-left-right-bottom-top"></div>
-                  </div>
-                </>
-              )}
+              <div className="about-left-right-top">My name is Josh</div>
+              <div className="about-left-right-bottom">
+                <div className="about-left-right-bottom-top"></div>
+              </div>
             </div>
           </div>
-          <motion.div layout className="about-expansion-container">
-            <div className="about-expansion-middle">
-              <div className="about-expansion-upper-middle"></div>
-              <div className="about-expansion-lower-middle">
-                {aboutSection === 'skills' && (
-                  <>
-                    <Skills />
-                  </>
-                )}
-                {aboutSection === 'experience' && (
-                  <>
-                    <Experience />
-                  </>
-                )}
-                {aboutSection === 'education' && (
-                  <>
-                    <Education />
-                  </>
-                )}
-                {aboutSection === 'everything' && (
-                  <>
-                    <EverythingAboutMe />
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="about-expansion-right">
-              <div className="empty-space"></div>
-              <div className="about-expansion-upper-right">
-                <div className="emblem-outer-container">
-                  <div className="emblem-inner-container">
-                    {goClicked ? (
-                      <WoodworkingImg svgVariants={lightSvgVariants} />
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                </div>
-              </div>
-              <div></div>
-            </div>
-          </motion.div>
           <div className="about-left-dashes"></div>
-          <motion.div layout className="about-middle-container">
+          <motion.div layout className="about-expansion-container"></motion.div>
+          <div className="about-middle-container">
             <div className="intro-top-container"></div>
             <div className="intro-mid-container">
               <p>I like problem solving and making things</p>
-              <button className="go-button" onClick={goClickHandler}>
-                <img src={directionArrow} className="go-arrow" />
+              <button className="go-button" onClick={() => setGoClicked(true)}>
+                GO
               </button>
             </div>
 
             <div className="intro-bottom-container"></div>
-          </motion.div>
-          <motion.div layout className="about-right-container">
+          </div>
+          <div className="about-right-container">
             <div className="about-right-top">
               <div className="about-right-top-left"></div>
             </div>
@@ -165,13 +105,8 @@ const About = ({ themeStyle }) => {
                 I live in Atlanta, GA
               </div>
             </div>
-          </motion.div>
-          <motion.div
-            className="tilted-container"
-            layout="size"
-            initial={{ scale: 1 }}
-            animate={goClicked ? { scale: 0 } : { scale: 1 }}
-          ></motion.div>
+          </div>
+          <div className="tilted-container"></div>
           {/* <Skills />
         <Education /> 
         {themeStyle ? (
@@ -188,9 +123,8 @@ const About = ({ themeStyle }) => {
           </div>
         )} */}
         </div>
-      </TransitAnim>
     </>
   );
 };
 
-export default About;
+export default AboutHome;

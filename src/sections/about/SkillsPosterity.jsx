@@ -1,5 +1,4 @@
 import "../../style/Skills.css";
-import visualImg from "../../assets/icons/eye2.png";
 
 const Skills = () => {
   const codeSkills = [
@@ -62,6 +61,9 @@ const Skills = () => {
   return (
     <>
       <div className="skills-container" id="skills">
+        {/* <h2 className="about-section-heading" id="skills-section-heading">
+          Skills
+        </h2> */}
         <div className="skills-content-container">
           {/* <div className="skills-section" id="code-skills">
             <div className="skills-content" id="code-skills-content">
@@ -79,35 +81,33 @@ const Skills = () => {
             </div>
           </div> */}
           <div className="skills-section" id="visual-skills">
-          
+            
             <div className="skills-heading">
-            <div className="skills-color"></div>
-                <div id="visual-heading">
-                <img src={visualImg} />
-                </div>
-              
+              <h3 id="visual-heading">Visual</h3>
             </div>
-            <div className="skills-content-color-border"></div>
             <div className="skills-content" id="visual-skills-content">
-              <ul
-                className="skills-content-list"
-                id="visual-skills-content-list"
-              >
+              
+            <ul className="skills-content-list" id="visual-skills-content-list">
                 {visualSkills.map((skill) => (
                   <li>{skill}</li>
                 ))}
               </ul>
               <div className="skills-icon" id="visual-skills-icon">
-                <h2 className="text-skill-icon">visual</h2>
+                <span className='text-skill-icon'>&#60;/&#62;</span>
               </div>
-            </div>
-
-            {/* <h3 className="skills-heading">Audio</h3>
+            
+              </div> 
+              
+              
+            
+            
+              {/* <h3 className="skills-heading">Audio</h3>
               <ul className="skills-content" id="audio-skills-content">
                 {audioSkills.map((skill) => (
                   <li>{skill}</li>
                 ))}
               </ul> */}
+            
           </div>
           {/* <div className="skills-section" id="business-skills">
             <h3 className="skills-heading">Business</h3>
