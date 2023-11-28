@@ -13,6 +13,7 @@ export default function SkylineImgBg ({ svgVariants }) {
       viewBox="0 0 500 500"
       enable-background="new 0 0 500 500"
       xml:space="preserve"
+			key="skyLinesvg-bg"
       className="skyline-svg-bg"
     >
       <g>

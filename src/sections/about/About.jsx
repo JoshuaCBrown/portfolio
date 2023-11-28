@@ -39,23 +39,23 @@ const About = ({ themeStyle }) => {
 
   const goClickHandler = () => {
     setGoClicked(true);
-    setAboutSection('skills');
-  }
+    setAboutSection("skills");
+  };
 
   return (
     <>
       <TransitAnim>
         <div className="about-container" data-goOn={goClicked}>
-          <div className="about-left-container">
+          <div className="about-left-container" data-goOn={goClicked}>
             <div className="about-left-left"></div>
             <div className="about-left-middle" data-goOn={goClicked}>
               <div className="about-circles-container" data-goOn={goClicked}>
                 <motion.div layout className="photo-container">
                   <div className="photo-shaper">
-                    {goClicked ? (<h2 className="about-sub-heading">{aboutSection }</h2>) : (
-
-                    
-                    <img src={phreshPhoto} className="fresh-foto" />
+                    {goClicked ? (
+                      <h2 className="about-sub-heading">{aboutSection}</h2>
+                    ) : (
+                      <img src={phreshPhoto} className="fresh-foto" />
                     )}
                   </div>
                 </motion.div>
@@ -79,7 +79,7 @@ const About = ({ themeStyle }) => {
                 {{ goClicked } ? <div className="place-holder"></div> : <></>}
               </div>
             </div>
-            <div className="about-left-right">
+            <motion.div layout className="about-left-right">
               {goClicked ? (
                 <></>
               ) : (
@@ -90,28 +90,28 @@ const About = ({ themeStyle }) => {
                   </div>
                 </>
               )}
-            </div>
+            </motion.div>
           </div>
           <motion.div layout className="about-expansion-container">
             <div className="about-expansion-middle">
               <div className="about-expansion-upper-middle"></div>
               <div className="about-expansion-lower-middle">
-                {aboutSection === 'skills' && (
+                {aboutSection === "skills" && (
                   <>
                     <Skills />
                   </>
                 )}
-                {aboutSection === 'experience' && (
+                {aboutSection === "experience" && (
                   <>
                     <Experience />
                   </>
                 )}
-                {aboutSection === 'education' && (
+                {aboutSection === "education" && (
                   <>
                     <Education />
                   </>
                 )}
-                {aboutSection === 'everything' && (
+                {aboutSection === "everything" && (
                   <>
                     <EverythingAboutMe />
                   </>
@@ -121,15 +121,27 @@ const About = ({ themeStyle }) => {
             <div className="about-expansion-right">
               <div className="empty-space"></div>
               <div className="about-expansion-upper-right">
-                <div className="emblem-outer-container">
-                  <div className="emblem-inner-container">
-                    {goClicked ? (
-                      <WoodworkingImg svgVariants={lightSvgVariants} />
-                    ) : (
-                      <></>
-                    )}
-                  </div>
-                </div>
+                {goClicked ? (
+                  <>
+                    <div className="emblem-outer-ww-container">
+                      <div className="emblem-inner-ww-container">
+                        <WoodworkingImg svgVariants={lightSvgVariants} />
+                      </div>
+                    </div>
+                    {/* <div className="emblem-outer-bench-container">
+                      <div className="emblem-inner-bench-container">
+                        <BenchyImg svgVariants={lightSvgVariants} />
+                      </div>
+                    </div>
+                    <div className="emblem-outer-keeys-container">
+                      <div className="emblem-inner-keeys-container">
+                        <KeysImg svgVariants={lightSvgVariants} />
+                      </div>
+                    </div> */}
+                  </>
+                ) : (
+                  <></>
+                )}
               </div>
               <div></div>
             </div>

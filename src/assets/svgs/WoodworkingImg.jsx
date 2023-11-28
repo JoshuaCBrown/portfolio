@@ -13,6 +13,7 @@ export default function WoodworkingImg({ svgVariants }) {
       viewBox="0 0 500 500"
       enable-background="new 0 0 500 500"
       xml:space="preserve"
+      key="woodWorksvg"      
       className="woodworking-svg"
     >
       <g>

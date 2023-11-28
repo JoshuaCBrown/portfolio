@@ -13,6 +13,8 @@ export default function KeysImg({ svgVariants }) {
       viewBox="0 0 500 500"
       enable-background="new 0 0 500 500"
       xml:space="preserve"
+      key="keyZSvg"
+      className="keyz-svg"
     >
       <g>
           <motion.path

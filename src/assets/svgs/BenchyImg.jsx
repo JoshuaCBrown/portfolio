@@ -14,7 +14,8 @@ export default function BenchyImg({ svgVariants }) {
         viewBox="0 0 500 500"
         // style="enable-background:new 0 0 500 500;"
         xml:space="preserve"
-        key="benchysvg"
+        key="benChy-svg"
+        className="benchy-svg"
       >
         <motion.path
           variants={svgVariants}
