@@ -1,14 +1,8 @@
 import { motion } from "framer-motion";
 import "../../style/About.css";
 
-export default function SkylineImg({ svgVariants }) {
-  
-	const newSvgVariants = {
-		...svgVariants,
-		animate: {...svgVariants.animate, transition: { duration: 1.4, ease: "easeOut" }},
-	};
-	
-	return (
+export default function SkylineImgBgReverse ({ svgVariants }) {
+  return (
     <motion.svg
       version="1.1"
       id="Layer_1"
@@ -19,37 +13,37 @@ export default function SkylineImg({ svgVariants }) {
       viewBox="0 0 500 500"
       enable-background="new 0 0 500 500"
       xml:space="preserve"
-			key="skyLinesvg"
-      className="skyline-svg"
+			key="skyLinesvg-bg"
+      className="skyline-svg-bg"
     >
       <g>
         <motion.path
-          variants={newSvgVariants}
+          variants={svgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primaryLight)"
+          strokeWidth="var(--svgStrokeWTwo)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeMiterlimit="10"
           d="
-					M105.7,358.7c0-11.3,0-22.6,0-33.9c0-0.4-0.1-0.9-0.1-1.3"
+          M105.7,358.7c0-11.3,0-22.6,0-33.9c0-0.4-0.1-0.9-0.1-1.3"
         />
         <motion.path
-          variants={newSvgVariants}
+          variants={svgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primaryLight)"
+          strokeWidth="var(--svgStrokeWTwo)"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeMiterlimit="10"
           d="
-					M2.5,499.4c0.1-2,0-2.7,0-4.8c-0.2-1.4,0.3-1.8,1.6-1.9c2.4-0.1,4.7-0.1,7-0.2c1.9,0,3.9-0.1,5.9-0.2c4.5-0.3,9.1-0.6,13.6-0.8
+          M2.5,499.4c0.1-2,0-2.7,0-4.8c-0.2-1.4,0.3-1.8,1.6-1.9c2.4-0.1,4.7-0.1,7-0.2c1.9,0,3.9-0.1,5.9-0.2c4.5-0.3,9.1-0.6,13.6-0.8
 					l0.4-1.9c0.2-3.3,0.2-6.5,0.3-9.7c0.2-7.9,0.3-15.7,0.5-23.6c0-4.2,0.1-8.2,0.2-12.3c0-4.6,0.1-9.1,0.2-13.6c0-5,0.1-10.1,0.2-15.1
 					c0.1-7.1,0.2-14.1,0.2-21.1c0-17.2,0.1-34.3,0-51.4c-0.1-3.6,0.5-3.2,3.4-3.2c1.5,0,1.9-0.2,1.9-1.6c0-1.5,0.1-3.2,0-4.8
 					c-0.1-1.1,0.4-1.5,1.4-1.5c0.3,0,0.6,0,0.8,0c2,0,2.2-0.1,2.2-2.2c0-3.7-0.1-7.6-0.2-11.3c0-1.7,0.4-2,2-2
