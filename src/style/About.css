@@ -89,7 +89,7 @@ grid-template-columns: 1fr 2px 1fr;
 
 .detailed-left-top {
   /* background-color: orange; */
-  height: 20%; /* set this to variable to decide spacing-height */
+  height: 23%; /* set this to variable to decide spacing-height */
 }
 
 .detailed-left-bottom {
@@ -115,7 +115,7 @@ grid-template-columns: 1fr 2px 1fr;
   border-left: 2px var(--primaryDark) dashed;
   position: absolute;
   /* height: 50%; */
-  top: 20%;
+  top: 23%;
   bottom: 20%;
 }
 

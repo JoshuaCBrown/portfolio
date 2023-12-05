@@ -19,7 +19,8 @@ import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
 
 import TransitAnim from "../../transit-routes/TransitAnim";
 
-import SkillsBlackRight from "./SkillsBlack.jsx";
+import SkillsRight from "./SkillsRight.jsx";
+import SkillsLeft from "./SkillsLeft.jsx";
 
 import AboutHome from "./AboutHome";
 
@@ -417,7 +418,9 @@ const About = ({ themeStyle }) => {
                   <div className="detailed-about-container">
                     <div className="detailed-about-left">
                       <div className="detailed-left-top"></div>
-                      <div className="detailed-left-bottom"></div>
+                      <div className="detailed-left-bottom">
+                        <SkillsLeft />
+                      </div>
                     </div>
                     <div className="detailed-about-middle">
                       <div className="detailed-spacer-top"></div>
@@ -426,7 +429,7 @@ const About = ({ themeStyle }) => {
                     </div>
                     <div className="detailed-about-right">
                       <div className="detailed-right-top">
-                        <SkillsBlackRight />
+                        <SkillsRight />
                       </div>
                       <div className="detailed-right-bottom"></div>
                     </div>
@@ -434,7 +437,7 @@ const About = ({ themeStyle }) => {
                   <div className="detailed-rightside-container">
                     <div className="icons-parent-container">
                       <div className="icon-container">
-                        <WoodworkingImg />
+                        <WoodworkingImg svgVariants={lightSvgVariants} />
                       </div>
                     </div>
                   </div>

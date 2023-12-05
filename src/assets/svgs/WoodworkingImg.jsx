@@ -2,6 +2,14 @@ import { motion } from "framer-motion";
 import "../../style/About.css";
 
 export default function WoodworkingImg({ svgVariants }) {
+
+  const newSvgVariants = {
+    ...svgVariants
+		// initial: { pathLength: 0 },
+    // animate: { pathLength: 1, transition: { repeat: Infinity, repeatType: "reverse", duration: 2 } },
+    // transition: { duration: 2 },
+	};
+
   return (
     <motion.svg
       version="1.1"
@@ -18,7 +26,7 @@ export default function WoodworkingImg({ svgVariants }) {
     >
       <g>
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -36,7 +44,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-1.8,0.2-3.6,0.2-5.3,0.7c-1.8,0.5-3.6,0.5-5.4,0.4"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -52,7 +60,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-0.4,0.2-0.8,0.3-1.2,0.5"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -72,7 +80,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c0,0.4,0.1,0.8,0.1,1.2"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -86,7 +94,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c0,42.4,0,84.9,0,127.3c0,1-0.1,2,0.3,2.9c0.2,0.6-0.1,0.9-0.3,1.3"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -103,7 +111,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-4.3-0.4-8.3-2.1-12.6-2.8c-0.1,0-0.2-0.2-0.4-0.3"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -118,7 +126,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c1,0.6,1.9,1.3,2.9,1.9c0.3,0.2,0.7,0.5,1.2,0.2"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -131,7 +139,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-5.4-1.4-10.7-2.8-16.1-4.2c-2-0.5-3.9-1.1-5.7-1.6c-2,0.3-2.3,1.5-2.3,3.2c0,72.4,0,144.8,0,217.2c0,0.5,0.1,1.1-0.2,1.6"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -143,7 +151,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c0,0.5,0.1,1.1-0.2,1.6"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -155,7 +163,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c0,39,0,78.1,0,117.1c0,42.1,0,84.2,0,126.2c0,0.5,0,0.9-0.2,1.3"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -168,7 +176,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c4.9,1.1,9.8,2.3,14.6,3.5c5.2,1.3,10.4,2.5,15.6,3.7c3.2,0.8,6.5,1.6,9.7,2.4c0.4,0.1,0.6,0.3,0.8,0.5"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -180,7 +188,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c0,24.7,0,49.4,0,74.2c0,27.8,0,55.5,0,83.3c0,0.4-0.1,0.9,0.1,1.3"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -193,7 +201,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c3.2-0.6,6.5-1.1,9.7-1.6c2.7-0.4,5.4-0.9,8-1.3c0.6-0.1,1-0.2,1.4-0.6"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -208,7 +216,7 @@ export default function WoodworkingImg({ svgVariants }) {
         "
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -221,7 +229,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-3.6,0.7-7.1,1.8-10.7,2.5c-4.3,0.8-8.6,2-12.8,3.1c-0.5,0.1-1.1,0.3-1.4,0.7"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -237,7 +245,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-2.4-0.2-4.8-0.5-7.2-0.8c-1.7-0.2-3.4-0.4-5-0.6c-2.3-0.3-4.6-0.5-7-0.7c-0.5-0.1-1-0.1-1.6-0.1c-0.5,0-0.8-0.1-1.1-0.5"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -251,7 +259,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-5.5,1.3-11,2.6-16.5,4c-4.9,1.2-9.8,2.3-14.7,3.4c-0.2,0.1-0.5-0.1-0.7-0.1"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -263,7 +271,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-0.1,8.3-0.1,16.6-0.1,25c0,5.2,0.1,10.5,0,15.7c-0.1,5.4,0,10.8-0.1,16.2c0,0.4,0.1,0.8-0.2,1.1"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -275,7 +283,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c0,11.8,0,23.7,0,35.5c0,0.4-0.1,0.9,0.1,1.3"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -287,7 +295,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-0.1,0-0.2,0-0.4,0"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
@@ -299,7 +307,7 @@ export default function WoodworkingImg({ svgVariants }) {
         c-3.4-0.4-6.9-0.7-10.3-1.2c-1-0.1-2.1-0.3-3.1-0.3"
         />
         <motion.path
-          variants={svgVariants}
+          variants={newSvgVariants}
           initial="initial"
           animate="animate"
           transition="transition"
