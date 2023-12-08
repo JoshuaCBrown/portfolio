@@ -14,14 +14,18 @@ import SkylineImgBg from "../../assets/svgs/SkylineImgBg.jsx";
 import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStatic.jsx";
 import SkylineImgBgReverse from "../../assets/svgs/SkylineImgBgReverse.jsx";
 import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
-import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
+
 import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
+
+import arrow from "../../assets/commonicons/arrow.png";
 
 import TransitAnim from "../../transit-routes/TransitAnim";
 
 import SkillsRight from "./SkillsRight.jsx";
 import SkillsLeft from "./SkillsLeft.jsx";
-
+import AboutCircles from "./AboutCircles.jsx";
+import ExperienceTop from "./ExperienceTop.jsx";
+import ExperienceBottom from "./ExperienceBottom.jsx";
 import AboutHome from "./AboutHome";
 
 import "../../style/About.css";
@@ -36,8 +40,68 @@ const About = ({ themeStyle }) => {
   const [skylineReady, setSkylineReady] = useState(false);
   const [bgSkylineReady, setBgSkylineReady] = useState(false);
   const [animateMe, setAnimateMe] = useState(false);
+  const [pageSelected, setPageSelected] = useState(0);
 
   const [scope, animate] = useAnimate();
+
+  const pageArr = [0, 1, 2, 3];
+
+  // [top, left, bottom, right]
+  const dimensionsArr = [
+    ["23%", 1, "20%", 1],
+    ["80%", 1, "10%", 1],
+    ["57%", 1, "43%", 0],
+    ["25%", 1, "25%", 1],
+  ];
+
+  const iconSpacing = [
+    '5%',
+    '80%',
+    '28%',
+    '30%',
+  ];
+
+  const iconPlace = () => {
+    const newIconSpacing = iconSpacing[pageSelected];
+    return {
+      height: newIconSpacing,
+    }
+  }
+  const aboutTopSpacing = () => {
+    const newHeightSpacing = dimensionsArr[pageSelected][0];
+
+    return {
+      height: newHeightSpacing,
+    };
+  };
+
+  const aboutBottomSpacing = () => {
+    const newHeightSpacing = dimensionsArr[pageSelected][2];
+    return {
+      height: newHeightSpacing,
+    };
+  };
+
+  const aboutLeftSpacing = () => {
+    const newWidthSpacing = dimensionsArr[pageSelected][1];
+    return { flex: newWidthSpacing };
+  };
+
+  const aboutRightSpacing = () => {
+    const newWidthSpacing = dimensionsArr[pageSelected][3];
+    return { flex: newWidthSpacing };
+  };
+
+  const abtNav = (whichWay) => {
+    if (pageSelected + whichWay === 4) {
+      setPageSelected(0);
+    } else if (pageSelected + whichWay === -1) {
+      setPageSelected(3);
+    } else {
+      const thisWay = pageSelected + whichWay;
+      setPageSelected(thisWay);
+    }
+  };
 
   useEffect(() => {
     setGoClicked(false);
@@ -196,17 +260,17 @@ const About = ({ themeStyle }) => {
 
   const showBox = () => {
     return displayShowBox
-      // ? { flex: 1, opacity: 1, transition: { duration: 0.25, delay: 0.25 } }
-      // : { flex: 0, opacity: 1, transition: { duration: 0.25, delay: 0 } };
-      ? { flex: 1, opacity: 1, transition: { duration: 2, delay: 2 } }
+      ? // ? { flex: 1, opacity: 1, transition: { duration: 0.25, delay: 0.25 } }
+        // : { flex: 0, opacity: 1, transition: { duration: 0.25, delay: 0 } };
+        { flex: 1, opacity: 1, transition: { duration: 2, delay: 2 } }
       : { flex: 0, opacity: 1, transition: { duration: 2, delay: 0 } };
   };
 
   const tellBox = () => {
     return displayShowBox
-      // ? { flex: 0, transition: { duration: 0.25, delay: 0 } }
-      // : { flex: 1, transition: { duration: 0.25, delay: 0.25 } };
-      ? { flex: 0, transition: { duration: 2, delay: 0 } }
+      ? // ? { flex: 0, transition: { duration: 0.25, delay: 0 } }
+        // : { flex: 1, transition: { duration: 0.25, delay: 0.25 } };
+        { flex: 0, transition: { duration: 2, delay: 0 } }
       : { flex: 1, transition: { duration: 2, delay: 2 } };
   };
 
@@ -217,81 +281,11 @@ const About = ({ themeStyle }) => {
           <div className="about-left-container" data-goOn={goClicked}>
             <div className="about-left-left"></div>
             <div className="about-left-middle" data-goOn={goClicked}>
-              <div className="about-circles-container" data-goOn={goClicked}>
-                <motion.div
-                  className="photo-container circle-group"
-                  id="circle-zero"
-                  layout
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                >
-                  <div className="photo-shaper">
-                    {goClicked ? (
-                      <div className="circle-text">Skills</div>
-                    ) : (
-                      <>
-                        <img src={phreshPhoto} className="fresh-foto" />
-                        <div className="photo-border-reveal"></div>
-                      </>
-                    )}
-                  </div>
-                  <div className="photo-container-dashes"></div>
-                </motion.div>
-
-                <motion.div
-                  className="circle-design circle-group"
-                  id="circle-one"
-                  layout
-                  data-animMe={animateMe}
-                  transition={
-                    goClicked
-                      ? {
-                          duration: 0.3,
-                          ease: "easeOut",
-                        }
-                      : {
-                          duration: 0.4,
-                          type: "spring",
-                          ease: [0, 0.5, 0.4, 0.95],
-                        }
-                  }
-                ></motion.div>
-                <motion.div
-                  className="circle-design circle-group"
-                  id="circle-two"
-                  layout
-                  data-animMe={animateMe}
-                  transition={
-                    goClicked
-                      ? {
-                          duration: 0.3,
-                          ease: "easeOut",
-                        }
-                      : {
-                          duration: 0.5,
-                          ease: [0, 0.5, 0.4, 0.95],
-                          type: "spring",
-                        }
-                  }
-                ></motion.div>
-                <motion.div
-                  className="circle-design circle-group"
-                  id="circle-three"
-                  layout
-                  data-animMe={animateMe}
-                  transition={
-                    goClicked
-                      ? {
-                          duration: 0.3,
-                          ease: "easeOut",
-                        }
-                      : {
-                          duration: 0.7,
-                          ease: [0, 0.5, 0.4, 0.95],
-                          type: "spring",
-                        }
-                  }
-                ></motion.div>
-              </div>
+              <AboutCircles
+                goClicked={goClicked}
+                animateMe={animateMe}
+                pageSelected={pageSelected}
+              />
             </div>
             <motion.div layout className="about-left-right">
               {goClicked ? (
@@ -416,29 +410,140 @@ const About = ({ themeStyle }) => {
               {goClicked && (
                 <>
                   <div className="detailed-about-container">
-                    <div className="detailed-about-left">
-                      <div className="detailed-left-top"></div>
-                      <div className="detailed-left-bottom">
-                        <SkillsLeft />
-                      </div>
+                    <div className="about-detailed-nav">
+                      <button
+                        className="left-abt-arrow"
+                        onClick={() => abtNav(-1)}
+                      >
+                        <img src={arrow} id="left-arrow-img" />
+                      </button>
+                      <button
+                        className="right-abt-arrow"
+                        onClick={() => abtNav(1)}
+                      >
+                        <img src={arrow} id="right-arrow-img" />
+                      </button>
                     </div>
+                    <motion.div
+                      className="detailed-about-left"
+                      initial={{ flex: 1 }}
+                      animate={aboutLeftSpacing}
+                    >
+                      <motion.div
+                        className="detailed-left-top"
+                        initial={{ height: "var(--aboutTopSpacer)" }}
+                        animate={aboutTopSpacing}
+                      >
+                        <AnimatePresence>
+                          {pageSelected === 2 && (
+                            <motion.div
+                              className="about-content-left"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <ExperienceTop />
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                      <motion.div
+                        className="detailed-left-middle"
+                        layout
+                        initial={{ flex: 1 }}
+                        animate={{ flex: 1 }}
+                      >
+                        <AnimatePresence>
+                          {pageSelected === 0 && (
+                            <motion.div
+                              className="about-content-left"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <SkillsLeft />
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                      <motion.div
+                        className="detailed-left-bottom"
+                        initial={{ height: "var(--aboutBottomSpacer)" }}
+                        animate={aboutBottomSpacing}
+                      >
+                        <AnimatePresence>
+                          {pageSelected === 2 && (
+                            <motion.div
+                              className="about-content-right"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <ExperienceBottom />
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                    </motion.div>
                     <div className="detailed-about-middle">
-                      <div className="detailed-spacer-top"></div>
+                      <motion.div
+                        className="detailed-spacer-top"
+                        initial={{ height: "var(--aboutTopSpacer)" }}
+                        animate={aboutTopSpacing}
+                      ></motion.div>
                       <div className="detailed-middle-border"></div>
-                      <div className="detailed-spacer-bottom"></div>
+                      <motion.div
+                        className="detailed-spacer-bottom"
+                        initial={{ height: "var(--aboutBottomSpacer)" }}
+                        animate={aboutBottomSpacing}
+                      ></motion.div>
                     </div>
-                    <div className="detailed-about-right">
-                      <div className="detailed-right-top">
-                        <SkillsRight />
+                    <motion.div
+                      className="detailed-about-right"
+                      initial={{ flex: 1 }}
+                      animate={aboutRightSpacing}
+                    >
+                      <motion.div
+                        className="detailed-right-top"
+                        initial={{ height: 'var(--aboutTopSpacer' }}
+                        animate={aboutTopSpacing}
+                      ></motion.div>
+                      <div className="detailed-right-middle">
+                        <AnimatePresence>
+                          {pageSelected === 0 && (
+                            <motion.div
+                              className="about-content-right"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <SkillsRight />
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                      <div className="detailed-right-bottom"></div>
-                    </div>
+                      <motion.div
+                        className="detailed-right-bottom"
+                        initial={{ height: 'var(--aboutBottomSpacer' }}
+                        animate={aboutBottomSpacing}
+                      ></motion.div>
+                    </motion.div>
                   </div>
                   <div className="detailed-rightside-container">
                     <div className="icons-parent-container">
+                      <div className="icon-spacer-top"></div>
                       <div className="icon-container">
                         <WoodworkingImg svgVariants={lightSvgVariants} />
                       </div>
+                      <motion.div className="icon-spacer-bottom"
+                      initial={{ height: '5%' }}
+                      animate={iconPlace}>
+
+                      </motion.div>
                     </div>
                   </div>
                 </>
@@ -450,7 +555,7 @@ const About = ({ themeStyle }) => {
               animate={{ flex: 0 }}
             ></motion.div>
           </div>
-          {/* <Skills />
+          {/* <Skills /> 
         <Education /> 
         {themeStyle ? (
           <>

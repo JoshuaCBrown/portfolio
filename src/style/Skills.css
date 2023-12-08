@@ -1,12 +1,18 @@
+:root {
+  --aboutTopSpacer: 23%;
+  --aboutBottomSpacer: 20%;
+}
+
 .skills-container {
   text-align: center;
   width: 100%;
   padding: 10px;
-  height: calc(80% - 12px);
+  height: 100%;
   box-sizing: border-box;
   color: var(--primaryBlack);
   /* color: green; */
   overflow: hidden;
+  /* background-color: green; */
 }
 
 #skills-right {

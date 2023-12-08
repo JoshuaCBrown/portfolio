@@ -1,0 +1,420 @@
+/* EXPERIENCE SECTION    */
+.experience-container {
+  display: grid;
+  direction: row;
+  text-align: center;
+  /* border: 3px orange solid; */
+}
+
+#experience-section-heading {
+}
+
+.timeline-container {
+  margin-top: 10px;
+  /* border: 2px green solid; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-right {
+  /* border-left: 2px var(--primaryBlack) dashed; */
+  align-items: start;
+}
+
+.timeline-left {
+  /* border-right: 2px var(--primaryBlack) dashed; */
+  align-items: end;
+}
+.timeline-right,
+.timeline-left {
+  height: 100%;
+  display: grid;
+  box-sizing: border-box;
+  justify-content: center;
+  /* border: 2px yellow solid; */
+}
+
+.timeline-left {
+  grid-template-columns: 1fr 10px;
+}
+
+.timeline-right {
+  grid-template-columns: 10px 1fr;
+}
+
+
+
+.color-coded-time {
+  height: 100%;
+  display: flex;
+  /* border: 2px blue dashed; */
+  width: 100%;
+}
+
+#color-code-left {
+  justify-content: flex-end;
+  position: relative;
+}
+
+#color-code-right {
+  justify-content: flex-start;
+  position: relative;
+}
+
+.time-color-left,
+.time-color-right {
+  width: 10px;
+  position: absolute;
+}
+/* 
+.time-color-right {
+
+} */
+
+#bdr-time {
+  height: 6%;
+  background-color: var(--primaryDark);
+}
+
+#musician-time {
+  height: 60%;
+  background-color: var(--primaryLight);
+  top: 6%;
+}
+
+#repair-time {
+  height: 21%;
+  background-color: var(--primaryDark);
+  top: 20%;
+}
+
+#workshopper-time {
+  height: 14%;
+  background-color: var(--primaryDark);
+  top: 48%;
+  width: 10px;
+  left: 0;
+}
+
+#writer-time {
+  height: 23%;
+  background-color: var(--primaryDark);
+  top: 64%;
+}
+
+#bartender-time {
+  height: 10%;
+  background-color: var(--primaryLight);
+  top: 79%;
+}
+
+#tutor-time {
+  height: 12.5%;
+  background-color: var(--primaryDark);
+  top: 87.5%;
+}
+
+.time-color-left::after {
+  content: "";
+  background-color: inherit;
+  height: 100%;
+  width: 100%;
+  right: -100%;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.time-color-right::after {
+  content: "";
+  background-color: inherit;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#workshopper-time::after {
+  display: none;
+}
+
+.jobs-left {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.jobs-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.job-left,
+.job-right {
+  /* border: 2px solid var(--primaryBlack); */
+  height: 15%;
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  /* border-radius: 20px; */
+}
+
+.jobs-right {
+  align-items: flex-end;
+}
+
+.job-left {
+  grid-template-columns: 90% 10%;
+}
+
+.job-right {
+  grid-template-columns: 10% 90%;
+}
+
+.job-description {
+  position: relative;
+  /* overflow: hidden; */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  color: var(--primaryDark);
+  background: linear-gradient(to left, transparent, var(--primaryLight));
+  /* background: radial-gradient(circle at 7px 20%, white 5px, var(--primaryLight) 20px, var(--primaryLight) 27px, white 27px, white 35px, var(--primaryLight) 38px, var(--primaryLight) 40px, white 40px); */
+  /* border-left: 20px var(--primaryLight) dashed; */
+  /* border-left: 10px var(--primaryDark) dashed;
+  border-top: 10px dashed var(--primaryDark);
+  border-right: 10px transparent solid;
+  border-left: 10px transparent solid; */
+  box-sizing: border-box;
+}
+
+.job-description h3 {
+  font-size: 1rem;
+}
+
+.job-description em {
+  font-size: .8rem;
+}
+
+.jd-bg-right {
+    /* background: radial-gradient(circle at 7px 20%, white 10px, var(--primaryLight) 30px, white 30px); */
+    border-radius: 100% 10% 100% 10%;
+    background: linear-gradient(to right, var(--primaryLight), transparent 125%);
+}
+
+.jd-bg-right-low {
+    /* background: radial-gradient(circle at 7px 80%, white 10px, var(--primaryLight) 30px, white 30px); */
+    /* border: 2px var(--primaryDark) dashed; */
+    border-radius: 100% 10% 100% 10%;
+    background: linear-gradient(to right, var(--primaryLight), transparent 125%);
+}
+
+.jd-bg-left {
+    /* background: radial-gradient(circle at calc(100% - 7px) 20%, white 10px, var(--primaryLight) 30px, white 30px); */
+    border-radius: 10% 100% 10% 100%;
+    /* border-left: 2px var(--primaryDark) dashed; */
+    /* border-top: 2px var(--primaryDark) dashed; */
+    background: linear-gradient(to left, var(--primaryLight), transparent 125%);
+}
+
+.jd-bg-left-low {
+    /* background: radial-gradient(circle at calc(100% - 7px) 80%, white 10px, var(--primaryLight) 30px, white 30px); */
+    /* border-radius: 50px 150px 50px 150px; */
+    border-radius: 10% 100% 10% 100%;
+    /* border-left: 2px var(--primaryDark) dashed;
+    border-top: 2px var(--primaryDark) dashed; */
+    /* background: linear-gradient(to right, transparent, var(--primaryLight)); */
+    background: linear-gradient(to left, var(--primaryLight), transparent 125%);
+    /* opacity: .2; */
+  }
+
+.job-highlights {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: inherit;
+}
+
+.job-highlights li {
+  font-size: .8rem;
+  list-style-type: disc;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+
+.job-highlights > ul {
+  list-style-type: disc;
+}
+/* .description-arrow-left {
+  display: grid;
+  height: 50%;
+  grid-template-rows: 1fr 1fr;
+} */
+
+/* .top-arrow-left {
+  background: radial-gradient(
+    circle at 100% 0%,
+    transparent 72%,
+    var(--primaryLightAccent) 72%
+  );
+}
+
+.bottom-arrow-left {
+  border-radius: 0 5px 0 0;
+  background: radial-gradient(
+    circle at 100% 100%,
+    transparent 72%,
+    var(--primaryLightAccent) 72%
+  );
+} */
+
+.description-arrow-right {
+  position: relative;
+  left: 0px;
+  top: 20%;
+  border-top: 2px black dashed;
+  /* width: calc(100% + 10px); */
+  width: 150%;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-sizing: content-box;
+}
+
+/* .description-arrow-right::after {
+  content: "";
+  top: -10px;
+  right: 0px;
+  position: absolute;
+  border-left: 2px black solid;
+  border-right: none;
+  background-color: transparent;
+  height: 20px;
+  width: 1px;
+
+  box-sizing: border-box;
+} */
+
+/* .description-arrow-right::before {
+  content: "";
+  top: -4px;
+  left: -3px;
+  position: absolute;
+  border: 3px black solid;
+  background-color: black;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  box-sizing: border-box;
+} */
+
+.description-arrow-left {
+  position: relative;
+  right: 50%;
+  top: 20%;
+  border-top: 2px black dashed;
+  /* width: calc(100% + 10px); */
+  width: 150%;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-sizing: content-box;
+}
+
+/* .description-arrow-left::before {
+  content: "";
+  top: -10px;
+  left: 0px;
+  position: absolute;
+  border-left: 2px black solid;
+  background-color: transparent;
+  height: 20px;
+  width: 1px;
+  
+  box-sizing: border-box;
+} */
+
+/* .description-arrow-left::after {
+  content: "";
+  top: -4px;
+  right: -3px;
+  position: absolute;
+  border: 3px black solid;
+  background-color: black;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  box-sizing: border-box;
+} */
+
+.low-arrow {
+  top: 80%;
+  width: 100%;
+  right: 0%;
+}
+/* #bdr-job {
+  background-color: var(--primaryLightAccent);
+}
+#musician-job {
+  background-color: var(--primaryLight);
+}
+#repair-job {
+  background-color: var(--primaryDark);
+}
+#workshopper-job {
+  background-color: var(--primaryLightAccent);
+}
+#writer-job {
+  background-color: var(--opt4v3);
+}
+#bartender-job {
+  background-color: var(--primaryDark);
+}
+#tutor-job {
+  background-color: var(--primaryLight);
+} */
+#tutor-job {
+  margin-left: 55%;
+}
+
+#bartender-job {
+  margin-right: 50%;
+}
+
+#writer-job {
+  margin-left: 40%;
+}
+
+#workshopper-job {
+  margin-right: 35%;
+}
+
+#repair-job {
+  margin-left: 25%;
+}
+
+#musician-job {
+  margin-right: 15%;
+}
+
+#bdr-job {
+  margin-left: 10%;
+}
