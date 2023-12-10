@@ -7,7 +7,7 @@ import NavImgs from "../home-components/NavImgs";
 import Portfolio from "../sections/portfolio/Portfolio";
 import Connect from "../sections/Connect";
 import Achievements from "../sections/about/Achievements";
-import Education from "../sections/about/Education";
+
 import Experience from "../sections/about/Experience";
 import Interests from "../sections/about/Interests";
 import Skills from "../sections/about/Skills";

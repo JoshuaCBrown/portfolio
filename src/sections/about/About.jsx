@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAnimate, motion, AnimatePresence } from "framer-motion";
 
-import Education from "./Education.jsx";
-import Experience from "./Experience.jsx";
-import Skills from "./Skills.jsx";
-import Achievements from "./Achievements.jsx";
-import Interests from "./Interests.jsx";
-
 import KeysImg from "../../assets/svgs/KeysImg.jsx";
 import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
@@ -26,6 +20,9 @@ import SkillsLeft from "./SkillsLeft.jsx";
 import AboutCircles from "./AboutCircles.jsx";
 import ExperienceTop from "./ExperienceTop.jsx";
 import ExperienceBottom from "./ExperienceBottom.jsx";
+import EducationLeft from "./EducationLeft.jsx";
+import EducationRight from "./EducationRight.jsx";
+import EducationCenter from "./EducationCenter.jsx";
 import AboutHome from "./AboutHome";
 
 import "../../style/About.css";
@@ -46,27 +43,22 @@ const About = ({ themeStyle }) => {
 
   const pageArr = [0, 1, 2, 3];
 
-  // [top, left, bottom, right]
+  // <--- key: [top, left div flex, bottom, right div flex, optional third flex-grow, optional third Top Spacer, Optional Third bottom spacer] --->
   const dimensionsArr = [
-    ["23%", 1, "20%", 1],
-    ["80%", 1, "10%", 1],
-    ["57%", 1, "43%", 0],
-    ["25%", 1, "25%", 1],
+    ["23%", 1, "20%", 1, 0, "80%", "20%"],
+    ["42%", 1, "15%", 2, 1, "30%", "15%"],
+    ["57%", 1, "43%", 0, 0, "57%", "43%"],
+    ["77%", 0, "23%", 2, 1, "25%", "23%"],
   ];
 
-  const iconSpacing = [
-    '5%',
-    '80%',
-    '28%',
-    '30%',
-  ];
+  const iconSpacing = ["5%", "55%", "28%", "60%"];
 
   const iconPlace = () => {
     const newIconSpacing = iconSpacing[pageSelected];
     return {
       height: newIconSpacing,
-    }
-  }
+    };
+  };
   const aboutTopSpacing = () => {
     const newHeightSpacing = dimensionsArr[pageSelected][0];
 
@@ -90,6 +82,21 @@ const About = ({ themeStyle }) => {
   const aboutRightSpacing = () => {
     const newWidthSpacing = dimensionsArr[pageSelected][3];
     return { flex: newWidthSpacing };
+  };
+
+  const optionalThirdOnOff = () => {
+    const newWidthSpacing = dimensionsArr[pageSelected][4];
+    return { flex: newWidthSpacing };
+  };
+
+  const optionalThirdTop = () => {
+    const newWidthSpacing = dimensionsArr[pageSelected][5];
+    return { height: newWidthSpacing };
+  };
+
+  const optionalThirdBot = () => {
+    const newWidthSpacing = dimensionsArr[pageSelected][6];
+    return { height: newWidthSpacing };
   };
 
   const abtNav = (whichWay) => {
@@ -260,18 +267,18 @@ const About = ({ themeStyle }) => {
 
   const showBox = () => {
     return displayShowBox
-      ? // ? { flex: 1, opacity: 1, transition: { duration: 0.25, delay: 0.25 } }
-        // : { flex: 0, opacity: 1, transition: { duration: 0.25, delay: 0 } };
-        { flex: 1, opacity: 1, transition: { duration: 2, delay: 2 } }
-      : { flex: 0, opacity: 1, transition: { duration: 2, delay: 0 } };
+      ? { flex: 1, opacity: 1, transition: { duration: 0.25, delay: 0.25 } }
+      : { flex: 0, opacity: 1, transition: { duration: 0.25, delay: 0 } };
+    //  ? { flex: 1, opacity: 1, transition: { duration: 2, delay: 2 } }
+    // : { flex: 0, opacity: 1, transition: { duration: 2, delay: 0 } };
   };
 
   const tellBox = () => {
     return displayShowBox
-      ? // ? { flex: 0, transition: { duration: 0.25, delay: 0 } }
-        // : { flex: 1, transition: { duration: 0.25, delay: 0.25 } };
-        { flex: 0, transition: { duration: 2, delay: 0 } }
-      : { flex: 1, transition: { duration: 2, delay: 2 } };
+      ? { flex: 0, transition: { duration: 0.25, delay: 0 } }
+      : { flex: 1, transition: { duration: 0.25, delay: 0.25 } };
+    // ?  { flex: 0, transition: { duration: 2, delay: 0 } }
+    // : { flex: 1, transition: { duration: 2, delay: 2 } };
   };
 
   return (
@@ -466,6 +473,17 @@ const About = ({ themeStyle }) => {
                               <SkillsLeft />
                             </motion.div>
                           )}
+                          {pageSelected === 1 && (
+                            <motion.div
+                              className="about-content-left"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <EducationLeft />
+                            </motion.div>
+                          )}
                         </AnimatePresence>
                       </motion.div>
                       <motion.div
@@ -476,7 +494,7 @@ const About = ({ themeStyle }) => {
                         <AnimatePresence>
                           {pageSelected === 2 && (
                             <motion.div
-                              className="about-content-right"
+                              className="about-content-left"
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               exit={{ opacity: 0 }}
@@ -508,7 +526,7 @@ const About = ({ themeStyle }) => {
                     >
                       <motion.div
                         className="detailed-right-top"
-                        initial={{ height: 'var(--aboutTopSpacer' }}
+                        initial={{ height: "var(--aboutTopSpacer" }}
                         animate={aboutTopSpacing}
                       ></motion.div>
                       <div className="detailed-right-middle">
@@ -524,26 +542,78 @@ const About = ({ themeStyle }) => {
                               <SkillsRight />
                             </motion.div>
                           )}
+                          {pageSelected === 1 && (
+                            <motion.div
+                              className="about-content-right"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <EducationCenter />
+                            </motion.div>
+                          )}
                         </AnimatePresence>
                       </div>
                       <motion.div
                         className="detailed-right-bottom"
-                        initial={{ height: 'var(--aboutBottomSpacer' }}
+                        initial={{ height: "var(--aboutBottomSpacer" }}
                         animate={aboutBottomSpacing}
                       ></motion.div>
                     </motion.div>
+                    <motion.div
+                      className="detailed-optional-third"
+                      initial={{ flex: 0 }}
+                      animate={optionalThirdOnOff}
+                    >
+                      <motion.div
+                        className="optional-third-top"
+                        initial={{ height: "var(--aboutTopSpacer)" }}
+                        animate={optionalThirdTop}
+                      ></motion.div>
+                      <div className="optional-third-middle-content">
+                        <AnimatePresence>
+                          {pageSelected === 1 && (
+                            <>
+                              <motion.div
+                                className="content-third-spacer"
+                                initial={{ height: "22%" }}
+                                animate={{ height: "22%" }}
+                                exit={{ height: "0%" }}
+                                transition={{ duration: 0.25 }}
+                              ></motion.div>
+                              <motion.div
+                                className="about-content-third"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.25 }}
+                              >
+                                <EducationRight />
+                              </motion.div>
+                            </>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                      <motion.div
+                        className="optional-third-bot"
+                        initial={{ height: "var(--aboutBottomSpacer)" }}
+                        animate={optionalThirdBot}
+                      ></motion.div>
+                    </motion.div>
                   </div>
+
                   <div className="detailed-rightside-container">
                     <div className="icons-parent-container">
                       <div className="icon-spacer-top"></div>
                       <div className="icon-container">
                         <WoodworkingImg svgVariants={lightSvgVariants} />
                       </div>
-                      <motion.div className="icon-spacer-bottom"
-                      initial={{ height: '5%' }}
-                      animate={iconPlace}>
-
-                      </motion.div>
+                      <motion.div
+                        className="icon-spacer-bottom"
+                        initial={{ height: "5%" }}
+                        animate={iconPlace}
+                      ></motion.div>
                     </div>
                   </div>
                 </>
@@ -577,64 +647,3 @@ const About = ({ themeStyle }) => {
 };
 
 export default About;
-
-{
-  /* <motion.div
-  layout
-  transition={{ duration: 2, delay: 2 }}
-  className="about-expansion-container"
->
-  <div className="about-expansion-middle">
-    <div className="about-expansion-upper-middle"></div>
-    <div className="about-expansion-lower-middle">
-      {aboutSection === "skills" && (
-                  <>
-                    <Skills />
-                  </>
-                )}
-                {aboutSection === "experience" && (
-                  <>
-                    <Experience />
-                  </>
-                )}
-                {aboutSection === "education" && (
-                  <>
-                    <Education />
-                  </>
-                )}
-                {aboutSection === "everything" && (
-                  <>
-                    <EverythingAboutMe />
-                  </>
-                )} 
-    </div>
-  </div>
-  <div className="about-expansion-right">
-    <div className="empty-space"></div>
-    <div className="about-expansion-upper-right">
-      {goClicked ? (
-        <>
-          <div className="emblem-outer-ww-container">
-            <div className="emblem-inner-ww-container">
-              <WoodworkingImg svgVariants={lightSvgVariants} />
-            </div>
-          </div>
-          <div className="emblem-outer-bench-container">
-                      <div className="emblem-inner-bench-container">
-                        <BenchyImg svgVariants={lightSvgVariants} />
-                      </div>
-                    </div>
-                    <div className="emblem-outer-keeys-container">
-                      <div className="emblem-inner-keeys-container">
-                        <KeysImg svgVariants={lightSvgVariants} />
-                      </div>
-                    </div> 
-        </>
-      ) : (
-        <></>
-      )}
-    </div>
-    <div></div>
-  </div>
-</motion.div>; */
-}

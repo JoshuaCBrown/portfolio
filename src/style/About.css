@@ -2,6 +2,8 @@
   --svgColor: var(--primaryDark);
   --svgStrokeW: 3px;
   --svgStrokeWTwo: 10px;
+  --aboutTopSpacer: 23%;
+  --aboutBottomSpacer: 20%;
 }
 
 .about-container {
@@ -153,13 +155,18 @@ overflow: hidden;
   /* background-color: purple; */
 }
 .about-content-left,
-.about-content-right {
+.about-content-right,
+.about-content-third {
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 .detailed-right-top {
   height: var(--aboutTopSpacer);
+}
+
+.about-content-third {
+  
 }
 
 .detailed-right-middle {
@@ -173,6 +180,43 @@ overflow: hidden;
   align-items: flex-end;
    /* set this to variable to decide spacing-height */
 }
+
+
+.detailed-optional-third {
+  /* background-color: red; */
+  height: 100%;
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.optional-third-top {
+  height: var(--aboutTopSpacer);
+}
+
+
+.optional-third-middle-content {
+  /* background-color: green; */
+  flex: 1;
+  border-left: 2px var(--primaryDark) dashed;
+  border-top: 2px var(--primaryDark) dashed;
+  box-sizing: border-box;
+}
+
+.optional-third-bot {
+  
+  height: var(--aboutBottomSpacer);
+}
+
+.content-third-spacer {
+  height: 22%;
+}
+
+
 
 .detailed-right-bottom {
   /* background-color: purple; */

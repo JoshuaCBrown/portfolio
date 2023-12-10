@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import Education from "./Education.jsx";
+import Education from "./EducationCenter.jsx";
 import Experience from "./Experience.jsx";
 import Skills from "./Skills.jsx";
 import Achievements from "./Achievements.jsx";

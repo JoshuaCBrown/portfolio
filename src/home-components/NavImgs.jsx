@@ -31,6 +31,9 @@ function NavImgs({ themeStyle, animVariant }) {
       >
         <div className="home-nav" id="comp-nav">
           <div className="home-third">
+            <div className="svg-container" id="svg-comp-bg">
+              <CompImg svgVariants={lightSvgVariants} />
+            </div>
             {themeStyle ? (
               <div className="svg-container" id="svg-comp-bg">
                 <CompImg svgVariants={darkSvgVariants} />
