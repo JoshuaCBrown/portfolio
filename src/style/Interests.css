@@ -1,0 +1,93 @@
+.interests-spacey-spacer {
+  flex: 0.33;
+}
+
+.interests-parent-container {
+  flex: 0.68;
+  overflow: hidden;
+  color: black;
+  box-sizing: border-box;
+  /* font-size: 0.5rem; */
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: start;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: .2fr 1fr 1fr;
+  grid-template-areas: "intTitle intTitle"
+  "intHobbies intFilmTv"
+  "intMusic intInspoArt";
+}
+
+.my-story-container {
+  /* background-color: green; */
+  
+  flex: 1;
+  /* flex: 0; */
+  display: grid;
+  /* grid-template-rows: .1fr .9fr; */
+  justify-items: center;
+  align-items: start;
+  overflow: hidden;
+  /* min-height: 0;
+  min-width: 0; */
+  position: absolute;
+}
+
+.interests-title,
+.my-story-title {
+  font-size: 1.3rem;
+  letter-spacing: 7px;
+  font-weight: normal;
+
+}
+
+.interests-title {
+  grid-area: intTitle;
+}
+
+.interests-subtitle {
+  font-size: 1rem;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.interests-list,
+.my-story-story {
+  font-size: .85rem;
+  padding: 5px;
+
+}
+
+.my-story-story {
+  padding-top: 0;
+  text-align: left;
+  overflow: hidden;
+}
+
+
+
+#hobbies-container {
+  grid-area: intHobbies;
+}
+
+#film-container {
+  grid-area: intFilmTv;
+}
+
+#art-container {
+  grid-area: intInspoArt;
+}
+#music-container {
+  grid-area: intMusic;
+}
+
+.interests-list {
+  list-style: none;
+}
+
+
+

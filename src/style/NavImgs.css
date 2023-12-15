@@ -26,8 +26,10 @@
 
   #light #svg-comp-front > svg,
   #light #svg-manny-front > svg {
-  --svgBgLight: var(--primaryLight);
-  --svgBgAccent: var(--primaryLightAccent);
+  /* --svgBgLight: var(--primaryLight); */
+  --svgBgLight: transparent;
+  /* --svgBgAccent: var(--primaryLightAccent); */
+  --svgBgAccent: transparent;
   --compColor: var(--primaryDark);
   --mannyColor: var(--primaryDark);
   filter: none;
@@ -66,6 +68,32 @@
   opacity: 0.5;
   /* border: red solid 2px; */
 }
+
+#svg-comp-bg-light > svg,
+#svg-manny-bg-light > svg {
+  --svgBgLight: var(--primaryShade);
+  --svgBgAccent: var(--primaryShade);
+  --compStrokeW: 10px;
+  --compColor: var(--primaryLight);
+  --mannyStrokeW: 10px;
+  --mannyColor: var(--primaryLightAccent);
+  filter: blur(1px);
+  /* opacity: 0.5; */
+  /* border: red solid 2px; */
+}
+
+#svg-comp-bg-light > svg {
+  position: relative;
+  left: -5px;
+  top: -4px;
+}
+
+#svg-manny-bg-light > svg {
+  position: relative;
+  right: -4px;
+  top: -3px;
+}
+
 .home-nav {
   position: relative;
   display: flex;

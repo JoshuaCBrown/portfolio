@@ -31,7 +31,7 @@ function NavImgs({ themeStyle, animVariant }) {
       >
         <div className="home-nav" id="comp-nav">
           <div className="home-third">
-            <div className="svg-container" id="svg-comp-bg">
+            <div className="svg-container" id="svg-comp-bg-light">
               <CompImg svgVariants={lightSvgVariants} />
             </div>
             {themeStyle ? (
@@ -91,6 +91,9 @@ function NavImgs({ themeStyle, animVariant }) {
         </motion.div>
         <div className="home-nav" id="manny-nav">
           <div className="home-third">
+          <div className="svg-container" id="svg-manny-bg-light">
+              <MannyImg svgVariants={lightSvgVariants} />
+            </div>
             {themeStyle ? (
               <div className="svg-container" id="svg-manny-bg">
                 <MannyImg svgVariants={darkSvgVariants} />

@@ -11,7 +11,7 @@ import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
 
 import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
 
-import arrow from "../../assets/commonicons/arrow.png";
+
 
 import TransitAnim from "../../transit-routes/TransitAnim";
 
@@ -23,7 +23,10 @@ import ExperienceBottom from "./ExperienceBottom.jsx";
 import EducationLeft from "./EducationLeft.jsx";
 import EducationRight from "./EducationRight.jsx";
 import EducationCenter from "./EducationCenter.jsx";
-import AboutHome from "./AboutHome";
+import Interests from "./Interests.jsx";
+import AboutNav from "./AboutNav.jsx";
+import Achievements from "./Achievements.jsx";
+import MyStory from "./MyStory.jsx";
 
 import "../../style/About.css";
 
@@ -45,10 +48,10 @@ const About = ({ themeStyle }) => {
 
   // <--- key: [top, left div flex, bottom, right div flex, optional third flex-grow, optional third Top Spacer, Optional Third bottom spacer] --->
   const dimensionsArr = [
-    ["23%", 1, "20%", 1, 0, "80%", "20%"],
-    ["42%", 1, "15%", 2, 1, "30%", "15%"],
-    ["57%", 1, "43%", 0, 0, "57%", "43%"],
-    ["77%", 0, "23%", 2, 1, "25%", "23%"],
+    ["23%", 1, "20%", 1, 0, 0, 0, 0],
+    ["42%", 1, "15%", 2, 1, 0.3, 0.15, 0.55],
+    ["57%", 1, "43%", 0, 0, 0, 0, 0],
+    ["77%", 0, "23%", 1, 0.5, 0.25, 0.23, 0.53],
   ];
 
   const iconSpacing = ["5%", "55%", "28%", "60%"];
@@ -76,38 +79,44 @@ const About = ({ themeStyle }) => {
 
   const aboutLeftSpacing = () => {
     const newWidthSpacing = dimensionsArr[pageSelected][1];
-    return { flex: newWidthSpacing };
+    return {
+      flex: newWidthSpacing,
+    };
   };
 
   const aboutRightSpacing = () => {
     const newWidthSpacing = dimensionsArr[pageSelected][3];
-    return { flex: newWidthSpacing };
+    return {
+      flex: newWidthSpacing,
+    };
   };
 
   const optionalThirdOnOff = () => {
     const newWidthSpacing = dimensionsArr[pageSelected][4];
-    return { flex: newWidthSpacing };
+    return {
+      flex: newWidthSpacing,
+    };
   };
 
   const optionalThirdTop = () => {
     const newWidthSpacing = dimensionsArr[pageSelected][5];
-    return { height: newWidthSpacing };
+    return {
+      flex: newWidthSpacing,
+    };
   };
 
   const optionalThirdBot = () => {
     const newWidthSpacing = dimensionsArr[pageSelected][6];
-    return { height: newWidthSpacing };
+    return {
+      flex: newWidthSpacing,
+    };
   };
 
-  const abtNav = (whichWay) => {
-    if (pageSelected + whichWay === 4) {
-      setPageSelected(0);
-    } else if (pageSelected + whichWay === -1) {
-      setPageSelected(3);
-    } else {
-      const thisWay = pageSelected + whichWay;
-      setPageSelected(thisWay);
-    }
+  const optionalThirdMid = () => {
+    const newWidthSpacing = dimensionsArr[pageSelected][7];
+    return {
+      flex: newWidthSpacing,
+    };
   };
 
   useEffect(() => {
@@ -322,7 +331,7 @@ const About = ({ themeStyle }) => {
             </motion.div>
           </div>
           <div className="flex-show-n-tell">
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               {!goClicked && (
                 <motion.div
                   className="flex-show"
@@ -413,35 +422,30 @@ const About = ({ themeStyle }) => {
                 </motion.div>
               )}
             </AnimatePresence>
-            <motion.div className="flex-tell" layout animate={tellBox}>
+            <motion.div
+              className="flex-tell"
+              layout
+              animate={tellBox}
+              transition={{ duration: 0.25 }}
+            >
               {goClicked && (
                 <>
-                  <div className="detailed-about-container">
-                    <div className="about-detailed-nav">
-                      <button
-                        className="left-abt-arrow"
-                        onClick={() => abtNav(-1)}
-                      >
-                        <img src={arrow} id="left-arrow-img" />
-                      </button>
-                      <button
-                        className="right-abt-arrow"
-                        onClick={() => abtNav(1)}
-                      >
-                        <img src={arrow} id="right-arrow-img" />
-                      </button>
-                    </div>
-                    <motion.div
-                      className="detailed-about-left"
-                      initial={{ flex: 1 }}
-                      animate={aboutLeftSpacing}
-                    >
+                  <AnimatePresence mode="wait">
+                    <div className="detailed-about-container">
+                      <AboutNav pageSelected={pageSelected} setPageSelected={setPageSelected} />
+
                       <motion.div
-                        className="detailed-left-top"
-                        initial={{ height: "var(--aboutTopSpacer)" }}
-                        animate={aboutTopSpacing}
+                        className="detailed-about-left"
+                        initial={{ flex: 1 }}
+                        animate={aboutLeftSpacing}
+                        transition={{ duration: 0.25 }}
                       >
-                        <AnimatePresence>
+                        <motion.div
+                          className="detailed-left-top"
+                          initial={{ height: "var(--aboutTopSpacer)" }}
+                          animate={aboutTopSpacing}
+                          transition={{ duration: 0.25 }}
+                        >
                           {pageSelected === 2 && (
                             <motion.div
                               className="about-content-left"
@@ -453,15 +457,14 @@ const About = ({ themeStyle }) => {
                               <ExperienceTop />
                             </motion.div>
                           )}
-                        </AnimatePresence>
-                      </motion.div>
-                      <motion.div
-                        className="detailed-left-middle"
-                        layout
-                        initial={{ flex: 1 }}
-                        animate={{ flex: 1 }}
-                      >
-                        <AnimatePresence>
+                        </motion.div>
+                        <motion.div
+                          className="detailed-left-middle"
+                          layout
+                          initial={{ flex: 1 }}
+                          animate={{ flex: 1 }}
+                          transition={{ duration: 0.25 }}
+                        >
                           {pageSelected === 0 && (
                             <motion.div
                               className="about-content-left"
@@ -484,14 +487,13 @@ const About = ({ themeStyle }) => {
                               <EducationLeft />
                             </motion.div>
                           )}
-                        </AnimatePresence>
-                      </motion.div>
-                      <motion.div
-                        className="detailed-left-bottom"
-                        initial={{ height: "var(--aboutBottomSpacer)" }}
-                        animate={aboutBottomSpacing}
-                      >
-                        <AnimatePresence>
+                        </motion.div>
+                        <motion.div
+                          className="detailed-left-bottom"
+                          initial={{ height: "var(--aboutBottomSpacer)" }}
+                          animate={aboutBottomSpacing}
+                          transition={{ duration: 0.25 }}
+                        >
                           {pageSelected === 2 && (
                             <motion.div
                               className="about-content-left"
@@ -503,34 +505,46 @@ const About = ({ themeStyle }) => {
                               <ExperienceBottom />
                             </motion.div>
                           )}
-                        </AnimatePresence>
+                        </motion.div>
                       </motion.div>
-                    </motion.div>
-                    <div className="detailed-about-middle">
+                      <div className="detailed-about-middle">
+                        <motion.div
+                          className="detailed-spacer-top"
+                          initial={{ height: "var(--aboutTopSpacer)" }}
+                          animate={aboutTopSpacing}
+                        ></motion.div>
+                        <div className="detailed-middle-border"></div>
+                        <motion.div
+                          className="detailed-spacer-bottom"
+                          initial={{ height: "var(--aboutBottomSpacer)" }}
+                          animate={aboutBottomSpacing}
+                        ></motion.div>
+                      </div>
                       <motion.div
-                        className="detailed-spacer-top"
-                        initial={{ height: "var(--aboutTopSpacer)" }}
-                        animate={aboutTopSpacing}
-                      ></motion.div>
-                      <div className="detailed-middle-border"></div>
-                      <motion.div
-                        className="detailed-spacer-bottom"
-                        initial={{ height: "var(--aboutBottomSpacer)" }}
-                        animate={aboutBottomSpacing}
-                      ></motion.div>
-                    </div>
-                    <motion.div
-                      className="detailed-about-right"
-                      initial={{ flex: 1 }}
-                      animate={aboutRightSpacing}
-                    >
-                      <motion.div
-                        className="detailed-right-top"
-                        initial={{ height: "var(--aboutTopSpacer" }}
-                        animate={aboutTopSpacing}
-                      ></motion.div>
-                      <div className="detailed-right-middle">
-                        <AnimatePresence>
+                        className="detailed-about-right"
+                        initial={{ flex: 1 }}
+                        animate={aboutRightSpacing}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <motion.div
+                          className="detailed-right-top"
+                          initial={{ height: "var(--aboutTopSpacer" }}
+                          animate={aboutTopSpacing}
+                          transition={{ duration: 0.25 }}
+                        >
+                          {pageSelected === 3 && (
+                            <motion.div
+                              className="about-content-right-top"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.25 }}
+                            >
+                              <Interests />
+                            </motion.div>
+                          )}
+                        </motion.div>
+                        <div className="detailed-right-middle">
                           {pageSelected === 0 && (
                             <motion.div
                               className="about-content-right"
@@ -553,26 +567,32 @@ const About = ({ themeStyle }) => {
                               <EducationCenter />
                             </motion.div>
                           )}
-                        </AnimatePresence>
-                      </div>
+                        </div>
+                        <motion.div
+                          className="detailed-right-bottom"
+                          initial={{ height: "var(--aboutBottomSpacer" }}
+                          animate={aboutBottomSpacing}
+                          transition={{ duration: 0.25 }}
+                        ></motion.div>
+                      </motion.div>
                       <motion.div
-                        className="detailed-right-bottom"
-                        initial={{ height: "var(--aboutBottomSpacer" }}
-                        animate={aboutBottomSpacing}
-                      ></motion.div>
-                    </motion.div>
-                    <motion.div
-                      className="detailed-optional-third"
-                      initial={{ flex: 0 }}
-                      animate={optionalThirdOnOff}
-                    >
-                      <motion.div
-                        className="optional-third-top"
-                        initial={{ height: "var(--aboutTopSpacer)" }}
-                        animate={optionalThirdTop}
-                      ></motion.div>
-                      <div className="optional-third-middle-content">
-                        <AnimatePresence>
+                        className="detailed-optional-third"
+                        initial={{ flex: 0 }}
+                        animate={optionalThirdOnOff}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <motion.div
+                          className="optional-third-top"
+                          initial={{ flex: 0 }}
+                          animate={optionalThirdTop}
+                          transition={{ duration: 0.25 }}
+                        ></motion.div>
+                        <motion.div
+                          className="optional-third-middle-content"
+                          initial={{ flex: 0 }}
+                          animate={optionalThirdMid}
+                          transition={{ duration: 0.25 }}
+                        >
                           {pageSelected === 1 && (
                             <>
                               <motion.div
@@ -584,25 +604,42 @@ const About = ({ themeStyle }) => {
                               ></motion.div>
                               <motion.div
                                 className="about-content-third"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
+                                initial={{ opacity: 0, flex: 0 }}
+                                animate={{ opacity: 1, flex: 1 }}
+                                exit={{ opacity: 0, flex: 0 }}
                                 transition={{ duration: 0.25 }}
                               >
                                 <EducationRight />
                               </motion.div>
                             </>
                           )}
-                        </AnimatePresence>
-                      </div>
-                      <motion.div
-                        className="optional-third-bot"
-                        initial={{ height: "var(--aboutBottomSpacer)" }}
-                        animate={optionalThirdBot}
-                      ></motion.div>
-                    </motion.div>
-                  </div>
-
+                          {pageSelected === 3 && (
+                            <>
+                              <motion.div
+                                className="about-content-third"
+                                initial={{ opacity: 0, flex: 1 }}
+                                animate={{
+                                  opacity: 1,
+                                  flex: 1,
+                                  transition: { duration: 0.25 },
+                                }}
+                                exit={{ opacity: 0, flex: 0 }}
+                                transition={{ duration: 0.25 }}
+                              >
+                                <MyStory />
+                              </motion.div>
+                            </>
+                          )}
+                        </motion.div>
+                        <motion.div
+                          className="optional-third-bot"
+                          initial={{ flex: 0 }}
+                          animate={optionalThirdBot}
+                          transition={{ duration: 0.25 }}
+                        ></motion.div>
+                      </motion.div>
+                    </div>
+                  </AnimatePresence>
                   <div className="detailed-rightside-container">
                     <div className="icons-parent-container">
                       <div className="icon-spacer-top"></div>
@@ -613,6 +650,7 @@ const About = ({ themeStyle }) => {
                         className="icon-spacer-bottom"
                         initial={{ height: "5%" }}
                         animate={iconPlace}
+                        transition={{ duration: 0.25 }}
                       ></motion.div>
                     </div>
                   </div>
@@ -623,23 +661,9 @@ const About = ({ themeStyle }) => {
               className="flex-cape"
               layout
               animate={{ flex: 0 }}
+              transition={{ duration: 0.25 }}
             ></motion.div>
           </div>
-          {/* <Skills /> 
-        <Education /> 
-        {themeStyle ? (
-          <>
-            <BenchyImg svgVariants={darkSvgVariants} />{" "}
-            <SkylineImg svgVariants={darkSvgVariants} />
-          </>
-        ) : (
-          <div style={{display: 'flex', width: '500px'}}>
-            <KeysImg svgVariants={lightSvgVariants} />
-            <WoodworkingImg svgVariants={lightSvgVariants} />
-            <BenchyImg svgVariants={lightSvgVariants} />
-            <SkylineImg svgVariants={lightSvgVariants} />
-          </div>
-        )} */}
         </div>
       </TransitAnim>
     </>

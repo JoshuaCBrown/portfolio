@@ -3,6 +3,20 @@
   /* background-color: green; */
   margin: 0;
   overflow: hidden;
+  flex: 1;
+  
+  /* position: absolute; */
+  /* overflow: auto; */
+}
+
+.education-container-web {
+  max-height: 100%;
+  /* background-color: green; */
+  margin: 0;
+  overflow: hidden;
+  flex: 1;
+  height: 100%;
+  position: absolute;
   /* overflow: auto; */
 }
 
@@ -29,9 +43,10 @@ h3, h4, h5 {
 }
 
 h3.education-heading {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: 7px;
   margin: 10px;
+  font-weight:  10000;
   /* background-color: black; */
   /* width: 100%; */
 }
