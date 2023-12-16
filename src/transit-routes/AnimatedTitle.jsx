@@ -61,7 +61,7 @@ function AnimatedTitle({ themeStyle, loadedStatus }) {
             path="/"
             element={
               <TitleReflector
-                category="JoshbrownDESIGN"
+                category="JoshDOTdev"
                 themeStyle={themeStyle}
                 lightVariants={loadedStatus ? groundLoadedAnim : groundInitAnim}
                 titleVariants={loadedStatus ? titleLoadedAnim : titleInitAnim}

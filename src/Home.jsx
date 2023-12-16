@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoadedStatus(true);
-      console.log("initial page oad off");
+      console.log("initial page load off");
     }, 3000);
     return () => {
       clearTimeout(timeoutId);

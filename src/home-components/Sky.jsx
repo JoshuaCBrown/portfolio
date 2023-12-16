@@ -29,7 +29,7 @@ function Sky({ themeStyle, toggleTheme, loadedStatus }) {
   return (
     <>
       {/* <NavHeader /> */}
-      <div
+      {/* <div
         className="toggle-container"
         data-themeStyle={themeStyle}
         onClick={toggleTheme}
@@ -39,7 +39,7 @@ function Sky({ themeStyle, toggleTheme, loadedStatus }) {
           layout
           transition={{ type: "tween", duration: 2 }}
         ></motion.div>
-      </div>
+      </div> */}
 
       <motion.div
         className="sky"

@@ -1,5 +1,5 @@
 .ground {
-  /* position: relative; */
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -21,75 +21,80 @@
 
 .heading-container {
   position: absolute;
-  /* border: 2px pink solid; */
-  top: -3.5rem;
+  /* flex: 1; */
+  /* top: -3.5rem; */
+  /* transform: translate(0%, 40%); */
+  /* transform: translate(-50%, -50%); */
   display: grid;
   grid-template-areas: "place";
+  /* background-color: orange; */
+  align-items: end;
+}
+
+
+
+div.reflection-container {
+  grid-area: place;
+  display: grid;
+  /* position: absolute; */
+  /* align-items: end; */
+  /* height: 5rem; */
+  position: relative;
+  bottom: clamp(1rem, 5vw, 3.5rem);
+  transform-origin: bottom;
+  filter: blur(1px);
 }
 
 div.title-container,
 div.title-texture-container {
   grid-area: place;
   z-index: 10;
-  /* height:  */
-  /* box-sizing: content-box; */
-  /* border: 2px black solid; */
-  /* background: gray; */
-}
-
-div.reflection-container {
-  grid-area: place;
-  display: grid;
-  height: 5rem;
-  /* background-color: red; */
-  /* transform: scaleY(1.5); */
-  transform-origin: bottom;
-  /* border: red solid 2px; */
-  /* transform: perspective(100px) rotateX(20deg) scaleY(1.5) translateY(-3px); */
-  /* transform-origin: top; */
-  filter: blur(1px);
-
-  /* overflow: hidden; */
+  /* position: relative; */
+  /* background-color: green; */
 }
 
 h1.title-text,
 h1.reflection-text,
 h1.reflection-text-highlight,
 h1.title-texture {
-  font-size: 7rem;
+  font-size: clamp(3rem, 11vw, 7rem);
   margin: 0;
-  /* margin: 5px 0; */
   padding: 0;
   font-weight: 100;
-  line-height: 5rem;
-  /* text-shadow: 2px 40px 0px pink; */
+  line-height: clamp(2rem, 8vw, 5rem);
+  /* bottom: clamp(1rem, 5vw, 3.5rem); */
+  /* position: relative; */
+  /* background-color: red; */
+}
+/* 
+h1.title-text {
+  font-size: 
+} */
+
+h1.title-text {
+  position: relative;
+  bottom: clamp(1rem, 5vw, 3.5rem);
 }
 
 #light h1.title-text {
-  /* color: transparent; */
-  /* color: rgb(53, 53, 53, .5); */
   text-shadow: none;
   color: black;
-  /* color: transparent; */
-  /* -webkit-text-stroke: 4px transparent; */
 }
 
 #light div.title-texture-container {
   background-image: url("../assets/transtextures/white-leather.png");
-
-  /* background-size: 5%; */
-  /* background: red; */
-  /* background-size: 5%; */
-  /* background-position-y: 5px; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* background-color: black; */
   opacity: .7;
+  height: 100%;
+  position: absolute;
+  bottom: clamp(1rem, 5vw, 3.5rem);
+  /* z-index: 22; */
 }
 
 #light h1.title-texture {
- 
   color: transparent;
-  /* filter: invert(100); */
   opacity: 1;
 }
 
@@ -112,8 +117,10 @@ h1.title-texture {
 #light h1.reflection-text {
   /* display: none; */
   color: rgba(128, 128, 128, 0.274);
-  font-size: 7rem;
+  /* font-size: 7rem; */
   line-height: 5rem;
+  line-height: clamp(2rem, 8vw, 5rem);
+  
   transform: rotateY(180deg) rotateZ(180deg);
   transform-origin: bottom;
   /* background: radial-gradient(white 10%, grey);
@@ -124,7 +131,7 @@ h1.title-texture {
 #dark h1.reflection-text {
   position: absolute;
   color: rgba(128, 128, 128, 0.774);
-  font-size: 7rem;
+  /* font-size: 7rem; */
   line-height: 5.6rem;
   transform: rotateY(180deg) rotateZ(180deg);
   transform-origin: bottom;

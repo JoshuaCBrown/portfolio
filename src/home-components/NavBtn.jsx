@@ -10,7 +10,7 @@ function NavBtn({ cardClass, cardId, cardFront, cardLink }) {
 
   return (
     <>
-      <div>
+      <div id={`${cardId}-div`} className="nav-btn-div">
         <Link to={cardLink}>
           <motion.div
             // initial={{ y: -1000 }}

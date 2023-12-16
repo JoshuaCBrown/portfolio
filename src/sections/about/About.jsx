@@ -11,8 +11,6 @@ import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
 
 import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
 
-
-
 import TransitAnim from "../../transit-routes/TransitAnim";
 
 import SkillsRight from "./SkillsRight.jsx";
@@ -432,7 +430,10 @@ const About = ({ themeStyle }) => {
                 <>
                   <AnimatePresence mode="wait">
                     <div className="detailed-about-container">
-                      <AboutNav pageSelected={pageSelected} setPageSelected={setPageSelected} />
+                      <AboutNav
+                        pageSelected={pageSelected}
+                        setPageSelected={setPageSelected}
+                      />
 
                       <motion.div
                         className="detailed-about-left"
