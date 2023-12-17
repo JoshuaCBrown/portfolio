@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import "../../style/About.css";
 
-export default function SkylineImgBgStatic ({ svgVariants }) {
+export default function SkylineImgBgStatic ({ svgVariants, classSetter }) {
   return (
     <svg
       version="1.1"
@@ -11,10 +11,10 @@ export default function SkylineImgBgStatic ({ svgVariants }) {
       x="0px"
       y="0px"
       viewBox="0 0 500 500"
-      enable-background="new 0 0 500 500"
-      xml:space="preserve"
+      enableBackground="new 0 0 500 500"
+      xmlSpace="preserve"
 			key="skyLinesvg-bg"
-      className="skyline-svg-bg"
+      className={classSetter}
     >
       <g>
         <path

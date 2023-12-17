@@ -1200,6 +1200,8 @@ p {
   max-height: 100%;
 } */
 
+
+
 @media (width < 1200px) {
   .about-container {
     grid-template-columns: 1fr 2fr;
@@ -1209,7 +1211,13 @@ p {
   }
 }
 
-@media (width < 1080px) {
+@media (width < 1000px) {
+  .about-container {
+    display: none;
+  }
+
+}
+/* @media (width < 1080px) {
   .about-container {
     grid-template-columns: 1fr;
     grid-template-areas: "meStuff"
@@ -1220,11 +1228,9 @@ p {
   }
   .tilted-container-dash {
     opacity: 0;
-    /* max-height: 100%; */
-    /* transform: translateY(500px); */
   }
   .about-left-right-bottom-top-dashes {
     max-width: 0;
     max-height: 50%;
   }
-}
+} */

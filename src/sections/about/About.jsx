@@ -25,7 +25,8 @@ import Interests from "./Interests.jsx";
 import AboutNav from "./AboutNav.jsx";
 import Achievements from "./Achievements.jsx";
 import MyStory from "./MyStory.jsx";
-
+import AboutSmall from "./AboutSmall.jsx";
+// import MiniAbout from "./MiniAbout.jsx";
 import "../../style/About.css";
 
 const About = ({ themeStyle }) => {
@@ -381,10 +382,10 @@ const About = ({ themeStyle }) => {
                       <div className="about-right-middle-middle">
                         <motion.div layout className="skyline-svg-container">
                           {skylineReady && (
-                            <SkylineImg svgVariants={lightSvgVariants} />
+                            <SkylineImg svgVariants={lightSvgVariants} classSetter="skyline-svg" />
                           )}
                           {bgSkylineReady && (
-                            <SkylineImgBgStatic
+                            <SkylineImgBgStatic classSetter="skyline-svg-bg"
                               svgVariants={lightSvgVariants}
                             />
                           )}
@@ -666,6 +667,8 @@ const About = ({ themeStyle }) => {
             ></motion.div>
           </div>
         </div>
+        <AboutSmall svgVariants={lightSvgVariants} />
+        {/* <MiniAbout svgVariants={lightSvgVariants} /> */}
       </TransitAnim>
     </>
   );

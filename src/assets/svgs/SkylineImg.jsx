@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import "../../style/About.css";
 
-export default function SkylineImg({ svgVariants }) {
+export default function SkylineImg({ svgVariants, classSetter }) {
   
 	const newSvgVariants = {
 		...svgVariants,
 		animate: {...svgVariants.animate, transition: { duration: 1.4, ease: "easeOut" }},
 	};
-	
+
+
 	return (
     <motion.svg
       version="1.1"
@@ -17,10 +18,11 @@ export default function SkylineImg({ svgVariants }) {
       x="0px"
       y="0px"
       viewBox="0 0 500 500"
-      enable-background="new 0 0 500 500"
-      xml:space="preserve"
+      enableBackground="new 0 0 500 500"
+      xmlSpace="preserve"
 			key="skyLinesvg"
-      className="skyline-svg"
+      className={classSetter}
+			
     >
       <g>
         <motion.path
