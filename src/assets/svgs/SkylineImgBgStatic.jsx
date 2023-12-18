@@ -10,7 +10,7 @@ export default function SkylineImgBgStatic ({ svgVariants, classSetter }) {
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      viewBox="0 0 500 500"
+      viewBox="0 300 500 200"
       enableBackground="new 0 0 500 500"
       xmlSpace="preserve"
 			key="skyLinesvg-bg"

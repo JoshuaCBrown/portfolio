@@ -21,65 +21,16 @@ import { useAnimate, motion, AnimatePresence } from "framer-motion";
 
 import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
 
-import "../../style/MiniAbout.css";
+import "../../style/MiniAbout2.css";
 
-const MiniAbout = ({ svgVariants }) => {
-  const CircleInCircles = () => {
-    //weighted front or weighted back if you want larger changes at the beginning or end of the circle spre  
-    //change these seven? variables to change circle sizes and # of circles around icon image
-
-    const numOfCircles = 8;;
-    const startingDiameter = 2; //<-- in pixels
-    const endingDiamater = 20; //<-- in pixels
-    const parentCircleRadius = 85; //<--in pixels
-    const circleRange = 120; // <-- number of degrees that the circles should appear within. between 0 - 360
-    const bigToSmall = true; // < -- true/false - reverse the direction of circles
-    const offset = 0; // <-- offset starting rotation
-    //STARTMATH
-    const circleDif = (endingDiamater - startingDiameter) / numOfCircles;
-    const circleArr = [];
-    const degreesOfSeparation = circleRange / (numOfCircles - 1);
-    for (let i = 0; i < numOfCircles; ++i) {
-      let circleMultiplier = (i + 1) * circleDif;
-      let circleSize = startingDiameter + circleMultiplier;
-      let circleDefaultRotation = bigToSmall
-        ? degreesOfSeparation * (numOfCircles - 1 - i)
-        : degreesOfSeparation * i;
-      let circleRotation = circleDefaultRotation - offset;
-      let circleRadius = circleSize / 2;
-      const newCircle = {
-        size: circleSize,
-        rotation: circleRotation,
-        radius: circleRadius,
-      };
-      circleArr.push(newCircle);
-    }
-    // const circleArr = bigToSmall ? rawCircleArr.reverse() : rawCircleArr;
-
-    return (
-      <>
-        {circleArr.map((circ, i) => (
-          <div
-            style={{
-              height: `${circ.size}px`,
-              width: `${circ.size}px`,
-              transform: `rotate(${circ.rotation}deg) translateX(${parentCircleRadius}px)`,
-              top: `calc(50% - ${circ.radius})`,
-              left: `calc(50% - ${circ.radius})`,
-            }}
-            className="surround-circle"
-            id={`surround-circ-id-${i}`}
-          ></div>
-        ))}
-      </>
-    );
-  };
+const MiniAbout2 = ({ svgVariants }) => {
   return (
     <>
+      {/* <WoodworkingImg svgVariants={svgVariants} /> */}
       <div className="small-about-container">
         <div className="sm-top-row">
-          <div className="sm-t-left">
-            <div className="sm-photo-wrapper">
+          <div className="sm-top-row-left">
+            {/* <div className="sm-photo-wrapper">
               <motion.img
                 src={phreshPhoto}
                 className="sm-fresh-photo"
@@ -87,16 +38,15 @@ const MiniAbout = ({ svgVariants }) => {
                 animate={{ filter: "blur(0px)" }}
                 transition={{ duration: 2 }}
               ></motion.img>
-            </div>
-            <CircleInCircles />
+            </div> */}
           </div>
-          <div className="sm-t-right">
+          <div className="sm-top-row-right">
             {/* <div className="sm-t-r-left"></div>
             <div className="sm-t-r-right"></div>
             <span className="sm-name-is">My name is Josh</span> */}
           </div>
         </div>
-        <div className="sm-mid-top-row">
+        <div className="sm-middle-row">
           <div className="sm-b-l-spacer">
             <div className="sm-m-left"></div>
             {/* <span className="sm-i-live">
@@ -105,7 +55,7 @@ const MiniAbout = ({ svgVariants }) => {
             </span> */}
             <div className="sm-m-right"></div>
           </div>
-          {/* <motion.div className="sm-skyline-container">
+          <motion.div className="sm-skyline-container">
             <SkylineImg
               svgVariants={svgVariants}
               classSetter="sm-skyline-svg"
@@ -115,9 +65,9 @@ const MiniAbout = ({ svgVariants }) => {
               classSetter="sm-skyline-svg-bg"
             />
             
-          </motion.div> */}
+          </motion.div>
         </div>
-        <div className="sm-mid-bot-row">
+        <div className="sm-bottom-row">
           {/* <button className="sm-go-btn">Go</button>
           <button className="sm-go-btn">Skills</button>
           <button className="sm-go-btn">Experience</button>
@@ -127,10 +77,10 @@ const MiniAbout = ({ svgVariants }) => {
           <button className="sm-go-btn">Portfolio</button>
           <button className="sm-go-btn">Contact</button> */}
         </div>
-        <div className="sm-bot-row"></div>
+        <div className="fourth-row"></div>
       </div>
     </>
   );
 };
 
-export default MiniAbout;
+export default MiniAbout2;
