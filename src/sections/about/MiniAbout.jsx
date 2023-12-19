@@ -25,16 +25,19 @@ import "../../style/MiniAbout.css";
 
 const MiniAbout = ({ svgVariants }) => {
   const CircleInCircles = () => {
-    //weighted front or weighted back if you want larger changes at the beginning or end of the circle spre  
+    //weighted front or weighted back if you want larger changes at the beginning or end of the circle spre
     //change these seven? variables to change circle sizes and # of circles around icon image
 
-    const numOfCircles = 8;;
+    const numOfCircles = 7;
     const startingDiameter = 2; //<-- in pixels
-    const endingDiamater = 20; //<-- in pixels
-    const parentCircleRadius = 85; //<--in pixels
+    const endingDiamater = 23; //<-- in pixels
+    const parentCircleRadius = 70; //<--in pixels
     const circleRange = 120; // <-- number of degrees that the circles should appear within. between 0 - 360
     const bigToSmall = true; // < -- true/false - reverse the direction of circles
     const offset = 0; // <-- offset starting rotation
+    const weightedAvg = true; // <-- true/false - create weighted average
+    const placeEdge = true; // <-- true/false to determine if circle are placed based on center or edge
+
     //STARTMATH
     const circleDif = (endingDiamater - startingDiameter) / numOfCircles;
     const circleArr = [];
@@ -47,10 +50,14 @@ const MiniAbout = ({ svgVariants }) => {
         : degreesOfSeparation * i;
       let circleRotation = circleDefaultRotation - offset;
       let circleRadius = circleSize / 2;
+      let distanceToTravel = placeEdge
+        ? parentCircleRadius + circleRadius
+        : parentCircleRadius;
       const newCircle = {
         size: circleSize,
         rotation: circleRotation,
         radius: circleRadius,
+        translateVal: distanceToTravel,
       };
       circleArr.push(newCircle);
     }
@@ -63,7 +70,7 @@ const MiniAbout = ({ svgVariants }) => {
             style={{
               height: `${circ.size}px`,
               width: `${circ.size}px`,
-              transform: `rotate(${circ.rotation}deg) translateX(${parentCircleRadius}px)`,
+              transform: `rotate(${circ.rotation}deg) translateX(${circ.translateVal}px)`,
               top: `calc(50% - ${circ.radius})`,
               left: `calc(50% - ${circ.radius})`,
             }}
@@ -79,45 +86,57 @@ const MiniAbout = ({ svgVariants }) => {
       <div className="small-about-container">
         <div className="sm-top-row">
           <div className="sm-t-left">
-            <div className="sm-photo-wrapper">
-              <motion.img
-                src={phreshPhoto}
-                className="sm-fresh-photo"
-                initial={{ filter: "blur(50px)" }}
-                animate={{ filter: "blur(0px)" }}
-                transition={{ duration: 2 }}
-              ></motion.img>
+            <div className="tlc-left">
+              <div className="sm-photo-wrapper">
+                <motion.img
+                  src={phreshPhoto}
+                  className="sm-fresh-photo"
+                  initial={{ filter: "blur(50px)" }}
+                  animate={{ filter: "blur(0px)" }}
+                  transition={{ duration: 2 }}
+                ></motion.img>
+              </div>
+              <CircleInCircles />
             </div>
-            <CircleInCircles />
+            <div className="tlc-right"></div>
           </div>
           <div className="sm-t-right">
-            {/* <div className="sm-t-r-left"></div>
-            <div className="sm-t-r-right"></div>
-            <span className="sm-name-is">My name is Josh</span> */}
+            <span className="sm-name-is">My name is Josh</span>
           </div>
         </div>
         <div className="sm-mid-top-row">
-          <div className="sm-b-l-spacer">
+          <div className="sm-mt-left">
             <div className="sm-m-left"></div>
-            {/* <span className="sm-i-live">
-              I live in <br />
-              Atlanta <br />and problem solving
-            </span> */}
+
             <div className="sm-m-right"></div>
           </div>
-          {/* <motion.div className="sm-skyline-container">
-            <SkylineImg
-              svgVariants={svgVariants}
-              classSetter="sm-skyline-svg"
-            />
-            <SkylineImgBgStatic
-              svgVariants={svgVariants}
-              classSetter="sm-skyline-svg-bg"
-            />
-            
-          </motion.div> */}
+          <div className="sm-mt-mid">
+            <div className="sm-mt-mid-dashes"></div>
+            <span className="sm-i-live">I live in Atlanta</span>
+            <motion.div className="sm-skyline-container">
+              <SkylineImg
+                svgVariants={svgVariants}
+                classSetter="sm-skyline-svg"
+              />
+              <SkylineImgBgStatic
+                svgVariants={svgVariants}
+                classSetter="sm-skyline-svg-bg"
+              />
+            </motion.div>
+          </div>
+          <div className="sm-mt-right"></div>
         </div>
+
         <div className="sm-mid-bot-row">
+          <div className="sm-mb-left">
+            <div className="sm-mb-left-dashes"></div>
+          </div>
+          <div className="sm-mb-mid"></div>
+          <div className="sm-mb-right">
+            <div className="sm-woodwork-container">
+              <WoodworkingImg svgVariants={svgVariants} />
+            </div>
+          </div>
           {/* <button className="sm-go-btn">Go</button>
           <button className="sm-go-btn">Skills</button>
           <button className="sm-go-btn">Experience</button>
