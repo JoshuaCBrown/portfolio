@@ -1,0 +1,41 @@
+.smacc-container {
+  /* border: 2px black solid; */
+  margin-bottom: 1.5rem;
+}
+
+.group-title {
+  margin-top: 0px;
+  width: 100%;
+  border-top: 2px solid var(--primaryBlack);
+  border-bottom: 2px solid var(--primaryBlack);
+  margin-left: 9px;
+  font-weight: 900;
+  text-align: left;
+  letter-spacing: 5px;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.skill-title,
+.interest-title,
+.story-title {
+  text-align: center;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-decoration: underline;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.skill-list,
+.interest-list,
+.story-story {
+  text-align: center;
+  font-size: .8rem;  
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.text-block {
+  text-align: left;
+}
