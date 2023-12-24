@@ -28,6 +28,19 @@ import "../../style/MiniAbout.css";
 const MiniAbout = ({ svgVariants }) => {
   const [showNavBtns, setShowNavBtns] = useState(true);
   const [aboutSelected, setAboutSelected] = useState(false);
+  const [sectionTitle, setSectionTitle] = useState("");
+
+  useEffect(() => {
+    if (aboutSelected === true) {
+      setSectionTitle("Skills");
+    }
+  }, [aboutSelected]);
+
+  const showSectionTitle = () => {
+    return aboutSelected
+      ? { flex: 1, width: "auto", height: "auto" }
+      : { flex: 0, width: 0, height: 0 };
+  };
 
   return (
     <>
@@ -97,8 +110,6 @@ const MiniAbout = ({ svgVariants }) => {
                       </div>
                     </motion.div>
                     <div className="sm-mt-ml-space">
-                      
-
                       {showNavBtns ? (
                         <>
                           <div className="sm-main-nav-container">
@@ -147,7 +158,7 @@ const MiniAbout = ({ svgVariants }) => {
                         </>
                       ) : (
                         <>
-                        <span className="sm-i-live">I live in Atlanta</span>
+                          <span className="sm-i-live">I live in Atlanta</span>
                         </>
                       )}
                     </div>
@@ -159,13 +170,10 @@ const MiniAbout = ({ svgVariants }) => {
           </AnimatePresence>
           {aboutSelected && (
             <div className="sm-about-content">
-              <div className="sm-ac-left">
-                
-              </div>
+              <div className="sm-ac-left"></div>
               <div className="sm-ac-right">
-              {/* <div className="sm-ac-right-dashes"></div> */}
-              <SmallAbout />
-              
+                {/* <div className="sm-ac-right-dashes"></div> */}
+                <SmallAbout />
               </div>
             </div>
           )}
@@ -175,7 +183,63 @@ const MiniAbout = ({ svgVariants }) => {
             layout
           >
             <div className="sm-mb-left">
-              <div className="sm-mb-left-dashes"></div>
+              <div className="sm-mbl-top">
+                <div className="sm-mbl-t-left">
+                  <div
+                    className="sm-mblt-dashes"
+                    data-shortenDashes={aboutSelected}
+                  ></div>
+                  {!aboutSelected && <span className="making-things">I</span>}
+                </div>
+                <div className="sm-mbl-t-right">
+                  {!aboutSelected && (
+                    <span className="making-things">like</span>
+                  )}
+                </div>
+              </div>
+              <div className="sm-mbl-mid">
+                <motion.div className="sm-mbl-m-left">
+                  <div className="sm-mblm-dashes"></div>
+                </motion.div>
+                <motion.div
+                  className="sm-mbl-m-mid"
+                  initial={false}
+                  animate={showSectionTitle}
+                  layout
+                >
+                  {aboutSelected && (
+                    <motion.h2
+                      className="sm-section-heading"
+                      initial={{ scale: 0.01 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 2, delay: 1 }}
+                    >
+                      {sectionTitle}
+                    </motion.h2>
+                  )}
+                </motion.div>
+                <motion.div className="sm-mbl-m-right">
+                  <div className="sm-mblm-dashes"></div>
+                </motion.div>
+              </div>
+              <div className="sm-mbl-bot">
+                <div className="sm-mbl-b-left">
+                  <div
+                    className="sm-mblb-dashes"
+                    data-shortenDashes={aboutSelected}
+                  ></div>
+                  {!aboutSelected && (
+                    <span className="making-things">making</span>
+                  )}
+                </div>
+                <div className="sm-mbl-b-right">
+                  {!aboutSelected && (
+                    <span className="making-things">things</span>
+                  )}
+                </div>
+              </div>
+
+              {/* <div className="sm-mb-left-dashes"></div>
               <div className="sm-mb-left-horizontal-dash"></div>
               <div className="sm-mb-lu-text">
                 <span className="making-things">I</span>
@@ -191,7 +255,7 @@ const MiniAbout = ({ svgVariants }) => {
               </div>
               <div className="sm-mb-ml-text">
                 <span className="making-things">things</span>
-              </div>
+              </div> */}
             </div>
             <div className="sm-mb-right">
               <div className="sm-woodwork-parent-container">
@@ -202,11 +266,10 @@ const MiniAbout = ({ svgVariants }) => {
                     </>
                   ) : (
                     <>
-                    <WoodworkingImg svgVariants={svgVariants} />
-                  <WoodworkingImgBgStatic svgVariants={svgVariants} />
+                      <WoodworkingImg svgVariants={svgVariants} />
+                      <WoodworkingImgBgStatic svgVariants={svgVariants} />
                     </>
                   )}
-                  
                 </div>
               </div>
             </div>

@@ -44,7 +44,7 @@
   grid-area: newRow;
   overflow: auto;
   display: grid;
-  grid-template-columns: 5fr 19fr;
+
   /* display: flex; */
   height: 100%;
   width: 100%;
@@ -287,10 +287,116 @@
 }
 
 .sm-mb-left {
-  flex: 5;
+  flex: 14;
   position: relative;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
+
+.sm-mbl-top {
+  flex: 1;
+  display: flex;
+}
+
+.sm-mbl-mid {
+  flex: 0;
+  display: flex;
+}
+
+.sm-mbl-bot {
+  flex: 1;
+  display: flex;
+}
+
+.sm-mbl-t-left {
+  flex: 5;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  position: relative;
+}
+
+.sm-mblt-dashes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-right: 3px var(--primaryBlack) dashed;
+}
+
+.sm-mblb-dashes {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-right: 3px var(--primaryBlack) dashed;
+}
+
+.sm-mblt-dashes[data-shortenDashes="true"],
+.sm-mblb-dashes[data-shortenDashes="true"] {
+  height: 60%;
+}
+
+.sm-mbl-t-right {
+  flex: 9;
+  display: flex;
+  align-items: end;
+}
+
+.sm-mbl-m-left {
+  flex: 5;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  position: relative;
+}
+
+.sm-mbl-m-mid {
+  /* overflow: hidden; */
+  position: relative;
+
+}
+
+.sm-section-heading {
+  line-height: 1;
+  padding-top: 5px;
+  margin: 5px;
+  margin-top: 7px;
+  font-size: 2rem;
+}
+
+.sm-mbl-m-right {
+  flex: 9;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+
+.sm-mblm-dashes {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-bottom: 3px var(--primaryBlack) dashed;
+}
+
+.sm-mbl-b-left {
+  flex: 5;
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+
+.sm-mbl-b-right {
+  flex: 9;
+  display: flex;
+}
+
+/* OLD mid bottom left */
 
 .sm-mb-mid {
   flex: 9;
@@ -300,7 +406,7 @@
 .sm-mb-left-dashes {
   border-right: 3px dashed var(--primaryDark);
   box-sizing: content-box;
-  height: 1000%;
+  height: calc(100% - 4px);
   width: 100%;
   top: 4px;
   right: -3px;
