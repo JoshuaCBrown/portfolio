@@ -173,7 +173,7 @@ const MiniAbout = ({ svgVariants }) => {
               <div className="sm-ac-left"></div>
               <div className="sm-ac-right">
                 {/* <div className="sm-ac-right-dashes"></div> */}
-                <SmallAbout />
+                <SmallAbout setSectionTitle={setSectionTitle} />
               </div>
             </div>
           )}
@@ -198,29 +198,32 @@ const MiniAbout = ({ svgVariants }) => {
                 </div>
               </div>
               <div className="sm-mbl-mid">
-                <motion.div className="sm-mbl-m-left">
+                <div className="sm-mbl-m-left"
+                >
                   <div className="sm-mblm-dashes"></div>
-                </motion.div>
-                <motion.div
+                </div>
+                <div
                   className="sm-mbl-m-mid"
-                  initial={false}
-                  animate={showSectionTitle}
-                  layout
+                  // initial={{ flex: 0, width: 0, height: 0 }}
+                  // animate={showSectionTitle}
+                  // transition={{ duration: 2, delay: 1 }}
+                  // layout
                 >
                   {aboutSelected && (
-                    <motion.h2
+                    <div className="sm-mblm-heading-container"
+                    
+                      >
+                    <h2
                       className="sm-section-heading"
-                      initial={{ scale: 0.01 }}
-                      animate={{ scale: 1 }}
-                      transition={{ duration: 2, delay: 1 }}
                     >
                       {sectionTitle}
-                    </motion.h2>
+                    </h2>
+                    </div>
                   )}
-                </motion.div>
-                <motion.div className="sm-mbl-m-right">
+                </div>
+                <div className="sm-mbl-m-right" layout>
                   <div className="sm-mblm-dashes"></div>
-                </motion.div>
+                </div>
               </div>
               <div className="sm-mbl-bot">
                 <div className="sm-mbl-b-left">

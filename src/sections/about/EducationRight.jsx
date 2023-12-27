@@ -9,7 +9,7 @@ const EducationRight = () => {
 
   return (
     <div className="education-container-web" id="education">
-      <EducationStructure contentSection="right"/>
+      <EducationStructure contentSection="web"/>
     </div>
   );
 };

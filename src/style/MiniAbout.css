@@ -356,8 +356,17 @@
 
 .sm-mbl-m-mid {
   /* overflow: hidden; */
+  flex: 0;
   position: relative;
+  display: flex;
+}
 
+.sm-mblm-heading-container {
+  /* position: absolute; */
+  /* left: 0; */
+  /* top: 0; */
+  flex: 1;
+  overflow: hidden;
 }
 
 .sm-section-heading {
@@ -365,7 +374,7 @@
   padding-top: 5px;
   margin: 5px;
   margin-top: 7px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .sm-mbl-m-right {
@@ -717,6 +726,7 @@ from ABOUT main
 
 @media (width > 1000px) {
   .small-about-container {
-    display: none;
+    display: none !important;
+    background: green;
   }
 }

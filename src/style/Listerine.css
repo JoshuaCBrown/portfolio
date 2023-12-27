@@ -18,7 +18,8 @@
 
 .skill-title,
 .interest-title,
-.story-title {
+.story-title,
+.education-title {
   text-align: center;
   font-weight: 100;
   letter-spacing: 3px;
@@ -29,7 +30,8 @@
 
 .skill-list,
 .interest-list,
-.story-story {
+.story-story,
+.education-list {
   text-align: center;
   font-size: .8rem;  
   padding-left: 10px;

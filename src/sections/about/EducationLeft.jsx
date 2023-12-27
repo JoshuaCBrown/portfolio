@@ -6,7 +6,7 @@ const EducationLeft = () => {
 
   return (
     <div className="education-container" id="education">
-      <EducationStructure contentSection="left"/>
+      <EducationStructure contentSection="books"/>
     </div>
   );
 };
