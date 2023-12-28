@@ -17,6 +17,7 @@ import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
 import SkylineImgBg from "../../assets/svgs/SkylineImgBgPosterity.jsx";
 import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStaticPosterity.jsx";
 import MannyImg from "../../assets/svgs/MannyImg.jsx";
+import MannyImgBgStatic from "../../assets/svgs/MannyImgBgStatic.jsx";
 
 import { useState, useEffect } from "react";
 import { useAnimate, motion, AnimatePresence } from "framer-motion";
@@ -170,8 +171,7 @@ const MiniAbout = ({ svgVariants }) => {
           </AnimatePresence>
           {aboutSelected && (
             <div className="sm-about-content">
-              <div className="sm-ac-left"></div>
-              <div className="sm-ac-right">
+              <div className="sm-ac-wrapper">
                 {/* <div className="sm-ac-right-dashes"></div> */}
                 <SmallAbout setSectionTitle={setSectionTitle} />
               </div>
@@ -261,11 +261,12 @@ const MiniAbout = ({ svgVariants }) => {
               </div> */}
             </div>
             <div className="sm-mb-right">
-              <div className="sm-woodwork-parent-container">
-                <div className="sm-woodwork-container">
+              <div className="sm-svg-parent-container">
+                <div className="sm-svg-container">
                   {aboutSelected ? (
                     <>
                       <MannyImg svgVariants={svgVariants} />
+                      <MannyImgBgStatic svgVariants={svgVariants} />
                     </>
                   ) : (
                     <>

@@ -97,12 +97,12 @@ const EducationStructure = ({ contentSection }) => {
       <div className="education-container" key={obj.key}>
         <h3 className="education-title">{obj.title}</h3>
         <h4 className="college-title">Florida State University</h4>
-        <h5 className="college-degree">Bachelor of Science, Business Marketing</h5>
-        <h5 className="college-degree">Bachelor of Science, Criminology</h5>
-        <span className="college-accolade">
+        <h5 className="degree-title">BS, Marketing</h5>
+        <h5 className="degree-title">BS, Criminology</h5>
+        <span className="college-ec-title">
           Golden Key International Honour Society
         </span>
-        <span className="college-accolade">
+        <span className="college-ec-title">
           PR Secretary for Alpha Phi Omega
         </span>
       </div>
@@ -111,7 +111,7 @@ const EducationStructure = ({ contentSection }) => {
         <h3 className="education-title">{obj.title}</h3>
         <ul className="education-list">
           {obj.content.map((item) => (
-            <li>
+            <li className="education-list-item">
               <div className="edu-item-container" key={item.id}>
                 <h4 className="edu-item-title">{item.title}</h4>
                 {item.subtitle && (

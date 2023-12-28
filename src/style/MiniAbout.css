@@ -44,7 +44,7 @@
   grid-area: newRow;
   overflow: auto;
   display: grid;
-
+  position: relative;
   /* display: flex; */
   height: 100%;
   width: 100%;
@@ -52,7 +52,6 @@
 
 .sm-ac-left {
   position: relative;
-  flex: 5;
 }
 .sm-ac-right-dashes {
   /* border-left: 3px var(--primaryBlack) dashed; */
@@ -61,8 +60,7 @@
   height: 100%;
 }
 
-.sm-ac-right {
-  flex: 19;
+.sm-ac-wrapper {
   position: relative;
 }
 
@@ -284,6 +282,8 @@
 
 .sm-mid-bot-row[data-thingSelected="true"] {
   grid-area: firstRow;
+  border-bottom: 1px var(--primaryBlack) dotted;
+  box-sizing: border-box;
 }
 
 .sm-mb-left {
@@ -375,6 +375,7 @@
   margin: 5px;
   margin-top: 7px;
   font-size: 1.5rem;
+  white-space: nowrap;
 }
 
 .sm-mbl-m-right {
@@ -471,7 +472,7 @@
   justify-content: center;
 }
 
-.sm-woodwork-parent-container {
+.sm-svg-parent-container {
   width: 85%;
   aspect-ratio: 1/1;
   overflow: hidden;
@@ -488,7 +489,7 @@
   /* background-color: red; */
 }
 
-.sm-woodwork-container {
+.sm-svg-container {
   width: 100%;
   aspect-ratio: 1/1;
   overflow: hidden;
@@ -509,6 +510,8 @@
   width: 85%;
 }
 
+
+
 .woodworking-svg-bg {
   position: absolute;
   height: 85%;
@@ -516,6 +519,26 @@
   z-index: -1;
   padding-left: 3px;
   padding-bottom: 3px;
+}
+
+.manny-svg {
+  position: absolute;
+  height: 200%;
+  top: -5%;
+  --svgBgAccent: transparent;
+}
+
+.manny-svg-bg {
+  position: absolute;
+  height: 200%;
+  z-index: -1;
+  top: -7px;
+  padding-left: 5px;
+
+  --svgBgAccent: transparent;
+  --mannyBgStaticColor: var(--primaryLight);
+  --mannyBgStrokeW: 10px;
+  opacity: .5;
 }
 
 .sm-bot-row {

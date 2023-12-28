@@ -1,23 +1,19 @@
-.education-container {
+/* .education-container {
   max-height: 100%;
-  /* background-color: green; */
   margin: 0;
   overflow: hidden;
   flex: 1;
-  
-  /* position: absolute; */
-  /* overflow: auto; */
 }
 
 .education-container-web {
   max-height: 100%;
-  /* background-color: green; */
+
   margin: 0;
   overflow: hidden;
   flex: 1;
   height: 100%;
   position: absolute;
-  /* overflow: auto; */
+
 }
 
 .edu-detail-content,
@@ -47,8 +43,6 @@ h3.education-heading {
   letter-spacing: 7px;
   margin: 10px;
   font-weight:  10000;
-  /* background-color: black; */
-  /* width: 100%; */
 }
 
 .college-title {
@@ -67,7 +61,6 @@ h3.education-heading {
   font-weight: 400;
   letter-spacing: -1px;
   line-height: .7;
-  /* font-style: italic; */
 }
 
 .college-accolade {
@@ -100,4 +93,4 @@ h3.education-heading {
 .edu-item-subtitle {
   display: none;
 }
-
+ */

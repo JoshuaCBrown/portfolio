@@ -16,6 +16,7 @@ export default function MannyImg({ svgVariants }) {
         enable-background="new 0 0 378 551"
         xml:space="preserve"
         key="mannySvg"
+        className="manny-svg"
       >
         <motion.path
           variants={svgVariants}

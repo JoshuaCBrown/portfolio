@@ -15,7 +15,7 @@ const MySmallStory = ({ setSectionTitle }) => {
   return (
     <>
       <div ref={ref} className="smacc-container" id="smacc-story" key="smallStory" >
-        <h2 className="group-title">About</h2>
+        <h2 className="group-title">About Me</h2>
         <MyNewStory />
       </div>
     </>

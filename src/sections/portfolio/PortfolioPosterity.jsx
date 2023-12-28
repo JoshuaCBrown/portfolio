@@ -1,79 +1,79 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import TransitAnim from "../../transit-routes/TransitAnim";
-import PortfolioProjects from "./PortfolioContent";
+import PortfolioContent from "./PortfolioContent";
 import "../../style/Portfolio.css";
-import backArrow from "../../assets/commonicons/arrow.png";
 
 const Portfolio = ({ themeStyle }) => {
   const [projectClicked, setProjectClicked] = useState("");
   const [hasSelected, setHasSelected] = useState(false);
-
-  const sortedImgs = PortfolioProjects();
 
   const clickHandler = (itemId) => {
     setProjectClicked(itemId);
     setHasSelected(true);
   };
 
-  const backToPortfolio = () => {
-    setProjectClicked("");
-    setHasSelected(false);
-  };
+  // const flexy = {
+  //   initial: { flex: 1 },
+  //   whileHover: { flex: 10 },
+  //   transition: { duration: 0.5 },
+  // };
+
+  // const ignored = {
+  //   initial: { flex: 0 },
+  //   whileHover: { flex: 0 },
+  //   transition: { duration: 2 },
+  // };
 
   const stylizer = (itemId) => {
-    return projectClicked === itemId ? { flex: 1 } : { flex: 0 };
+    return projectClicked === itemId ? { flex: 1 } : { flex: 0.01 };
   };
 
   const selectorBot = (itemId) => {
     console.log(itemId);
     return hasSelected ? stylizer(itemId) : { flex: 1 };
-  };
+  }
 
-  const techJoiner = (arr) => {
-    const str = arr.join(", ");
+  function techJoiner(arr) {
+    const str = arr.join(', ');
     return str;
-  };
+  }
 
   const noBlur = {
-    initial: { filter: "initial" },
-    whileHover: { filter: "initial" },
-    animate: { filter: "initial" },
+    initial: { filter: "blur(0)" },
+    whileHover: { filter: "blur(0)" },
     transition: { duration: 0.5 },
   };
 
   const hasBlur = {
     initial: { filter: "blur(10px)" },
-    whileHover: { filter: "initial" },
-    animate: { filter: "blur(10px)" },
+    whileHover: { filter: "blur(0px)" },
     transition: { duration: 0.5 },
   };
 
   const blurVariants = hasSelected ? noBlur : hasBlur;
 
+  //these sorting functions here are so that I can add and remove portfolio projects to the PortfolioContent array without worrying about their order and they will be automatically sorted into the proper category
+  const imgSorter = (item, str) => {
+    return item.cat === str;
+  };
+
+  const codingImgs = PortfolioContent.filter((item) =>
+    imgSorter(item, "coding")
+  );
+  const musicImgs = PortfolioContent.filter((item) => imgSorter(item, "music"));
+  const craftImgs = PortfolioContent.filter((item) => imgSorter(item, "craft"));
+
+  const videoImgs = PortfolioContent.filter((item) => imgSorter(item, "video"));
+
+  const sortedImgs = [...codingImgs, ...musicImgs, ...craftImgs, ...videoImgs];
+
   return (
     <>
       <TransitAnim>
         <div className="portfolio-page-container">
-
-        <AnimatePresence>
-                      {hasSelected && (
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.5 }}
-                          className="portfolio-back-btn-container">
-                      <button className="portfolio-back-btn" onClick={backToPortfolio}>
-                        <img src={backArrow} className="back-btn-aro" />
-                       </button>
-                   
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-       
           <div className="portfolio-flex-container">
-            {/* <div className="color-cat-key">
+            <div className="color-cat-key">
               <h3 id="key-legend-title">Color Key</h3>
               <div className="key-legend-item">
                 <div className="coding-color"></div>
@@ -91,7 +91,7 @@ const Portfolio = ({ themeStyle }) => {
                 <div className="video-color"></div>
                 <span>video</span>
               </div>
-            </div> */}
+            </div>
             <div className="portfolio-item-container">
               {sortedImgs.map((item) => (
                 <motion.div
@@ -110,23 +110,8 @@ const Portfolio = ({ themeStyle }) => {
                   transition={{ duration: 0.5 }}
                   onClick={() => clickHandler(item.id)}
                 >
-                  {/* <div className="color-coded" id={item.cat}></div> */}
+                  <div className="color-coded" id={item.cat}></div>
                   <div className="img-div-container">
-                    <AnimatePresence>
-                      {!hasSelected && (
-                        <motion.div
-                          className="project-title-collapsed-container"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          <h2 className="project-title-collapsed">
-                            {item.title}
-                          </h2>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
                     <motion.div
                       className="blur-div"
                       key={item.id}
@@ -134,7 +119,6 @@ const Portfolio = ({ themeStyle }) => {
                       initial="initial"
                       whileHover="whileHover"
                       transition="transition"
-                      animate="animate"
                     >
                       <div className="img-div">
                         <img
@@ -143,7 +127,7 @@ const Portfolio = ({ themeStyle }) => {
                           id={item.id}
                         />
                       </div>
-                      {/* {projectClicked === item.id && (
+                      {projectClicked === item.id && (
                         <>
                           {item.imgs.map((pic) => (
                             <div className="img-div">
@@ -151,26 +135,21 @@ const Portfolio = ({ themeStyle }) => {
                             </div>
                           ))}
                         </>
-                      )} */}
-                      {projectClicked === item.id && (
-                        <motion.div
-                          className="project-info-container"
-                          layout
-                          data-isShown={item.id === projectClicked}
-                        >
-                          <h2 className="project-title">{item.title}</h2>
-                          {projectClicked === item.id && (
-                            <>
-                              <p className="project-description">
-                                {item.description}
-                              </p>
-                              <span className="project-technology">
-                                {techJoiner(item.technology)}
-                              </span>
-                            </>
-                          )}
-                        </motion.div>
                       )}
+                      <motion.div 
+                      className="project-info-container"
+                      layout
+                      data-isShown={item.id === projectClicked}
+                      >
+                        <h2 className="project-title">{item.title}</h2>
+                        {projectClicked === item.id && (
+                          <>
+                            <p className="project-description">{item.description}</p>
+                            <span className="project-technology">{techJoiner(item.technology)}
+                            </span>
+                          </>
+                        )}
+                      </motion.div>
                     </motion.div>
                   </div>
                 </motion.div>
