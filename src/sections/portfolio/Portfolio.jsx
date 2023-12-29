@@ -4,6 +4,8 @@ import TransitAnim from "../../transit-routes/TransitAnim";
 import PortfolioProjects from "./PortfolioContent";
 import "../../style/Portfolio.css";
 import backArrow from "../../assets/commonicons/arrow.png";
+import CompImg from "../../assets/svgs/CompImg";
+import MobileHeader from "../../home-components/MobileHeader.jsx";
 
 const Portfolio = ({ themeStyle }) => {
   const [projectClicked, setProjectClicked] = useState("");
@@ -55,23 +57,8 @@ const Portfolio = ({ themeStyle }) => {
     <>
       <TransitAnim>
         <div className="portfolio-page-container">
-
-        <AnimatePresence>
-                      {hasSelected && (
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.5 }}
-                          className="portfolio-back-btn-container">
-                      <button className="portfolio-back-btn" onClick={backToPortfolio}>
-                        <img src={backArrow} className="back-btn-aro" />
-                       </button>
-                   
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
        
+
           <div className="portfolio-flex-container">
             {/* <div className="color-cat-key">
               <h3 id="key-legend-title">Color Key</h3>
@@ -92,7 +79,41 @@ const Portfolio = ({ themeStyle }) => {
                 <span>video</span>
               </div>
             </div> */}
+            {/* <div className="portfolio-header">
+              <div className="ph-left"></div>
+              <div className="ph-mid">
+                <div className="ph-svg-grandparent">
+                  <div className="ph-svg-parent">
+                    <div className="ph-svg-container">
+                      <CompImg />
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div className="ph-right"></div>
+            </div> */}
+              
+            
+            <MobileHeader section="portfolio" headingBool={true} sectionTitle="ALL" />
             <div className="portfolio-item-container">
+            <AnimatePresence>
+            {hasSelected && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="portfolio-back-btn-container"
+              >
+                <button
+                  className="portfolio-back-btn"
+                  onClick={backToPortfolio}
+                >
+                  <img src={backArrow} className="back-btn-aro" />
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
               {sortedImgs.map((item) => (
                 <motion.div
                   className="portfolio-item"
@@ -105,7 +126,7 @@ const Portfolio = ({ themeStyle }) => {
                   style={selectorBot(item.id)}
                   layout
                   initial={false}
-                  whileHover={{ flex: 10 }}
+                  // whileHover={{ flex: 10 }}
                   animate={selectorBot(item.id)}
                   transition={{ duration: 0.5 }}
                   onClick={() => clickHandler(item.id)}
@@ -132,7 +153,7 @@ const Portfolio = ({ themeStyle }) => {
                       key={item.id}
                       variants={blurVariants}
                       initial="initial"
-                      whileHover="whileHover"
+                      // whileHover="whileHover"
                       transition="transition"
                       animate="animate"
                     >

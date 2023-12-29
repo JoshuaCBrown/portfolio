@@ -1,0 +1,263 @@
+.sm-mid-bot-row {
+  grid-area: thirdRow;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* gap: 4px; */
+}
+
+.sm-mid-bot-row[data-thingSelected="true"] {
+  grid-area: sectionHeading;
+  border-bottom: 1px var(--primaryBlack) dotted;
+  box-sizing: border-box;
+}
+
+.header-title-dashes-container {
+  flex: 14;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.htd-top {
+  flex: 1;
+  display: flex;
+}
+
+.htd-mid {
+  flex: 0;
+  display: flex;
+}
+
+.htd-bot {
+  flex: 1;
+  display: flex;
+}
+
+.htd-top-left {
+  flex: 5;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  position: relative;
+}
+
+.htd-tl-dashes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-right: 3px var(--primaryBlack) dashed;
+}
+
+.htd-bl-dashes {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-right: 3px var(--primaryBlack) dashed;
+}
+
+.htd-tl-dashes[data-shortenDashes="true"],
+.htd-bl-dashes[data-shortenDashes="true"] {
+  height: 60%;
+}
+
+.htd-top-right {
+  flex: 9;
+  display: flex;
+  align-items: end;
+}
+
+.htd-mid-left {
+  flex: 5;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  position: relative;
+}
+
+.htd-mid-mid {
+  /* overflow: hidden; */
+  flex: 0;
+  position: relative;
+  display: flex;
+}
+
+.htd-heading-container {
+  /* position: absolute; */
+  /* left: 0; */
+  /* top: 0; */
+  flex: 1;
+  /* overflow: hidden; */
+}
+
+.htd-section-heading {
+  line-height: 1;
+  padding-top: 5px;
+  margin: 5px;
+  margin-top: 7px;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.htd-mid-right {
+  flex: 9;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+
+.htd-ml-dashes {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-bottom: 3px var(--primaryBlack) dashed;
+}
+
+.htd-bot-left {
+  flex: 5;
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+
+.htd-bot-right {
+  flex: 9;
+  display: flex;
+}
+
+.sm-mb-mid {
+  flex: 9;
+  position: relative;
+}
+
+.sm-mb-left-dashes {
+  border-right: 3px dashed var(--primaryDark);
+  box-sizing: content-box;
+  height: calc(100% - 4px);
+  width: 100%;
+  top: 4px;
+  right: -3px;
+  position: absolute;
+}
+
+.sm-mb-left-horizontal-dash {
+  border-bottom: 3px dashed var(--primaryDark);
+  box-sizing: content-box;
+  height: 50%;
+  width: 70%;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.sm-mb-lu-text,
+.sm-mb-ll-text,
+.sm-mb-mu-text,
+.sm-mb-ml-text {
+  height: 50%;
+  display: flex;
+  width: 100%;
+}
+
+.sm-mb-mu-text,
+.sm-mb-lu-text {
+  align-items: flex-end;
+}
+
+.sm-mb-ll-text,
+.sm-mb-lu-text {
+  justify-content: end;
+}
+
+.making-things {
+  padding: 5px;
+  font-size: 0.9rem;
+}
+
+.sm-mb-mu {
+  height: 50%;
+  /* background-color: red; */
+  position: absolute;
+  width: 100%;
+  border-bottom: 3px dashed var(--primaryBlack);
+}
+
+.header-icon-container {
+  flex: 10;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.sm-svg-semi {
+  width: 85%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  padding: 3px;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7.5%;
+  margin-bottom: 7.5%;
+  /* background-color: red; */
+}
+
+.sm-svg-circle-border {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px var(--primaryDark) dashed;
+  position: relative;
+  /* background-color: red; */
+}
+
+.woodworking-svg {
+  position: absolute;
+  height: 85%;
+  width: 85%;
+}
+
+.woodworking-svg-bg {
+  position: absolute;
+  height: 85%;
+  width: 85%;
+  z-index: -1;
+  padding-left: 3px;
+  padding-bottom: 3px;
+}
+
+.manny-svg {
+  position: absolute;
+  height: 200%;
+  top: -5%;
+  --svgBgAccent: transparent;
+}
+
+.manny-svg-bg {
+  position: absolute;
+  height: 200%;
+  z-index: -1;
+  top: -7px;
+  padding-left: 5px;
+
+  --svgBgAccent: transparent;
+  --mannyBgStaticColor: var(--primaryLight);
+  --mannyBgStrokeW: 10px;
+  opacity: 0.5;
+}

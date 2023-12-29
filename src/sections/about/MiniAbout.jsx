@@ -241,24 +241,6 @@ const MiniAbout = ({ svgVariants }) => {
                   )}
                 </div>
               </div>
-
-              {/* <div className="sm-mb-left-dashes"></div>
-              <div className="sm-mb-left-horizontal-dash"></div>
-              <div className="sm-mb-lu-text">
-                <span className="making-things">I</span>
-              </div>
-              <div className="sm-mb-ll-text">
-                <span className="making-things">making</span>
-              </div>
-            </div>
-            <div className="sm-mb-mid">
-              <div className="sm-mb-mu"></div>
-              <div className="sm-mb-mu-text">
-                <span className="making-things">like</span>
-              </div>
-              <div className="sm-mb-ml-text">
-                <span className="making-things">things</span>
-              </div> */}
             </div>
             <div className="sm-mb-right">
               <div className="sm-svg-parent-container">
@@ -277,14 +259,6 @@ const MiniAbout = ({ svgVariants }) => {
                 </div>
               </div>
             </div>
-            {/* <button className="sm-go-btn">Go</button>
-          <button className="sm-go-btn">Skills</button>
-          <button className="sm-go-btn">Experience</button>
-          <button className="sm-go-btn">Education</button> */}
-            {/* <button className="sm-go-btn">Interests</button>
-          <button className="sm-go-btn">About</button>
-          <button className="sm-go-btn">Portfolio</button>
-          <button className="sm-go-btn">Contact</button> */}
           </motion.div>
           <div className="sm-bot-row"></div>
         </motion.div>

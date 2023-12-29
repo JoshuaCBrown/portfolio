@@ -1211,7 +1211,7 @@ p {
   }
 }
 
-@media (width < 1000px) {
+@media (width < 2000px) {
   .about-container {
     display: none;
   }
