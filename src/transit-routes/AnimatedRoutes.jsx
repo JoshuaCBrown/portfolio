@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "../Home";
+import AltHome from "../home-components/AltHome";
 import About from "../sections/about/About";
 import NavImgs from "../home-components/NavImgs";
 import Portfolio from "../sections/portfolio/Portfolio";
@@ -34,7 +35,7 @@ function AnimatedRoutes({ themeStyle, loadedStatus }) {
           <Route
             path="/"
             element={
-              <NavImgs
+              <AltHome
                 themeStyle={themeStyle}
                 animVariant={loadedStatus ? skyLoadedAnim : skyInitAnim}
               />

@@ -1,0 +1,25 @@
+.nav-btn-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+
+
+:any-link {
+  flex: 1;
+  /* background: blue; */
+  display: flex;
+  justify-content: center;
+}
+.alt-nav-btn {
+  
+  height: 40px;
+  width: 80%;
+  
+  background: var(--primaryBlack);
+  border: none;
+  color: var(--primaryWhite);
+  font-size: 1rem;
+  font-weight: 900;
+}

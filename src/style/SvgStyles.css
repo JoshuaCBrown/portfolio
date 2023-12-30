@@ -1,0 +1,31 @@
+:root {
+  --primarySvgColor: var(--primaryBlack);
+  --primarySvgWidth: 2px;
+
+  --fancySvgFill: var(--primaryLight);
+  --fancySvgWidth: 3px;
+}
+
+/* 
+
+<--3d popping off page-->
+
+better (behind)
+fancy (on top)
+
+  --primarySvgColor: var(--primaryBlack);
+  --primarySvgWidth: 7px;
+  --fancySvgFill: var(--primaryLightAccent);
+  --fancySvgWidth: 0px;
+
+<--sketched-->
+
+fancy (behind)
+better (on top)
+  
+  --primarySvgColor: var(--primaryBlack);
+  --primarySvgWidth: 1px;
+  --fancySvgFill: var(--primaryShade);
+  --fancySvgWidth: 0px;
+
+  */

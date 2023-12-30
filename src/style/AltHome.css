@@ -1,0 +1,138 @@
+:root {
+  --dashedCircle: 2px var(--primaryLightShade) dashed;
+  --dashedSemiCircle: 4px var(--primaryLightShade) dashed;
+  --solidCircle: 2px var(--primaryBlack) solid;
+
+  /* --dashedCircle: 2px var(--primaryBlack) dashed; */
+  /* --dashedSemiCircle: 4px var(--primaryBlack) dashed; */
+  
+  /* --dashedCircle: 2px transparent dashed;
+  --dashedSemiCircle: 4px transparent dashed;
+  --solidCircle: 2px transparent solid; */
+}
+
+.home-nav-container {
+  font-family: CourierPrime;
+  display: flex;
+  flex-direction: column;
+  max-height: 90%;
+  width: 100%;
+  /* background: green; */
+  padding-bottom: 2rem;
+}
+
+.alt-home-group {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.alt-home-btn-container,
+.alt-home-svg-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #alt-about-btn-container {
+  align-items: end;
+} */
+
+/* #alt-connect-btn-container {
+  align-items: start;
+} */
+
+.alt-home-svg-wrapper {
+  flex: .9;
+  aspect-ratio: 1/1;
+  /* background: red; */
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+}
+
+.alt-home-svg-circle {
+  position: absolute;
+  width: 150%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: var(--solidCircle);
+  border: var(--dashedCircle);
+}
+
+
+.alt-home-svg-semicircle {
+  position: absolute;
+  width: 200%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+}
+
+#alt-projects-svg-semicircle {
+  border-right: var(--dashedSemiCircle);
+}
+
+#alt-about-svg-semicircle,
+#alt-connect-svg-semicircle {
+  border-left: var(--dashedSemiCircle);
+}
+
+/* svg {
+  display: none;
+}
+
+button {
+  display: none;
+} */
+
+
+
+.home-svg {
+  position: absolute;
+  /* left: 0; */
+  /* top: 0; */
+}
+
+.home-bg-svg {
+  position: absolute;
+  padding-left: 3px;
+  padding-top: -1px;
+}
+
+#alt-projects-svg-wrapper > svg {
+  height: 85%;
+  width: 85%;
+}
+
+#alt-about-svg-wrapper {
+  align-items: start;
+}
+
+#alt-about-svg-wrapper > svg {
+  height: 230%;
+  margin-top: -7%;
+  --primarySvgWidth: 1px;
+  --fancySvgWidth: 2px;
+}
+
+#alt-connect-svg-wrapper > svg {
+  height: 70%;
+  margin-top: -15%;
+  margin-left: 10%;
+}
+
+.home-svg-front {
+  position: absolute;
+  --fancySvgFill: black;
+  --fancySvgWidth: 0px;
+}
+
+#alt-about-svg-wrapper > .home-svg-front {
+  --fancySvgWidth: 0px;
+}
