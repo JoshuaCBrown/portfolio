@@ -14,7 +14,7 @@
 }
 .alt-nav-btn {
   
-  height: 40px;
+  height: var(--btnHeight);
   width: 80%;
   
   background: var(--primaryBlack);

@@ -48,105 +48,177 @@ const AltHome = ({ themeStyle, animVariant }) => {
 
   return (
     <>
-      <motion.div
-        className="home-nav-container"
-        variants={animVariant}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition="transition"
-      >
-        {/* <BetterManny
+      <div className="home-container">
+        <div className="home-bg-container">
+          <div className="home-bg-row" id="home-bg-row-one">
+            <div className="circle-container" id="circle-container-right">
+              <div
+                className="alt-home-svg-semicircle"
+                id="alt-about-svg-semicircle"
+              ></div>
+              <div
+                className="alt-home-svg-circle"
+                id="alt-about-svg-circle"
+              ></div>
+            </div>
+          </div>
+          <div className="home-bg-row" id="home-bg-row-two">
+            <div className="circle-container" id="circle-container-left">
+              <div
+                className="alt-home-svg-semicircle"
+                id="alt-projects-svg-semicircle"
+              ></div>
+              <div
+                className="alt-home-svg-circle"
+                id="alt-projects-svg-circle"
+              ></div>
+            </div>
+          </div>
+          <div className="home-bg-row" id="home-bg-row-three">
+            <div className="circle-container" id="circle-container-right">
+              <div
+                className="alt-home-svg-semicircle"
+                id="alt-connect-svg-semicircle"
+              ></div>
+              <div
+                className="alt-home-svg-circle"
+                id="alt-connect-svg-circle"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <motion.div
+          className="home-nav-container"
+          variants={animVariant}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition="transition"
+        >
+          {/* <BetterManny
           classSetter="home-svg"
           svgParentVariants={fadeSvgVariants}
           svgVariants={pathVariants}
         /> */}
-        <div className="alt-home-group" id="alt-about-group">
-          <div className="alt-home-btn-container" id="alt-about-btn-container">
-            <NavBtn
-              btnClass={btnClass}
-              btnId="alt-about-btn"
-              btnName="About"
-              btnLink="about"
-            />
-          </div>
-          <div className="alt-home-svg-container" id="alt-about-svg-container">
+          <div className="alt-home-group" id="alt-about-group">
             <div
-              className="alt-home-svg-semicircle"
-              id="alt-about-svg-semicircle"
-            ></div>
-            <div className="alt-home-svg-circle"></div>
-
-            <div className="alt-home-svg-wrapper" id="alt-about-svg-wrapper">
-            
-              <FancyManny fancySvgVariants={fadeInVariants} classSetter="home-bg-svg"/>
-              <FancyManny fancySvgVariants={fadeInVariants} classSetter="home-svg-front"/>
-              <BetterManny svgVariants={pathVariants} svgParentVariants={fadeOutVariants} classSetter="home-svg"/>
-              
+              className="alt-home-btn-container"
+              id="alt-about-btn-container"
+            >
+              <NavBtn
+                btnClass={btnClass}
+                btnId="alt-about-btn"
+                btnName="About"
+                btnLink="about"
+              />
+            </div>
+            <div
+              className="alt-home-svg-container"
+              id="alt-about-svg-container"
+            >
+              <div className="alt-home-svg-wrapper" id="alt-about-svg-wrapper">
+                <FancyManny
+                  fancySvgVariants={fadeInVariants}
+                  classSetter="home-bg-svg"
+                />
+                <FancyManny
+                  fancySvgVariants={fadeInVariants}
+                  classSetter="home-svg-front"
+                />
+                <BetterManny
+                  svgVariants={pathVariants}
+                  svgParentVariants={fadeOutVariants}
+                  classSetter="home-svg"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="alt-home-group" id="alt-projects-group">
-          
-          <div
-            className="alt-home-svg-container"
-            id="alt-projects-svg-container"
-          >
+          <div className="alt-home-group" id="alt-projects-group">
             <div
+              className="alt-home-svg-container"
+              id="alt-projects-svg-container"
+            >
+              {/* <div
               className="alt-home-svg-semicircle"
               id="alt-projects-svg-semicircle"
             ></div>
-            <div className="alt-home-svg-circle"></div>
+            <div className="alt-home-svg-circle"></div> */}
 
-            <div className="alt-home-svg-wrapper" id="alt-projects-svg-wrapper">
-            <FancyComp fancySvgVariants={fadeInVariants} classSetter="home-bg-svg"/>
-            <FancyComp fancySvgVariants={fadeInVariants} classSetter="home-svg-front"/>
-              <BetterComp svgVariants={pathVariants} svgParentVariants={fadeOutVariants} classSetter="home-svg"/>
+              <div
+                className="alt-home-svg-wrapper"
+                id="alt-projects-svg-wrapper"
+              >
+                <FancyComp
+                  fancySvgVariants={fadeInVariants}
+                  classSetter="home-bg-svg"
+                />
+                <FancyComp
+                  fancySvgVariants={fadeInVariants}
+                  classSetter="home-svg-front"
+                />
+                <BetterComp
+                  svgVariants={pathVariants}
+                  svgParentVariants={fadeOutVariants}
+                  classSetter="home-svg"
+                />
+              </div>
             </div>
-          </div>
-          <div
-            className="alt-home-btn-container"
-            id="alt-projects-btn-container"
-          >
-            <NavBtn
-              btnClass={btnClass}
-              btnId="alt-projects-btn"
-              btnName="Projects"
-              btnLink="portfolio"
-            />
-          </div>
-          
-        </div>
-        <div className="alt-home-group" id="alt-connect-group">
-          <div
-            className="alt-home-btn-container"
-            id="alt-connect-btn-container"
-          >
-            <NavBtn
-              btnClass={btnClass}
-              btnId="alt-connect-btn"
-              btnName="Connect"
-              btnLink="contact"
-            />
-          </div>
-          <div
-            className="alt-home-svg-container"
-            id="alt-connect-svg-container"
-          >
             <div
-              className="alt-home-svg-semicircle"
-              id="alt-connect-svg-semicircle"
-            ></div>
-            <div className="alt-home-svg-circle"></div>
-
-            <div className="alt-home-svg-wrapper" id="alt-connect-svg-wrapper">
-            <FancyCube fancySvgVariants={fadeInVariants} classSetter="home-bg-svg"/>
-            <FancyCube fancySvgVariants={fadeInVariants} classSetter="home-svg-front"/>
-              <BetterCube svgVariants={pathVariants} svgParentVariants={fadeOutVariants} classSetter="home-svg"/>
+              className="alt-home-btn-container"
+              id="alt-projects-btn-container"
+            >
+              <NavBtn
+                btnClass={btnClass}
+                btnId="alt-projects-btn"
+                btnName="Projects"
+                btnLink="portfolio"
+              />
             </div>
           </div>
-        </div>
-        {/* <motion.div
+          <div className="alt-home-group" id="alt-connect-group">
+            <div
+              className="alt-home-btn-container"
+              id="alt-connect-btn-container"
+            >
+              <NavBtn
+                btnClass={btnClass}
+                btnId="alt-connect-btn"
+                btnName="Connect"
+                btnLink="contact"
+              />
+            </div>
+            <div
+              className="alt-home-svg-container"
+              id="alt-connect-svg-container"
+            >
+              {/* <div
+                className="alt-home-svg-semicircle"
+                id="alt-connect-svg-semicircle"
+              ></div>
+              <div className="alt-home-svg-circle"></div> */}
+
+              <div
+                className="alt-home-svg-wrapper"
+                id="alt-connect-svg-wrapper"
+              >
+                <FancyCube
+                  fancySvgVariants={fadeInVariants}
+                  classSetter="home-bg-svg"
+                />
+                <FancyCube
+                  fancySvgVariants={fadeInVariants}
+                  classSetter="home-svg-front"
+                />
+                <BetterCube
+                  svgVariants={pathVariants}
+                  svgParentVariants={fadeOutVariants}
+                  classSetter="home-svg"
+                />
+              </div>
+            </div>
+          </div>
+          {/* <motion.div
           className="home-nav"
           id="cube-nav"
           initial={{ y: 0 }}
@@ -166,7 +238,8 @@ const AltHome = ({ themeStyle, animVariant }) => {
                 className="left-dashed"
               ></motion.div>
               </motion.div> */}
-      </motion.div>
+        </motion.div>
+      </div>
     </>
   );
 };

@@ -3,9 +3,9 @@
   --primarySvgWidth: 2px;
 
   --fancySvgFill: var(--primaryLight);
-  --fancySvgWidth: 3px;
+  /* --fancySvgFill:  #87aba796; */
+  --fancySvgWidth: 0px;
 }
-
 /* 
 
 <--3d popping off page-->
