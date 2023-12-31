@@ -1,10 +1,9 @@
-import AllSkills from "./AllSkills.jsx";
+import { allSkills } from "./AllSkills.js";
 import Listerine from "./Listerine.jsx";
 import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 const MySmallSkills = ({ setSectionTitle }) => {
-  const skillsArray = AllSkills();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: "all" });
 
@@ -23,7 +22,7 @@ const MySmallSkills = ({ setSectionTitle }) => {
         key="smallSkills"
       >
         <h2 className="group-title">Skills</h2>
-        {skillsArray.map((item) => (
+        {allSkills.map((item) => (
           <>
             <Listerine
               listTitle={item.title}

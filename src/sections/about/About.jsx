@@ -13,8 +13,10 @@ import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
 
 import TransitAnim from "../../transit-routes/TransitAnim";
 
+import LoremIpsum from "./LoremIpsum.jsx";
+
 import SkillsRight from "./SkillsRight.jsx";
-import SkillsLeft from "./SkillsLeft.jsx";
+// import SkillsLeft from "./SkillsLeft.jsx";
 import AboutCircles from "./AboutCircles.jsx";
 import ExperienceTop from "./ExperienceTop.jsx";
 import ExperienceBottom from "./ExperienceBottom.jsx";
@@ -25,6 +27,8 @@ import Interests from "./Interests.jsx";
 import AboutNav from "./AboutNav.jsx";
 import Achievements from "./Achievements.jsx";
 import MyStory from "./MyStory.jsx";
+
+import MyNewStory from "./MyNewStory.jsx";
 // import AboutSmall from "./AboutSmall.jsx";
 import MiniAbout from "./MiniAbout.jsx";
 import "../../style/About.css";
@@ -244,7 +248,7 @@ const About = ({ themeStyle }) => {
   const firstCircleVariant = {
     transition: {
       duration: 0.7,
-      ease: [0, 0.5, 0.4, 0.95],
+      ease: [0, 0.5, 0.4, 0.95], 
     },
   };
 
@@ -475,7 +479,7 @@ const About = ({ themeStyle }) => {
                               exit={{ opacity: 0 }}
                               transition={{ duration: 0.25 }}
                             >
-                              <SkillsLeft />
+                              <MyStory />
                             </motion.div>
                           )}
                           {pageSelected === 1 && (
@@ -555,6 +559,7 @@ const About = ({ themeStyle }) => {
                               exit={{ opacity: 0 }}
                               transition={{ duration: 0.25 }}
                             >
+                              {/* <LoremIpsum /> */}
                               <SkillsRight />
                             </motion.div>
                           )}

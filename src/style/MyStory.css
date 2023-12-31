@@ -1,0 +1,19 @@
+.my-story-container {
+  position: relative;
+  /* background: red; */
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  
+}
+
+.my-story-title {
+  /* text-decoration: underline; */
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 3px;
+  /* padding: 0; */
+  /* letter-spacing: 0; */
+}

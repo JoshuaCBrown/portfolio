@@ -11,6 +11,8 @@ import Achievements from "./Achievements.jsx";
 import MyStory from "./MyStory.jsx";
 import CircleInCircles from "./CircleInCircles";
 
+import LoremIpsum from "./LoremIpsum.jsx";
+
 import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 import WoodworkingImgBgStatic from "../../assets/svgs/WoodworkingImgBgStatic.jsx";
 import SkylineImg from "../../assets/svgs/SkylineImg.jsx";

@@ -246,6 +246,6 @@ from ABOUT main
 
 @media (width > 1000px) {
   .small-about-container {
-    display: none;
+    display: none !important;
   }
 }
