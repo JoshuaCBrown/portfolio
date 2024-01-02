@@ -4,6 +4,8 @@
   --svgStrokeWThree: 15px;
   --aboutTopSpacer: 23%;
   --aboutBottomSpacer: 20%;
+  --circlerRadius: 70px;
+  --color-red: 100;
 }
 
 .small-about-container {
@@ -234,6 +236,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 300px;
 }
 
 .sm-skyline-svg {
@@ -269,9 +272,9 @@
 .sm-mt-mid-underline {
   position: absolute;
   bottom: -3px;
-  left: 0;
+  right: -5%;
   height: 100%;
-  width: 115%;
+  width: 110%;
   border-bottom: 3px var(--primaryBlack) dashed;
 }
 
@@ -474,7 +477,7 @@
 }
 
 .sm-svg-parent-container {
-  width: clamp(100px, 85%, 200px);
+  width: clamp(100px, 85%, 150px);
   aspect-ratio: 1/1;
   overflow: hidden;
   padding: 3px;
@@ -626,7 +629,7 @@
 }
 
 .sm-photo-wrapper {
-  width: clamp(100px, 85%, 200px);
+  width: clamp(100px, 85%, 150px);
   aspect-ratio: 1/1;
   /* margin-top: 7.5%; */
   /* align-self: start; */
@@ -655,7 +658,7 @@
   height: 100%;
   width: 50%;
   /* border-bottom: 3px var(--primaryDark) dashed; */
-  border-left: 3px var(--primaryDark) dashed;
+  border-right: 3px var(--primaryDark) dashed;
   border: none;
 }
 
@@ -730,7 +733,7 @@ from ABOUT main
   width: 100%;
   height: 100%;
 }
-
+ 
 
 
 .skyline-svg {

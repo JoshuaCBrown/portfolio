@@ -47,21 +47,25 @@ const EducationStructure = ({ contentSection }) => {
       title: "The Odin Project",
       source: "theodinproject.com",
       id: "online1",
+      stillWorking: false,
     },
     {
       title: "freeCodeCamp",
       source: "freecodecamp.org",
       id: "online2",
+      stillWorking: false,
     },
     {
       title: "UI/UX Design",
       source: "generalassembly.com",
       id: "online3",
+      stillWorking: true,
     },
     {
       title: "Intro to Excel",
       source: "generalassembly.com",
       id: "online4",
+      stillWorking: true,
     },
   ];
 
@@ -94,11 +98,11 @@ const EducationStructure = ({ contentSection }) => {
 
   const DivsOrList = ({obj}) => {
     return obj.specialStruct ? (
-      <div className="education-container" key={obj.key}>
-        <h3 className="education-title">{obj.title}</h3>
-        <h4 className="college-title">Florida State University</h4>
-        <h5 className="degree-title">BS, Marketing</h5>
-        <h5 className="degree-title">BS, Criminology</h5>
+      <div className="lg-about-content" key={obj.key}>
+        <h3 className="lg-about-heading">{obj.title}</h3>
+        <div className="bolded-item">Florida State University</div>
+        <div className="item-description">BS, Marketing</div>
+        <div className="item-description">BS, Criminology</div>
         <span className="college-ec-title">
           Golden Key International Honour Society
         </span>
@@ -107,17 +111,20 @@ const EducationStructure = ({ contentSection }) => {
         </span>
       </div>
     ) : (
-      <div className="education-container" key={obj.key} >
-        <h3 className="education-title">{obj.title}</h3>
-        <ul className="education-list">
+      <div className="lg-about-content" key={obj.key} >
+        <h3 className="lg-about-heading">{obj.title}</h3>
+        <ul className="about-unordered-list">
           {obj.content.map((item) => (
             <li className="education-list-item">
               <div className="edu-item-container" key={item.id}>
-                <h4 className="edu-item-title">{item.title}</h4>
-                {item.subtitle && (
-                  <span className="edu-item-subtitle">{item.subtitle}, </span>
+                <div className="bolded-item">{item.title}</div>
+                {item.stillWorking && (
+                  <div className="item-progress">(in progress)</div>
                 )}
-                <span className="edu-item-source">{item.source}</span>
+                {item.subtitle && (
+                  <span className="item-subtitle">{item.subtitle}, </span>
+                )}
+                <span className="item-source">{item.source}</span>
               </div>
             </li>
           ))}

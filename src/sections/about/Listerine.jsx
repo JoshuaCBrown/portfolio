@@ -9,18 +9,18 @@ const Listerine = ({ listContent, listTitle, listClass, listId }) => {
         key={`${listId}${listClass}Key`}
       >
         <div className={`${listClass}-heading`}>
-          <h2
-            className={`${listClass}-title`}
+          <h3
+            className={`${listClass}-title category-title`}
             id={`${listId}-${listClass}-title`}
           >
             {listTitle}
-          </h2>
+          </h3>
         </div>
         <div
           className={`${listClass}-list-parent`}
           id={`${listId}-${listClass}-list-parent`}
         >
-          <div className={`${listClass}-list`} id={`${listId}-list`}>
+          <div className={`${listClass}-list category-list`} id={`${listId}-list`}>
             {listContent.join(" | ")}
           </div>
         </div>

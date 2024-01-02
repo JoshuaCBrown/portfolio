@@ -29,7 +29,7 @@ import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
 import "../../style/MiniAbout.css";
 
 const MiniAbout = ({ svgVariants }) => {
-  const [showNavBtns, setShowNavBtns] = useState(true);
+  const [showNavBtns, setShowNavBtns] = useState(false);
   const [aboutSelected, setAboutSelected] = useState(false);
   const [sectionTitle, setSectionTitle] = useState("");
 
@@ -115,18 +115,7 @@ const MiniAbout = ({ svgVariants }) => {
                     <div className="sm-mt-ml-space">
                       {showNavBtns ? (
                         <>
-                          <div className="sm-main-nav-container">
-                            {/* <div className="nav-spacer left-nav-spacer">
-                            <div className="mini-dashes">
-                              <div className="mini-dash-itself"></div>
-                            </div>
-                            <div className="mini-dashes">
-                              <div className="mini-dash-itself"></div>
-                            </div>
-                            <div className="mini-dashes">
-                              <div className="mini-dash-itself"></div>
-                            </div>
-                          </div> */}
+                          {/* <div className="sm-main-nav-container">
                             <nav className="sm-main-nav">
                               <ul className="sm-nav-btns-list">
                                 <li className="sm-nav-btn-item">
@@ -156,8 +145,7 @@ const MiniAbout = ({ svgVariants }) => {
                                 </li>
                               </ul>
                             </nav>
-                            {/* <div className="nav-spacer right-nav-spacer"></div> */}
-                          </div>
+                          </div> */}
                         </>
                       ) : (
                         <>

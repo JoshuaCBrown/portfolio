@@ -235,6 +235,10 @@
   height: 22%;
 }
 
+.content-second-spacer {
+  height: 32%;
+}
+
 .detailed-right-bottom {
   /* background-color: purple; */
   height: var(--aboutBottomSpacer);
@@ -814,8 +818,10 @@
 
 .circle-text {
   color: var(--primaryWhite);
-  font-size: 20px;
+  font-size: 2vw;
   font-weight: 900;
+  width: 100%;
+  text-align: center;
 }
 
 .about-left-right-top {
@@ -1170,6 +1176,7 @@ p {
   position: absolute;
   height: 100%;
   overflow: hidden;
+  width: 100%;
 }
 /* 
 #circle-one {

@@ -5,8 +5,8 @@ import EducationStructure from "./EducationStructure.jsx";
 const EducationLeft = () => {
 
   return (
-    <div className="education-container" id="education">
-      <EducationStructure contentSection="books"/>
+    <div className="large-about-container" id="education-left">
+      <EducationStructure contentSection="web"/>
     </div>
   );
 };

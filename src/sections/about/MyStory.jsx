@@ -5,8 +5,8 @@ const MyStory = () => {
   return (
     <>
       <div className="large-about-container">
-        <div className="my-story-container">
-          <h2 className="my-story-title">About Me</h2>
+        <div className="lg-about-content">
+          <h2 className="lg-about-heading">About Me</h2>
           
           <MyNewStory />
 

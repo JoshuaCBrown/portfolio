@@ -1,9 +1,10 @@
 .interests-spacey-spacer {
-  flex: 0.33;
+  /* flex: 0.33; */
+  /* background-color: red; */
 }
 
 .interests-parent-container {
-  flex: 0.68;
+  /* flex: 0.67; */
   overflow: hidden;
   color: black;
   box-sizing: border-box;
@@ -15,6 +16,7 @@
   justify-items: center;
   align-items: start;
   text-align: center;
+  position: relative;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: .2fr 1fr 1fr;
   grid-template-areas: "intTitle intTitle"
@@ -37,8 +39,7 @@
   position: absolute;
 }
 
-.interests-title,
-.my-story-title {
+.interests-title {
   font-size: 1.3rem;
   letter-spacing: 7px;
   font-weight: normal;
@@ -55,8 +56,7 @@
   font-weight: bold;
 }
 
-.interests-list,
-.my-story-story {
+.interests-list {
   font-size: .85rem;
   padding: 5px;
 

@@ -1,6 +1,18 @@
+import "../../style/MiniAbout.css";
+import { useEffect } from "react";
+
 const CircleInCircles = () => {
+
+  useEffect(() => {
+    const parentCircleRadiusTwo = window.getComputedStyle(document.body).getPropertyValue('--color-red');
+    console.log(parentCircleRadiusTwo);
+  }, []);
+
+
   //weighted front or weighted back if you want larger changes at the beginning or end of the circle spre
   //change these seven? variables to change circle sizes and # of circles around icon image
+
+  
 
   const numOfCircles = 7;
   const startingDiameter = 2; //<-- in pixels

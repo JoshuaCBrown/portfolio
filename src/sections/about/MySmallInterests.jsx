@@ -1,14 +1,10 @@
 
-import AllInterests from "./AllInterests.jsx";
+import { allInterestsArray } from "./AllInterests.js";
 import Listerine from "./Listerine.jsx";
-import MyNewStory from "./MyNewStory.jsx";
-import MySmallStory from "./MySmallInterests.jsx";
-import MannyImg from "../../assets/svgs/MannyImg.jsx";
 import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
 
 const MySmallInterests = ({ setSectionTitle }) => {
-  const interestsArray = AllInterests();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: .8 });
 
@@ -27,7 +23,7 @@ const MySmallInterests = ({ setSectionTitle }) => {
         key="smallInterests"
       >
         <h2 className="group-title">Interests</h2>
-        {interestsArray.map((item) => (
+        {allInterestsArray.map((item) => (
           <>
             <Listerine
               listTitle={item.title}

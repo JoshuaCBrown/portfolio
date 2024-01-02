@@ -4,7 +4,7 @@
 
   /* background-color: orange; */
   /* border: orange solid; */
-  box-sizing: border-box;
+  box-sizing: border-box; 
   /* justify-items: center; */
   text-align: center;
   /* position: relative; */
@@ -14,14 +14,14 @@
 }
 
 .experience-top-container {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   /* align-items: end; */
   /* justify-content: center; */
 }
 
 .experience-bottom-container {
-  grid-template-columns: .5fr 1fr 1fr 1fr .5fr;
+  grid-template-columns: .5fr 1fr 1fr .5fr;
   
   
   /* background-color: red; */
@@ -87,6 +87,7 @@
   min-height: 0px;
   max-height: 100%;
   height: 100%;
+  font-weight: 900;
 }
 
 .job-title {
@@ -106,6 +107,7 @@
   font-size: .8rem;
   min-height: 0px;
   margin: 0;
+  font-weight: 100;
   /* background-color: green; */
 }
 

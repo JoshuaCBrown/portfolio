@@ -1,4 +1,4 @@
-const AllInterests = () => {
+
   const hobbiesInt = [
     "Music composition/production",
     "Music performance",
@@ -26,7 +26,7 @@ const AllInterests = () => {
     "Kendrick Lamar",
     "Hiatus Kaiyote",
     "Paul Simon",
-    "Hozier",
+    "Hozier", 
   ];
   const artDesignInt = [
     "Minimalism",
@@ -65,7 +65,5 @@ const AllInterests = () => {
     },
   ];
 
-  return allInterestsArray;
-};
 
-export default AllInterests;
+export { allInterestsArray };

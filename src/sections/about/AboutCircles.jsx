@@ -39,7 +39,8 @@ const AboutCircles = ({ goClicked, animateMe, pageSelected }) => {
       >
         <div className="photo-shaper">
           {goClicked ? (
-            <div className="circle-text">Skills</div>
+            // <motion.div layout="position" className="circle-text">Sk</motion.div>
+            <></>
           ) : (
             <>
               <img src={phreshPhoto} className="fresh-foto" />

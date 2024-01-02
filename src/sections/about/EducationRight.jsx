@@ -8,8 +8,8 @@ import EducationStructure from "./EducationStructure";
 const EducationRight = () => {
 
   return (
-    <div className="education-container-web" id="education">
-      <EducationStructure contentSection="web"/>
+    <div className="large-about-container" id="education-right">
+      <EducationStructure contentSection="university"/>
     </div>
   );
 };

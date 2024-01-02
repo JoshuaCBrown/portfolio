@@ -8,8 +8,8 @@ const ExperienceBottom = () => {
       <div></div>
       {rightJobs.map((job) => (
         <div className="job-container-bottom" key={job.id}>
-          <h4 className="job-title-bot">{job.title}</h4>
-          <h5 className="job-duration-bot">{job.duration}</h5>
+          <div className="job-title-bot">{job.title}</div>
+          <div className="job-duration-bot">{job.duration}</div>
           <div className="job-line-bot"></div>
           <div className="spacey-bot"></div>
         </div>

@@ -27,6 +27,9 @@ import Interests from "./Interests.jsx";
 import AboutNav from "./AboutNav.jsx";
 import Achievements from "./Achievements.jsx";
 import MyStory from "./MyStory.jsx";
+import MyAboutWebsite from "./MyAboutWebsite.jsx";
+
+import InterestsLeft from "./InterestsLeft.jsx";
 
 import MyNewStory from "./MyNewStory.jsx";
 // import AboutSmall from "./AboutSmall.jsx";
@@ -52,7 +55,7 @@ const About = ({ themeStyle }) => {
   // <--- key: [top, left div flex, bottom, right div flex, optional third flex-grow, optional third Top Spacer, Optional Third bottom spacer] --->
   const dimensionsArr = [
     ["23%", 1, "20%", 1, 0, 0, 0, 0],
-    ["42%", 1, "15%", 2, 1, 0.3, 0.15, 0.55],
+    ["42%", 1, "15%", 1, 1, 0.3, 0.15, 0.55],
     ["57%", 1, "43%", 0, 0, 0, 0, 0],
     ["77%", 0, "23%", 1, 0.5, 0.25, 0.23, 0.53],
   ];
@@ -539,6 +542,8 @@ const About = ({ themeStyle }) => {
                           transition={{ duration: 0.25 }}
                         >
                           {pageSelected === 3 && (
+                            <>
+                        
                             <motion.div
                               className="about-content-right-top"
                               initial={{ opacity: 0 }}
@@ -546,8 +551,10 @@ const About = ({ themeStyle }) => {
                               exit={{ opacity: 0 }}
                               transition={{ duration: 0.25 }}
                             >
-                              <Interests />
+                              {/* <Interests /> */}
+                              <InterestsLeft />
                             </motion.div>
+                            </>
                           )}
                         </motion.div>
                         <div className="detailed-right-middle">
@@ -633,7 +640,7 @@ const About = ({ themeStyle }) => {
                                 exit={{ opacity: 0, flex: 0 }}
                                 transition={{ duration: 0.25 }}
                               >
-                                <MyStory />
+                                <MyAboutWebsite />
                               </motion.div>
                             </>
                           )}

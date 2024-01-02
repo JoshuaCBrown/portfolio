@@ -43,6 +43,7 @@
   align-items: center;
   background-color: var(--primaryBlack);
   border: 4px var(--primaryLight) solid;
+  /* max-width: 100px; */
 }
 
 .sm-fresh-photo {
@@ -248,4 +249,4 @@ from ABOUT main
   .small-about-container {
     display: none !important;
   }
-}
+} 

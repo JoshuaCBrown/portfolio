@@ -1,24 +1,24 @@
 const ExpeJobs = [
-  {
-    title: "Tutor",
-    duration: "Apr 2015 - Apr 2016",
-    highlights: [
-      "Tutor high school and undergraduate college students in one-on-one settings diverse range of subjects",
-      "Set tutoring goals, monitor progress and develop personalized tutoring programs",
-    ],
-    id: "tutor-job",
-    lowArrow: true,
-  },
-  {
-    title: "Bartender",
-    duration: "Mar 2016 - Jan 2017",
-    highlights: [
-      "Provide high level of customer service in upscale dining setting",
-      "Maintain extensive knowledge of menu to provide recommendations and develop custom cocktails",
-    ],
-    id: "bartender-job",
-    lowArrow: true,
-  },
+  // {
+  //   title: "Tutor",
+  //   duration: "Apr 2015 - Apr 2016",
+  //   highlights: [
+  //     "Tutor high school and undergraduate college students in one-on-one settings diverse range of subjects",
+  //     "Set tutoring goals, monitor progress and develop personalized tutoring programs",
+  //   ],
+  //   id: "tutor-job",
+  //   lowArrow: true,
+  // },
+  // {
+  //   title: "Bartender",
+  //   duration: "Mar 2016 - Jan 2017",
+  //   highlights: [
+  //     "Provide high level of customer service in upscale dining setting",
+  //     "Maintain extensive knowledge of menu to provide recommendations and develop custom cocktails",
+  //   ],
+  //   id: "bartender-job",
+  //   lowArrow: true,
+  // },
   {
     title: "Writer",
     duration: "Jan 2016 - Apr 2018",

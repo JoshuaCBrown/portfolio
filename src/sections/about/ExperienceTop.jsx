@@ -9,8 +9,8 @@ const ExperienceTop = () => {
       {leftJobs.map((job) => (
         <div className="job-container-top" key={job.id}>
           <div className="spacey"></div>
-          <h4 className="job-title">{job.title}</h4>
-          <h5 className="job-duration">{job.duration}</h5>
+          <div className="job-title">{job.title}</div>
+          <div className="job-duration">{job.duration}</div>
           <div className="job-line"></div>
         </div>
       ))}      
