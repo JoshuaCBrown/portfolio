@@ -126,7 +126,7 @@ const About = ({ themeStyle }) => {
   };
 
   useEffect(() => {
-    setGoClicked(false);
+    // setGoClicked(false);
     const simulOne = () => {
       return (
         animate(
@@ -680,7 +680,7 @@ const About = ({ themeStyle }) => {
           </div>
         </div>
         {/* <AboutSmall svgVariants={lightSvgVariants} /> */}
-        <MiniAbout svgVariants={lightSvgVariants} />
+        <MiniAbout goClickHandler={goClickHandler} goClicked={goClicked} svgVariants={lightSvgVariants} />
       </TransitAnim>
     </>
   );

@@ -40,14 +40,14 @@ const Portfolio = ({ themeStyle }) => {
   const noBlur = {
     initial: { filter: "initial" },
     whileHover: { filter: "initial" },
-    animate: { filter: "initial" },
+    animate: { filter: "blur(0px) brightness(1)" },
     transition: { duration: 0.5 },
   };
 
   const hasBlur = {
-    initial: { filter: "blur(10px)" },
-    whileHover: { filter: "initial" },
-    animate: { filter: "blur(10px)" },
+    initial: { filter: "blur(10px) brightness(1)" },
+    whileHover: { filter: "blur(0px)" },
+    animate: { filter: "blur(10px) brightness(2.5) contrast(2)" },
     transition: { duration: 0.5 },
   };
 
@@ -94,7 +94,7 @@ const Portfolio = ({ themeStyle }) => {
             </div> */}
               
             
-            <MobileHeader section="portfolio" headingBool={true} sectionTitle="ALL" />
+            {/* <MobileHeader section="portfolio" headingBool={true} sectionTitle="ALL" /> */}
             <div className="portfolio-item-container">
             <AnimatePresence>
             {hasSelected && (

@@ -10,7 +10,8 @@ import AboutNav from "./AboutNav.jsx";
 import Achievements from "./Achievements.jsx";
 import MyStory from "./MyStory.jsx";
 import CircleInCircles from "./CircleInCircles";
-import arrow from "../../assets/commonicons/arrow.png";
+
+import FlashingArrows from "./FlashingArrows.jsx";
 
 import LoremIpsum from "./LoremIpsum.jsx";
 
@@ -29,19 +30,18 @@ import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
 
 import "../../style/MiniAbout.css";
 
-const MiniAbout = ({ svgVariants }) => {
+const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
   const [showNavBtns, setShowNavBtns] = useState(false);
-  const [aboutSelected, setAboutSelected] = useState(false);
   const [sectionTitle, setSectionTitle] = useState("");
 
   useEffect(() => {
-    if (aboutSelected === true) {
+    if (goClicked === true) {
       setSectionTitle("Skills");
     }
-  }, [aboutSelected]);
+  }, [goClicked]);
 
   const showSectionTitle = () => {
-    return aboutSelected
+    return goClicked
       ? { flex: 1, width: "auto", height: "auto" }
       : { flex: 0, width: 0, height: 0 };
   };
@@ -51,10 +51,10 @@ const MiniAbout = ({ svgVariants }) => {
       <AnimatePresence>
         <motion.div
           className="small-about-container"
-          data-thingSelected={aboutSelected}
+          data-thingSelected={goClicked}
         >
           <AnimatePresence>
-            {!aboutSelected && (
+            {!goClicked && (
               <>
                 <motion.div
                   className="sm-top-row"
@@ -118,18 +118,6 @@ const MiniAbout = ({ svgVariants }) => {
                           svgVariants={svgVariants}
                           classSetter="sm-skyline-svg-bg"
                         />
-                        <motion.button className="sm-go-forth-btn"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 2, delay: 1 }}>
-                        {/* GO */}
-                        <div className="go-btn-img-container">
-                          {/* <img className="go-btn-arrow" src={arrow} /> */}
-                          <img className="go-btn-arrow" src={arrow} />
-                          <img className="go-btn-arrow" src={arrow} />
-                          <img className="go-btn-arrow" src={arrow} />
-                        </div>
-                      </motion.button>
                       </div>
                     </motion.div>
                     <div className="sm-mt-ml-space">
@@ -139,22 +127,29 @@ const MiniAbout = ({ svgVariants }) => {
                     </div>
                   </div>
                   <div className="sm-mt-right"></div>
-                  
                 </motion.div>
               </>
             )}
           </AnimatePresence>
-          {aboutSelected && (
-            <div className="sm-about-content">
+          {goClicked && (
+            <motion.div
+              className="sm-about-content"
+              data-thingSelected={goClicked}
+              layout
+              initial={{ y: "200%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: .5 }}
+            >
               <div className="sm-ac-wrapper">
                 {/* <div className="sm-ac-right-dashes"></div> */}
                 <SmallAbout setSectionTitle={setSectionTitle} />
               </div>
-            </div>
+            </motion.div>
           )}
           <motion.div
             className="sm-mid-bot-row"
-            data-thingSelected={aboutSelected}
+            data-thingSelected={goClicked}
+            
             layout
           >
             <div className="sm-mb-left">
@@ -162,14 +157,12 @@ const MiniAbout = ({ svgVariants }) => {
                 <div className="sm-mbl-t-left">
                   <div
                     className="sm-mblt-dashes"
-                    data-shortenDashes={aboutSelected}
+                    data-shortenDashes={goClicked}
                   ></div>
-                  {!aboutSelected && <span className="making-things">I</span>}
+                  {!goClicked && <span className="making-things">I</span>}
                 </div>
                 <div className="sm-mbl-t-right">
-                  {!aboutSelected && (
-                    <span className="making-things">like</span>
-                  )}
+                  {!goClicked && <span className="making-things">like</span>}
                 </div>
               </div>
               <div className="sm-mbl-mid">
@@ -183,7 +176,7 @@ const MiniAbout = ({ svgVariants }) => {
                   // transition={{ duration: 2, delay: 1 }}
                   // layout
                 >
-                  {aboutSelected && (
+                  {goClicked && (
                     <div className="sm-mblm-heading-container">
                       <h2 className="sm-section-heading">{sectionTitle}</h2>
                     </div>
@@ -197,23 +190,19 @@ const MiniAbout = ({ svgVariants }) => {
                 <div className="sm-mbl-b-left">
                   <div
                     className="sm-mblb-dashes"
-                    data-shortenDashes={aboutSelected}
+                    data-shortenDashes={goClicked}
                   ></div>
-                  {!aboutSelected && (
-                    <span className="making-things">making</span>
-                  )}
+                  {!goClicked && <span className="making-things">making</span>}
                 </div>
                 <div className="sm-mbl-b-right">
-                  {!aboutSelected && (
-                    <span className="making-things">things</span>
-                  )}
+                  {!goClicked && <span className="making-things">things</span>}
                 </div>
               </div>
             </div>
             <div className="sm-mb-right">
               <div className="sm-svg-parent-container">
                 <div className="sm-svg-container">
-                  {aboutSelected ? (
+                  {goClicked ? (
                     <>
                       <MannyImg svgVariants={svgVariants} />
                       <MannyImgBgStatic svgVariants={svgVariants} />
@@ -222,7 +211,22 @@ const MiniAbout = ({ svgVariants }) => {
                     <>
                       <WoodworkingImg svgVariants={svgVariants} />
                       <WoodworkingImgBgStatic svgVariants={svgVariants} />
-                         {/* <motion.button className="sm-go-forth-btn"
+                      <motion.button
+                        className="sm-go-forth-btn"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 2, delay: 1 }}
+                        onClick={() => goClickHandler()}
+                      >
+                        {/* GO */}
+                        <div className="go-btn-img-container">
+                          {/* <img className="go-btn-arrow" src={arrow} /> */}
+                          <FlashingArrows delayMulti={1} />
+                          <FlashingArrows delayMulti={2} />
+                          <FlashingArrows delayMulti={3} />
+                        </div>
+                      </motion.button>
+                      {/* <motion.button className="sm-go-forth-btn"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 2, delay: 1 }}>
@@ -234,7 +238,6 @@ const MiniAbout = ({ svgVariants }) => {
                           <img className="go-btn-arrow" src={arrow} />
                         </div>
                       </motion.button> */}
-                      
                     </>
                   )}
                 </div>

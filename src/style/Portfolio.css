@@ -58,7 +58,7 @@
 
 .ph-left,
 .ph-right {
-  flex: 7;
+  flex: 7; 
 }
 
 .ph-mid {
@@ -143,6 +143,8 @@
 .blur-div {
   display: flex;
   flex: 1;
+  background: rgba(255, 255, 255, 0.404);
+  background-color: black;
   /* opacity: 0; */
   justify-content: center;
   align-items: center;
