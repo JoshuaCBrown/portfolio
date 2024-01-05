@@ -21,6 +21,7 @@
   grid-template-columns: 3fr 7fr;
   grid-template-areas: "meStuff flexMagicShow";
   max-width: 1600px;
+  max-height: 650px;
 }
 
 .about-container[data-goOn="true"] {
@@ -59,7 +60,7 @@
 .flex-cape {
   border-left: 3px black dashed;
   position: relative;
-  left: 3px;
+  left: 4px;
   /*^ width of border to remove it from window ^ */
   overflow: hidden;
   box-sizing: border-box;
@@ -280,7 +281,7 @@
   /* position: absolute;
   bottom: 5%; */
   border-radius: 50%;
-  height: 30%;
+  height: 24%;
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
@@ -720,6 +721,10 @@
   opacity: 0;
 }
 
+.photo-container-dashes[data-goOn="true"] {
+  display: none;
+}
+
 .photo-shaper {
   color: var(--primaryLight);
   border-radius: 50%;
@@ -778,7 +783,13 @@
 
 #selected {
   height: 34%;
+  /* border-right: 2px dashed transparent; */
+  /* transition: all 2s; */
   /* flex: 2; */
+  
+}
+
+#selected[data-animMe="true"] {
   border-right: 2px dashed var(--primaryDark);
 }
 
@@ -1007,8 +1018,8 @@
   left: -5%;
   z-index: -3;
   /* display: flex; */
-  height: 90%;
-  top: 10%;
+  height: 40%;
+  top: 30%;
 }
 
 .about-middle-middle-dash-container {
@@ -1215,7 +1226,36 @@ p {
   max-height: 100%;
 } */
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  padding-right: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+  border-radius: 10px;
+  /* border-bottom: 2px black solid; */
+  /* border-top: 2px black solid; */
+  
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #888; */
+  border: 1px var(--primaryShade) dotted;
+  border-top: 3px var(--primaryShade) solid;
+  border-bottom: 3px var(--primaryShade) solid;
+  border-radius: 5px;
+  
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primaryLightShade);
+}
 
 @media (width < 1200px) {
   .about-container {

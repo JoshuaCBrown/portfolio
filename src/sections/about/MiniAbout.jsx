@@ -10,6 +10,7 @@ import AboutNav from "./AboutNav.jsx";
 import Achievements from "./Achievements.jsx";
 import MyStory from "./MyStory.jsx";
 import CircleInCircles from "./CircleInCircles";
+import arrow from "../../assets/commonicons/arrow.png";
 
 import LoremIpsum from "./LoremIpsum.jsx";
 
@@ -74,10 +75,17 @@ const MiniAbout = ({ svgVariants }) => {
                       </div>
                       <CircleInCircles />
                     </div>
-                    <div className="tlc-right"></div>
+                    {/* <div className="tlc-right"></div> */}
                   </div>
                   <div className="sm-t-right">
-                    <span className="sm-name-is">My name is Josh</span>
+                    <div className="trc-left"></div>
+                    <div className="trc-right">
+                      {/* <div className="trc-right-dashes"></div> */}
+                      <span className="sm-name-is">
+                        My name is <br />
+                        Josh
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
                 <motion.div
@@ -110,51 +118,28 @@ const MiniAbout = ({ svgVariants }) => {
                           svgVariants={svgVariants}
                           classSetter="sm-skyline-svg-bg"
                         />
+                        <motion.button className="sm-go-forth-btn"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 2, delay: 1 }}>
+                        {/* GO */}
+                        <div className="go-btn-img-container">
+                          {/* <img className="go-btn-arrow" src={arrow} /> */}
+                          <img className="go-btn-arrow" src={arrow} />
+                          <img className="go-btn-arrow" src={arrow} />
+                          <img className="go-btn-arrow" src={arrow} />
+                        </div>
+                      </motion.button>
                       </div>
                     </motion.div>
                     <div className="sm-mt-ml-space">
-                      {showNavBtns ? (
-                        <>
-                          {/* <div className="sm-main-nav-container">
-                            <nav className="sm-main-nav">
-                              <ul className="sm-nav-btns-list">
-                                <li className="sm-nav-btn-item">
-                                  <button
-                                    className="go-sm-button"
-                                    id="sm-about-nav"
-                                    onClick={() => setAboutSelected(true)}
-                                  >
-                                    About
-                                  </button>
-                                </li>
-                                <li className="sm-nav-btn-item">
-                                  <button
-                                    className="go-sm-button"
-                                    id="sm-projects-nav"
-                                  >
-                                    Projects
-                                  </button>
-                                </li>
-                                <li className="sm-nav-btn-item">
-                                  <button
-                                    className="go-sm-button"
-                                    id="sm-connect-nav"
-                                  >
-                                    Connect
-                                  </button>
-                                </li>
-                              </ul>
-                            </nav>
-                          </div> */}
-                        </>
-                      ) : (
-                        <>
-                          <span className="sm-i-live">I live in Atlanta</span>
-                        </>
-                      )}
+                      <>
+                        <span className="sm-i-live">I live in Atlanta</span>
+                      </>
                     </div>
                   </div>
                   <div className="sm-mt-right"></div>
+                  
                 </motion.div>
               </>
             )}
@@ -188,8 +173,7 @@ const MiniAbout = ({ svgVariants }) => {
                 </div>
               </div>
               <div className="sm-mbl-mid">
-                <div className="sm-mbl-m-left"
-                >
+                <div className="sm-mbl-m-left">
                   <div className="sm-mblm-dashes"></div>
                 </div>
                 <div
@@ -200,14 +184,8 @@ const MiniAbout = ({ svgVariants }) => {
                   // layout
                 >
                   {aboutSelected && (
-                    <div className="sm-mblm-heading-container"
-                    
-                      >
-                    <h2
-                      className="sm-section-heading"
-                    >
-                      {sectionTitle}
-                    </h2>
+                    <div className="sm-mblm-heading-container">
+                      <h2 className="sm-section-heading">{sectionTitle}</h2>
                     </div>
                   )}
                 </div>
@@ -244,6 +222,19 @@ const MiniAbout = ({ svgVariants }) => {
                     <>
                       <WoodworkingImg svgVariants={svgVariants} />
                       <WoodworkingImgBgStatic svgVariants={svgVariants} />
+                         {/* <motion.button className="sm-go-forth-btn"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 2, delay: 1 }}>
+                        GO
+                        <div className="go-btn-img-container">
+                          <img className="go-btn-arrow" src={arrow} />
+                          <img className="go-btn-arrow" src={arrow} />
+                          <img className="go-btn-arrow" src={arrow} />
+                          <img className="go-btn-arrow" src={arrow} />
+                        </div>
+                      </motion.button> */}
+                      
                     </>
                   )}
                 </div>

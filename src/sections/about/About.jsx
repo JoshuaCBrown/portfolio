@@ -60,7 +60,7 @@ const About = ({ themeStyle }) => {
     ["77%", 0, "23%", 1, 0.5, 0.25, 0.23, 0.53],
   ];
 
-  const iconSpacing = ["5%", "55%", "28%", "60%"];
+  const iconSpacing = ["8%", "58%", "31%", "63%"];
 
   const iconPlace = () => {
     const newIconSpacing = iconSpacing[pageSelected];

@@ -48,7 +48,7 @@ const AboutCircles = ({ goClicked, animateMe, pageSelected }) => {
             </>
           )}
         </div>
-        <div className="photo-container-dashes"></div>
+        <div className="photo-container-dashes" data-goOn={goClicked} ></div>
       </motion.div>
 
       <motion.div
