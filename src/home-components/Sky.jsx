@@ -2,7 +2,7 @@ import NavImgs from "./NavImgs";
 import { motion } from "framer-motion";
 import "../style/Sky.css";
 import AnimatedNav from "../transit-routes/AnimatedNav";
-import NavHeader from "../NavHeader";
+import NavHeader from "../NavFooter";
 import AnimatedRoutes from "../transit-routes/AnimatedRoutes";
 
 function Sky({ themeStyle, toggleTheme, loadedStatus }) {

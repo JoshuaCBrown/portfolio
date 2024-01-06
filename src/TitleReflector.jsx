@@ -38,6 +38,8 @@ function TitleReflector({
     <>
       {/* these are all children of .ground */}
       <div className="heading-container">
+        
+        {/* <NavImgs themeStyle={themeStyle} /> */}
         <motion.div
           className="title-container"
           style={{ zIndex: 10 }}

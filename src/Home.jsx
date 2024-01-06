@@ -7,6 +7,8 @@ import TitleReflector from "./TitleReflector";
 import Sky from "./home-components/Sky";
 import AnimatedTitle from "./transit-routes/AnimatedTitle";
 
+import NavFooter from "./NavFooter";
+
 const Home = () => {
   const [themeStyle, setThemeStyle] = useState(false);
 
@@ -34,6 +36,7 @@ const Home = () => {
           loadedStatus={loadedStatus}
         />
         <div className="ground">
+          <NavFooter />
           {/* <TitleReflector category={pageTitle} themeStyle={themeStyle} /> */}
           <AnimatedTitle themeStyle={themeStyle} loadedStatus={loadedStatus} />
           {themeStyle ? (

@@ -611,13 +611,12 @@
   position: relative;
 }
 
-.trc-right-dashes {
-  position: absolute;
-  left: 0;
+.trc-right-dashes { 
+  position: absolute; 
+  left: 0; 
   bottom: 20%;
   height: 30%;
   width: 50%;
-  /* border-left: 1px var(--primaryBlack) dashed; */
   border-bottom: 1px var(--primaryBlack) dashed;
 }
 
