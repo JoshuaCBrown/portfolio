@@ -47,8 +47,8 @@ const Portfolio = ({ themeStyle }) => {
   const hasBlur = {
     initial: { filter: "blur(10px) brightness(1)" },
     whileHover: { filter: "blur(0px)" },
-    // animate: { filter: "blur(10px) brightness(1.1) contrast(1.5)" },
-    animate: { filter: "blur(10px)" },
+    animate: { filter: "blur(12px) brightness(2.0) contrast(1.5) grayscale(0.8) saturate(1.4) hue-rotate(180deg)" },
+    // animate: { filter: "blur(10px)" },
     transition: { duration: 0.5 },
   };
 
@@ -117,10 +117,6 @@ const Portfolio = ({ themeStyle }) => {
                   className="portfolio-item"
                   id={item.id}
                   key={item.id}
-                  // style={projectClicked === item.id ? { flex: 1, minWidth: '700px'} : { flex: 1, minWidth: 0 }}
-                  // style={{ width: '700px'}}
-                  // variants={projectClicked === item.id ? clicked : notClicked}
-
                   style={selectorBot(item.id)}
                   layout
                   initial={false}
@@ -149,6 +145,7 @@ const Portfolio = ({ themeStyle }) => {
 
                     <div className="img-div">
                       <motion.div
+                      
                         className="blur-div"
                         key={item.id}
                         variants={blurVariants}
@@ -162,8 +159,19 @@ const Portfolio = ({ themeStyle }) => {
                           className="portfolio-img"
                           id={item.id}
                         />
+                        {projectClicked === item.id && (
+                          <>
+                            <motion.div
+                              className="project-title-container"
+                              layout
+                            >
+                              <h2 className="project-title">{item.title}</h2>
+                            </motion.div>
+                          </>
+                        )}
                       </motion.div>
                     </div>
+
                     {/* {projectClicked === item.id && (
                         <>
                           {item.imgs.map((pic) => (
@@ -174,23 +182,26 @@ const Portfolio = ({ themeStyle }) => {
                         </>
                       )} */}
                     {projectClicked === item.id && (
-                      <motion.div
-                        className="project-info-container"
-                        layout
-                        data-isShown={item.id === projectClicked}
-                      >
-                        <h2 className="project-title">{item.title}</h2>
-                        {projectClicked === item.id && (
-                          <>
-                            <p className="project-description">
-                              {item.description}
-                            </p>
-                            <span className="project-technology">
-                              {techJoiner(item.technology)}
-                            </span>
-                          </>
-                        )}
-                      </motion.div>
+                      <>
+                        <motion.div
+                          className="project-info-container"
+                          layout
+                          data-isShown={item.id === projectClicked}
+                        >
+                          <motion.div
+                              className="project-title-container-ghost"
+                              layout
+                            >
+                              <h2 className="project-title-ghost">{item.title}</h2>
+                            </motion.div>
+                          <p className="project-description">
+                            {item.description}
+                          </p>
+                          <span className="project-technology">
+                            {techJoiner(item.technology)}
+                          </span>
+                        </motion.div>
+                      </>
                     )}
                   </div>
                 </motion.div>
