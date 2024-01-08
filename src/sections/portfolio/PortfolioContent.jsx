@@ -162,8 +162,8 @@ const PortfolioProjects = () => {
       title: "Audio Visualizer",
       img: visualizeThisImg,
       imgs: [exampleImg, secondExample],
-      id: "ano-img",
-      cat: "music",
+      id: "audio-visualizing",
+      cat: "video",
       description: (
         <p className="project-description">
           Custom audio visualizer for my band's song 'I Need It'. Utilized
@@ -287,7 +287,6 @@ const PortfolioProjects = () => {
       ),
       technology: ["React", "JavaScript", "HTML", "CSS", "Framer Motion"],
     },
-  
   ];
 
   //these sorting functions here are so that I can add and remove portfolio projects to the PortfolioContent array without worrying about their order and they will be automatically sorted into the proper category
@@ -303,7 +302,7 @@ const PortfolioProjects = () => {
 
   const videoImgs = PortfolioContent.filter((item) => imgSorter(item, "video"));
 
-  const sortedImgs = [...codingImgs, ...craftImgs, ...videoImgs, ...musicImgs,];
+  const sortedImgs = [...codingImgs, ...craftImgs, ...musicImgs, ...videoImgs];
 
   return sortedImgs;
 };

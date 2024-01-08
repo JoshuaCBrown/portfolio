@@ -29,6 +29,7 @@
   grid-template-areas: "place";
   /* background-color: orange; */
   align-items: end;
+  pointer-events: none;
 }
 
 

@@ -4,8 +4,9 @@ import TransitAnim from "../../transit-routes/TransitAnim";
 import PortfolioProjects from "./PortfolioContent";
 import "../../style/Portfolio.css";
 import backArrow from "../../assets/commonicons/arrow.png";
-import CompImg from "../../assets/svgs/CompImg";
+import CompImg from "../../assets/svgs/new/BetterComp";
 import MobileHeader from "../../home-components/MobileHeader.jsx";
+import FancyComp from "../../assets/svgs/new/FancyComp";
 
 const Portfolio = ({ themeStyle }) => {
   const [projectClicked, setProjectClicked] = useState("");
@@ -38,46 +39,79 @@ const Portfolio = ({ themeStyle }) => {
   };
 
   const noBlur = {
-    initial: { filter: "initial" },
-    whileHover: { filter: "initial" },
-    animate: { filter: "blur(0px) brightness(1)" },
-    transition: { duration: 0.5 },
+    initial: { opacity: "100%" },
+    whileHover: { opacity: "0%" },
+    // animate: { opacity: '0%', transition: { duration: 2 } },
+    animate: { opacity: "0%", transition: { duration: 1 } },
+    transition: { duration: 1 },
   };
 
   const hasBlur = {
-    initial: { filter: "blur(10px) brightness(1)" },
-    whileHover: { filter: "blur(0px)" },
-    animate: { filter: "blur(12px) brightness(2.0) contrast(1.5) grayscale(0.8) saturate(1.4) hue-rotate(180deg)" },
+    initial: { opacity: "100%" },
+    whileHover: { opacity: "0%" },
+    // animate: { opacity: '100%', transition: { duration: 2 } },
+    animate: { opacity: "100%", transition: { duration: 1 } },
     // animate: { filter: "blur(10px)" },
-    transition: { duration: 0.5 },
+    transition: { duration: 1 },
   };
 
   const blurVariants = hasSelected ? noBlur : hasBlur;
+
+  const colorKeysOne = [
+    {
+      title: "code",
+      class: "coding-color",
+      key: "codeColor",
+    },
+    {
+      title: "craft",
+      class: "craft-color",
+      key: "craftColor",
+    },
+  ];
+  const colorKeysTwo = [
+    {
+      title: "music",
+      class: "music-color",
+      key: "musicColor",
+    },
+    {
+      title: "video",
+      class: "video-color",
+      key: "videoColor",
+    },
+  ];
+
+  const colorKeysAll = [...colorKeysOne, ...colorKeysTwo];
 
   return (
     <>
       <TransitAnim>
         <div className="portfolio-page-container">
           <div className="portfolio-flex-container">
-            {/* <div className="color-cat-key">
-              <h3 id="key-legend-title">Color Key</h3>
-              <div className="key-legend-item">
-                <div className="coding-color"></div>
-                <span>code</span>
+            {/* <div className="color-key-wrapper">
+              <div className="color-key-left">
+                {colorKeysOne.map((item) => (
+                  <div className="key-legend-item" key={item.key}>
+                    <div className={item.class}></div>
+                    <span>{item.title}</span>
+                  </div>
+                ))}
               </div>
-              <div className="key-legend-item">
-                <div className="music-color"></div>
-                <span>music</span>
+              <div className="portfolio-svg-wrapper">
+                <FancyComp />
+                <CompImg />
               </div>
-              <div className="key-legend-item">
-                <div className="craft-color"></div>
-                <span>craft</span>
-              </div>
-              <div className="key-legend-item">
-                <div className="video-color"></div>
-                <span>video</span>
+              <div className="color-key-right">
+                {colorKeysTwo.map((item) => (
+                  <div className="key-legend-item" key={item.key}>
+                    <div className={item.class}></div>
+                    <span>{item.title}</span>
+                  </div>
+                ))}
               </div>
             </div> */}
+
             {/* <div className="portfolio-header">
               <div className="ph-left"></div>
               <div className="ph-mid">
@@ -125,7 +159,6 @@ const Portfolio = ({ themeStyle }) => {
                   transition={{ duration: 0.5 }}
                   onClick={() => clickHandler(item.id)}
                 >
-                  {/* <div className="color-coded" id={item.cat}></div> */}
                   <div className="img-div-container">
                     <AnimatePresence>
                       {!hasSelected && (
@@ -144,8 +177,14 @@ const Portfolio = ({ themeStyle }) => {
                     </AnimatePresence>
 
                     <div className="img-div">
+                      <div className="img-wrapper">
+                        <img
+                          src={item.img}
+                          className="portfolio-img"
+                          id={item.id}
+                        />
+                      </div>
                       <motion.div
-                      
                         className="blur-div"
                         key={item.id}
                         variants={blurVariants}
@@ -159,17 +198,17 @@ const Portfolio = ({ themeStyle }) => {
                           className="portfolio-img"
                           id={item.id}
                         />
-                        {projectClicked === item.id && (
-                          <>
-                            <motion.div
-                              className="project-title-container"
-                              layout
-                            >
-                              <h2 className="project-title">{item.title}</h2>
-                            </motion.div>
-                          </>
-                        )}
                       </motion.div>
+                      {projectClicked === item.id && (
+                        <>
+                          <motion.div
+                            className="project-title-container"
+                            layout
+                          >
+                            <h2 className="project-title">{item.title}</h2>
+                          </motion.div>
+                        </>
+                      )}
                     </div>
 
                     {/* {projectClicked === item.id && (
@@ -189,11 +228,13 @@ const Portfolio = ({ themeStyle }) => {
                           data-isShown={item.id === projectClicked}
                         >
                           <motion.div
-                              className="project-title-container-ghost"
-                              layout
-                            >
-                              <h2 className="project-title-ghost">{item.title}</h2>
-                            </motion.div>
+                            className="project-title-container-ghost"
+                            layout
+                          >
+                            <h2 className="project-title-ghost">
+                              {item.title}
+                            </h2>
+                          </motion.div>
                           <p className="project-description">
                             {item.description}
                           </p>
@@ -204,6 +245,7 @@ const Portfolio = ({ themeStyle }) => {
                       </>
                     )}
                   </div>
+                  <div className="color-coded" id={item.cat}></div>
                 </motion.div>
               ))}
             </div>
