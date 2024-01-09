@@ -302,8 +302,8 @@ const PortfolioProjects = () => {
 
   const videoImgs = PortfolioContent.filter((item) => imgSorter(item, "video"));
 
-  const sortedImgs = [...codingImgs, ...craftImgs, ...musicImgs, ...videoImgs];
+  const sortedProjects = [...codingImgs, ...craftImgs, ...musicImgs, ...videoImgs];
 
-  return sortedImgs;
+  return sortedProjects;
 };
 export default PortfolioProjects;

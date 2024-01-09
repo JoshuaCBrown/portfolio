@@ -4,24 +4,54 @@ import TransitAnim from "../../transit-routes/TransitAnim";
 import PortfolioProjects from "./PortfolioContent";
 import "../../style/Portfolio.css";
 import backArrow from "../../assets/commonicons/arrow.png";
+import detailedArrow from "../../assets/commonicons/directional-arrow-two.png";
 import CompImg from "../../assets/svgs/new/BetterComp";
 import MobileHeader from "../../home-components/MobileHeader.jsx";
 import FancyComp from "../../assets/svgs/new/FancyComp";
+import WoodworkingImg from "../../assets/svgs/WoodworkingImg";
+import KeysImg from "../../assets/svgs/KeysImg";
 
 const Portfolio = ({ themeStyle }) => {
   const [projectClicked, setProjectClicked] = useState("");
   const [hasSelected, setHasSelected] = useState(false);
 
-  const sortedImgs = PortfolioProjects();
+  const sortedProjects = PortfolioProjects();
+  const sortedIndexs = sortedProjects.map((item) => {
+    item.id;
+  });
 
   const clickHandler = (itemId) => {
     setProjectClicked(itemId);
     setHasSelected(true);
   };
 
-  const backToPortfolio = () => {
+  const backToPortfolio = (e) => {
+    e.stopPropagation();
+    console.log("hey");
     setProjectClicked("");
     setHasSelected(false);
+  };
+
+  const nextProject = (e, num) => {
+    e.stopPropagation();
+    console.log(projectClicked);
+    console.log(sortedProjects);
+    const currentProjIndex = sortedProjects.findIndex(
+      (obj) => obj["id"] === projectClicked
+    );
+    console.log(currentProjIndex);
+    console.log;
+    let newProjIndex;
+    if (currentProjIndex + num === sortedProjects.length) {
+      newProjIndex = 0;
+    } else if (currentProjIndex + num < 0) {
+      newProjIndex = sortedProjects.length - 1;
+    } else {
+      newProjIndex = currentProjIndex + num;
+    }
+    const newProjId = sortedProjects[newProjIndex].id;
+    console.log(newProjId);
+    return setProjectClicked(newProjId);
   };
 
   const stylizer = (itemId) => {
@@ -29,7 +59,7 @@ const Portfolio = ({ themeStyle }) => {
   };
 
   const selectorBot = (itemId) => {
-    console.log(itemId);
+    // console.log(itemId);
     return hasSelected ? stylizer(itemId) : { flex: 1 };
   };
 
@@ -89,64 +119,25 @@ const Portfolio = ({ themeStyle }) => {
       <TransitAnim>
         <div className="portfolio-page-container">
           <div className="portfolio-flex-container">
-            {/* <div className="color-key-wrapper">
-              <div className="color-key-left">
-                {colorKeysOne.map((item) => (
+            <div className="project-left-spacer">
+              <div className="dotted-lines-circle-left"></div>
+              <div className="color-key-wrapper">
+                {colorKeysAll.map((item) => (
                   <div className="key-legend-item" key={item.key}>
                     <div className={item.class}></div>
                     <span>{item.title}</span>
                   </div>
                 ))}
               </div>
-              <div className="portfolio-svg-wrapper">
-                <FancyComp />
-                <CompImg />
-              </div>
-              <div className="color-key-right">
-                {colorKeysTwo.map((item) => (
-                  <div className="key-legend-item" key={item.key}>
-                    <div className={item.class}></div>
-                    <span>{item.title}</span>
-                  </div>
+              <div className="color-coded-wrapper">
+                {sortedProjects.map((item) => (
+                  <div className="color-coded" id={item.cat}></div>
                 ))}
               </div>
-            </div> */}
+            </div>
 
-            {/* <div className="portfolio-header">
-              <div className="ph-left"></div>
-              <div className="ph-mid">
-                <div className="ph-svg-grandparent">
-                  <div className="ph-svg-parent">
-                    <div className="ph-svg-container">
-                      <CompImg />
-                    </div>
-                  </div>
-                </div>
-              </div>
-                <div className="ph-right"></div>
-            </div> */}
-
-            {/* <MobileHeader section="portfolio" headingBool={true} sectionTitle="ALL" /> */}
             <div className="portfolio-item-container">
-              <AnimatePresence>
-                {hasSelected && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="portfolio-back-btn-container"
-                  >
-                    <button
-                      className="portfolio-back-btn"
-                      onClick={backToPortfolio}
-                    >
-                      <img src={backArrow} className="back-btn-aro" />
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              {sortedImgs.map((item) => (
+              {sortedProjects.map((item) => (
                 <motion.div
                   className="portfolio-item"
                   id={item.id}
@@ -242,16 +233,82 @@ const Portfolio = ({ themeStyle }) => {
                             {techJoiner(item.technology)}
                           </span>
                         </motion.div>
+                        <motion.div layout className="project-navigation">
+                          <button
+                            className="project-nav-btn"
+                            id="project-nav-prev"
+                            key="project-nav-prev"
+                            onClick={(e) => nextProject(e, -1, projectClicked)}
+                          >
+                            <img
+                              src={backArrow}
+                              className="back-btn-aro"
+                              id="nav-prev"
+                            />
+                          </button>
+                          <button
+                            className="project-nav-btn"
+                            id="project-nav-back"
+                            key="project-nav-back"
+                            onClick={backToPortfolio}
+                          >
+                            {/* Back */}
+                            <img
+                              src={detailedArrow}
+                              className="back-btn-aro"
+                              id="nav-back"
+                            />
+                          </button>
+                          <button
+                            className="project-nav-btn"
+                            id="project-nav-next"
+                            key="project-nav-next"
+                            onClick={(e) => nextProject(e, 1)}
+                          >
+                            <img
+                              src={backArrow}
+                              className="back-btn-aro"
+                              id="nav-next"
+                            />
+                          </button>
+                        </motion.div>
                       </>
                     )}
                   </div>
-                  <div className="color-coded" id={item.cat}></div>
+                  
                 </motion.div>
               ))}
             </div>
-            <div className="portfolio-spacer-right"></div>
+            <div className="project-right-spacer">
+              <div className="dotted-lines-circle"></div>
+              <div className="project-svg-wrapper">
+                <KeysImg />
+              </div>
+              <div className="project-svg-wrapper">
+                <CompImg />
+              </div>
+              <div className="project-svg-wrapper">
+                <WoodworkingImg />
+              </div>
+            </div>
           </div>
         </div>
+
+        {/* <div className="portfolio-header">
+              <div className="ph-left"></div>
+              <div className="ph-mid">
+                <div className="ph-svg-grandparent">
+                  <div className="ph-svg-parent">
+                    <div className="ph-svg-container">
+                      <CompImg />
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div className="ph-right"></div>
+            </div> */}
+
+        {/* <MobileHeader section="portfolio" headingBool={true} sectionTitle="ALL" /> */}
       </TransitAnim>
     </>
   );
