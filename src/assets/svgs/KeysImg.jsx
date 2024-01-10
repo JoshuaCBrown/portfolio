@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import "../../style/About.css";
 
-export default function KeysImg({ svgVariants }) {
+export default function KeysImg({  svgParentVariants = { initial: {}, animate: {}, transition: {} },
+  svgVariants = { initial: {}, animate: {}, transition: {} },
+  classSetter = 'keyz-svg', }) {
   return (
     <motion.svg
+      variants={svgParentVariants}
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +17,7 @@ export default function KeysImg({ svgVariants }) {
       enable-background="new 0 0 500 500"
       xml:space="preserve"
       key="keyZSvg"
-      className="keyz-svg"
+      className={classSetter}
     >
       <g>
           <motion.path
@@ -22,9 +25,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M175.4,223v84.8c0,0.6,0.4,1,1,1h7.8c0.6,0,1,0.4,1,1v52.7
         c0,0.6-0.4,1-1,1h-21.6c-0.6,0-1-0.4-1-1V223.6c0-0.6-0.4-1-1-1h-0.2c-0.6,0-1,0.4-1,1v138.9c0,0.6-0.4,1-1,1h-21.4
@@ -35,9 +38,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M354.8,222.9v84.9c0,0.6,0.4,1,1,1h7.8c0.6,0,1,0.4,1,1v52.7
         c0,0.6-0.4,1-1,1h-21.5c-0.6,0-1-0.4-1-1V223.6c0-0.6-0.4-1-1-1H340c-0.6,0-1,0.4-1,1v138.9c0,0.6-0.4,1-1,1h-21.5
@@ -48,9 +51,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M287.8,309.1v53.4c0,0.6-0.4,1-1,1h-21.6c-0.6,0-1-0.4-1-1V223.6
         c0-0.6-0.5-1-1-1c0,0,0,0,0,0c-0.6,0-1,0.5-1,1c0,0.1,0,0.3,0,0.4c0,46.2,0,92.4,0,138.6c0,0.6-0.4,1-1,1c-7.1,0-14.1,0-21.2,0
@@ -61,9 +64,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M406.2,384.7c14,0,28,0,42,0c0,0,0.1,0,0.1,0
         c12-1.5,21.7-6.6,29-14.7c5.2-5.8,8.8-12.6,10.5-20.3c0.9-3.8,1.1-7.7,1.2-11.5c0-58.6,0-117.2,0-175.8c0-6.2-1-12.3-3.4-18.1
@@ -74,9 +77,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M93.7,116.4c-12.1,0-24.2,0.1-36.2,0c-8-0.1-15.5,1.6-22.5,5.3
         c-4.9,2.6-9.1,6-12.8,10.3c-2.8,3.3-5.1,6.9-7,10.8c-1.8,3.9-3,8-3.6,12.2c-0.4,2.8-0.5,5.5-0.5,8.3c0,59.3,0,118.6,0,178
@@ -87,9 +90,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M427.2,223v84.8c0,0.6-0.4,1-1,1h-7.1c-0.6,0-1,0.4-1,1v52.7
         c0,0.6,0.4,1,1,1h21.5c0.6,0,1-0.4,1-1V223"
@@ -99,9 +102,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M231.8,223v84.8c0,0.6,0.4,1,1,1h2.6c0.6,0,1,0.4,1,1v52.7
         c0,0.6-0.4,1-1,1H214c-0.6,0-1-0.4-1-1v-53.4"
@@ -111,9 +114,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M411.4,223v84.8c0,0.6,0.4,1,1,1h2.5c0.6,0,1,0.4,1,1v53.6
         c-0.4,0.2-0.9,0.1-1.3,0.1c-7.1,0-14.2,0-21.3,0c-0.6,0-1-0.4-1-1c0-17.8,0-35.7,0-53.5"
@@ -123,9 +126,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M191.4,222.9v84.9c0,0.6-0.4,1-1,1h-2.2c-0.6,0-1,0.4-1,1v52.7
         c0,0.6,0.4,1,1,1h21.6c0.6,0,1-0.4,1-1v-53.4"
@@ -135,9 +138,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M370.8,223v84.8c0,0.5-0.4,1-0.9,1c-0.7,0-1.5,0-2.2,0
         c-0.5,0-0.9,0.5-0.9,1v53.6c0.4,0.2,0.9,0.2,1.3,0.2c7.1,0,14.2,0,21.3,0c0.6,0,1-0.4,1-1c0-17.8,0-35.7,0-53.5"
@@ -147,9 +150,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M84.7,223c0,46.8,0,93.6,0,140.3c0.5,0.2,0.9,0.2,1.3,0.2
         c7.1,0,14.2,0,21.3,0c0.6,0,1-0.4,1-1c0-17.8,0-35.7,0-53.5"
@@ -159,9 +162,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M52.6,316.3c5.6,0.2,11.1-4.3,12-10.6c0.1-0.7,0.1-1.4,0.1-2.2
         c0-16.3,0-32.6,0-49c0-6.4-4.6-11.5-10.8-12.2c-5.2-0.6-10.2,1.9-12.5,6.7c-0.8,1.6-1.2,3.2-1.2,4.9c0,16.9,0,33.8,0,50.8
@@ -172,9 +175,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M110.3,309.1v53.5c0,0.6,0.4,1,1,1c7.1,0,14.1,0,21.2,0
         c0.1,0,0.3,0,0.4,0c0.6,0,1-0.4,1-1v-53.4"
@@ -184,9 +187,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M289.8,309.1v53.5c0,0.6,0.4,1,1,1c7.1,0,14.1,0,21.2,0
         c0.1,0,0.3,0,0.4,0c0.6,0,1-0.4,1-1v-53.4"
@@ -196,9 +199,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M99,222.9v84.9c0,0.6,0.4,1,1,1h14.1c0.6,0,1-0.4,1-1v-84.9"
         />
@@ -207,9 +210,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M324.7,223v84.9c0,0.6-0.4,1-1,1h-14c-0.6,0-1-0.4-1-1v-85"
         />
@@ -218,9 +221,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M278.5,222.9v84.9c0,0.6,0.4,1,1,1h14.1c0.6,0,1-0.4,1-1v-84.9"
         />
@@ -229,9 +232,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M145.2,223v84.9c0,0.6-0.4,1-1,1h-14c-0.6,0-1-0.4-1-1v-85"
         />
@@ -240,9 +243,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M382.8,223v84.8c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-84.9"
         />
@@ -251,9 +254,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M203.4,222.9v84.9c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1V223"
         />
@@ -262,9 +265,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M350.2,154.5c-2.6,1.7-3.6,6.3-1.8,9.7c2.2,4.3,7.5,5.7,11.4,3.5
         c3.7-2.1,5.4-6.1,3.7-10.4c-1.7-4.2-6.2-6.2-10.5-4.7c-1,0.4-2.1,0.7-2.6,1.9"
@@ -274,9 +277,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M437.8,166.5c3.5-3.1,3.4-8.9,0.1-12c-4.3-4.1-11.1-2.5-13.3,2.6
         c-2.2,5.1,0.7,10.5,6.1,11.6c2.5,0.5,5,0,6.9-2.1"
@@ -286,9 +289,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M381.4,152.4c-1.3-0.7-2.6,0-3.6,0.5c-3.6,1.8-5.2,4.9-4.8,8.5
         c0.5,3.7,2.8,6.4,6.8,7.3c3.1,0.7,6.9-1.2,8.5-3.9c2.1-3.7,1.2-7.5-1-9.9c-1.3-1.4-3-2.2-4.8-2.6c-0.3-0.1-0.7-0.1-1.1,0.1"
@@ -298,9 +301,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M381.5,152.5c0,2.5,0,5,0,7.6"
         />
@@ -309,9 +312,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M406.7,160.8c-1.2,0.1-1.5,1.3-2.1,2c-1,1.2-2.1,2.4-3,3.7"
         />
@@ -320,9 +323,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M432.4,160.8c1.8,1.9,3.5,3.8,5.3,5.6"
         />
@@ -331,9 +334,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M350.4,154.6c1.8,1.7,3.4,3.6,5,5.5"
         />
@@ -342,9 +345,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M405.8,152.1c-2,0.4-3.7,1.1-5.2,2.6c-2.6,2.7-3.1,7.3-0.8,10.5
         c2.4,3.4,7,4.6,10.7,2.5c3.2-1.8,5-5,4.3-8.8c-0.7-3.8-3.5-6-6.6-6.6c-0.8-0.2-1.5-0.2-2.3-0.2"
@@ -354,9 +357,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M142.3,133.9c-0.7,0.2-0.3,0.8-0.3,1.2c0,13.6,0,27.1,0,40.7
         c0,0.4,0,0.8,0,1.3c-2.6,0-5.2,0-7.7,0c-0.5,0-1.1-0.2-1.2,0.5c-0.1,0.7-0.2,1.6,0.2,2.3c0.2,0.3,0.6,0.1,1,0.1c2.2,0,4.5,0,6.7,0
@@ -368,9 +371,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M116.6,133.9c-0.6,0.2-0.3,0.7-0.3,1.1c0,3.2,0,6.3,0,9.5
         c0,0.4,0.1,0.9-0.2,1.3h-7.5c-0.6,0-1,0.4-1,1v0.8c0,0.6,0.4,1,1,1h6.7c0.6,0,1,0.4,1,1v36c0,0.6,0.4,1,1,1h3.8c0.6,0,1-0.4,1-1
@@ -381,9 +384,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M90.2,133.9c-0.7,0.2-0.3,0.8-0.3,1.2c0,7.5,0,15,0,22.4
         c0,0.4,0,0.8,0,1.3h-7.8c-0.6,0-1,0.4-1,1l0,0.9c0,0.6,0.5,1,1,1c2.3,0,4.6,0,6.8,0c0.6,0,1,0.4,1,1c0,7.5,0,15.1,0,22.6
@@ -395,9 +398,9 @@ export default function KeysImg({ svgVariants }) {
           initial="initial"
           animate="animate"
           transition="transition"
-          strokeWidth="var(--svgStrokeW)"
+          strokeWidth="var(--primarySvgWidth)"
           fill="none"
-          stroke="var(--svgColor)"
+          stroke="var(--primarySvgColor)"
           stroke-miterlimit="10"
           d="M185.8,142c-0.5,0.1-0.4,0.4-0.4,0.7c0,10.8,0,21.7,0,32.5
         c0,0.1,0.1,0.2,0.1,0.3h136.7c0.6,0,1-0.4,1-1V143c0-0.6-0.4-1-1-1H185.9"

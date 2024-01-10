@@ -83,7 +83,7 @@ function AnimatedTitle({ themeStyle, loadedStatus }) {
             path="portfolio"
             element={
               <TitleReflector
-                category="PORTFOLIO"
+                category="PROJECTS"
                 themeStyle={themeStyle}
                 lightVariants={loadedStatus ? groundLoadedAnim : groundInitAnim}
                 titleVariants={loadedStatus ? titleLoadedAnim : titleInitAnim}

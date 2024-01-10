@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import "../../style/About.css";
 
-export default function WoodworkingImg({ svgVariants }) {
+export default function WoodworkingImg({  svgParentVariants = { initial: {}, animate: {}, transition: {} },
+  svgVariants = { initial: {}, animate: {}, transition: {} },
+  classSetter = 'woodworking-svg', }) {
 
   const newSvgVariants = {
     ...svgVariants
@@ -12,6 +14,7 @@ export default function WoodworkingImg({ svgVariants }) {
 
   return (
     <motion.svg
+      variants={svgParentVariants}
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +25,7 @@ export default function WoodworkingImg({ svgVariants }) {
       enable-background="new 0 0 500 500"
       xml:space="preserve"
       key="woodWorksvg"      
-      className="woodworking-svg"
+      className={classSetter}
     >
       <g>
         <motion.path
@@ -31,8 +34,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M283.8,87.8c-3.8,0.6-7.6,1.1-11.4,1.7
         c-3.7,0.5-7.4,0.9-11.2,1.5c-4.8,0.7-9.5,1.4-14.3,2c-3.1,0.4-6.2,0.9-9.4,1.3c-3,0.4-6.1,0.9-9.1,1.3c-3.2,0.5-6.4,0.9-9.6,1.3
@@ -49,8 +52,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M488.9,111.3c0.2,0.4,0.1,0.9,0.1,1.3
         c0,51.9,0,103.8,0,155.7c-3.1,1.7-6.2,3.7-9.3,5.6c-4.5,2.8-9,5.6-13.5,8.4c-8.2,5.1-16.5,10.1-24.7,15.1
@@ -65,8 +68,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M301.6,89.5c3.9-0.2,7.7,0.5,11.5,0.9
         c3.2,0.4,6.5,0.6,9.7,1c2.6,0.3,5.1,0.6,7.7,0.8c3.3,0.4,6.6,0.7,9.8,1.1c3.2,0.4,6.5,0.8,9.7,1.2c3.3,0.4,6.6,0.6,9.8,1
@@ -85,8 +88,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M479.2,190.4c-1.5,0-2.7,0.8-3.9,1.4
         c-16,6.9-32,13.8-48,20.6c-16.1,6.9-32.1,13.9-48.1,20.8c-15,6.5-30.1,12.7-45.1,19.2c-15.6,6.8-31.3,13.4-46.9,20.2
@@ -99,8 +102,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M294.1,91.4c-4-0.2-7.9,0.6-11.9,1.1
         c-2.7,0.3-5.5,0.6-8.2,1.1c-3,0.5-6,0.9-9,1.4c-2.3,0.4-4.7,0.7-7.1,1c-2.7,0.4-5.4,0.7-8,1.2c-2.9,0.5-5.8,0.8-8.8,1.2
@@ -116,8 +119,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M11.8,126.3c-0.4,0.5-0.4,1.2-0.4,1.8
         c0,58.6,0,117.3,0,176.1c2.5,1.5,5,3.1,7.6,4.6c11.1,6.9,22.2,13.8,33.2,20.6c5.5,3.4,10.9,6.9,16.4,10.2
@@ -131,8 +134,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M219.7,178.4c-2.3-0.6-4.6-1.2-6.8-1.8
         c-3.4-0.9-6.9-1.7-10.3-2.7c-1.1-0.3-2.1-0.5-3.2-0.6c-1.1,0-2.1-0.7-3.2-1c-7.5-1.9-15-3.7-22.4-5.6c-5.8-1.5-11.6-2.9-17.4-4.4
@@ -144,8 +147,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M68.3,141.6c0,65.3,0,130.6,0,196
         c0,0.5,0.1,1.1-0.2,1.6"
@@ -156,8 +159,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M198.8,173.6c-0.4,0.3-0.2,0.8-0.2,1.2
         c0,39,0,78.1,0,117.1c0,42.1,0,84.2,0,126.2c0,0.5,0,0.9-0.2,1.3"
@@ -168,8 +171,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M55.6,125.6c0.9,0.9,2.2,0.9,3.4,1.2
         c6.7,1.7,13.5,3.3,20.3,4.9c4.8,1.2,9.6,2.3,14.4,3.5c0.8,0.2,1.6,0.3,2.2,1c1.6-0.4,3.1,0.3,4.7,0.6c5.1,1.2,10.1,2.6,15.3,3.8
@@ -181,8 +184,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M479.3,113.5c0,0.5,0.1,1,0.1,1.6
         c0,24.7,0,49.4,0,74.2c0,27.8,0,55.5,0,83.3c0,0.4-0.1,0.9,0.1,1.3"
@@ -193,8 +196,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M13.7,126.2c1.2,1.1,2.8,1,4.2,1.4
         c5.9,1.6,11.9,3,17.9,4.5c6.3,1.6,12.6,3.1,18.8,4.7c4.9,1.2,9.7,2.5,14.6,3.7c0.9,0.2,1.7,0,2.5,0.3c1.4-0.9,3-0.8,4.5-1.1
@@ -206,8 +209,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M224.6,167.2c-1.2-1.1-2.8-1-4.2-1.4
         c-3.2-0.9-6.4-1.6-9.6-2.4c-7.3-1.7-14.6-3.5-21.8-5.3c-7.3-1.8-14.6-3.5-21.8-5.3c-2.7-0.7-5.5-1.4-8.3-1.9
@@ -221,8 +224,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M291.5,152.2c-0.9-0.7-1.9,0-2.7,0.2
         c-5.7,1.5-11.5,2.7-17.3,4c-2.7,0.6-5.4,1.3-8.2,1.9c-4.3,1-8.6,2.1-12.8,3.1c-3.5,0.8-7,1.6-10.4,2.4c-4.5,1.1-9,2.4-13.6,3.3
@@ -234,8 +237,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M479.3,113.4c-0.2-0.6-0.7-0.8-1.2-0.8
         c-3.9-0.4-7.8-0.8-11.8-1.2c-1.4-0.2-2.8-0.4-4.3-0.1c-0.8-1-2-0.7-3-0.8c-3.1-0.5-6.3-0.7-9.5-1c-3.1-0.3-6.2-0.7-9.4-1.1
@@ -250,8 +253,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M461.8,111.4c-1.1,0.7-2.5,0.7-3.7,1
         c-4.6,1.2-9.3,2.3-13.9,3.3c-5.8,1.4-11.6,2.7-17.4,4.1c-3,0.7-6,1.5-9,2.1c-5.3,1.1-10.5,2.5-15.7,3.7c-4.1,0.9-8.2,1.9-12.4,2.9
@@ -264,8 +267,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M292.3,91.6c-0.3,0.8-0.3,1.6-0.4,2.4
         c-0.1,8.3-0.1,16.6-0.1,25c0,5.2,0.1,10.5,0,15.7c-0.1,5.4,0,10.8-0.1,16.2c0,0.4,0.1,0.8-0.2,1.1"
@@ -276,8 +279,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M353.8,98.7c0,0.5,0.1,1,0.1,1.4
         c0,11.8,0,23.7,0,35.5c0,0.4-0.1,0.9,0.1,1.3"
@@ -288,8 +291,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M219.6,301.9c-6.8-3-13.6-5.9-20.4-8.9
         c-0.1,0-0.2,0-0.4,0"
@@ -300,8 +303,8 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M301.3,89.4c-0.8-0.6-1.8-0.5-2.6-0.6
         c-3.4-0.4-6.9-0.7-10.3-1.2c-1-0.1-2.1-0.3-3.1-0.3"
@@ -312,16 +315,16 @@ export default function WoodworkingImg({ svgVariants }) {
           animate="animate"
           transition="transition"
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           d="M418.8,106.2c0,4.7,0,9.4,0,14.2
         c0,0.4-0.1,0.8,0.1,1.2"
         />
         <line
           fill="none"
-          stroke="var(--svgColor)"
-          strokeWidth="var(--svgStrokeW)"
+          stroke="var(--primarySvgColor)"
+          strokeWidth="var(--primarySvgWidth)"
           stroke-miterlimit="10"
           x1="291.9"
           y1="91.3"

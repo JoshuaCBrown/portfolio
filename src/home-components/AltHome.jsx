@@ -185,7 +185,7 @@ const AltHome = ({ themeStyle, animVariant }) => {
                 btnClass={btnClass}
                 btnId="alt-connect-btn"
                 btnName="Connect"
-                btnLink="contact"
+                btnLink="connect"
               />
             </div>
             <div

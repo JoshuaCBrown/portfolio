@@ -121,18 +121,15 @@ const Portfolio = ({ themeStyle }) => {
           <div className="portfolio-flex-container">
             <div className="project-left-spacer">
               <div className="dotted-lines-circle-left"></div>
-              <div className="color-key-wrapper">
-                {colorKeysAll.map((item) => (
-                  <div className="key-legend-item" key={item.key}>
-                    <div className={item.class}></div>
-                    <span>{item.title}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="color-coded-wrapper">
-                {sortedProjects.map((item) => (
-                  <div className="color-coded" id={item.cat}></div>
-                ))}
+              <div className="color-key-parent-container">
+                <div className="color-key-wrapper">
+                  {colorKeysAll.map((item) => (
+                    <div className="key-legend-item" key={item.key}>
+                      <div className={item.class}></div>
+                      <span>{item.title}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -150,6 +147,7 @@ const Portfolio = ({ themeStyle }) => {
                   transition={{ duration: 0.5 }}
                   onClick={() => clickHandler(item.id)}
                 >
+                  <div className="color-coded" id={item.cat}></div>
                   <div className="img-div-container">
                     <AnimatePresence>
                       {!hasSelected && (
@@ -194,6 +192,7 @@ const Portfolio = ({ themeStyle }) => {
                         <>
                           <motion.div
                             className="project-title-container"
+                            id={`${item.cat}-title`}
                             layout
                           >
                             <h2 className="project-title">{item.title}</h2>
@@ -211,11 +210,13 @@ const Portfolio = ({ themeStyle }) => {
                           ))}
                         </>
                       )} */}
+                      <AnimatePresence>
                     {projectClicked === item.id && (
                       <>
                         <motion.div
                           className="project-info-container"
                           layout
+                          exit={{ height: '0' }}
                           data-isShown={item.id === projectClicked}
                         >
                           <motion.div
@@ -233,7 +234,7 @@ const Portfolio = ({ themeStyle }) => {
                             {techJoiner(item.technology)}
                           </span>
                         </motion.div>
-                        <motion.div layout className="project-navigation">
+                        <motion.div layout className="project-navigation" id={`${item.cat}-navigation`}>
                           <button
                             className="project-nav-btn"
                             id="project-nav-prev"
@@ -274,26 +275,31 @@ const Portfolio = ({ themeStyle }) => {
                         </motion.div>
                       </>
                     )}
+                    </AnimatePresence>
                   </div>
-                  
+                  <div className="color-coded" id={item.cat}></div>
                 </motion.div>
               ))}
             </div>
+
             <div className="project-right-spacer">
               <div className="dotted-lines-circle"></div>
+              <div className="dashed-vertical-flex-item"></div>
               <div className="project-svg-wrapper">
-                <KeysImg />
+                <KeysImg classSetter={'portfolio-keys-img'}/>
               </div>
+              <div className="dashed-vertical-flex-item"></div>
               <div className="project-svg-wrapper">
-                <CompImg />
+                <CompImg classSetter={'portfolio-comp-img'}/>
               </div>
+              <div className="dashed-vertical-flex-item"></div>
               <div className="project-svg-wrapper">
-                <WoodworkingImg />
+                <WoodworkingImg classSetter={'portfolio-woodworking-img'}/>
               </div>
+              <div className="dashed-vertical-flex-item"></div>
             </div>
           </div>
         </div>
-
         {/* <div className="portfolio-header">
               <div className="ph-left"></div>
               <div className="ph-mid">
