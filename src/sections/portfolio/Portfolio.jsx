@@ -87,7 +87,7 @@ const Portfolio = ({ themeStyle }) => {
 
   const blurVariants = hasSelected ? noBlur : hasBlur;
 
-  const colorKeysOne = [
+  const colorKeysAll = [
     {
       title: "code",
       class: "coding-color",
@@ -98,21 +98,19 @@ const Portfolio = ({ themeStyle }) => {
       class: "craft-color",
       key: "craftColor",
     },
-  ];
-  const colorKeysTwo = [
     {
-      title: "music",
+      title: "a/v",
       class: "music-color",
       key: "musicColor",
     },
+  ];
+  const colorKeysTwo = [
     {
       title: "video",
       class: "video-color",
       key: "videoColor",
     },
   ];
-
-  const colorKeysAll = [...colorKeysOne, ...colorKeysTwo];
 
   return (
     <>
@@ -139,7 +137,6 @@ const Portfolio = ({ themeStyle }) => {
                   className="portfolio-item"
                   id={item.id}
                   key={item.id}
-                  style={selectorBot(item.id)}
                   layout
                   initial={false}
                   // whileHover={{ flex: 10 }}
@@ -153,6 +150,7 @@ const Portfolio = ({ themeStyle }) => {
                       {!hasSelected && (
                         <motion.div
                           className="project-title-collapsed-container"
+                          id={`${item.cat}-col-title`}
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
@@ -177,7 +175,8 @@ const Portfolio = ({ themeStyle }) => {
                         className="blur-div"
                         key={item.id}
                         variants={blurVariants}
-                        initial="initial"
+                        // initial="initial"
+                        initial={false}
                         // whileHover="whileHover"
                         transition="transition"
                         animate="animate"
@@ -210,71 +209,78 @@ const Portfolio = ({ themeStyle }) => {
                           ))}
                         </>
                       )} */}
-                      <AnimatePresence>
-                    {projectClicked === item.id && (
-                      <>
-                        <motion.div
-                          className="project-info-container"
-                          layout
-                          exit={{ height: '0' }}
-                          data-isShown={item.id === projectClicked}
-                        >
+                    <AnimatePresence>
+                      {projectClicked === item.id && (
+                        <>
                           <motion.div
-                            className="project-title-container-ghost"
+                            className="project-info-container"
                             layout
+                            exit={{ height: "0" }}
+                            data-isShown={item.id === projectClicked}
                           >
-                            <h2 className="project-title-ghost">
-                              {item.title}
-                            </h2>
+                            <motion.div
+                              className="project-title-container-ghost"
+                              layout
+                            >
+                              <h2 className="project-title-ghost">
+                                {item.title}
+                              </h2>
+                            </motion.div>
+                            <p className="project-description">
+                              {item.description}
+                            </p>
+                            <span className="project-technology">
+                              {techJoiner(item.technology)}
+                            </span>
                           </motion.div>
-                          <p className="project-description">
-                            {item.description}
-                          </p>
-                          <span className="project-technology">
-                            {techJoiner(item.technology)}
-                          </span>
-                        </motion.div>
-                        <motion.div layout className="project-navigation" id={`${item.cat}-navigation`}>
-                          <button
-                            className="project-nav-btn"
-                            id="project-nav-prev"
-                            key="project-nav-prev"
-                            onClick={(e) => nextProject(e, -1, projectClicked)}
+                          <motion.div
+                            layout
+                            className="project-navigation"
+                            id={`${item.cat}-navigation`}
+                            exit={{ height: "0" }}
                           >
-                            <img
-                              src={backArrow}
-                              className="back-btn-aro"
-                              id="nav-prev"
-                            />
-                          </button>
-                          <button
-                            className="project-nav-btn"
-                            id="project-nav-back"
-                            key="project-nav-back"
-                            onClick={backToPortfolio}
-                          >
-                            {/* Back */}
-                            <img
-                              src={detailedArrow}
-                              className="back-btn-aro"
-                              id="nav-back"
-                            />
-                          </button>
-                          <button
-                            className="project-nav-btn"
-                            id="project-nav-next"
-                            key="project-nav-next"
-                            onClick={(e) => nextProject(e, 1)}
-                          >
-                            <img
-                              src={backArrow}
-                              className="back-btn-aro"
-                              id="nav-next"
-                            />
-                          </button>
-                        </motion.div>
-                      </>
-                    )}
+                            <button
+                              className="project-nav-btn"
+                              id="project-nav-prev"
+                              key="project-nav-prev"
+                              onClick={(e) =>
+                                nextProject(e, -1, projectClicked)
+                              }
+                            >
+                              <img
+                                src={backArrow}
+                                className="back-btn-aro"
+                                id="nav-prev"
+                              />
+                            </button>
+                            <button
+                              className="project-nav-btn"
+                              id="project-nav-back"
+                              key="project-nav-back"
+                              onClick={backToPortfolio}
+                            >
+                              {/* Back */}
+                              <img
+                                src={detailedArrow}
+                                className="back-btn-aro"
+                                id="nav-back"
+                              />
+                            </button>
+                            <button
+                              className="project-nav-btn"
+                              id="project-nav-next"
+                              key="project-nav-next"
+                              onClick={(e) => nextProject(e, 1)}
+                            >
+                              <img
+                                src={backArrow}
+                                className="back-btn-aro"
+                                id="nav-next"
+                              />
+                            </button>
+                          </motion.div>
+                        </>
+                      )}
                     </AnimatePresence>
                   </div>
                   <div className="color-coded" id={item.cat}></div>
@@ -286,15 +292,15 @@ const Portfolio = ({ themeStyle }) => {
               <div className="dotted-lines-circle"></div>
               <div className="dashed-vertical-flex-item"></div>
               <div className="project-svg-wrapper">
-                <KeysImg classSetter={'portfolio-keys-img'}/>
+                <KeysImg classSetter={"portfolio-keys-img"} />
               </div>
               <div className="dashed-vertical-flex-item"></div>
               <div className="project-svg-wrapper">
-                <CompImg classSetter={'portfolio-comp-img'}/>
+                <CompImg classSetter={"portfolio-comp-img"} />
               </div>
               <div className="dashed-vertical-flex-item"></div>
               <div className="project-svg-wrapper">
-                <WoodworkingImg classSetter={'portfolio-woodworking-img'}/>
+                <WoodworkingImg classSetter={"portfolio-woodworking-img"} />
               </div>
               <div className="dashed-vertical-flex-item"></div>
             </div>

@@ -163,7 +163,7 @@ const PortfolioProjects = () => {
       img: visualizeThisImg,
       imgs: [exampleImg, secondExample],
       id: "audio-visualizing",
-      cat: "video",
+      cat: "music",
       description: (
         <p className="project-description">
           Custom audio visualizer for my band's song 'I Need It'. Utilized
@@ -178,7 +178,7 @@ const PortfolioProjects = () => {
       img: ptImg,
       imgs: [exampleImg, secondExample],
       id: "pt-img",
-      cat: "video",
+      cat: "music",
       description: (
         <p className="project-description">
           Claymation music video for my band's song 'Passin Through'.
@@ -193,7 +193,7 @@ const PortfolioProjects = () => {
       img: flareImg,
       imgs: [secondExample, exampleImg],
       id: "flare-img",
-      cat: "video",
+      cat: "music",
       description: (
         <p className="project-description">
           Video editing and FX for my band's song 'Flare'. In addition to
@@ -302,7 +302,7 @@ const PortfolioProjects = () => {
 
   const videoImgs = PortfolioContent.filter((item) => imgSorter(item, "video"));
 
-  const sortedProjects = [...codingImgs, ...craftImgs, ...musicImgs, ...videoImgs];
+  const sortedProjects = [...codingImgs,  ...craftImgs, ...musicImgs,];
 
   return sortedProjects;
 };

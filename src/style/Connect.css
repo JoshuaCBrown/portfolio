@@ -1,8 +1,174 @@
+.contact-container {
+  /* background: black; */
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "connectCube contactForm connectLinks";
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  
+  font-family: CourierPrime;
+  overflow-y: auto;
+  /* background: red; */
+}
+
+.connect-cube-container {
+  grid-area: connectCube;
+  display: flex;
+  justify-content: center;
+  /* background: orange; */
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.connect-form-container {
+  grid-area: contactForm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: stretch; */
+  /* background: green; */
+
+}
+.contact-form {
+  display: flex;
+  /* background: blue; */
+  /* justify-self: center; */
+  /* align-self: center; */
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  max-width: 400px;
+}
 form {
-  color: red;
+  min-width: 100%;
+  /* border: 2px var(--primaryBlack) dashed; */
+  padding: 7px;
+  border-radius: 5px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* background: orange; */
 }
 
 label {
-  color: red;
-  font-size: 3rem;
+  /* color: red; */
+  font-size: 1rem;
+}
+
+
+
+.contact-form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* background: red; */
+}
+
+.connect-links-container {
+  grid-area: connectLinks;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* background: green; */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  
+  
+  /* gap: 10%; */
+}
+
+.connect-cube {
+  /* height: 100%; */
+  width: 50%;
+  /* position: absolute; */
+  --fancySvgFill: var(--primaryShade);
+  z-index: -1;
+  /* align-self: center;
+  justify-self: center; */
+  /* opacity: .25; */
+}
+
+
+
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  background: transparent;
+  margin: 10px;
+  outline: 2px solid;
+  border: none;
+}
+
+input[type=submit] {
+  margin: 0;
+  background: var(--primaryBlack);
+  padding: none;
+  padding: 0;
+  color: var(--primaryWhite);
+  font-weight: 900;
+  height: 2rem;
+  width: 50%;
+  outline: none;
+  
+}
+
+
+
+.connect-links-container a {
+  max-height: 80px;
+  /* max-height: fit-content; */
+  /* height: min-content; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: red; */
+}
+
+.contact-container img {
+  width: 80px;
+  height: 80px;
+}
+
+@media (width < 700px) {
+  .contact-container {
+   
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5 1fr 3rem;
+    grid-template-areas: "connectLinks"
+    "contactForm";
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    
+    font-family: CourierPrime;
+    /* background: red; */
+  }
+
+  .connect-links-container {
+    flex-direction: row;
+  }
+
+  .connect-cube {
+    display: none;
+  }
+
+  .contact-conatiner img {
+    width: 50px;
+    height: 50px;
+  }
 }

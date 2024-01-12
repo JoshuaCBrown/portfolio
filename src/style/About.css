@@ -14,7 +14,7 @@
   flex: 1;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
   box-sizing: border-box;
   justify-content: center;
   align-items: stretch;
@@ -58,7 +58,7 @@
 }
 
 .flex-cape {
-  border-left: 3px black dashed;
+  /* border-left: 3px black dashed; */
   position: relative;
   left: 4px;
   /*^ width of border to remove it from window ^ */
@@ -463,7 +463,7 @@
   width: 100%;
   height: 100%;
   grid-area: meStuff;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: grid;
   grid-template-columns: .12fr .44fr .44fr;
   /* background: purple; */
