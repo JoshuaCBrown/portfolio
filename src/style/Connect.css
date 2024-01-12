@@ -143,6 +143,30 @@ input[type=submit] {
   height: 80px;
 }
 
+.connect-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: 100%;
+  align-items: center;
+}
+
+.connect-button-container  button {
+  width: 70%;
+  background: var(--primaryBlack);
+  color: var(--primaryWhite);
+  font-family: courierPrime;
+  border: none;
+  padding: 10px 5px;
+  font-weight: 900;
+  border-radius: 5px;
+  height: 3rem;
+}
+
+.email-btn {
+  border: none;
+}
+
 @media (width < 700px) {
   .contact-container {
    

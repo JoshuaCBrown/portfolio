@@ -11,6 +11,8 @@ import githubIcon from "../assets/icons/github-100.png";
 const Connect = ({ themeStyle }) => {
   const [result, setResult] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [mailClicked, setMailClicked] = useState(false);
+  const [btnText, setBtnText] = useState('Copy email to clipboard');
   const navigate = useNavigate();
 
   const onSubmit = async (event) => {
@@ -34,6 +36,15 @@ const Connect = ({ themeStyle }) => {
       setResult("An error occured.");
     }
   };
+
+  function copyTextToClipboard() {
+    const stringOne = "JoshuaChBrown";
+    const stringTwo = "@gmail.com";
+    const stringThree = stringOne + stringTwo;
+    navigator.clipboard.writeText(stringThree);
+    console.log(stringThree);
+    setBtnText('email copied');
+  }
   return (
     <>
       <TransitAnim>
@@ -83,20 +94,29 @@ const Connect = ({ themeStyle }) => {
           <div className="connect-links-container">
             <a
               href="https://www.linkedin.com/in/josh-brown-a5a24125a/"
-              target="blank"
+              target="_blank"
             >
               <img src={liIcon} alt="linked in" />
             </a>
-            <a
-              href="https://www.linkedin.com/in/josh-brown-a5a24125a/"
-              target="blank"
-            >
-              <img src={emailIcon} />
-            </a>
-            <a
-              href="https://github.com/JoshuaCBrown/"
-              target="blank"
-            >
+            {mailClicked ? (
+              <>
+                <div className="connect-button-container">
+                  <a href="mailto:joshuachbrown@gmail.com" target="_blank">
+                    <button>Open default email client</button>
+                  </a>
+                  <button onClick={copyTextToClipboard}>
+                    {btnText}
+                    
+                  </button>
+                </div>
+              </>
+            ) : (
+              <button className="email-btn" onClick={() => setMailClicked(true)}>
+                <img src={emailIcon} />
+              </button>
+            )}
+
+            <a href="https://github.com/JoshuaCBrown" target="_blank">
               <img src={githubIcon} />
             </a>
           </div>
