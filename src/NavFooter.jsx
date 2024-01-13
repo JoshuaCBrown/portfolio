@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import "./style/NavFooter.css";
 
 function NavFooter() {
@@ -9,25 +9,25 @@ function NavFooter() {
   const navLinks = [
     {
       link: "/",
-      title: 'Home',
-      key: 'nav-footer-home',
+      title: "Home",
+      key: "nav-footer-home",
     },
     {
       link: "about",
-      title: 'About',
-      key: 'nav-footer-about',
+      title: "About",
+      key: "nav-footer-about",
     },
     {
       link: "portfolio",
-      title: 'Projects',
-      key: 'nav-footer-projects',
+      title: "Projects",
+      key: "nav-footer-projects",
     },
     {
       link: "connect",
-      title: 'Connect',
-      key: 'nav-footer-connect',
-    }
-  ]
+      title: "Connect",
+      key: "nav-footer-connect",
+    },
+  ];
   return (
     <>
       {pathname !== "/" ? (
@@ -40,10 +40,10 @@ function NavFooter() {
             <ul className="nav-list">
               {navLinks.map((item) => (
                 <li className="nav-link" key={item.key}>
-                <Link style={{ textDecoration: "none" }} to={item.link}>
-                <span className="link-text">{item.title}</span>
-                </Link>
-              </li>
+                  <Link style={{ textDecoration: "none" }} to={item.link}>
+                    <span className="link-text">{item.title}</span>
+                  </Link>
+                </li>
               ))}
             </ul>
           </nav>

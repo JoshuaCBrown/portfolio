@@ -1,12 +1,9 @@
-
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import arrow from "../../assets/commonicons/arrow.png";
 
 import "../../style/AboutNav.css";
 
-
 const AboutNav = ({ pageSelected, setPageSelected }) => {
-
   const abtNav = (whichWay) => {
     if (pageSelected + whichWay === 4) {
       setPageSelected(0);
@@ -20,30 +17,26 @@ const AboutNav = ({ pageSelected, setPageSelected }) => {
 
   const specificSections = [
     {
-      section: 'Skills',
-      id: 'skillSection',
-    },
-    { 
-      section: 'Education',
-      id: 'educationSection',
+      section: "Skills",
+      id: "skillSection",
     },
     {
-      section: 'Experience',
-      id: 'experienceSection',
+      section: "Education",
+      id: "educationSection",
     },
     {
-      section: 'Interests',
-      id: 'interestsSection',
+      section: "Experience",
+      id: "experienceSection",
+    },
+    {
+      section: "Interests",
+      id: "interestsSection",
     },
   ];
 
   const listClassify = (thisHeading) => {
-    return pageSelected === thisHeading ? (
-       "selected-nav"
-    ) : (
-       "about-nav-item"
-    );
-  }
+    return pageSelected === thisHeading ? "selected-nav" : "about-nav-item";
+  };
 
   return (
     <div className="about-detailed-nav">
@@ -53,7 +46,12 @@ const AboutNav = ({ pageSelected, setPageSelected }) => {
       <div className="top-nav-about-headings">
         <ul className="about-nav-list">
           {specificSections.map((navItem, i) => (
-            <motion.li className={listClassify(i)} id={i} key={navItem.id} onClick={() => setPageSelected(i)}>
+            <motion.li
+              className={listClassify(i)}
+              id={i}
+              key={navItem.id}
+              onClick={() => setPageSelected(i)}
+            >
               {navItem.section}
             </motion.li>
           ))}

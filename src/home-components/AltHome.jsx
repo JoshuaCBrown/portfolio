@@ -1,16 +1,14 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import NavBtn from "./NavBtn";
-import CompImg from "../assets/svgs/CompImg.jsx";
-import BetterCube from "../assets/svgs/new/BetterCube";
-import FancyCube from "../assets/svgs/new/FancyCube";
-import BetterManny from "../assets/svgs/new/BetterManny";
-import FancyManny from "../assets/svgs/new/FancyManny";
-import FancyMannyTwo from "../assets/svgs/new/FancyMannyTwo";
-import BetterComp from "../assets/svgs/new/BetterComp";
-import FancyComp from "../assets/svgs/new/FancyComp";
 
-import MannyImg from "../assets/svgs/MannyImg.jsx";
+import NavBtn from "./NavBtn";
+
+import BetterComp from "../assets/svgs/new/BetterComp";
+import BetterCube from "../assets/svgs/new/BetterCube";
+import BetterManny from "../assets/svgs/new/BetterManny";
+import FancyComp from "../assets/svgs/new/FancyComp";
+import FancyCube from "../assets/svgs/new/FancyCube";
+import FancyManny from "../assets/svgs/new/FancyManny";
+
 import "../style/AltHome.css";
 
 const AltHome = ({ themeStyle, animVariant }) => {
@@ -96,11 +94,6 @@ const AltHome = ({ themeStyle, animVariant }) => {
           exit="exit"
           transition="transition"
         >
-          {/* <BetterManny
-          classSetter="home-svg"
-          svgParentVariants={fadeSvgVariants}
-          svgVariants={pathVariants}
-        /> */}
           <div className="alt-home-group" id="alt-about-group">
             <div
               className="alt-home-btn-container"
@@ -218,26 +211,6 @@ const AltHome = ({ themeStyle, animVariant }) => {
               </div>
             </div>
           </div>
-          {/* <motion.div
-          className="home-nav"
-          id="cube-nav"
-          initial={{ y: 0 }}
-          animate={{ y: 0 }}
-          transition={{ ease: "circOut", duration: 2 }}
-        >
-              <motion.div
-                initial={{ height: 0, width: 0 }}
-                animate={{ height: "80%", width: "40%" }}
-                transition={{ duration: 2 }}
-                className="right-dashed"
-              ></motion.div>
-              <motion.div
-                initial={{ height: 0, width: 0 }}
-                animate={{ height: "50%", width: "20%" }}
-                transition={{ duration: 2 }}
-                className="left-dashed"
-              ></motion.div>
-              </motion.div> */}
         </motion.div>
       </div>
     </>

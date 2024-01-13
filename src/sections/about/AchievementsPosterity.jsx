@@ -1,8 +1,5 @@
 const Achievements = () => {
-  return (
-    <>
-    </>
-  )
-}
+  return <></>;
+};
 
 export default Achievements;

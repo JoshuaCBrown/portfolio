@@ -1,17 +1,9 @@
-import { useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Home from "../Home";
+import { Route, Routes, useLocation } from "react-router-dom";
 import AltHome from "../home-components/AltHome";
-import About from "../sections/about/About";
-import NavImgs from "../home-components/NavImgs";
-import Portfolio from "../sections/portfolio/Portfolio";
 import Connect from "../sections/Connect";
-import Achievements from "../sections/about/Achievements";
-
-import Experience from "../sections/about/Experience";
-import Interests from "../sections/about/Interests";
-import Skills from "../sections/about/Skills";
+import About from "../sections/about/About";
+import Portfolio from "../sections/portfolio/Portfolio";
 
 function AnimatedRoutes({ themeStyle, loadedStatus }) {
   const skyInitAnim = {

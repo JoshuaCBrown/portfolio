@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import TransitAnim from "../../transit-routes/TransitAnim";
-import PortfolioProjects from "./PortfolioContent";
-import "../../style/Portfolio.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 import backArrow from "../../assets/commonicons/arrow.png";
 import detailedArrow from "../../assets/commonicons/directional-arrow-two.png";
-import CompImg from "../../assets/svgs/new/BetterComp";
-import MobileHeader from "../../home-components/MobileHeader.jsx";
-import FancyComp from "../../assets/svgs/new/FancyComp";
-import WoodworkingImg from "../../assets/svgs/WoodworkingImg";
 import KeysImg from "../../assets/svgs/KeysImg";
+import WoodworkingImg from "../../assets/svgs/WoodworkingImg";
+import CompImg from "../../assets/svgs/new/BetterComp";
+import "../../style/Portfolio.css";
+import TransitAnim from "../../transit-routes/TransitAnim";
+import PortfolioProjects from "./PortfolioContent";
 
 const Portfolio = ({ themeStyle }) => {
   const [projectClicked, setProjectClicked] = useState("");

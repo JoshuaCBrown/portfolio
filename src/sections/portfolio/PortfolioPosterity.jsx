@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import "../../style/Portfolio.css";
 import TransitAnim from "../../transit-routes/TransitAnim";
 import PortfolioContent from "./PortfolioContent";
-import "../../style/Portfolio.css";
 
 const Portfolio = ({ themeStyle }) => {
   const [projectClicked, setProjectClicked] = useState("");
@@ -32,10 +32,10 @@ const Portfolio = ({ themeStyle }) => {
   const selectorBot = (itemId) => {
     console.log(itemId);
     return hasSelected ? stylizer(itemId) : { flex: 1 };
-  }
+  };
 
   function techJoiner(arr) {
-    const str = arr.join(', ');
+    const str = arr.join(", ");
     return str;
   }
 
@@ -136,16 +136,19 @@ const Portfolio = ({ themeStyle }) => {
                           ))}
                         </>
                       )}
-                      <motion.div 
-                      className="project-info-container"
-                      layout
-                      data-isShown={item.id === projectClicked}
+                      <motion.div
+                        className="project-info-container"
+                        layout
+                        data-isShown={item.id === projectClicked}
                       >
                         <h2 className="project-title">{item.title}</h2>
                         {projectClicked === item.id && (
                           <>
-                            <p className="project-description">{item.description}</p>
-                            <span className="project-technology">{techJoiner(item.technology)}
+                            <p className="project-description">
+                              {item.description}
+                            </p>
+                            <span className="project-technology">
+                              {techJoiner(item.technology)}
                             </span>
                           </>
                         )}

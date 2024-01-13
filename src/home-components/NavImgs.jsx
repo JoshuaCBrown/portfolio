@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import NavBtn from "./NavBtn";
 import CompImg from "../assets/svgs/CompImg.jsx";
+import NavBtn from "./NavBtn";
 
 import MannyImg from "../assets/svgs/MannyImg.jsx";
 import "../style/NavImgs.css";
@@ -9,13 +8,13 @@ import "../style/NavImgs.css";
 function NavImgs({ themeStyle, animVariant }) {
   const lightSvgVariants = {
     initial: { pathLength: 0 },
-    animate: { pathLength: 1, transition: { duration: 2 }},
+    animate: { pathLength: 1, transition: { duration: 2 } },
     transition: { duration: 2 },
   };
 
   const darkSvgVariants = {
     initial: { pathLength: 1 },
-    animate: { pathLength: 1, transition: { duration: 0 }},
+    animate: { pathLength: 1, transition: { duration: 0 } },
     transition: { duration: 0 },
   };
 
@@ -42,7 +41,9 @@ function NavImgs({ themeStyle, animVariant }) {
               <></>
             )}
             <div className="svg-container" id="svg-comp-front">
-              <CompImg svgVariants={themeStyle ? darkSvgVariants : lightSvgVariants} />
+              <CompImg
+                svgVariants={themeStyle ? darkSvgVariants : lightSvgVariants}
+              />
             </div>
           </div>
         </div>
@@ -91,7 +92,7 @@ function NavImgs({ themeStyle, animVariant }) {
         </motion.div>
         <div className="home-nav" id="manny-nav">
           <div className="home-third">
-          <div className="svg-container" id="svg-manny-bg-light">
+            <div className="svg-container" id="svg-manny-bg-light">
               <MannyImg svgVariants={lightSvgVariants} />
             </div>
             {themeStyle ? (
@@ -102,7 +103,9 @@ function NavImgs({ themeStyle, animVariant }) {
               <></>
             )}
             <div className="svg-container" id="svg-manny-front">
-              <MannyImg svgVariants={themeStyle ? darkSvgVariants : lightSvgVariants} />
+              <MannyImg
+                svgVariants={themeStyle ? darkSvgVariants : lightSvgVariants}
+              />
             </div>
           </div>
         </div>

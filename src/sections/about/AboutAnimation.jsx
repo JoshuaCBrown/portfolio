@@ -14,11 +14,7 @@ export default function aboutAnimation() {
         { height: "100%" },
         { duration: 0.25 }
       ),
-      animate(
-        ".about-middle-top-dashes",
-        { width: "100%" },
-        { duration: 0.25 }
-      )
+      animate(".about-middle-top-dashes", { width: "100%" }, { duration: 0.25 })
     );
   };
   const simulTwo = () => {
@@ -79,11 +75,7 @@ export default function aboutAnimation() {
 
   const simulFive = () => {
     return (
-      animate(
-        ".skyline-svg-bg",
-        { opacity: 0.9 },
-        { duration: 1, delay: 0.5 }
-      ),
+      animate(".skyline-svg-bg", { opacity: 0.9 }, { duration: 1, delay: 0.5 }),
       animate(
         ".problem-solving",
         {

@@ -70,5 +70,4 @@ const allSkills = [codeSkills, visualSkills, audioSkills, generalSkills];
 const rightSkills = [codeSkills, generalSkills];
 const leftSkills = [visualSkills, audioSkills];
 
-
-export { allSkills, rightSkills, leftSkills };
+export { allSkills, leftSkills, rightSkills };

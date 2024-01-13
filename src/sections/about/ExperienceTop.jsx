@@ -1,7 +1,5 @@
-import { leftJobs, rightJobs } from "./ExpeJobs";
 import "../../style/Experience.css";
-
-
+import { leftJobs } from "./ExpeJobs";
 
 const ExperienceTop = () => {
   return (
@@ -13,9 +11,9 @@ const ExperienceTop = () => {
           <div className="job-duration">{job.duration}</div>
           <div className="job-line"></div>
         </div>
-      ))}      
+      ))}
     </div>
-  )
+  );
 };
 
 export default ExperienceTop;

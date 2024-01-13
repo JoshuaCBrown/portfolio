@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "./style/Ground.css";
+import "../style/Ground.css";
 
 function TitleReflector({
   category,
@@ -38,8 +37,6 @@ function TitleReflector({
     <>
       {/* these are all children of .ground */}
       <div className="heading-container">
-        
-        {/* <NavImgs themeStyle={themeStyle} /> */}
         <motion.div
           className="title-container"
           style={{ zIndex: 10 }}
@@ -78,10 +75,8 @@ function TitleReflector({
           ) : (
             <></>
           )}
-          
         </motion.div>
       </div>
-      
     </>
   );
 }

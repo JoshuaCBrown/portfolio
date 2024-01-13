@@ -1,15 +1,11 @@
-import { useState } from "react";
 import "../../style/Education.css";
 
-import arrow from "../../assets/commonicons/arrow.png";
-import { motion } from "framer-motion";
 import EducationStructure from "./EducationStructure";
 
 const EducationRight = () => {
-
   return (
     <div className="large-about-container" id="education-right">
-      <EducationStructure contentSection="university"/>
+      <EducationStructure contentSection="university" />
     </div>
   );
 };

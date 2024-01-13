@@ -1,9 +1,8 @@
-import arrow from "../../assets/commonicons/arrow.png";
 import { motion } from "framer-motion";
+import arrow from "../../assets/commonicons/arrow.png";
 const FlashingArrows = ({ delayMulti }) => {
-
   const animDelay = () => {
-    const delayedVal = delayMulti * .15;
+    const delayedVal = delayMulti * 0.15;
     const fullDelay = 2 + delayedVal;
     return fullDelay;
   };

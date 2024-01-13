@@ -1,10 +1,10 @@
-import { useState } from "react";
-import "../../style/Education.css";
-import collegeIcon from "../../assets/icons/gradcap1.png";
-import booksIcon from "../../assets/icons/book1.png";
-import webIcon from "../../assets/icons/web2.png";
-import arrow from "../../assets/commonicons/arrow.png";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import arrow from "../../assets/commonicons/arrow.png";
+import booksIcon from "../../assets/icons/book1.png";
+import collegeIcon from "../../assets/icons/gradcap1.png";
+import webIcon from "../../assets/icons/web2.png";
+import "../../style/Education.css";
 
 const Education = () => {
   const [eduSelected, setEduSelected] = useState({

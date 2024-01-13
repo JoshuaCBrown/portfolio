@@ -1,5 +1,5 @@
-import "../../style/Skills.css";
 import visualImg from "../../assets/icons/eye2.png";
+import "../../style/Skills.css";
 
 const Skills = () => {
   const codeSkills = [
@@ -79,13 +79,11 @@ const Skills = () => {
             </div>
           </div> */}
           <div className="skills-section" id="visual-skills">
-          
             <div className="skills-heading">
-            <div className="skills-color"></div>
-                <div id="visual-heading">
+              <div className="skills-color"></div>
+              <div id="visual-heading">
                 <img src={visualImg} />
-                </div>
-              
+              </div>
             </div>
             <div className="skills-content-color-border"></div>
             <div className="skills-content" id="visual-skills-content">

@@ -1,7 +1,7 @@
+import { useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { allSkills } from "./AllSkills.js";
 import Listerine from "./Listerine.jsx";
-import { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
 
 const MySmallSkills = ({ setSectionTitle }) => {
   const ref = useRef(null);
@@ -33,7 +33,6 @@ const MySmallSkills = ({ setSectionTitle }) => {
           </>
         ))}
       </div>
-      
     </>
   );
 };

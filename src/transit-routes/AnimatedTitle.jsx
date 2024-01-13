@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import TitleReflector from "../TitleReflector";
 import { AnimatePresence } from "framer-motion";
+import { Route, Routes, useLocation } from "react-router-dom";
+import TitleReflector from "../home-components/TitleReflector";
 
 function AnimatedTitle({ themeStyle, loadedStatus }) {
   const location = useLocation();
@@ -26,13 +25,18 @@ function AnimatedTitle({ themeStyle, loadedStatus }) {
   };
 
   const groundLoadedAnim = {
-    initial: { transformPerspective: 175, scaleY: .9, rotateX: 50, x: "100vw" },
+    initial: {
+      transformPerspective: 175,
+      scaleY: 0.9,
+      rotateX: 50,
+      x: "100vw",
+    },
     animate: {
       transformPerspective: 175,
       scaleY: 0.9,
       rotateX: 50,
       x: 0,
-      transition: { type: "tween", duration: .25 },
+      transition: { type: "tween", duration: 0.25 },
     },
     exit: {
       transformPerspective: 175,
@@ -61,7 +65,7 @@ function AnimatedTitle({ themeStyle, loadedStatus }) {
             path="/"
             element={
               <TitleReflector
-                category="JoshDOTdev"
+                category="JoshCB.dev"
                 themeStyle={themeStyle}
                 lightVariants={loadedStatus ? groundLoadedAnim : groundInitAnim}
                 titleVariants={loadedStatus ? titleLoadedAnim : titleInitAnim}

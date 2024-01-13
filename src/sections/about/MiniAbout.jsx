@@ -1,30 +1,17 @@
-import SmallAbout from "./SmallAbout.jsx";
-import AboutCircles from "./AboutCircles.jsx";
-import ExperienceTop from "./ExperienceTop.jsx";
-import ExperienceBottom from "./ExperienceBottom.jsx";
-import EducationLeft from "./EducationLeft.jsx";
-import EducationRight from "./EducationRight.jsx";
-import EducationCenter from "./EducationCenter.jsx";
-import Interests from "./Interests.jsx";
-import AboutNav from "./AboutNav.jsx";
-import Achievements from "./Achievements.jsx";
-import MyStory from "./MyStory.jsx";
 import CircleInCircles from "./CircleInCircles";
+import SmallAbout from "./SmallAbout.jsx";
 
 import FlashingArrows from "./FlashingArrows.jsx";
 
-import LoremIpsum from "./LoremIpsum.jsx";
-
-import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
-import WoodworkingImgBgStatic from "../../assets/svgs/WoodworkingImgBgStatic.jsx";
-import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
-import SkylineImgBg from "../../assets/svgs/SkylineImgBgPosterity.jsx";
-import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStaticPosterity.jsx";
 import MannyImg from "../../assets/svgs/MannyImg.jsx";
 import MannyImgBgStatic from "../../assets/svgs/MannyImgBgStatic.jsx";
+import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
+import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStaticPosterity.jsx";
+import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
+import WoodworkingImgBgStatic from "../../assets/svgs/WoodworkingImgBgStatic.jsx";
 
-import { useState, useEffect } from "react";
-import { useAnimate, motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
 
@@ -138,7 +125,7 @@ const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
               layout
               initial={{ y: "200%" }}
               animate={{ y: "0%" }}
-              transition={{ duration: .5 }}
+              transition={{ duration: 0.5 }}
             >
               <div className="sm-ac-wrapper">
                 {/* <div className="sm-ac-right-dashes"></div> */}
@@ -149,7 +136,6 @@ const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
           <motion.div
             className="sm-mid-bot-row"
             data-thingSelected={goClicked}
-            
             layout
           >
             <div className="sm-mb-left">

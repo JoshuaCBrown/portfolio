@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
 
-
-
 const AboutCircles = ({ goClicked, animateMe, pageSelected }) => {
-
   function circleSize(circleNum) {
     const difference = circleNum - pageSelected;
     const absoluteDif = Math.abs(difference);
@@ -17,8 +14,7 @@ const AboutCircles = ({ goClicked, animateMe, pageSelected }) => {
     } else {
       return "three-off";
     }
-
-  };
+  }
 
   return (
     <div
@@ -48,7 +44,7 @@ const AboutCircles = ({ goClicked, animateMe, pageSelected }) => {
             </>
           )}
         </div>
-        <div className="photo-container-dashes" data-goOn={goClicked} ></div>
+        <div className="photo-container-dashes" data-goOn={goClicked}></div>
       </motion.div>
 
       <motion.div

@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import TransitAnim from "../../transit-routes/TransitAnim";
 import "../../style/About.css";
 import TextBlockShaper from "./TextBlockShaper";
-import MyComponent from "./Test";
 const AboutContent = ({}) => {
   const [btnClicked, setBtnClicked] = useState(false);
 
@@ -24,29 +22,32 @@ const AboutContent = ({}) => {
     { id: "education-box", title: "Education", link: "about/education" },
     { id: "experience-box", title: "Experience", link: "about/experience" },
     { id: "skills-box", title: "Skills", link: "about/skills" },
-    { id: "achievements-box", title: "Achievements", link: "about/achievements" },
+    {
+      id: "achievements-box",
+      title: "Achievements",
+      link: "about/achievements",
+    },
     { id: "interests-box", title: "Interests", link: "about/interests" },
   ];
 
   return (
     <>
-     
-        <div className="about-page-container">
-          <div className="about-content-container">
-            {btnClicked ? (
-              <></>
-            ) : (
-              <div className="about-summary">
-                <TextBlockShaper />
-              </div>
-            )}
-            {/* <MyComponent /> */}
-            <div className="about-nav-container">
-              <div className="left-spacer"></div>
-              <nav>
-                <ul className="about-nav" data-btnClicked={btnClicked}>
-                  {abtNavBtns.map((item) => (
-                    <Link to={item.link}>
+      <div className="about-page-container">
+        <div className="about-content-container">
+          {btnClicked ? (
+            <></>
+          ) : (
+            <div className="about-summary">
+              <TextBlockShaper />
+            </div>
+          )}
+          {/* <MyComponent /> */}
+          <div className="about-nav-container">
+            <div className="left-spacer"></div>
+            <nav>
+              <ul className="about-nav" data-btnClicked={btnClicked}>
+                {abtNavBtns.map((item) => (
+                  <Link to={item.link}>
                     <motion.li
                       key={item.id}
                       className="about-box"
@@ -54,20 +55,17 @@ const AboutContent = ({}) => {
                       onClick={() => clickHandler(item.id)}
                       layout
                     >
-                      
-                        <h2>{item.title}</h2>
-                      
+                      <h2>{item.title}</h2>
                     </motion.li>
-                    </Link>
-                  ))}
-                </ul>
-              </nav>
-              <div className="right-spacer"></div>
-            </div>
-            <Outlet />
+                  </Link>
+                ))}
+              </ul>
+            </nav>
+            <div className="right-spacer"></div>
           </div>
+          <Outlet />
         </div>
-      
+      </div>
     </>
   );
 };

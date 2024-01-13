@@ -1,6 +1,5 @@
+import { motion } from "framer-motion";
 import "../../style/Skills.css";
-import visualImg from "../../assets/icons/eye2.png";
-import {motion } from "framer-motion";
 
 const SkillsLeft = () => {
   const audioSkills = [
@@ -24,14 +23,9 @@ const SkillsLeft = () => {
     "Tinkercad",
   ];
 
-
   return (
     <>
-    
-      <motion.div 
-      className="skills-container" 
-      id="skills-left"
-      >
+      <motion.div className="skills-container" id="skills-left">
         <div className="skills-content-container">
           <div className="skill-group" id="skills-group-visual">
             <div className="skills-heading">
@@ -59,8 +53,6 @@ const SkillsLeft = () => {
           </div>
         </div>
       </motion.div>
-      
-     
     </>
   );
 };

@@ -1,13 +1,9 @@
+import MySmallEducation from "./MySmallEducation.jsx";
 import MySmallInterests from "./MySmallInterests.jsx";
 import MySmallSkills from "./MySmallSkills.jsx";
 import MySmallStory from "./MySmallStory.jsx";
-import MySmallEducation from "./MySmallEducation.jsx";
-
 
 const SmallAbout = ({ setSectionTitle }) => {
-
-
-
   return (
     <>
       <MySmallStory setSectionTitle={setSectionTitle} />

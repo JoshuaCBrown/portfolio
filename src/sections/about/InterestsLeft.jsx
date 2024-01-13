@@ -1,7 +1,6 @@
 import "../../style/AboutDetail.css";
-import visualImg from "../../assets/icons/eye2.png";
-import Listerine from "./Listerine";
 import { allInterestsArray } from "./AllInterests";
+import Listerine from "./Listerine";
 
 const InterestsLeft = () => {
   return (

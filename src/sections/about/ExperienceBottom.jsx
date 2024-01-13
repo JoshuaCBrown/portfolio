@@ -1,6 +1,5 @@
-import { leftJobs, rightJobs } from "./ExpeJobs";
 import "../../style/Experience.css";
-
+import { rightJobs } from "./ExpeJobs";
 
 const ExperienceBottom = () => {
   return (
@@ -13,10 +12,10 @@ const ExperienceBottom = () => {
           <div className="job-line-bot"></div>
           <div className="spacey-bot"></div>
         </div>
-      ))}  
-      <div></div>    
+      ))}
+      <div></div>
     </div>
-  )
+  );
 };
 
 export default ExperienceBottom;

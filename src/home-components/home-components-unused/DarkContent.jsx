@@ -1,18 +1,16 @@
-import { motion } from "framer-motion";
-import NavBtn from "./NavBtn";
-import CubeStone from "../assets/svgs/CubeStone.jsx";
+import NavBtn from "../NavBtn";
 import CompStone from "../assets/svgs/CompStone.jsx";
+import CubeStone from "../assets/svgs/CubeStone.jsx";
 import MannyStone from "../assets/svgs/MannyStone.jsx";
 import "../style/NavImgs.css";
 
 const DarkContent = () => {
   return (
     <>
-    <CompStone />
+      <CompStone />
       <div className="home-nav" id="comp-nav">
-      
         <div className="dark-stone-card">
-        <NavBtn
+          <NavBtn
             cardClass="nav-btn"
             cardId="portfolio-nav"
             cardFront="Portfolio"
@@ -21,7 +19,6 @@ const DarkContent = () => {
           <div className="svg-container" id="comp-svg">
             <CompStone />
           </div>
-         
         </div>
       </div>
 
@@ -40,7 +37,7 @@ const DarkContent = () => {
       </div>
       <div className="home-nav" id="manny-nav">
         <div className="dark-stone-card">
-        <NavBtn
+          <NavBtn
             cardClass="nav-btn"
             cardId="contact-nav"
             cardFront="Contact"
@@ -49,7 +46,6 @@ const DarkContent = () => {
           <div className="svg-container" id="manny-svg">
             <MannyStone />
           </div>
-          
         </div>
       </div>
     </>

@@ -20,7 +20,10 @@ const Listerine = ({ listContent, listTitle, listClass, listId }) => {
           className={`${listClass}-list-parent`}
           id={`${listId}-${listClass}-list-parent`}
         >
-          <div className={`${listClass}-list category-list`} id={`${listId}-list`}>
+          <div
+            className={`${listClass}-list category-list`}
+            id={`${listId}-list`}
+          >
             {listContent.join(" | ")}
           </div>
         </div>

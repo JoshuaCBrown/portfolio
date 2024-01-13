@@ -1,5 +1,5 @@
-import collegeIcon from "../../assets/icons/gradcap1.png";
 import booksIcon from "../../assets/icons/book1.png";
+import collegeIcon from "../../assets/icons/gradcap1.png";
 import webIcon from "../../assets/icons/web2.png";
 
 const EducationStructure = ({ contentSection }) => {
@@ -83,7 +83,7 @@ const EducationStructure = ({ contentSection }) => {
     icon: booksIcon,
     id: "books-edu",
     specialStruct: false,
-    key: 'booksEducation',
+    key: "booksEducation",
     content: booksEducation,
   };
 
@@ -96,7 +96,7 @@ const EducationStructure = ({ contentSection }) => {
     content: onlineEducation,
   };
 
-  const DivsOrList = ({obj}) => {
+  const DivsOrList = ({ obj }) => {
     return obj.specialStruct ? (
       <div className="lg-about-content" key={obj.key}>
         <h3 className="lg-about-heading">{obj.title}</h3>
@@ -111,7 +111,7 @@ const EducationStructure = ({ contentSection }) => {
         </span>
       </div>
     ) : (
-      <div className="lg-about-content" key={obj.key} >
+      <div className="lg-about-content" key={obj.key}>
         <h3 className="lg-about-heading">{obj.title}</h3>
         <ul className="about-unordered-list">
           {obj.content.map((item) => (
@@ -131,21 +131,18 @@ const EducationStructure = ({ contentSection }) => {
         </ul>
       </div>
     );
-  
   };
 
   const whichEdu = () => {
-    if (contentSection === 'books') {
+    if (contentSection === "books") {
       return bookEdu;
-    } else if (contentSection === 'web') {
+    } else if (contentSection === "web") {
       return webEdu;
     } else {
       return collegeEdu;
     }
-  }
-  return (
-    <DivsOrList obj={whichEdu()} />
-  )
+  };
+  return <DivsOrList obj={whichEdu()} />;
 };
 
 export default EducationStructure;

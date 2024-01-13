@@ -1,12 +1,11 @@
-
+import { useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { allInterestsArray } from "./AllInterests.js";
 import Listerine from "./Listerine.jsx";
-import { useRef, useEffect } from "react";
-import { useInView } from "framer-motion";
 
 const MySmallInterests = ({ setSectionTitle }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: .8 });
+  const isInView = useInView(ref, { amount: 0.8 });
 
   useEffect(() => {
     if (isInView === true) {

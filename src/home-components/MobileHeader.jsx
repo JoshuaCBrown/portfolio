@@ -1,14 +1,8 @@
-import "../style/MobileHeader.css";
-import WoodworkingImg from "../assets/svgs/WoodworkingImg";
-import WoodworkingImgBgStatic from "../assets/svgs/WoodworkingImgBgStatic.jsx";
-import SkylineImg from "../assets/svgs/SkylineImg.jsx";
-import SkylineImgBg from "../assets/svgs/SkylineImgBgPosterity.jsx";
-import SkylineImgBgStatic from "../assets/svgs/SkylineImgBgStaticPosterity.jsx";
-import MannyImg from "../assets/svgs/MannyImg.jsx";
-import MannyImgBgStatic from "../assets/svgs/MannyImgBgStatic.jsx";
-import CompImg from "../assets/svgs/CompImg.jsx";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import CompImg from "../assets/svgs/CompImg.jsx";
+import MannyImg from "../assets/svgs/MannyImg.jsx";
+import WoodworkingImg from "../assets/svgs/WoodworkingImg";
+import "../style/MobileHeader.css";
 
 // initial page load off causing late loading??
 const MobileHeader = ({ section, headingBool, sectionTitle }) => {
@@ -28,13 +22,13 @@ const MobileHeader = ({ section, headingBool, sectionTitle }) => {
     const str = page;
     switch (str) {
       case "portfolio":
-        return <CompImg svgVariants={lightSvgVariants} />
+        return <CompImg svgVariants={lightSvgVariants} />;
         break;
       case "about":
-        return <MannyImg svgVariants={lightSvgVariants} />
+        return <MannyImg svgVariants={lightSvgVariants} />;
         break;
       case "contact":
-        return <CubeImg svgVariants={lightSvgVariants} />
+        return <CubeImg svgVariants={lightSvgVariants} />;
         break;
       default:
         return <WoodworkingImg svgVariants={lightSvgVariants} />;

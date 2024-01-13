@@ -1,10 +1,10 @@
-import { useRef, useEffect } from "react";
 import { useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 import MyNewStory from "./MyNewStory.jsx";
 
 const MySmallStory = ({ setSectionTitle }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: .8 });
+  const isInView = useInView(ref, { amount: 0.8 });
 
   useEffect(() => {
     if (isInView === true) {
@@ -14,7 +14,12 @@ const MySmallStory = ({ setSectionTitle }) => {
 
   return (
     <>
-      <div ref={ref} className="smacc-container" id="smacc-story" key="smallStory" >
+      <div
+        ref={ref}
+        className="smacc-container"
+        id="smacc-story"
+        key="smallStory"
+      >
         <h2 className="group-title">About Me</h2>
         <MyNewStory />
       </div>

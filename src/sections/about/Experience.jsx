@@ -1,6 +1,6 @@
-import { leftJobs, rightJobs } from "./ExpeJobs";
 import { motion } from "framer-motion";
-import "../../style/Experience.css"
+import "../../style/Experience.css";
+import { leftJobs, rightJobs } from "./ExpeJobs";
 
 const Experience = () => {
   return (
@@ -14,13 +14,15 @@ const Experience = () => {
             <div className="jobs-left">
               {leftJobs.map((job) => (
                 <div className="job-left" key={job.id}>
-                  <div className={
+                  <div
+                    className={
                       job.lowArrow
                         ? "job-description jd-bg-left-low"
                         : "job-description jd-bg-left"
-                    } id={job.id}>
-                    <motion.div
-                    >
+                    }
+                    id={job.id}
+                  >
+                    <motion.div>
                       <h3>{job.title}</h3>
                       <em>{job.duration}</em>
                     </motion.div>

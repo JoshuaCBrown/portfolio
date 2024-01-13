@@ -1,40 +1,24 @@
-import { useState, useEffect } from "react";
-import { useAnimate, motion, AnimatePresence } from "framer-motion";
-
-import KeysImg from "../../assets/svgs/KeysImg.jsx";
-import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
-import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
-import SkylineImgBg from "../../assets/svgs/SkylineImgBg.jsx";
-import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStatic.jsx";
-import SkylineImgBgReverse from "../../assets/svgs/SkylineImgBgReverse.jsx";
-import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
-
+import { AnimatePresence, motion, useAnimate } from "framer-motion";
+import { useEffect, useState } from "react";
 import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
-
+import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
+import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStatic.jsx";
+import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 import TransitAnim from "../../transit-routes/TransitAnim";
-
-import LoremIpsum from "./LoremIpsum.jsx";
-
-import SkillsRight from "./SkillsRight.jsx";
-// import SkillsLeft from "./SkillsLeft.jsx";
 import AboutCircles from "./AboutCircles.jsx";
-import ExperienceTop from "./ExperienceTop.jsx";
-import ExperienceBottom from "./ExperienceBottom.jsx";
+import EducationCenter from "./EducationCenter.jsx";
 import EducationLeft from "./EducationLeft.jsx";
 import EducationRight from "./EducationRight.jsx";
-import EducationCenter from "./EducationCenter.jsx";
-import Interests from "./Interests.jsx";
-import AboutNav from "./AboutNav.jsx";
-import Achievements from "./Achievements.jsx";
-import MyStory from "./MyStory.jsx";
+import ExperienceBottom from "./ExperienceBottom.jsx";
+import ExperienceTop from "./ExperienceTop.jsx";
 import MyAboutWebsite from "./MyAboutWebsite.jsx";
+import SkillsRight from "./SkillsRight.jsx";
 
 import InterestsLeft from "./InterestsLeft.jsx";
 
-import MyNewStory from "./MyNewStory.jsx";
 // import AboutSmall from "./AboutSmall.jsx";
-import MiniAbout from "./MiniAbout.jsx";
 import "../../style/About.css";
+import MiniAbout from "./MiniAbout.jsx";
 
 const About = ({ themeStyle }) => {
   const [goClicked, setGoClicked] = useState(false);
@@ -251,7 +235,7 @@ const About = ({ themeStyle }) => {
   const firstCircleVariant = {
     transition: {
       duration: 0.7,
-      ease: [0, 0.5, 0.4, 0.95], 
+      ease: [0, 0.5, 0.4, 0.95],
     },
   };
 
@@ -389,10 +373,14 @@ const About = ({ themeStyle }) => {
                       <div className="about-right-middle-middle">
                         <motion.div layout className="skyline-svg-container">
                           {skylineReady && (
-                            <SkylineImg svgVariants={lightSvgVariants} classSetter="skyline-svg" />
+                            <SkylineImg
+                              svgVariants={lightSvgVariants}
+                              classSetter="skyline-svg"
+                            />
                           )}
                           {bgSkylineReady && (
-                            <SkylineImgBgStatic classSetter="skyline-svg-bg"
+                            <SkylineImgBgStatic
+                              classSetter="skyline-svg-bg"
                               svgVariants={lightSvgVariants}
                             />
                           )}
@@ -543,17 +531,16 @@ const About = ({ themeStyle }) => {
                         >
                           {pageSelected === 3 && (
                             <>
-                        
-                            <motion.div
-                              className="about-content-right-top"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              exit={{ opacity: 0 }}
-                              transition={{ duration: 0.25 }}
-                            >
-                              {/* <Interests /> */}
-                              <InterestsLeft />
-                            </motion.div>
+                              <motion.div
+                                className="about-content-right-top"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.25 }}
+                              >
+                                {/* <Interests /> */}
+                                <InterestsLeft />
+                              </motion.div>
                             </>
                           )}
                         </motion.div>
@@ -680,7 +667,11 @@ const About = ({ themeStyle }) => {
           </div>
         </div>
         {/* <AboutSmall svgVariants={lightSvgVariants} /> */}
-        <MiniAbout goClickHandler={goClickHandler} goClicked={goClicked} svgVariants={lightSvgVariants} />
+        <MiniAbout
+          goClickHandler={goClickHandler}
+          goClicked={goClicked}
+          svgVariants={lightSvgVariants}
+        />
       </TransitAnim>
     </>
   );

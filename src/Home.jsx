@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
-import "./style/App.css";
-// import "./style/Darkstyle.css";
-// import "./style/Posterity.css";
-import { motion } from "framer-motion";
-import TitleReflector from "./TitleReflector";
+import { useEffect, useState } from "react";
+
+import NavFooter from "./NavFooter";
 import Sky from "./home-components/Sky";
 import AnimatedTitle from "./transit-routes/AnimatedTitle";
 
-import NavFooter from "./NavFooter";
+import "./style/App.css";
 
 const Home = () => {
+  //<--true for dark, false for light <--coming soon-->
   const [themeStyle, setThemeStyle] = useState(false);
 
   const [loadedStatus, setLoadedStatus] = useState(false);
 
   const toggleTheme = () => setThemeStyle(!themeStyle);
 
-  //after 3 seconds, the initial page load animation will not show when the home components are rendered
+  //<--after 3 seconds, the initial page load animation will not show when the home components are rendered-->
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setLoadedStatus(true);
@@ -37,7 +35,6 @@ const Home = () => {
         />
         <div className="ground">
           <NavFooter />
-          {/* <TitleReflector category={pageTitle} themeStyle={themeStyle} /> */}
           <AnimatedTitle themeStyle={themeStyle} loadedStatus={loadedStatus} />
           {themeStyle ? (
             <>

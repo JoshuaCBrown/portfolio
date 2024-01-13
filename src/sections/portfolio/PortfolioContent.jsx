@@ -1,22 +1,21 @@
-import briefcaseImg from "../../assets/portfolio-images/new/briefcasealttwo_thtwo.jpeg";
-import computerImg from "../../assets/portfolio-images/new/rackmount_thtw.jpeg";
-import studioImg from "../../assets/portfolio-images/new/studioalt3_32.jpeg";
-import rackImg from "../../assets/portfolio-images/new/rack_thee-to.jpeg";
-import shelfImg from "../../assets/portfolio-images/new/shelf_thtwo.jpeg";
-import circlesImg from "../../assets/portfolio-images/new/circles_thtwo.jpeg";
-import anoImg from "../../assets/portfolio-images/new/sunglass_thtwo.jpeg";
-import ptImg from "../../assets/portfolio-images/new/pt_thtw.jpeg";
-import flareImg from "../../assets/portfolio-images/new/flair_thtw.jpeg";
 import articleReadRImg from "../../assets/portfolio-images/new/articlereader_thtwo_two.jpeg";
+import briefcaseImg from "../../assets/portfolio-images/new/briefcasealttwo_thtwo.jpeg";
+import flareImg from "../../assets/portfolio-images/new/flair_thtw.jpeg";
+import visualizeThisImg from "../../assets/portfolio-images/new/i_need_it_thtwo.jpg";
 import jatoWebImg from "../../assets/portfolio-images/new/jato-website_thtwo.jpeg";
-import tictactoeImg from "../../assets/portfolio-images/new/tictactoe_th_tw.jpeg";
-import tutorialHeavenImg from "../../assets/portfolio-images/new/tutorialheaven_thee-two.jpeg";
 import portfolioImg from "../../assets/portfolio-images/new/portfolio_screenshot_three-To.jpeg";
-import "../../style/Portfolio.css";
+import ptImg from "../../assets/portfolio-images/new/pt_thtw.jpeg";
+import rackImg from "../../assets/portfolio-images/new/rack_thee-to.jpeg";
+import computerImg from "../../assets/portfolio-images/new/rackmount_thtw.jpeg";
+import shelfImg from "../../assets/portfolio-images/new/shelf_thtwo.jpeg";
+import studioImg from "../../assets/portfolio-images/new/studioalt3_32.jpeg";
+import anoImg from "../../assets/portfolio-images/new/sunglass_thtwo.jpeg";
+import tutorialHeavenImg from "../../assets/portfolio-images/new/tutorialheaven_thee-two.jpeg";
 import exampleImg from "../../assets/portfolio-images/webqual/IMG_0135.jpg";
 import secondExample from "../../assets/portfolio-images/webqual/IMG_0136.jpg";
-import referenceImg from "../../assets/portfolio-images/webqual/reference-img.png";
-import visualizeThisImg from "../../assets/portfolio-images/new/i_need_it_thtwo.jpg";
+
+import "../../style/Portfolio.css";
+
 const PortfolioProjects = () => {
   const computerPartsList = [
     "Intel i7-12700k",
@@ -302,7 +301,7 @@ const PortfolioProjects = () => {
 
   const videoImgs = PortfolioContent.filter((item) => imgSorter(item, "video"));
 
-  const sortedProjects = [...codingImgs,  ...craftImgs, ...musicImgs,];
+  const sortedProjects = [...codingImgs, ...craftImgs, ...musicImgs];
 
   return sortedProjects;
 };

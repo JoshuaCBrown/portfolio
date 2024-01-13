@@ -1,23 +1,17 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import Education from "./Education.jsx";
 import Experience from "./Experience.jsx";
 import Skills from "./Skills.jsx";
-import Achievements from "./Achievements.jsx";
-import Interests from "./Interests.jsx";
 
-import KeysImg from "../../assets/svgs/KeysImg.jsx";
-import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
-import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
-import SkylineImgBg from "../../assets/svgs/SkylineImgBg.jsx";
-import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
 import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
 import directionArrow from "../../assets/commonicons/directional-arrow-two.png";
+import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
+import SkylineImgBg from "../../assets/svgs/SkylineImgBg.jsx";
+import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 
-import TransitAnim from "../../transit-routes/TransitAnim";
-
-import AboutHome from "./AboutHome";
+import TransitAnim from "../../transit-routes/TransitAnim.jsx";
 
 import "../../style/About.css";
 

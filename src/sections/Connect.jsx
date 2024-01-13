@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import TransitAnim from "../transit-routes/TransitAnim";
-import { redirect, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import emailIcon from "../assets/icons/email-100.png";
+import githubIcon from "../assets/icons/github-100.png";
+import liIcon from "../assets/icons/linkedin-100.png";
 import FancyCube from "../assets/svgs/new/FancyCube";
 import "../style/Connect.css";
-import emailIcon from "../assets/icons/email-100.png";
-import liIcon from "../assets/icons/linkedin-100.png";
-import githubIcon from "../assets/icons/github-100.png";
+import TransitAnim from "../transit-routes/TransitAnim";
 
 const Connect = ({ themeStyle }) => {
   const [result, setResult] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [mailClicked, setMailClicked] = useState(false);
-  const [btnText, setBtnText] = useState('Copy email to clipboard');
+  const [btnText, setBtnText] = useState("Copy email to clipboard");
   const navigate = useNavigate();
 
   const onSubmit = async (event) => {
@@ -43,7 +42,7 @@ const Connect = ({ themeStyle }) => {
     const stringThree = stringOne + stringTwo;
     navigator.clipboard.writeText(stringThree);
     console.log(stringThree);
-    setBtnText('email copied');
+    setBtnText("email copied");
   }
   return (
     <>
@@ -104,14 +103,14 @@ const Connect = ({ themeStyle }) => {
                   <a href="mailto:joshuachbrown@gmail.com" target="_blank">
                     <button>Open default email client</button>
                   </a>
-                  <button onClick={copyTextToClipboard}>
-                    {btnText}
-                    
-                  </button>
+                  <button onClick={copyTextToClipboard}>{btnText}</button>
                 </div>
               </>
             ) : (
-              <button className="email-btn" onClick={() => setMailClicked(true)}>
+              <button
+                className="email-btn"
+                onClick={() => setMailClicked(true)}
+              >
                 <img src={emailIcon} />
               </button>
             )}

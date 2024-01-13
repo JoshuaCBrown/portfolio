@@ -1,12 +1,9 @@
 import NavHeader from "../NavFooter";
 
-import { useState } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-
+import { Route, Routes, useLocation } from "react-router-dom";
 
 function AnimatedRoutes() {
-  
   const location = useLocation();
   return (
     <>
@@ -15,10 +12,7 @@ function AnimatedRoutes() {
         <Routes location={location} key={location.pathname}>
           {/* <Route path="/" element={<NavHeader />} /> */}
           <Route path="about" element={<NavHeader />} />
-          <Route
-            path="portfolio"
-            element={<NavHeader />}
-          />
+          <Route path="portfolio" element={<NavHeader />} />
           <Route path="connect" element={<NavHeader />} />
         </Routes>
       </AnimatePresence>

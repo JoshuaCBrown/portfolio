@@ -1,25 +1,7 @@
-import SkillsRight from "./SkillsRight.jsx";
-import SkillsLeft from "./SkillsLeft.jsx";
-import AboutCircles from "./AboutCircles.jsx";
-import ExperienceTop from "./ExperienceTop.jsx";
-import ExperienceBottom from "./ExperienceBottom.jsx";
-import EducationLeft from "./EducationLeft.jsx";
-import EducationRight from "./EducationRight.jsx";
-import EducationCenter from "./EducationCenter.jsx";
-import Interests from "./Interests.jsx";
-import AboutNav from "./AboutNav.jsx";
-import Achievements from "./Achievements.jsx";
-import MyStory from "./MyStory.jsx";
-
-import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
-import SkylineImgBg from "../../assets/svgs/SkylineImgBg.jsx";
 import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStatic.jsx";
 
-import { useState, useEffect } from "react";
-import { useAnimate, motion, AnimatePresence } from "framer-motion";
-
-import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
+import { motion } from "framer-motion";
 
 import "../../style/MiniAbout2.css";
 
@@ -64,7 +46,6 @@ const MiniAbout2 = ({ svgVariants }) => {
               svgVariants={svgVariants}
               classSetter="sm-skyline-svg-bg"
             />
-            
           </motion.div>
         </div>
         <div className="sm-bottom-row">

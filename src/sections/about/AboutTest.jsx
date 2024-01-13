@@ -1,16 +1,7 @@
-import Education from "./Education.jsx";
-import Experience from "./Experience.jsx";
-import Skills from "./Skills.jsx";
-import Achievements from "./Achievements.jsx";
-import Interests from "./Interests.jsx";
-
-import KeysImg from "../../assets/svgs/KeysImg.jsx";
-import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
-import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
-import BenchyImg from "../../assets/svgs/BenchyImg.jsx";
 import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
+import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
 
-import TransitAnim from "../../transit-routes/TransitAnim";
+import TransitAnim from "../../transit-routes/TransitAnim.jsx";
 
 import "../../style/About.css";
 
@@ -57,9 +48,7 @@ const About = ({ themeStyle }) => {
               <div className="skyline-svg">
                 <SkylineImg svgVariants={lightSvgVariants} />
               </div>
-
             </div>
-           
           </div>
           <div className="tilted-container"></div>
           {/* <Skills />
