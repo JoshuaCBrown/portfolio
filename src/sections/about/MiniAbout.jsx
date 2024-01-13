@@ -6,7 +6,7 @@ import FlashingArrows from "./FlashingArrows.jsx";
 import MannyImg from "../../assets/svgs/MannyImg.jsx";
 import MannyImgBgStatic from "../../assets/svgs/MannyImgBgStatic.jsx";
 import SkylineImg from "../../assets/svgs/SkylineImg.jsx";
-import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStaticPosterity.jsx";
+import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStatic.jsx";
 import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 import WoodworkingImgBgStatic from "../../assets/svgs/WoodworkingImgBgStatic.jsx";
 
@@ -18,7 +18,6 @@ import phreshPhoto from "../../assets/about-photos/fresh-foto2.jpg";
 import "../../style/MiniAbout.css";
 
 const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
-  const [showNavBtns, setShowNavBtns] = useState(false);
   const [sectionTitle, setSectionTitle] = useState("");
 
   useEffect(() => {
@@ -62,12 +61,10 @@ const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
                       </div>
                       <CircleInCircles />
                     </div>
-                    {/* <div className="tlc-right"></div> */}
                   </div>
                   <div className="sm-t-right">
                     <div className="trc-left"></div>
                     <div className="trc-right">
-                      {/* <div className="trc-right-dashes"></div> */}
                       <span className="sm-name-is">
                         My name is <br />
                         Josh
@@ -128,7 +125,6 @@ const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
               transition={{ duration: 0.5 }}
             >
               <div className="sm-ac-wrapper">
-                {/* <div className="sm-ac-right-dashes"></div> */}
                 <SmallAbout setSectionTitle={setSectionTitle} />
               </div>
             </motion.div>
@@ -155,13 +151,7 @@ const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
                 <div className="sm-mbl-m-left">
                   <div className="sm-mblm-dashes"></div>
                 </div>
-                <div
-                  className="sm-mbl-m-mid"
-                  // initial={{ flex: 0, width: 0, height: 0 }}
-                  // animate={showSectionTitle}
-                  // transition={{ duration: 2, delay: 1 }}
-                  // layout
-                >
+                <div className="sm-mbl-m-mid">
                   {goClicked && (
                     <div className="sm-mblm-heading-container">
                       <h2 className="sm-section-heading">{sectionTitle}</h2>
@@ -204,26 +194,12 @@ const MiniAbout = ({ svgVariants, goClickHandler, goClicked }) => {
                         transition={{ duration: 2, delay: 1 }}
                         onClick={() => goClickHandler()}
                       >
-                        {/* GO */}
                         <div className="go-btn-img-container">
-                          {/* <img className="go-btn-arrow" src={arrow} /> */}
                           <FlashingArrows delayMulti={1} />
                           <FlashingArrows delayMulti={2} />
                           <FlashingArrows delayMulti={3} />
                         </div>
                       </motion.button>
-                      {/* <motion.button className="sm-go-forth-btn"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 2, delay: 1 }}>
-                        GO
-                        <div className="go-btn-img-container">
-                          <img className="go-btn-arrow" src={arrow} />
-                          <img className="go-btn-arrow" src={arrow} />
-                          <img className="go-btn-arrow" src={arrow} />
-                          <img className="go-btn-arrow" src={arrow} />
-                        </div>
-                      </motion.button> */}
                     </>
                   )}
                 </div>

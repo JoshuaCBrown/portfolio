@@ -6,15 +6,16 @@ import SkylineImgBgStatic from "../../assets/svgs/SkylineImgBgStatic.jsx";
 import WoodworkingImg from "../../assets/svgs/WoodworkingImg.jsx";
 import TransitAnim from "../../transit-routes/TransitAnim";
 import AboutCircles from "./AboutCircles.jsx";
+import AboutNav from "./AboutNav.jsx";
 import EducationCenter from "./EducationCenter.jsx";
 import EducationLeft from "./EducationLeft.jsx";
 import EducationRight from "./EducationRight.jsx";
 import ExperienceBottom from "./ExperienceBottom.jsx";
 import ExperienceTop from "./ExperienceTop.jsx";
-import MyAboutWebsite from "./MyAboutWebsite.jsx";
-import SkillsRight from "./SkillsRight.jsx";
-
 import InterestsLeft from "./InterestsLeft.jsx";
+import MyAboutWebsite from "./MyAboutWebsite.jsx";
+import MyStory from "./MyStory.jsx";
+import SkillsRight from "./SkillsRight.jsx";
 
 // import AboutSmall from "./AboutSmall.jsx";
 import "../../style/About.css";

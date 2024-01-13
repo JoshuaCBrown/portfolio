@@ -1,7 +1,3 @@
-import booksIcon from "../../assets/icons/book1.png";
-import collegeIcon from "../../assets/icons/gradcap1.png";
-import webIcon from "../../assets/icons/web2.png";
-
 const EducationStructure = ({ contentSection }) => {
   const booksEducation = [
     {
@@ -71,7 +67,6 @@ const EducationStructure = ({ contentSection }) => {
 
   const collegeEdu = {
     title: "University",
-    icon: collegeIcon,
     id: "college-edu",
     specialStruct: true,
     key: "collegeEducation",
@@ -80,7 +75,6 @@ const EducationStructure = ({ contentSection }) => {
 
   const bookEdu = {
     title: "Books",
-    icon: booksIcon,
     id: "books-edu",
     specialStruct: false,
     key: "booksEducation",
@@ -89,7 +83,6 @@ const EducationStructure = ({ contentSection }) => {
 
   const webEdu = {
     title: "Web",
-    icon: webIcon,
     id: "web-edu",
     specialStruct: false,
     key: "webEducation",

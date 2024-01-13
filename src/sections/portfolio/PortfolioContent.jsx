@@ -10,9 +10,11 @@ import computerImg from "../../assets/portfolio-images/new/rackmount_thtw.jpeg";
 import shelfImg from "../../assets/portfolio-images/new/shelf_thtwo.jpeg";
 import studioImg from "../../assets/portfolio-images/new/studioalt3_32.jpeg";
 import anoImg from "../../assets/portfolio-images/new/sunglass_thtwo.jpeg";
-import tutorialHeavenImg from "../../assets/portfolio-images/new/tutorialheaven_thee-two.jpeg";
-import exampleImg from "../../assets/portfolio-images/webqual/IMG_0135.jpg";
-import secondExample from "../../assets/portfolio-images/webqual/IMG_0136.jpg";
+import {
+  default as exampleImg,
+  default as secondExample,
+  default as tutorialHeavenImg,
+} from "../../assets/portfolio-images/new/tutorialheaven_thee-two.jpeg";
 
 import "../../style/Portfolio.css";
 
