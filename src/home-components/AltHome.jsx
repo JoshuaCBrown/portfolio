@@ -11,7 +11,7 @@ import FancyManny from "../assets/svgs/new/FancyManny";
 
 import "../style/AltHome.css";
 
-const AltHome = ({ themeStyle, animVariant }) => {
+const AltHome = ({ themeStyle, animVariant, loadedStatus }) => {
   const pathVariants = {
     initial: { pathLength: 0 },
     animate: { pathLength: 1, transition: { duration: 2 } },
@@ -47,7 +47,15 @@ const AltHome = ({ themeStyle, animVariant }) => {
   return (
     <>
       <div className="home-container">
-        <div className="home-bg-container">
+        <motion.div
+          className="home-bg-container"
+          variants={animVariant}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          transition="transition"
+          key="home-background"
+        >
           <div className="home-bg-row" id="home-bg-row-one">
             <div className="circle-container" id="circle-container-right">
               <div
@@ -84,7 +92,7 @@ const AltHome = ({ themeStyle, animVariant }) => {
               ></div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <motion.div
           className="home-nav-container"

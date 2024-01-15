@@ -30,6 +30,7 @@ function AnimatedRoutes({ themeStyle, loadedStatus }) {
               <AltHome
                 themeStyle={themeStyle}
                 animVariant={loadedStatus ? skyLoadedAnim : skyInitAnim}
+                loadedStatus={loadedStatus}
               />
             }
           />
