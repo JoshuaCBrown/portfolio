@@ -86,8 +86,6 @@ body {
   padding: 0;
 }
 
-
-
 .ground {
   position: relative;
   display: flex;
@@ -186,7 +184,6 @@ body {
   box-sizing: border-box;
 
   /* <-----IMPORTANT IF YOU DON'T WANT CONTENT OVERFLOWING OVER HEADER TEXT AND TOP NAVIGATION , leave commented out otherwise------> */
-  
 
   align-self: flex-start;
   display: flex;
@@ -198,8 +195,10 @@ body {
   .page-container {
     grid-template-rows: 5fr 1fr;
   }
-
 }
 
-
-
+@media (width < 500px) {
+  #root {
+    border: none;
+  }
+}

@@ -132,7 +132,7 @@ const Portfolio = ({ themeStyle }) => {
             <div className="portfolio-item-container">
               {sortedProjects.map((item) => (
                 <motion.div
-                  className="portfolio-item"
+                  className={`portfolio-item ${item.cat}-item`}
                   id={item.id}
                   key={item.id}
                   layout
@@ -142,7 +142,7 @@ const Portfolio = ({ themeStyle }) => {
                   transition={{ duration: 0.5 }}
                   onClick={() => clickHandler(item.id)}
                 >
-                  <div className="color-coded" id={item.cat}></div>
+                  {/* <div className="color-coded" id={item.cat}></div> */}
                   <div className="img-div-container">
                     <AnimatePresence>
                       {!hasSelected && (
@@ -246,7 +246,7 @@ const Portfolio = ({ themeStyle }) => {
                               }
                             >
                               <img
-                                src={backArrow}
+                                src={detailedArrow}
                                 className="back-btn-aro"
                                 id="nav-prev"
                               />
@@ -258,9 +258,16 @@ const Portfolio = ({ themeStyle }) => {
                               onClick={backToPortfolio}
                             >
                               {/* Back */}
-                              <img
-                                src={detailedArrow}
+                              {/* <img
+                                src={backArrow}
                                 className="back-btn-aro"
+                                key="back-btn-aro-one"
+                                id="nav-back"
+                              /> */}
+                              <img
+                                src={backArrow}
+                                className="back-btn-aro"
+                                key="back-btn-aro-two"
                                 id="nav-back"
                               />
                             </button>
@@ -271,7 +278,7 @@ const Portfolio = ({ themeStyle }) => {
                               onClick={(e) => nextProject(e, 1)}
                             >
                               <img
-                                src={backArrow}
+                                src={detailedArrow}
                                 className="back-btn-aro"
                                 id="nav-next"
                               />
@@ -281,7 +288,7 @@ const Portfolio = ({ themeStyle }) => {
                       )}
                     </AnimatePresence>
                   </div>
-                  <div className="color-coded" id={item.cat}></div>
+                  {/* <div className="color-coded" id={item.cat}></div> */}
                 </motion.div>
               ))}
             </div>

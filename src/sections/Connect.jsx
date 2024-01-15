@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import emailIcon from "../assets/icons/email-100.png";
-import githubIcon from "../assets/icons/github-100.png";
-import liIcon from "../assets/icons/linkedin-100.png";
+import emailIcon from "../assets/icons/email-100-icon.png";
+import githubIcon from "../assets/icons/github-100-icon.png";
+import liIcon from "../assets/icons/linkedin-100-icon.png";
 import FancyCube from "../assets/svgs/new/FancyCube";
 import "../style/Connect.css";
 import TransitAnim from "../transit-routes/TransitAnim";
@@ -13,6 +13,10 @@ const Connect = ({ themeStyle }) => {
   const [mailClicked, setMailClicked] = useState(false);
   const [btnText, setBtnText] = useState("Copy email to clipboard");
   const navigate = useNavigate();
+
+  const stringOne = "JoshuaChBrown";
+  const stringTwo = "@gmail.com";
+  const emailStr = stringOne + stringTwo;
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -37,11 +41,8 @@ const Connect = ({ themeStyle }) => {
   };
 
   function copyTextToClipboard() {
-    const stringOne = "JoshuaChBrown";
-    const stringTwo = "@gmail.com";
-    const stringThree = stringOne + stringTwo;
-    navigator.clipboard.writeText(stringThree);
-    console.log(stringThree);
+    navigator.clipboard.writeText(emailStr);
+    console.log(emailStr);
     setBtnText("email copied");
   }
   return (
@@ -61,15 +62,19 @@ const Connect = ({ themeStyle }) => {
                 <form onSubmit={onSubmit}>
                   <div>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" required />
+                    <input type="text" id="name" name="name" />
                   </div>
                   <div>
                     <label htmlFor="email">Email</label>
                     <input type="email" id="email" name="email" required />
                   </div>
                   <div>
-                    <label htmlFor="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required />
+                    <input
+                      type="hidden"
+                      id="subject"
+                      name="subject"
+                      value="New form message from joshcb.dev"
+                    />
                   </div>
 
                   <div>
@@ -91,33 +96,38 @@ const Connect = ({ themeStyle }) => {
             )}
           </div>
           <div className="connect-links-container">
-            <a
-              href="https://www.linkedin.com/in/josh-brown-a5a24125a/"
-              target="_blank"
-            >
-              <img src={liIcon} alt="linked in" />
-            </a>
-            {mailClicked ? (
-              <>
-                <div className="connect-button-container">
-                  <a href="mailto:joshuachbrown@gmail.com" target="_blank">
-                    <button>Open default email client</button>
-                  </a>
-                  <button onClick={copyTextToClipboard}>{btnText}</button>
-                </div>
-              </>
-            ) : (
-              <button
-                className="email-btn"
-                onClick={() => setMailClicked(true)}
+            <div className="connect-link">
+              <a
+                href="https://www.linkedin.com/in/josh-brown-a5a24125a/"
+                target="_blank"
               >
-                <img src={emailIcon} />
-              </button>
-            )}
-
-            <a href="https://github.com/JoshuaCBrown" target="_blank">
-              <img src={githubIcon} />
-            </a>
+                <img src={liIcon} alt="linked in" />
+              </a>
+            </div>
+            <div className="connect-link">
+              {mailClicked ? (
+                <>
+                  <div className="connect-button-container">
+                    <a href={`mailto:${emailStr}`} target="_blank">
+                      <button>Open default email client</button>
+                    </a>
+                    <button onClick={copyTextToClipboard}>{btnText}</button>
+                  </div>
+                </>
+              ) : (
+                <button
+                  className="email-btn"
+                  onClick={() => setMailClicked(true)}
+                >
+                  <img src={emailIcon} />
+                </button>
+              )}
+            </div>
+            <div className="connect-link">
+              <a href="https://github.com/JoshuaCBrown" target="_blank">
+                <img src={githubIcon} />
+              </a>
+            </div>
           </div>
         </div>
       </TransitAnim>

@@ -10,7 +10,7 @@
   justify-content: center;
   align-content: stretch;
   align-items: center;
-  
+
   font-family: CourierPrime;
   overflow-y: auto;
   /* background: red; */
@@ -33,7 +33,6 @@
   justify-content: center;
   /* justify-content: stretch; */
   /* background: green; */
-
 }
 .contact-form {
   display: flex;
@@ -64,8 +63,6 @@ label {
   font-size: 1rem;
 }
 
-
-
 .contact-form div {
   display: flex;
   flex-direction: column;
@@ -84,8 +81,7 @@ label {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  
-  
+
   /* gap: 10%; */
 }
 
@@ -100,9 +96,6 @@ label {
   /* opacity: .25; */
 }
 
-
-
-
 input,
 textarea {
   width: 100%;
@@ -113,7 +106,7 @@ textarea {
   border: none;
 }
 
-input[type=submit] {
+input[type="submit"] {
   margin: 0;
   background: var(--primaryBlack);
   padding: none;
@@ -123,10 +116,7 @@ input[type=submit] {
   height: 2rem;
   width: 50%;
   outline: none;
-  
 }
-
-
 
 .connect-links-container a {
   max-height: 80px;
@@ -151,7 +141,7 @@ input[type=submit] {
   align-items: center;
 }
 
-.connect-button-container  button {
+.connect-button-container button {
   width: 70%;
   background: var(--primaryBlack);
   color: var(--primaryWhite);
@@ -165,20 +155,29 @@ input[type=submit] {
 
 .email-btn {
   border: none;
+  background: transparent;
+}
+
+.connect-link {
+  flex: 1;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (width < 700px) {
   .contact-container {
-   
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .5 1fr 3rem;
-    grid-template-areas: "connectLinks"
-    "contactForm";
+    grid-template-rows: 1fr 1fr 3rem;
+    grid-template-areas:
+      "connectLinks"
+      "contactForm";
     justify-content: center;
     align-content: stretch;
     align-items: center;
-    
+
     font-family: CourierPrime;
     /* background: red; */
   }
@@ -191,7 +190,24 @@ input[type=submit] {
     display: none;
   }
 
-  .contact-conatiner img {
+  .connect-link:nth-child(2) {
+    flex: 2;
+  }
+
+  .connect-button-container button {
+    width: 80%;
+    background: var(--primaryBlack);
+    color: var(--primaryWhite);
+    font-family: courierPrime;
+    border: none;
+    padding: 5px 5px;
+    font-weight: 900;
+    border-radius: 5px;
+    /* height: 1rem; */
+    height: max-content;
+  }
+
+  .contact-container img {
     width: 50px;
     height: 50px;
   }
