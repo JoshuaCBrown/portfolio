@@ -16,12 +16,11 @@ const MyAboutWebsite = () => {
               framework or design library, I opted for vanilla CSS. I made this
               decision for two reasons: First and foremost, I wanted to increase
               my fluency in CSS. Second, using vanilla CSS gave me greater
-              flexibility in coming up with a completely original design for my
-              page, something I decided early on was a priority for my personal
-              website. All SVGs on this website were created from scratch in
-              Adobe Illustrator. If you are looking for more information on my
-              design process or have any questions about the site itself, feel
-              free to&nbsp;
+              flexibility in coming up with an original design for my website.
+              All SVGs on this website were created from scratch in Adobe
+              Illustrator. If you are looking for more information on my design
+              process or have any questions about the site itself, feel free
+              to&nbsp;
               <a
                 href="https://www.linkedin.com/in/josh-brown-a5a24125a/"
                 target="_blank"

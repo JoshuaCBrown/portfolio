@@ -6,6 +6,7 @@
 
 .interests-parent-container {
   flex: 0.68;
+  position: relative;
   /* background-color: blue; */
   /* padding-bottom: 10px; */
   /* padding-top: 19px; */
