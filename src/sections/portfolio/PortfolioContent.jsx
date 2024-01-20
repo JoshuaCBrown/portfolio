@@ -34,48 +34,47 @@ const PortfolioProjects = () => {
 
   const PortfolioContent = [
     {
-      title: "Retro future briefcase",
+      title: "Retro Future Briefcase",
       img: briefcaseImg,
-      imgs: [exampleImg, secondExample],
+      // imgs: [exampleImg, secondExample],
       id: "briefcase-img",
       cat: "craft",
       description: (
         <p className="project-description">
-          An old briefcase purchased at a thrift store converted into an easily
-          transportable control panel for a rackmount PC used for live music
-          gigs. In addition to a touchscreen monitor, a MIDI controller, a
-          trackpad mouse, and flush mounted input jacks for all peripheral
-          cables, the briefcase also contains an Arduino Nano clone powering an
-          LED VU meter (decibel meter) for a 1/4" balanced input on the top
-          panel. When in transit, the fold-down hinges allow the briefcase close
-          and latch shut with all internal equipment secure. The 3D-printed
-          parts are original designs created in Tinkercad. Modeled after retro
-          futurism aesthetic featured in Netflix original series Maniac.{" "}
+          <em>Featured in March 2023 issue of Hackspace Magazine</em>
+          <br />
+          <br />A thrifted briefcase converted into a transportable control
+          station for a rackmount PC. The briefcase contains a touchscreen
+          monitor, MIDI controller, trackpad mouse, and flush mounted input
+          jacks for all peripheral cables, as well as an LED VU meter (decibel
+          meter) controlled by an Arduino Nano clone. Utilizes several custom 3D
+          printed parts for folding mechanism and equipment mounting.
         </p>
       ),
       technology: [
-        "Wood",
-        "PETG",
         "Woodworking",
-        "3D modeling",
-        "3D printing",
+        "3D Printing",
+        "3D Modeling",
         "Arduino",
-        "soldering",
         "Tinkercad",
       ],
+      link: "https://hackspace.raspberrypi.com/issues/64",
+      github: null,
+      completed: true,
     },
     {
-      title: "Rackmount PC for Audio",
+      title: "Rackmount Audio PC",
       img: computerImg,
       // img: computImg,
-      imgs: [exampleImg, secondExample],
+      // imgs: [exampleImg, secondExample],
       id: "computer-img",
       cat: "craft",
       description: (
         <p className="project-description">
-          A custom-built rackmount PC for running a host of virtual instruments
-          and effects with complex audio routing and processing in a live
-          performance setting. Parts list:
+          A rackmount PC for running a host of virtual instruments and effects
+          with complex audio routing and processing in a live performance
+          setting. Parts were selected to ensure capable performance and
+          reliability with minimal latency. Parts list:
           <ul className="project-description-list">
             {computerPartsList.map((part, i) => (
               <li key={`computer-part-${i}`}>{part}</li>
@@ -83,52 +82,56 @@ const PortfolioProjects = () => {
           </ul>
         </p>
       ),
-      technology: [],
+      technology: null,
+      link: null,
+      github: null,
+      completed: true,
     },
     {
-      title: "Home music studio",
+      title: "Home Music Studio",
       img: studioImg,
       imgs: [exampleImg, secondExample],
       id: "studio-img",
       cat: "craft",
       description: (
         <p className="project-description">
-          Built several acoustic panels of varying densities in order to turn a
-          spare room in my house into a suitable recording and mixing
-          environment. I conducted numerous acoustic measurements over the
-          course of several weeks using Room EQ Wizard and a calibrated
-          omnidirectional microphone in order to identify secondary reflection
-          points, room modes, frequency decay, and aim for overall flatness of a
-          sine sweep from 20Hz to 20kHz. Using the data from Room EQ Wizard and
-          careful placement of panels, and consistent experimentation, I was
-          able to identify the ideal monitor placement and set up the room to be
-          within 6 decibels of a completely flat response from the listening
-          position (comparable to professional level recording and engineering
-          studios). Starting measurements before treatment showed a range of
-          over 50 decibels of variance.
+          A spare bedroom converted into a professional-level recording and
+          mixing environment. Room EQ Wizard and a calibrated omnidirectional
+          microphone were used to take acoustic measurements and interpret
+          graphical readings of frequency response, room modes, reflection
+          points, and frequency decay. Designed and built acoustic panels of
+          varying dimensions to treat the room accordingly. Beginning
+          measurements showed variance of over 50 dBs, final measurements showed
+          a flat frequency response within 6 dBs from 20Hz to 20kHz.
         </p>
       ),
-      technology: ["JavaScript", "HTML", "CSS"],
+      technology: ["Room EQ Wizard", "Woodworking"],
+      link: null,
+      github: null,
+      completed: true,
     },
     {
-      title: "Audio equipment rack",
+      title: "Audio Equipment Rack",
       img: rackImg,
       imgs: [exampleImg, secondExample],
       id: "rack-img",
       cat: "craft",
       description: (
         <p className="project-description">
-          Designed, built, and stained a 10u equipment rack for my home studio
-          using leftover wood from other projects. Front face was placed at a
-          slight angle to increase stability for heavier equipment. Built to
-          standardized width spec with hand tools and a power drill utilizing
+          A 10u equipment rack for my home studio built using leftover wood from
+          other projects. Front face was placed at a slight angle to improve
+          weight distribution of heavier equipement. Built to standardized
+          rackmount equipment spec with hand tools and a power drill utilizing
           cement blocks for measurements of right angles and flat surfaces.
         </p>
       ),
-      technology: ["Wood", "Hardware"],
+      technology: ["Woodworking"],
+      link: null,
+      github: null,
+      completed: true,
     },
     {
-      title: "Stained glass boxshelf",
+      title: "Stained Glass Boxshelf",
       img: shelfImg,
       imgs: [exampleImg, secondExample],
       id: "shelf-img",
@@ -136,13 +139,16 @@ const PortfolioProjects = () => {
       description: (
         <p className="project-description">
           A stained glass box shelf made from wood, clear acrylic, shattered
-          pieces of colored glass, and led string lights. LEDs sandwiched
-          between panes of acrylic and colored glass pieces in the top and sides
-          of the box shelf, causing a colorful light effect emanating from the
-          shelf when turned on, similar to prismatic light refraction.{" "}
+          pieces of colored glass, and led string lights. LED lights were
+          sandwiched between panes of acrylic and colored glass pieces in the
+          top and sides of the box shelf, causing a colorful light effect
+          emanating from the shelf when turned on.
         </p>
       ),
-      technology: ["Wood", "Acrylic", "Glass", "LEDs"],
+      technology: ["Woodworking"],
+      link: null,
+      github: null,
+      completed: true,
     },
     {
       title: "Music Catalog",
@@ -152,32 +158,43 @@ const PortfolioProjects = () => {
       cat: "music",
       description: (
         <p className="project-description">
-          Music released with my Atlanta-based band Jack and the Other. Catalog
-          encompasses 19 songs over three EPs and two standalone singles, and
-          has received over two million cross-platform streams to date.
+          Music released with Atlanta-based duo Jack and the Other which has
+          received over 2 million cross-platform streams to date. Catalog
+          encompasses 19 songs over three EPs and two standalone singles.
         </p>
       ),
-      technology: [],
+      technology: [
+        "Composition",
+        "Production",
+        "Audio Recording",
+        "Mixing/Mastering",
+      ],
+      link: "https://open.spotify.com/artist/53wrHX7FVfvPldDQXlNTts",
+      github: null,
+      completed: true,
     },
     {
       title: "Audio Visualizer",
       img: visualizeThisImg,
-      imgs: [exampleImg, secondExample],
+      // imgs: [exampleImg, secondExample],
       id: "audio-visualizing",
       cat: "music",
       description: (
         <p className="project-description">
-          Custom audio visualizer for my band's song 'I Need It'. Utilized
-          displacement mapping and parallax animation to create 3-dimensional
-          depth and movement effects from a still image source.{" "}
+          Audio visualizer for my band's song 'I Need It'. Displacement mapping
+          and parallax animation in Adobe After Effects to create 3-dimensional
+          depth and movement effects from a still photograph source.
         </p>
       ),
-      technology: ["JavaScript", "HTML", "CSS"],
+      technology: ["Adobe After Effects"],
+      link: "https://www.youtube.com/watch?v=VyGNSaKj8Jg",
+      github: null,
+      completed: true,
     },
     {
       title: "Claymation music video",
       img: ptImg,
-      imgs: [exampleImg, secondExample],
+      // imgs: [exampleImg, secondExample],
       id: "pt-img",
       cat: "music",
       description: (
@@ -187,49 +204,56 @@ const PortfolioProjects = () => {
           and minor VFX with Adobe After Effects.
         </p>
       ),
-      technology: ["JavaScript", "HTML", "CSS"],
+      technology: ["Adobe After Effects"],
+      link: "https://www.youtube.com/watch?v=BwxnX8Lc5sY",
+      github: null,
+      completed: true,
     },
     {
-      title: "Stylistic music video",
+      title: "Stylized Music Video",
       img: flareImg,
-      imgs: [secondExample, exampleImg],
+      // imgs: [secondExample, exampleImg],
       id: "flare-img",
       cat: "music",
       description: (
         <p className="project-description">
-          Video editing and FX for my band's song 'Flare'. In addition to
-          stylistic visual effects, raw footage encoding, and general editing, I
-          relied heavily upon object tracking, stabilization, rotoscoping, AI
-          content fill, and Twixtor's frame interpolation algorithm. Majority of
-          editing was done in Premiere, with certain VFX and footage preparation
-          completed in Adobe After Effects.
+          Music video for my band's song 'Flare'. In addition to stylistic
+          visual effects, raw footage encoding, and general editing, video
+          editing relied heavily upon object tracking, stabilization,
+          rotoscoping, AI content fill, and Twixtor's frame interpolation
+          algorithm. Majority of editing completed in Premiere, with certain VFX
+          and footage preparation completed in Adobe After Effects.
         </p>
       ),
-      technology: ["JavaScript", "HTML", "CSS"],
+      technology: ["Adobe Premiere", "Adobe After Effects"],
+      link: "https://www.youtube.com/watch?v=ardW9bJXo-w",
+      github: null,
+      completed: true,
     },
     {
-      title: "Article reader Chrome ext",
+      title: "Article Reader Chrome Ext",
       img: articleReadRImg,
-      imgs: [secondExample, exampleImg],
+      // imgs: [secondExample, exampleImg],
       id: "article-read-img",
       cat: "coding",
       description: (
         <p className="project-description">
-          A custom Google Chrome extension used by three separate teams for
-          prospecting, information gathering, and lead generation. The extension
-          parses the text of online news articles currently being viewed in the
-          user's browser window, identifies significant information contained
-          therein, and organizes the information into various categories. Allows
-          users to quickly and easily extract relevant information from the
-          article at hand without having to read the entire article.
+          A Google Chrome extension created for prospecting, information
+          gathering, and lead generation. Allows users to quickly and easily
+          extract relevant information from the article at hand without having
+          to read the entire article. Currently used by three separate teams at
+          current employer.
         </p>
       ),
       technology: ["JavaScript", "HTML", "CSS"],
+      link: null,
+      github: "https://github.com/JoshuaCBrown/article-reader-ext",
+      completed: true,
     },
     {
       title: "Band website",
       img: jatoWebImg,
-      imgs: [exampleImg, secondExample],
+      // imgs: [exampleImg, secondExample],
       id: "jato-website-img",
       cat: "coding",
       description: (
@@ -240,6 +264,9 @@ const PortfolioProjects = () => {
         </p>
       ),
       technology: ["React", "JavaScript", "HTML", "CSS"],
+      link: null,
+      github: "https://github.com/JoshuaCBrown/jato-website",
+      completed: true,
     },
     // {
     //   title: "Tic tac toe web app",
@@ -257,7 +284,7 @@ const PortfolioProjects = () => {
     {
       title: "Tutorial Heaven",
       img: tutorialHeavenImg,
-      imgs: [exampleImg, secondExample],
+      // imgs: [exampleImg, secondExample],
       id: "tutorial-heaven-img",
       cat: "coding",
       description: (
@@ -268,15 +295,18 @@ const PortfolioProjects = () => {
           well as vote on posts submitted by other users. Users can also create
           customized 'courses' by organizing individual tutorials into
           playlists. Tutorial content is sorted by tutorial topic, content
-          medium (video, article, & text post), and popularity.
+          medium, and popularity.
         </p>
       ),
-      technology: ["React", "JavaScript", "HTML", "CSS", "MongoDB", "Mongoose"],
+      technology: ["JavaScript", "HTML", "CSS", "React", "MongoDB", "Mongoose"],
+      link: null,
+      github: "https://github.com/JoshuaCBrown/tutorial-heaven",
+      completed: false,
     },
     {
       title: "Portfolio Website",
       img: portfolioImg,
-      imgs: [exampleImg, secondExample],
+      // imgs: [exampleImg, secondExample],
       id: "portfolio-img",
       cat: "coding",
       description: (
@@ -286,7 +316,10 @@ const PortfolioProjects = () => {
           images. **INSERT LINK** READ MORE HERE **INSERT LINK**
         </p>
       ),
-      technology: ["React", "JavaScript", "HTML", "CSS", "Framer Motion"],
+      technology: ["JavaScript", "HTML", "CSS", "React", "Framer Motion"],
+      link: null,
+      github: "https://github.com/JoshuaCBrown/portfolio",
+      completed: true,
     },
   ];
 

@@ -5,7 +5,6 @@
   align-items: center;
 }
 
-
 :any-link {
   flex: 1;
   /* background: blue; */
@@ -14,10 +13,9 @@
   text-decoration: none;
 }
 .alt-nav-btn {
-  
   height: var(--btnHeight);
   width: 80%;
-  
+
   background: var(--primaryBlack);
   border: none;
   color: var(--primaryWhite);

@@ -227,9 +227,32 @@ const Portfolio = ({ themeStyle }) => {
                             <p className="project-description">
                               {item.description}
                             </p>
-                            <span className="project-technology">
-                              {techJoiner(item.technology)}
-                            </span>
+
+                            {item.link && (
+                              <a
+                                href={item.link}
+                                target="_blank"
+                                className="project-link"
+                                key="link"
+                              >
+                                Link
+                              </a>
+                            )}
+                            {item.github && (
+                              <a
+                                href={item.github}
+                                target="_blank"
+                                className="project-github"
+                                key="github"
+                              >
+                                GitHub
+                              </a>
+                            )}
+                            {item.technology && (
+                              <span className="project-technology" key="tech">
+                                {techJoiner(item.technology)}
+                              </span>
+                            )}
                           </motion.div>
                           <motion.div
                             layout

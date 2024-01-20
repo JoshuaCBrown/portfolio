@@ -170,7 +170,7 @@ input[type="submit"] {
   .contact-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 3rem;
+    grid-template-rows: 0.25fr 1fr 3rem;
     grid-template-areas:
       "connectLinks"
       "contactForm";
@@ -184,6 +184,7 @@ input[type="submit"] {
 
   .connect-links-container {
     flex-direction: row;
+    /* height: 100px; */
   }
 
   .connect-cube {

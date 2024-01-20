@@ -1,33 +1,8 @@
-/*
-    VARIABLE REFERENCE 
---primaryDark: #172733;
---primaryLight: #87aba7;
---primaryLightAccent: #ab87a9;
---primaryBlack: black;
---primaryWhite: white;
---primaryShade: rgba(0, 0, 0, 0.577);
---compColor: var(--primaryDark);
---mannyColor: var(--primaryDark);
---cubeColor: var(--primaryWhite);
---svgBgDark: var(--primaryDark);
---svgBgLight: var(--primaryLight);
---svgBgAccent: var(--primaryLightAccent);
---mannyStrokeW: 2px;
---compStrokeW: 2px;
-
-*/
-
-/* ORIGINAL-BLUE    #087CC9 #005A96  #003C63 */
-  /* BLUE COLOR PALETTE  */
-  /* #1E6696 #5199C9 #003C63 #97D4FC #CCEBFF  */
-  /* #144463 #65C0FC #005A96 #99D6FF #CCEBFF */
-  /* SLIGHTLY LESS MONOCHROMATIC MORE DEPTH LESS APPEALING */
-  /* #246996 #2C4D63 #087CC9 #212C33 #2B3033  */
+/* 
   .home-nav-container {
   
     max-width: 1250px;
     position: relative;
-    /* border: green solid 2px; */
     width: 100%;
     height: 100%;
     display: grid;
@@ -37,9 +12,7 @@
   
   #light #svg-comp-front > svg,
   #light #svg-manny-front > svg {
-  /* --svgBgLight: var(--primaryLight); */
   --svgBgLight: transparent;
-  /* --svgBgAccent: var(--primaryLightAccent); */
   --svgBgAccent: transparent;
   --compColor: var(--primaryDark);
   --mannyColor: var(--primaryDark);
@@ -58,9 +31,7 @@
 
 #dark #svg-comp-front > svg,
 #dark #svg-manny-front > svg {
-  /* --compColor: rgb(255, 140, 159); */
   --compColor: white;
-  /* --mannyColor: rgb(96, 181, 255); */
   --mannyColor: white;
   opacity: 1;
 }
@@ -82,7 +53,6 @@
   --mannyColor: blue;
   filter: drop-shadow(0 0 3px white);
   opacity: 0.5;
-  /* border: red solid 2px; */
 }
 
 #svg-comp-bg-light > svg,
@@ -93,12 +63,8 @@
   --svgBgLight: transparent;
   --compStrokeW: 10px;
   --compColor: var(--primaryLightShade);
-  /* --compColor: transparent; */
   --mannyStrokeW: 10px;
   --mannyColor: var(--primaryLightShade);
-  /* filter: blur(2px); */
-  /* opacity: 0.5; */
-  /* border: red solid 2px; */
 }
 
 #svg-comp-bg-light > svg {
@@ -110,7 +76,7 @@
 #svg-manny-bg-light > svg {
   position: relative;
   right: -4px;
-  top: -3px;
+  top: -3px; 
 }
 
 .home-nav {
@@ -120,7 +86,6 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  /* border: 2px black solid; */
 }
 
 #comp-nav {
@@ -136,7 +101,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 2px pink solid; */
   z-index: 2;
   width: 300px;
   height: 100%;
@@ -144,13 +108,9 @@
 
 .svg-container {
   position: absolute;
-  /* align-self: center; */
-  /* justify-self: center; */
   display: flex;
   justify-content: center;
-  /* border: 2px black solid; */
   max-width: 300px;
-  /* background-color: purple; */
   height: 100%;
   width: 100%;
 }
@@ -166,8 +126,6 @@
   top: -50px;
   left: -60px;
   opacity: 0.5;
-  /* stroke-width: 20px; */
-  /* stroke: black; */
 }
 
 #dark div#manny-svg {
@@ -189,7 +147,6 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  /* border: red solid 1px;   */
 }
 
 #light .right-dashed {
@@ -217,9 +174,7 @@
 .nav-btn {
   height: 40px;
   width: 200px;
-  /* backface-visibility: hidden; */
   perspective: 50px;
-  /* position: absolute; */
   color: var(--primaryWhite);
   display: flex;
   justify-content: center;
@@ -230,9 +185,7 @@
 #light .nav-btn {
   height: 40px;
   width: 200px;
-  /* backface-visibility: hidden; */
   perspective: 50px;
-  /* position: absolute; */
   color: var(--primaryWhite);
   display: flex;
   justify-content: center;
@@ -240,45 +193,21 @@
   background-color: var(--primaryShade);
 }
 
-/* #light div#shapeone {
-  background-color: var(--primaryLightAccent);
-}
 
-#light #shapetwo {
-  background-color: var(--primaryDark);
-}
-
-#light #shapethree {
-  background-color: var(--primaryLight);
-} */
-
-/* #dark .nav-btn {
-  border: 2px solid rgb(117, 253, 117);
-  color: rgb(117, 253, 117);
-  background: transparent;
-  box-shadow: 0 0 5px 0px white, 0 0 15px rgb(117, 253, 117, .5), inset 0 0 5px 0px white, inset 0 0 20px -5px rgb(117, 253, 117, .5), 0 0 50px rgba(255, 255, 255, 0.233), inset 0 0 20px rgba(255, 255, 255, 0.2);
-  text-shadow: 0 0 3px white;
-} */
 #dark .nav-btn {
   box-shadow: 0 0px 3px 2px rgb(63, 63, 63);
 }
 
 #dark div#about-nav {
-  /* background-color: rgb(153, 87, 0); */
   background-color: rgb(0, 59, 99);
-  /* background-image: url("../assets/transtextures/rocky-wall.png"); */
 }
 
 #dark div#portfolio-nav {
   background-color: rgb(0, 90, 150);
-  /* background-color: rgb(71, 15, 15); */
-  /* background-image: url("../assets/transtextures/rocky-wall.png"); */
 }
 
 #dark div#connect-nav {
   background-color: rgb(8, 125, 202);
-  /* background-color: rgb(71, 15, 15); */
-  /* background-image: url("../assets/transtextures/rocky-wall.png"); */
 }
 
 
@@ -308,10 +237,8 @@
   
 }
 #cube-nav {
-  /* background-color: green; */
 }
 #manny-nav {
-  /* background-color: purple; */
 }
 
 @media (width < 1000px) {
@@ -323,7 +250,6 @@
   }
   #comp-nav {
     justify-content: center;
-    /* background-color: red; */
   }
   #comp-nav::after {
     content: '';
@@ -381,14 +307,12 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    /* border: red solid 1px;   */
   }
   
   .nav-btn-container {
     width: 100%;
     flex: 1;
     display: flex;
-    /* background-color: green; */
     justify-content: flex-start;
     flex-direction: row;
     align-items: stretch;
@@ -398,19 +322,8 @@
   }
 
   #portfolio-nav {
-    /* position: absolute; */
-    /* bottom: 3rem; */
-    /* justify-self: center; */
   }
 
-  /* #portfolio-nav-div {
-    justify-self: center;
-    position: absolute;
-    bottom: 4rem;
-    left: 30%;
-    width: 40%;
-    align-self: center;
-  } */
 
   .nav-btn-div {
     flex: 1;
@@ -419,8 +332,6 @@
   #light .nav-btn {
     height: 40px;
     width: 200px;
-    /* backface-visibility: hidden; */
-    /* position: absolute; */
     color: var(--primaryWhite);
     display: flex;
     justify-content: center;
@@ -436,7 +347,6 @@
     position: absolute;
     height: 10%;
     width: 20%;
-    /* background-color: red; */
     right: 0;
     top: 25%;
     border-right: 2px var(--primaryDark) dashed;
@@ -448,10 +358,9 @@
     position: absolute;
     height: 10%;
     width: 30%;
-    /* background-color: red; */
     left: 0;
     bottom: 25%;
     border-left: 2px var(--primaryDark) dashed;
     border-bottom: 2px var(--primaryDark) dashed;
   }
-}
+} */

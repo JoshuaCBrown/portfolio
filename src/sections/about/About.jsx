@@ -471,7 +471,7 @@ const About = ({ themeStyle }) => {
                               exit={{ opacity: 0 }}
                               transition={{ duration: 0.25 }}
                             >
-                              <MyStory />
+                              <MyStory setPageSelected={setPageSelected} />
                             </motion.div>
                           )}
                           {pageSelected === 1 && (

@@ -815,7 +815,29 @@ from ABOUT main
   opacity: 0;
 } */
 
+.optional-website-info {
+  display: none;
+}
+
+.website-info-link {
+  text-decoration: underline;
+}
+
+.story-story :any-link {
+  text-decoration: underline;
+  color: var(--primaryBlack);
+  /* white-space: nowrap; */
+  display: inline;
+}
+
+.story-story p {
+  display: inline;
+}
+
 @media (width > 1000px) {
+  .optional-website-info {
+    display: block;
+  }
   .small-about-container {
     display: none !important;
     background: green;

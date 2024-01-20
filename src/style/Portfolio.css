@@ -463,6 +463,10 @@
   font-size: clamp(0.8rem, 1.5vw, 1.2rem);
 }
 
+.project-info-container :any-link {
+  text-decoration: underline;
+}
+
 @media (width > 900px) {
   .portfolio-flex-container {
     grid-template-rows: 0 1fr clamp(2rem, 14%, 4rem);
