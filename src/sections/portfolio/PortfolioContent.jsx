@@ -311,9 +311,7 @@ const PortfolioProjects = () => {
       cat: "coding",
       description: (
         <p className="project-description">
-          A website to showcase my personal projects with my personal network
-          and potential employers. Designed all non-photograph visual assets and
-          images. **INSERT LINK** READ MORE HERE **INSERT LINK**
+          A website to provide information about me and showcase some projects.
         </p>
       ),
       technology: ["JavaScript", "HTML", "CSS", "React", "Framer Motion"],
