@@ -314,7 +314,14 @@ const PortfolioProjects = () => {
           A website to provide information about me and showcase some projects.
         </p>
       ),
-      technology: ["JavaScript", "HTML", "CSS", "React", "Framer Motion"],
+      technology: [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React",
+        "Framer Motion",
+        "Adobe Illustrator",
+      ],
       link: null,
       github: "https://github.com/JoshuaCBrown/portfolio",
       completed: true,
