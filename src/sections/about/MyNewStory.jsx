@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const MyNewStory = ({ setPageSelected }) => {
   return (
     <>
@@ -9,12 +7,10 @@ const MyNewStory = ({ setPageSelected }) => {
         <p className="story-story ">
           My name is Josh Brown and I am a developer, musician, and creative
           based in Atlanta, GA. I built this website to feature some of my
-          personal and projects.&nbsp;
-          <Link to="/portfolio">You can find those here</Link>. If you are
-          interested in working with together, want to offer constructive
-          feedback on something you see here, have a question for me, or just
-          want to drop a line, please don't hestitate to reach out. I look
-          forward to hearing from you!
+          personal and projects. If you are interested in working with together,
+          want to offer constructive feedback on something you see here, have a
+          question for me, or just want to drop a line, please don't hestitate
+          to reach out. I look forward to hearing from you!
           <span className="optional-website-info">
             If you'd like to learn more about the website itself,{" "}
             <span
